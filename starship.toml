@@ -1,0 +1,13 @@
+format = """
+$directory\
+$line_break\
+$character"""
+
+[character]
+format = "$symbol"
+success_symbol = "[➜  ](bold green)"
+error_symbol = "[➜  ](bold red)"
+vicmd_symbol = "[➜  ](bold yellow)"
+
+[line_break]
+disabled = true
