@@ -7,6 +7,9 @@ source "$HOME/.dotfiles/zsh/key-bindings.zsh"
 
 export FZF_DEFAULT_OPTS="rg --files"
 export FZF_DEFAULT_OPTS="-m --height 50% --border"
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+--color fg:#D8DEE9,bg:#2E3440,hl:#A3BE8C,fg+:#D8DEE9,bg+:#434C5E,hl+:#A3BE8C
+--color pointer:#BF616A,info:#4C566A,spinner:#4C566A,header:#4C566A,prompt:#81A1C1,marker:#EBCB8B'
 
 export NNN_PLUG='c:fzcd;o:fzopen;t:treeview;s:suedit'
 export PATH="$HOME/.cargo/env:$PATH"
@@ -16,7 +19,7 @@ export PATH="$HOME/Programs/fzf/bin:$PATH"
 export ZEPHYR_BASE="$HOME/zephyrproject/zephyr"
 export MANPAGER="nvim -c 'set ft=man' -"
 export EXA_STRICT=1
-export BAT_THEME="base16"
+export BAT_THEME="nord"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export EDITOR=nvim
@@ -34,6 +37,8 @@ alias mcbd="meson . build --cross-file=cross.ini --buildtype=debug"
 alias mcbr="meson . build --cross-file=cross.ini --buildtype=release"
 alias njb="clear && ninja -C build"
 alias njc="ninja -C build clean"
+alias wb="west build"
+alias wf="west flash"
 alias za="zathura"
 alias n="nnn -e"
 alias UU="sudo pacman -Syu"
@@ -43,3 +48,4 @@ export PATH="$HOME/Toolchains/arm-none-eabi/bin:$PATH"
 export PATH="$HOME/Toolchains/riscv-linux/bin:$PATH"
 
 eval "$(starship init zsh)"
+test -r ~/.dotfiles/zsh/dir_colors && eval $(dircolors ~/.dotfiles/zsh/dir_colors)

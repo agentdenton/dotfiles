@@ -11,7 +11,6 @@ mkdir -p ~/.config
 mkdir -p ~/.config/rofi
 mkdir -p ~/.config/dunst
 mkdir -p ~/.config/zathura
-mkdir -p ~/.config/awesome
 mkdir -p ~/.config/alacritty
 
 ln -s ~/.dotfiles/nvim ~/.config/

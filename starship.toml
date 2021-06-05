@@ -1,6 +1,8 @@
 format = """
 $directory\
 $line_break\
+$username\
+$hostname\
 $character"""
 
 [character]
