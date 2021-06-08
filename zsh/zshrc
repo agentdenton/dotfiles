@@ -8,10 +8,11 @@ source "$HOME/.dotfiles/zsh/key-bindings.zsh"
 export FZF_DEFAULT_OPTS="rg --files"
 export FZF_DEFAULT_OPTS="-m --height 50% --border"
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
---color fg:#D8DEE9,bg:#2E3440,hl:#A3BE8C,fg+:#D8DEE9,bg+:#434C5E,hl+:#A3BE8C
---color pointer:#BF616A,info:#4C566A,spinner:#4C566A,header:#4C566A,prompt:#81A1C1,marker:#EBCB8B'
+    --color=fg:#4d4d4c,bg:-1,hl:#d7005f
+    --color=fg+:#4d4d4c,bg+:-1,hl+:#d7005f
+    --color=info:#4271ae,prompt:#8959a8,pointer:#d7005f
+    --color=marker:#4271ae,spinner:#4271ae,header:#4271ae'
 
-export NNN_PLUG='c:fzcd;o:fzopen;t:treeview;s:suedit'
 export PATH="$HOME/.cargo/env:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.dotfiles/scripts:$PATH"
@@ -19,7 +20,7 @@ export PATH="$HOME/Programs/fzf/bin:$PATH"
 export ZEPHYR_BASE="$HOME/zephyrproject/zephyr"
 export MANPAGER="nvim -c 'set ft=man' -"
 export EXA_STRICT=1
-export BAT_THEME="nord"
+export BAT_THEME="OneHalfDark"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export EDITOR=nvim
@@ -48,4 +49,3 @@ export PATH="$HOME/Toolchains/arm-none-eabi/bin:$PATH"
 export PATH="$HOME/Toolchains/riscv-linux/bin:$PATH"
 
 eval "$(starship init zsh)"
-test -r ~/.dotfiles/zsh/dir_colors && eval $(dircolors ~/.dotfiles/zsh/dir_colors)

@@ -2,26 +2,16 @@ source ~/.config/nvim/plugins.vim
 source ~/.config/nvim/basic.vim
 
 let g:rustfmt_autosave = 1
-
 let g:indentLine_char = '|'
 
 let g:fzf_layout = { 'window': { 'width': 1.0, 'height': 0.5 } }
 let g:fzf_layout = { 'down': '40%' }
 
-let g:tokyonight_style = "night"
-let g:tokyonight_italic_functions = 0
-let g:tokyonight_italic_keywords = 0
-let g:tokyonight_italic_variables = 0
-let g:tokyonight_sidebars = [ "quickfix", "__vista__", "terminal" ]
-
-let g:two_firewatch_italics=1
-
-let ayucolor="light"
-
-colorscheme nord
-
 noremap <space> <nop>
 let mapleader = "\<Space>"
+
+let ayucolor="light"
+colorscheme ayu
 
 nnoremap E $
 nnoremap B ^
@@ -46,7 +36,6 @@ nnoremap <leader>p :e#<cr>
 " hi CursorLine ctermbg=NONE guibg=NONE
 " hi StatusLine guibg=NONE guifg=NONE ctermbg=NONE ctermfg=NONE
 " hi StatusLineNC guibg=NONE ctermbg=NONE guifg=NONE ctermfg=NONE
-hi VertSplit cterm=NONE guibg=NONE
 
 function! s:fzf_statusline()
   highlight fzf1 ctermfg=161 ctermbg=251

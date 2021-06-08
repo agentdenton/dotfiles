@@ -20,4 +20,4 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 ```
 
 ### Run
-`scripts/install.sh`
+`install.sh`
