@@ -1,51 +1,5 @@
-export ZSH="/home/agent_denton/.oh-my-zsh"
-ZSH_THEME="robbyrussell"
-plugins=(git vi-mode)
-source $ZSH/oh-my-zsh.sh
+source "$HOME/.dotfiles/zsh/exports.zsh" 2> /dev/null
 source "$HOME/.dotfiles/zsh/completion.zsh" 2> /dev/null
-source "$HOME/.dotfiles/zsh/key-bindings.zsh"
-
-export FZF_DEFAULT_OPTS="rg --files"
-export FZF_DEFAULT_OPTS="-m --height 50% --border"
-export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
-    --color=fg:#4d4d4c,bg:-1,hl:#d7005f
-    --color=fg+:#4d4d4c,bg+:-1,hl+:#d7005f
-    --color=info:#4271ae,prompt:#8959a8,pointer:#d7005f
-    --color=marker:#4271ae,spinner:#4271ae,header:#4271ae'
-
-export PATH="$HOME/.cargo/env:$PATH"
-export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/.dotfiles/scripts:$PATH"
-export PATH="$HOME/Programs/fzf/bin:$PATH"
-export ZEPHYR_BASE="$HOME/zephyrproject/zephyr"
-export MANPAGER="nvim -c 'set ft=man' -"
-export EXA_STRICT=1
-export BAT_THEME="OneHalfDark"
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-export EDITOR=nvim
-export VISUAL=nvim
-
-alias lg="lazygit"
-alias ls="exa --icons"
-alias ll="exa -la --icons"
-alias l="exa -l --icons"
-alias vim="nvim"
-alias xcy="xclip"
-alias xcp="xclip -o"
-alias mcb="meson . build --cross-file=cross.ini"
-alias mcbd="meson . build --cross-file=cross.ini --buildtype=debug"
-alias mcbr="meson . build --cross-file=cross.ini --buildtype=release"
-alias njb="clear && ninja -C build"
-alias njc="ninja -C build clean"
-alias wb="west build"
-alias wf="west flash"
-alias za="zathura"
-alias n="nnn -e"
-alias UU="sudo pacman -Syu"
-
-export PATH="/home/agent_denton/Toolchains/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabihf/bin:$PATH"
-export PATH="$HOME/Toolchains/arm-none-eabi/bin:$PATH"
-export PATH="$HOME/Toolchains/riscv-linux/bin:$PATH"
+source "$HOME/.dotfiles/zsh/key-bindings.zsh" 2> /dev/null
 
 eval "$(starship init zsh)"

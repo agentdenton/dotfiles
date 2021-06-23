@@ -27,34 +27,33 @@ font:
     family: JetBrainsMono Nerd Font
     style:  Italic
 
-# Colors (ayu_light)
+# Colors (One Dark)
 colors:
-  bright:
-    black: '#323232'
-    blue: '#73d8ff'
-    cyan: '#7ff1cb'
-    green: '#b8e532'
-    magenta: '#ffa3aa'
-    red: '#ff6565'
-    white: '#ffffff'
-    yellow: '#ffc94a'
-  cursor:
-    cursor: '#ff6a00'
-    text: '#5c6773'
-  normal:
-    black: '#000000'
-    blue: '#41a6d9'
-    cyan: '#4dbf99'
-    green: '#86b300'
-    magenta: '#f07178'
-    red: '#ff3333'
-    white: '#ffffff'
-    yellow: '#f29718'
+  # Default colors
   primary:
-    background: '#fafafa'
-    foreground: '#5c6773'
-  selection:
-    background: '#f0eee4'
-    text: '#5c6773'
+    background: '0x1e2127'
+    foreground: '0xabb2bf'
+
+  # Normal colors
+  normal:
+    black:   '0x1e2127'
+    red:     '0xe06c75'
+    green:   '0x98c379'
+    yellow:  '0xd19a66'
+    blue:    '0x61afef'
+    magenta: '0xc678dd'
+    cyan:    '0x56b6c2'
+    white:   '0xabb2bf'
+
+  # Bright colors
+  bright:
+    black:   '0x56b6c2'
+    red:     '0xe06c75'
+    green:   '0x98c379'
+    yellow:  '0xd19a66'
+    blue:    '0x61afef'
+    magenta: '0xc678dd'
+    cyan:    '0x56b6c2'
+    white:   '0xffffff'
 
 background_opacity: 1.0

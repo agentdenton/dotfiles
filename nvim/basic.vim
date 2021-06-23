@@ -22,7 +22,7 @@ set laststatus=2
 set relativenumber
 set number
 set cursorline
-set background=light
+set background=dark
 set shortmess+=c
 set clipboard+=unnamedplus
 set list

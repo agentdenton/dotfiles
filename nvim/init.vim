@@ -11,7 +11,7 @@ noremap <space> <nop>
 let mapleader = "\<Space>"
 
 let ayucolor="light"
-colorscheme ayu
+colorscheme onedark
 
 nnoremap E $
 nnoremap B ^
@@ -31,7 +31,7 @@ nnoremap <leader>p :e#<cr>
 
 " hi CursorLineNR guifg=yellow guibg=NONE
 " hi LineNr guifg=NONE guibg=NONE
-" hi Normal guibg=NONE ctermbg=NONE
+hi Normal guibg=NONE ctermbg=NONE
 " hi Comment guifg=#7e7e7e
 " hi CursorLine ctermbg=NONE guibg=NONE
 " hi StatusLine guibg=NONE guifg=NONE ctermbg=NONE ctermfg=NONE

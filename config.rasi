@@ -4,10 +4,10 @@
  * Copyright: Dave Davenport
  */
 * {
-    background-color:      #FAFAFA;
+    background-color:      #0A0E14;
     border-color:          #FAFAFA;
-    text-color:           #575F66;
-    font:            "SauceCodePro Nerd Font 10";
+    text-color:           #FAFAFA;
+    font:            "TerminessTTF Nerd Font 12";
 }
 
 #window {
@@ -38,5 +38,5 @@
     padding: 0px 2px;
 }
 #element selected {
-    background-color: #D4BFFF;
+    background-color: #FB8E89;
 }
