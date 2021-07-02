@@ -38,5 +38,5 @@
     padding: 0px 2px;
 }
 #element selected {
-    background-color: #FB8E89;
+    background-color: #ABD5FF;
 }

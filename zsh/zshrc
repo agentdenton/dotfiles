@@ -1,5 +1,0 @@
-source "$HOME/.dotfiles/zsh/exports.zsh" 2> /dev/null
-source "$HOME/.dotfiles/zsh/completion.zsh" 2> /dev/null
-source "$HOME/.dotfiles/zsh/key-bindings.zsh" 2> /dev/null
-
-eval "$(starship init zsh)"
