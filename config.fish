@@ -24,4 +24,5 @@ alias mcbr="meson . build --cross-file=cross.ini --buildtype=release"
 alias oni="/home/agent_denton/github/oni2/_esy/release/install/bin/Oni2 & disown"
 
 fish_vi_key_bindings
+set fish_greeting
 starship init fish | source
