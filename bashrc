@@ -117,6 +117,7 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 
 export NNN_FIFO=/tmp/nnn.fifo
 export NNN_PLUG='f:finder;o:fzopen;p:mocplay;d:diffs;t:nmount;v:imgview'
+export NNN_FCOLORS="0B0B04060006060009060B06"
 
 export MANPAGER="nvim -c 'set ft=man' -"
 

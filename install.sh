@@ -1,5 +1,6 @@
 #!/bin/bash
 
+rm -rf ~/.zshrc
 rm -rf ~/.bashrc
 rm -rf ~/.tmux.conf
 rm -rf ~/.config/fish
@@ -17,6 +18,7 @@ mkdir -p ~/.config/zathura
 mkdir -p ~/.config/alacritty
 
 ln -s ~/.dotfiles/nvim ~/.config/
+ln -s ~/.dotfiles/zshrc ~/.zshrc
 ln -s ~/.dotfiles/bashrc ~/.bashrc
 ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/.dotfiles/dunstrc ~/.config/dunst/dunstrc

@@ -14,6 +14,7 @@ set -x BAT_THEME "Nord"
 
 set -x NNN_FIFO /tmp/nnn.fifo
 set -x NNN_PLUG "f:finder;o:fzopen;p:mocplay;d:diffs;t:nmount;v:imgview"
+set -x NNN_FCOLORS "0B0B04060006060009060B06"
 
 set -x FZF_DEFAULT_COMMAND 'rg --files --no-ignore-vcs --hidden'
 set -x FZF_DEFAULT_OPTS "-m --height 50% --border"
