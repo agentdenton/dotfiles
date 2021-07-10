@@ -107,7 +107,7 @@ alias vim="nvim"
 alias nnn="nnn -e"
 alias xcy="xclip"
 alias xcp="xclip -o"
-alias tmux="TERM=screen-256color-bce tmux"
+alias tmux="tmux -2"
 
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 export FZF_DEFAULT_OPTS="-m --height 50% --border"
