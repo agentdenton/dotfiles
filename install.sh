@@ -24,4 +24,3 @@ ln -s ~/.dotfiles/zathurarc ~/.config/zathura/zathurarc
 ln -s ~/.dotfiles/config.rasi ~/.config/rofi/config.rasi
 ln -s ~/.dotfiles/starship.toml ~/.config/starship.toml
 ln -s ~/.dotfiles/config.fish ~/.config/fish/config.fish
-ln -s ~/.dotfiles/alacritty.yml ~/.config/alacritty/alacritty.yml

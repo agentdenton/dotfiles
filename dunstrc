@@ -10,8 +10,8 @@
     padding = 8
     horizontal_padding = 8
     frame_width = 3
-    frame_color = "#7f3fbf"
-    separator_color = auto
+    frame_color = "#E5E9F0"
+    separator_color = "#E5E9F0"
     sort = yes
     idle_threshold = 120
     font = "TerminessTTF Nerd Font 12"
@@ -51,17 +51,16 @@
     context = ctrl+shift+period
 
 [urgency_low]
-    background = "#28143c"
-    foreground = "#ffffff"
+    background = "#3B4252"
+    foreground = "#4C566A"
     timeout = 5
 
 [urgency_normal]
-    background = "#28143c"
-    foreground = "#ffffff"
+    background = "#434C5E"
+    foreground = "#E5E9F0"
     timeout = 5
 
 [urgency_critical]
-    background = "#28143c"
-    foreground = "#ffffff"
-    frame_color = "#ff7f7f"
+    background = "#88C0D0"
+    foreground = "#ECEFF4"
     timeout = 120
