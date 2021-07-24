@@ -97,7 +97,7 @@ workspace 8 output secondary
 workspace 9 output secondary
 workspace 10 output secondary
 
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -t -i ~/Pictures/wallpapers/audio-bunny.png --nofork
 exec --no-startup-id nm-applet
 exec --no-startup-id /home/agent_denton/.dotfiles/i3/scripts/startup.sh
 exec --no-startup-id dunst

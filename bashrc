@@ -29,3 +29,5 @@ export EDITOR=nvim
 export VISUAL=nvim
 
 eval "$(starship init bash)"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

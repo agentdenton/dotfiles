@@ -33,7 +33,7 @@ alias lg="lazygit"
 alias ls="exa"
 alias ll="exa -la"
 alias l="exa -l"
-alias tmux="tmux -2"
+alias tmux="TERM=xterm-256color tmux -2"
 alias vim="nvim"
 alias za="zathura"
 alias nnn="nnn -e"
@@ -70,3 +70,6 @@ export VISUAL=nvim
 
 eval $(dircolors $ZSH_STUFF/dir_colors)
 eval $(starship init zsh)
+
+source $HOME/.dotfiles/zsh/fzf.zsh
+

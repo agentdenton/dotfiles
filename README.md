@@ -1,15 +1,17 @@
-# Dotfiles
+## Dotfiles
 
-## Install programs
+### Install programs
 ```
-yay -S tmux alacritty vim rofi curl bat ripgrep exa zathura \
-    firefox feh thunar lxappearance htop dunst xclip fd flameshot
-```
-
-## Install fonts
-```
-yay -S nerd-fonts-source-code-pro ttf-font-awesome ttf-koruri nerd-fonts-terminus
+paru -S alacritty vim rofi curl bat ripgrep exa zathura nvim xss-lock \
+    firefox feh thunar lxappearance htop dunst xclip fd flameshot i3
 ```
 
-## Run
-`install.sh`
+### Install fonts
+```
+yay -S ttf-font-awesome nerd-fonts-terminus nerd-fonts-jetbrains-mono
+```
+
+### Run
+```
+install.sh
+```
