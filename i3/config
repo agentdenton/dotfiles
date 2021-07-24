@@ -97,7 +97,7 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -t -i ~/Pictures/wallpapers/audio-bunny.png --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -c 000000 --nofork
 exec --no-startup-id nm-applet
 exec --no-startup-id /home/agent_denton/.dotfiles/i3/scripts/startup.sh
 exec --no-startup-id dunst
