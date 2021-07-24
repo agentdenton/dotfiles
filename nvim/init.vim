@@ -68,6 +68,7 @@ nnoremap <leader>m <cmd>Marks<cr>
 nnoremap <leader>l <cmd>BLines<cr>
 nnoremap <leader>h <cmd>History:<cr>
 nnoremap <leader>p :e#<cr>
+nnoremap <leader>s :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
 colorscheme nord
 let g:lightline = { 'colorscheme': 'nord'}
