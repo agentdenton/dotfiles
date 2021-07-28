@@ -8,7 +8,8 @@ paru -S alacritty vim rofi curl bat ripgrep exa zathura nvim xss-lock \
 
 ### Install fonts
 ```
-yay -S ttf-font-awesome nerd-fonts-terminus nerd-fonts-jetbrains-mono
+paru -S ttf-font-awesome nerd-fonts-terminus nerd-fonts-jetbrains-mono \
+    ttf-blex-nerd-font-git
 ```
 
 ### Run

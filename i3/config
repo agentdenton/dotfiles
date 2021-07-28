@@ -1,10 +1,13 @@
 set $mod Mod1
 
-gaps inner 10
+gaps inner 15
 gaps outer 3
 
-font pango:TerminessTTF Nerd Font Bold 11
+font pango:Blex Mono Nerd Font Medium 10
 floating_modifier $mod
+
+default_border pixel 3
+default_floating_border pixel 3
 
 bindsym $mod+Shift+c kill
 bindsym $mod+Return exec alacritty
@@ -51,16 +54,16 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
-workspace 1 output primary
-workspace 2 output primary
-workspace 3 output primary
-workspace 4 output primary
-workspace 5 output primary
-workspace 6 output secondary
-workspace 7 output secondary
-workspace 8 output secondary
-workspace 9 output secondary
-workspace 10 output secondary
+workspace 1 output DVI-D-1
+workspace 2 output DVI-D-1
+workspace 3 output DVI-D-1
+workspace 4 output DVI-D-1
+workspace 5 output DVI-D-1
+workspace 6 output HDMI-0
+workspace 7 output HDMI-0
+workspace 8 output HDMI-0
+workspace 9 output HDMI-0
+workspace 10 output HDMI-0
 
 set $ws1 "1"
 set $ws2 "2"
@@ -99,34 +102,35 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -c 000000 --nofork
 exec --no-startup-id nm-applet
-exec --no-startup-id /home/agent_denton/.dotfiles/i3/scripts/startup.sh
 exec --no-startup-id dunst
 exec --no-startup-id nitrogen --restore
+exec --no-startup-id /home/agent_denton/.dotfiles/i3/scripts/startup.sh
+exec --no-startup-id /home/agent_denton/.dotfiles/polybar/startup.sh
 
-bar {
-    separator_symbol "  "
-    tray_output primary
-    height 20
-    position top 
-    font pango:TerminessTTF Nerd Font 11
-    status_command i3blocks
-    tray_padding 1
-    strip_workspace_numbers yes
-    bindsym button4 nop
-    bindsym button5 nop
-
-    colors {
-        background #2E3440
-        statusline #ECEFF4
-
-        # border           background         text
-        focused_workspace  #88c0d0 #88c0d0    #ECEFF4 
-        active_workspace   #88c0d0 #88c0d0    #ECEFF4
-        inactive_workspace #2E3440 #2E3440    #ECEFF4
-        urgent_workspace   #BF616A #BF616A    #ECEFF4
-        binding_mode       #88c0d0 #88c0d0    #ECEFF4
-    }
-}
+# bar {
+#     separator_symbol "  "
+#     tray_output primary
+#     height 20
+#     position top 
+#     font pango:TerminessTTF Nerd Font 11
+#     status_command polybar
+#     tray_padding 1
+#     strip_workspace_numbers yes
+#     bindsym button4 nop
+#     bindsym button5 nop
+# 
+#     colors {
+#         background #2E3440
+#         statusline #ECEFF4
+# 
+#         # border           background         text
+#         focused_workspace  #88c0d0 #88c0d0    #ECEFF4 
+#         active_workspace   #88c0d0 #88c0d0    #ECEFF4
+#         inactive_workspace #2E3440 #2E3440    #ECEFF4
+#         urgent_workspace   #BF616A #BF616A    #ECEFF4
+#         binding_mode       #88c0d0 #88c0d0    #ECEFF4
+#     }
+# }
 
 client.focused          #81a1c1 #81a1c1 #ffffff #81a1c1
 client.unfocused        #2e3440 #2e3440 #888888 #2e3440

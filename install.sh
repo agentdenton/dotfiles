@@ -11,6 +11,7 @@ rm -rf ~/.config/alacritty
 rm -rf ~/.config/starship.toml
 rm -rf ~/.config/i3
 rm -rf ~/.config/i3blocks
+rm -rf ~/.config/polybar
 
 mkdir -p ~/.config
 mkdir -p ~/.config/fish
@@ -21,6 +22,7 @@ mkdir -p ~/.config/alacritty
 
 ln -s ~/.dotfiles/i3 ~/.config/
 ln -s ~/.dotfiles/i3blocks ~/.config/
+ln -s ~/.dotfiles/polybar ~/.config/
 ln -s ~/.dotfiles/nvim ~/.config/
 ln -s ~/.dotfiles/zshrc ~/.zshrc
 ln -s ~/.dotfiles/bashrc ~/.bashrc
