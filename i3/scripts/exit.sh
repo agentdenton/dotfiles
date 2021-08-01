@@ -41,7 +41,7 @@ case $var in
     $logout)
         ans=$(confirm_exit &)
         if [[ $ans == "y" ]]; then
-            killall dwm
+            killall i3
         elif [[ $ans == "n" ]]; then
             exit 0
         else

@@ -9,7 +9,7 @@ paru -S alacritty vim rofi curl bat ripgrep exa zathura nvim xss-lock \
 ### Install fonts
 ```
 paru -S ttf-font-awesome nerd-fonts-terminus nerd-fonts-jetbrains-mono \
-    ttf-blex-nerd-font-git
+    ttf-blex-nerd-font-git tamzen-font
 ```
 
 ### Run
