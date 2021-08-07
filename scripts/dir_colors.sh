@@ -1,11 +1,3 @@
-# Copyright (C) 2017-present Arctic Ice Studio <development@arcticicestudio.com>
-# Copyright (C) 2017-present Sven Greb <development@svengreb.de>
-
-# Project:    Nord dircolors
-# Version:    0.2.0
-# Repository: https://github.com/arcticicestudio/nord-dircolors
-# License:    MIT
-
 COLOR tty
 
 TERM alacritty
@@ -101,7 +93,7 @@ STICKY 04;37;44
 .gz 01;32
 .jar 01;32
 .lha 01;32
-.lrz 01;2
+.lrz 01;32
 .lz 01;32
 .lz4 01;32
 .lzh 01;32
@@ -253,4 +245,4 @@ STICKY 04;37;44
 .swf 32
 .vob 32
 .webm 32
-.wmv 323
+.wmv 32

@@ -6,9 +6,11 @@
 cursor:
   unfocused_hollow: true
   thickness: 0.15
+shell:
+  program: /usr/bin/zsh
 
 font:
-  size: 9
+  size: 10
   normal:
     family: JetBrainsMono Nerd Font
     style:  Medium
@@ -17,7 +19,7 @@ font:
     style:  Bold
   italic:
     family: JetBrainsMono Nerd Font
-    style:  Italic
+    style:  Medium Italic
 
 colors:
   primary:

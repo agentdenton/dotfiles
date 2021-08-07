@@ -55,8 +55,16 @@ let mapleader = "\<Space>"
 
 nnoremap E $
 nnoremap B ^
-vmap     E $
-vmap     B ^
+nnoremap Y y$
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+inoremap ! !<c-g>u
+inoremap ? ?<c-g>u
+vmap     E $h
+vmap     B ^h
 
 nnoremap <leader>r <cmd>:noh<cr>
 nnoremap <leader>t <cmd>term<cr>

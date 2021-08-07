@@ -26,7 +26,6 @@ ncd ()
     fi
 }
 
-ZSH_STUFF="$HOME/.dotfiles/zsh"
 bindkey -v
 
 alias lg="lazygit"
@@ -68,8 +67,4 @@ export LANG=en_US.UTF-8
 export EDITOR=nvim
 export VISUAL=nvim
 
-eval $(dircolors $ZSH_STUFF/dir_colors)
 eval $(starship init zsh)
-
-source $HOME/.dotfiles/zsh/fzf.zsh
-

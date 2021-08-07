@@ -1,18 +1,17 @@
 ## Dotfiles
 
-### Install programs
+### Install programs (Arch Linux)
 ```
-paru -S alacritty vim rofi curl bat ripgrep exa zathura nvim xss-lock \
-    firefox feh thunar lxappearance htop dunst xclip fd flameshot i3
+paru -S alacritty vim nvim rofi curl bat ripgrep fd exa zathura xss-lock \
+    firefox sxiv thunar lxappearance htop dunst xclip flameshot i3 polybar
 ```
 
 ### Install fonts
 ```
-paru -S ttf-font-awesome nerd-fonts-terminus nerd-fonts-jetbrains-mono \
-    ttf-blex-nerd-font-git tamzen-font
+paru -S ttf-font-awesome nerd-fonts-terminus nerd-fonts-jetbrains-mono
 ```
 
-### Run
+### Run install script
 ```
-install.sh
+./install.sh
 ```

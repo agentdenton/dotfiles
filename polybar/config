@@ -28,13 +28,13 @@ padding-right = 0
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = Tamzen:antialias=false:size=11;1
-font-1 = Tamzen:antialias=false:size=11;1
+font-0 = TerminessTTF Nerd Font:antialias=false:size=11;1
+font-1 = TerminessTTF Nerd Font:antialias=false:size=11;1
 font-2 = FontAwesome:fontformat=truetype:size=9;1
 
 modules-left = i3 
 modules-center = xwindow
-modules-right = date
+modules-right = date battery
 
 tray-position = right
 tray-padding = 9
@@ -90,41 +90,40 @@ format-prefix-foreground = ${colors.foreground}
 format-underline =
 label = %date% %time%
 
+[module/battery]
+type = internal/battery
+battery = BAT1
+adapter = AC
+full-at = 99
 
-; [module/battery]
-; type = internal/battery
-; battery = BAT1
-; adapter = AC
-; full-at = 99
-; 
-; format-full-background = ${colors.background}
-; format-charging-background = ${colors.background}
-; format-charging = "⁣  <label-charging> <animation-charging> "
-; format-charging-underline = ${colors.border}
-; 
-; format-discharging-background = ${colors.background}
-; format-discharging = "⁣ <label-discharging> <ramp-capacity> "
-; format-discharging-underline = ${self.format-charging-underline}
-; 
-; format-full-prefix-foreground = ${colors.background}
-; format-full-underline = ${self.format-charging-underline}
-; 
-; format-charing-background = ${colors.background}
-; 
-; ramp-capacity-0 = 
-; ramp-capacity-1 = 
-; ramp-capacity-2 = 
-; ramp-capacity-3 = 
-; ramp-capacity-4 = 
-; ramp-capacity-foreground = ${colors.foreground}
-; 
-; animation-charging-0 = 
-; animation-charging-1 = 
-; animation-charging-2 = 
-; animation-charging-3 = 
-; animation-charging-4 = 
-; animation-charging-foreground = ${colors.foreground}
-; animation-charging-framerate = 750
+format-full-background = ${colors.background}
+format-charging-background = ${colors.background}
+format-charging = "⁣  <label-charging> <animation-charging> "
+format-charging-underline = ${colors.border}
+
+format-discharging-background = ${colors.background}
+format-discharging = "⁣ <label-discharging> <ramp-capacity> "
+format-discharging-underline = ${self.format-charging-underline}
+
+format-full-prefix-foreground = ${colors.background}
+format-full-underline = ${self.format-charging-underline}
+
+format-charing-background = ${colors.background}
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-foreground = ${colors.foreground}
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-foreground = ${colors.foreground}
+animation-charging-framerate = 750
 
 [settings]
 screenchange-reload = true

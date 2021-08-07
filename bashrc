@@ -1,11 +1,50 @@
+ncd ()
+{
+    # Block nesting of nnn in subshells
+    if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
+        echo "nnn is already running"
+        return
+    fi
+
+    # The default behaviour is to cd on quit (nnn checks if NNN_TMPFILE is set)
+    # To cd on quit only on ^G, remove the "export" as in:
+    #     NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
+    # NOTE: NNN_TMPFILE is fixed, should not be modified
+    export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
+
+    # Unmask ^Q (, ^V etc.) (if required, see `stty -a`) to Quit nnn
+    # stty start undef
+    # stty stop undef
+    # stty lwrap undef
+    # stty lnext undef
+
+    nnn "$@"
+
+    if [ -f "$NNN_TMPFILE" ]; then
+            . "$NNN_TMPFILE"
+            rm -f "$NNN_TMPFILE" > /dev/null
+    fi
+}
+
 set -o vi
+bind 'TAB:menu-complete'
 
 alias lg="lazygit"
+alias ls="exa"
+alias ll="exa -la"
+alias l="exa -l"
 alias vim="nvim"
 alias nnn="nnn -e"
 alias xcy="xclip"
 alias xcp="xclip -o"
 alias tmux="tmux -2"
+alias wb="west build"
+alias wf="west flash"
+alias njc="ninja -C build clean"
+alias njb="clear && ninja -C build"
+alias mcb="meson . build --cross-file=cross.ini"
+alias mcbd="meson . build --cross-file=cross.ini --buildtype=debug"
+alias mcbr="meson . build --cross-file=cross.ini --buildtype=release"
 
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 export FZF_DEFAULT_OPTS="-m --height 50% --border"
@@ -25,9 +64,10 @@ export BAT_THEME="Nord"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-export EDITOR=nvim
-export VISUAL=nvim
+export EDITOR="nvim"
+export VISUAL="nvim"
 
+eval $(dircolors ~/.dotfiles/scripts/dir_colors.sh)
 eval "$(starship init bash)"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
