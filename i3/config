@@ -18,6 +18,8 @@ bindsym Print exec --no-startup-id flameshot gui
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec /home/agent_denton/.dotfiles/i3/scripts/exit.sh
+# switch to a previous workspace
+bindsym $mod+Tab workspace back_and_forth
 
 # change focus
 bindsym $mod+h focus left
@@ -107,6 +109,8 @@ exec --no-startup-id dunst
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id /home/agent_denton/.dotfiles/i3/scripts/startup.sh
 exec --no-startup-id /home/agent_denton/.dotfiles/polybar/startup.sh
+exec --no-startup-id i3-msg 'workspace 1; exec firefox'
+exec --no-startup-id i3-msg 'workspace 2; exec alacritty'
 
 client.focused          #81a1c1 #8fbcbb #ffffff #8fbcbb
 client.unfocused        #2e3440 #2e3440 #888888 #2e3440
