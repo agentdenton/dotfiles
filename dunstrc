@@ -14,7 +14,7 @@
     separator_color = "#E5E9F0"
     sort = yes
     idle_threshold = 120
-    font = "TerminessTTF Nerd Font 12"
+    font = "Iosevka Nerd Font 11"
     line_height = 0
     markup = no
     format = "<b>%s</b>\n%b"
@@ -52,16 +52,16 @@
     context = ctrl+shift+period
 
 [urgency_low]
-    background = "#3B4252"
-    foreground = "#4C566A"
+    background = "#1f2335"
+    foreground = "#c0caf5"
     timeout = 5
 
 [urgency_normal]
-    background = "#434C5E"
-    foreground = "#E5E9F0"
+    background = "#1f2335"
+    foreground = "#c0caf5"
     timeout = 5
 
 [urgency_critical]
-    background = "#88C0D0"
-    foreground = "#ECEFF4"
+    background = "#1f2335"
+    foreground = "#c0caf5"
     timeout = 120

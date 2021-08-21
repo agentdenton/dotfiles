@@ -3,7 +3,7 @@ set $mod Mod1
 gaps inner 15
 gaps outer 3
 
-font pango:TerminessTTF Nerd Font Bold 11
+font pango:Iosevka Nerd Font, Bold, 9
 floating_modifier $mod
 
 default_border pixel 2
@@ -57,16 +57,16 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
-workspace 1 output DVI-D-1
-workspace 2 output DVI-D-1
-workspace 3 output DVI-D-1
-workspace 4 output DVI-D-1
-workspace 5 output DVI-D-1
-workspace 6 output HDMI-0
-workspace 7 output HDMI-0
-workspace 8 output HDMI-0
-workspace 9 output HDMI-0
-workspace 10 output HDMI-0
+# workspace 1 output DVI-D-1
+# workspace 2 output DVI-D-1
+# workspace 3 output DVI-D-1
+# workspace 4 output DVI-D-1
+# workspace 5 output DVI-D-1
+# workspace 6 output HDMI-0
+# workspace 7 output HDMI-0
+# workspace 8 output HDMI-0
+# workspace 9 output HDMI-0
+# workspace 10 output HDMI-0
 
 set $ws1 "1"
 set $ws2 "2"
@@ -109,10 +109,11 @@ exec --no-startup-id dunst
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id /home/agent_denton/.dotfiles/i3/scripts/startup.sh
 exec --no-startup-id /home/agent_denton/.dotfiles/polybar/startup.sh
-exec --no-startup-id i3-msg 'workspace 1; exec firefox'
-exec --no-startup-id i3-msg 'workspace 2; exec alacritty'
 
-client.focused          #81a1c1 #8fbcbb #ffffff #8fbcbb
+# exec --no-startup-id i3-msg 'workspace 1; exec firefox'
+# exec --no-startup-id i3-msg 'workspace 2; exec alacritty'
+
+client.focused          #81a1c1 #9ece6a #ffffff #9ece6a
 client.unfocused        #2e3440 #2e3440 #888888 #2e3440
 client.focused_inactive #2e3440 #2e3440 #888888 #2e3440
 client.placeholder      #2e3440 #2e3440 #888888 #2e3440

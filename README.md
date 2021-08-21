@@ -8,7 +8,7 @@ paru -S alacritty vim nvim rofi curl bat ripgrep fd exa zathura xss-lock \
 
 ### Install fonts
 ```
-paru -S ttf-font-awesome nerd-fonts-terminus nerd-fonts-jetbrains-mono
+paru -S ttf-font-awesome nerd-fonts-terminus nerd-fonts-jetbrains-mono nerd-fonts-iosevka
 ```
 
 ### Run install script

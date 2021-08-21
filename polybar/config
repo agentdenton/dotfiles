@@ -1,5 +1,5 @@
 [colors]
-background 	= #2E3440
+background 	= #1f2335
 foreground 	= #ECEFF4
 border = #3B4252
 
@@ -28,11 +28,11 @@ padding-right = 0
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = TerminessTTF Nerd Font:antialias=false:size=11;1
-font-1 = TerminessTTF Nerd Font:antialias=false:size=11;1
+font-0 = Iosevka Nerd Font:antialias=false:hint=true:size=10;1
+font-1 = Iosevka Nerd Font:antialias=false:hint=true:size=10;1
 font-2 = FontAwesome:fontformat=truetype:size=9;1
 
-modules-left = i3 
+modules-left = i3
 modules-center = xwindow
 modules-right = date battery
 
