@@ -14,10 +14,13 @@ end
 require('packer').startup(function()
     use 'wbthomason/packer.nvim'
     use 'tpope/vim-commentary'
-    use 'folke/tokyonight.nvim'
     use 'Yggdroot/indentLine'
     use 'JuliaEditorSupport/julia-vim'
     use 'rust-lang/rust.vim'
+    use 'projekt0n/github-nvim-theme'
+
+    use 'folke/tokyonight.nvim'
+    use "rafamadriz/neon"
 
 	-- use {'junegunn/fzf.vim'}
     -- use {'junegunn/fzf', dir = '~/.fzf', run = './install --all' }

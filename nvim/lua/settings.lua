@@ -1,4 +1,4 @@
-local theme = require("tokyonight.theme")
+require('github-theme').setup()
 local api = vim.api
 local cmd = vim.cmd
 local g = vim.g
@@ -37,12 +37,12 @@ opt.clipboard = "unnamedplus"
 opt.termguicolors = true
 opt.background = 'dark'
 
-g.tokyonight_style = "storm"
-g.tokyonight_italic_keywords = false
-g.tokyonight_italic_functions = false
+-- g.tokyonight_style = "storm"
+-- g.tokyonight_italic_keywords = false
+-- g.tokyonight_italic_functions = false
 -- g.tokyonight_colors = { comment = "yellow" }
 
-cmd [[colorscheme tokyonight]]
+cmd [[colorscheme github]]
 
 -- highlight on yank
 api.nvim_exec(

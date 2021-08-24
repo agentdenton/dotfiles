@@ -113,7 +113,7 @@ exec --no-startup-id /home/agent_denton/.dotfiles/polybar/startup.sh
 # exec --no-startup-id i3-msg 'workspace 1; exec firefox'
 # exec --no-startup-id i3-msg 'workspace 2; exec alacritty'
 
-client.focused          #81a1c1 #9ece6a #ffffff #9ece6a
+client.focused          #81a1c1 #3b8eea #ffffff #3b8eea
 client.unfocused        #2e3440 #2e3440 #888888 #2e3440
 client.focused_inactive #2e3440 #2e3440 #888888 #2e3440
 client.placeholder      #2e3440 #2e3440 #888888 #2e3440

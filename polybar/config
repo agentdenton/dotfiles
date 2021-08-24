@@ -1,7 +1,6 @@
 [colors]
-background 	= #1f2335
+background 	= #22272E
 foreground 	= #ECEFF4
-border = #3B4252
 
 [bar/bar]
 monitor = DVI-D-1
@@ -28,8 +27,8 @@ padding-right = 0
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = Iosevka Nerd Font:antialias=false:hint=true:size=10;1
-font-1 = Iosevka Nerd Font:antialias=false:hint=true:size=10;1
+font-0 = BlexMono Nerd Font:style=Bold:antialias=true:size=9;1
+font-1 = BlexMono Nerd Font:style=Bold:antialias=true:size=9;1
 font-2 = FontAwesome:fontformat=truetype:size=9;1
 
 modules-left = i3

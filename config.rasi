@@ -1,45 +1,98 @@
-/**
- * ROFI Color theme
- * User: Qball
- * Copyright: Dave Davenport
- */
+/*******************************************************************************
+ * ROFI SQUARED THEME USING THE MATERIAL DARKER PALETTE
+ * User                 : LR-Tech
+ * Theme Repo           : https://github.com/lr-tech/rofi-themes-collection
+ *******************************************************************************/
+
+configuration {
+    font: "BlexMono Nerd Font Medium 10";
+    display-ssh     : "";
+    display-run     : "";
+    display-drun    : "";
+    display-window  : "";
+    display-combi   : "";
+    show-icons:     true;
+    icon-theme:     "Arc";
+}
 * {
-    background-color:      #2E3440;
-    border-color:          #8FBCBB;
-    text-color:            #C0CAF5;
-    highlight: none;
-    font:            "Iosevka Nerd Font Bold 10";
-}
+    bg-color            : #212121;
+    bg-light-color      : #404040;
+    fg-color            : #eeffff;
+    accent-color        : #6cb6ff;
+    urgent-color        : #ffcb6b;
 
+    background-color    : @bg-color;
+    text-color          : @fg-color;
+
+    highlight:      none;
+    margin              : 0;
+}
 #window {
-    anchor:     north;
-    location:   north;
-    width:      100%;
-    padding:    4px;
-    children:   [ horibox ];
+    location            : center;
+    y-offset            : -160;
+    width               : 480;
+    background-color    : @bg-color;
 }
-
-#horibox {
-    orientation: horizontal;
-    children:   [ prompt, entry, listview ];
+#mainbox {
+    spacing             : 0;
 }
-
-#listview {
-    layout:     horizontal;
-    spacing:    5px;
-    lines:      100;
+#inputbar {
+    background-color    : @bg-light-color;
+    spacing             : 16;
+    padding             : 8;
 }
-
+#prompt {
+    background-color    : transparent;
+    vertical-align      : 0;
+}
 #entry {
-    expand:     false;
-    width:      10em;
+    background-color    : transparent;
 }
-
+#case-indicator {
+    background-color    : transparent;
+}
+#message {
+    padding             : 0;
+}
+#textbox {
+    padding             : 8;
+    background-color    : @bg-light-color;
+}
+#listview {
+    lines               : 8;
+    columns             : 1;
+    fixed-height        : false;
+    spacing             : 0;
+    padding             : 4 0;
+}
 #element {
-    padding: 0px 2px;
+    padding             : 8;
+    spacing             : 8;
 }
-
-#element selected {
-    background-color: #FF9E64;
-    text-color:       #545C7E;
+#element normal normal {
+    text-color          : @fg-color;
+}
+#element normal urgent {
+    text-color          : @urgent-color;
+}
+#element normal active {
+    text-color          : @accent-color;
+}
+#element selected normal {
+    background-color    : @accent-color;
+    text-color          : @bg-color;
+}
+#element selected urgent {
+    background-color    : @urgent-color;
+    text-color          : @bg-color;
+}
+#element selected active {
+    background-color    : @accent-color;
+    text-color          : @bg-color;
+}
+#element-icon {
+    size                : 0.8em;
+}
+#mode-switcher {
+    padding             : 0;
 }
