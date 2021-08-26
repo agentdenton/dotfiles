@@ -1,4 +1,4 @@
-require('github-theme').setup()
+local theme = require('github-theme')
 local api = vim.api
 local cmd = vim.cmd
 local g = vim.g
@@ -33,16 +33,8 @@ opt.laststatus = 2
 opt.mouse = "a"
 opt.scl = "yes"
 opt.clipboard = "unnamedplus"
-
 opt.termguicolors = true
 opt.background = 'dark'
-
--- g.tokyonight_style = "storm"
--- g.tokyonight_italic_keywords = false
--- g.tokyonight_italic_functions = false
--- g.tokyonight_colors = { comment = "yellow" }
-
-cmd [[colorscheme github]]
 
 -- highlight on yank
 api.nvim_exec(
@@ -58,12 +50,14 @@ api.nvim_exec(
 cmd [[let g:rustfmt_autosave = 1]]
 cmd [[let g:indentLine_char = '|']]
 
-cmd [[let g:fzf_layout = { 'window': { 'width': 1.0, 'height': 0.5 } }]]
-cmd [[let g:fzf_layout = { 'down': '40%' }]]
-
 -- disable new line comments
 cmd [[au BufEnter * set fo-=c fo-=r fo-=o]]
 
 -- remove all spaces and lines at the end of the file on save
 cmd [[au BufWritePre * %s/\s\+$//e]]
 cmd [[au BufWritePre * %s/\n\+\%$//e]]
+
+theme.setup({
+  functionStyle = "NONE",
+  keywordStyle = "NONE",
+})
