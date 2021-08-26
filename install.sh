@@ -1,16 +1,13 @@
 #!/bin/bash
 
-rm -rf ~/.zshrc
 rm -rf ~/.bashrc
 rm -rf ~/.tmux.conf
-rm -rf ~/.config/fish
 rm -rf ~/.config/rofi
 rm -rf ~/.config/dunst
 rm -rf ~/.config/zathura
 rm -rf ~/.config/alacritty
 rm -rf ~/.config/starship.toml
 rm -rf ~/.config/i3
-rm -rf ~/.config/i3blocks
 rm -rf ~/.config/polybar
 
 mkdir -p ~/.config

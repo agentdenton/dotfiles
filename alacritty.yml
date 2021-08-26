@@ -1,13 +1,8 @@
-# TerminessTTF Nerd Font
-# JetBrainsMono Nerd Font
-# SauceCodePro Nerd Font
-# BlexMono Nerd Font
-
 cursor:
   unfocused_hollow: true
   thickness: 0.15
 shell:
-  program: /usr/bin/zsh
+  program: /usr/bin/bash
 
 font:
   size: 11
