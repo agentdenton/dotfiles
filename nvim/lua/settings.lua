@@ -1,4 +1,4 @@
-local theme = require('github-theme')
+local theme = require("github-theme")
 local api = vim.api
 local cmd = vim.cmd
 local g = vim.g

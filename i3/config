@@ -1,25 +1,40 @@
 set $mod Mod1
 
+set $conf_dir /home/agent_denton/.dotfiles/i3
+set $scripts_dir /home/agent_denton/.dotfiles/i3/scripts
+
 gaps inner 15
-gaps outer 3
+gaps outer 15
 
 font pango:JetBrainsMono Nerd Font, Medium 9
-floating_modifier $mod
 
 default_border pixel 2
 default_floating_border pixel 2
+floating_modifier $mod
 
+# close a window
 bindsym $mod+Shift+c kill
+
+# launch terminal
 bindsym $mod+Return exec alacritty
-bindsym $mod+d exec --no-startup-id rofi -show run -display-run ""
+
+# launch programs
+bindsym $mod+d exec --no-startup-id rofi -show run
+
+# switch windows
+bindsym $mod+w exec --no-startup-id rofi -show window
+
+# ssh session
+bindsym $mod+s exec --no-startup-id rofi -show ssh
+
+# take a screen show
 bindsym Print exec --no-startup-id flameshot gui
 
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+# restart i3 inplace
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec /home/agent_denton/.dotfiles/i3/scripts/exit.sh
-# switch to a previous workspace
-bindsym $mod+Tab workspace back_and_forth
+
+# exit i3
+bindsym $mod+Shift+e exec $scripts_dir/exit.sh
 
 # change focus
 bindsym $mod+h focus left
@@ -39,13 +54,20 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
+# vertical split
 bindsym $mod+Ctrl+h split h
+
+# horizontal split
 bindsym $mod+Ctrl+v split v
+
+# fullscreen mode
 bindsym $mod+f fullscreen toggle
 
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+# switch to a previous workspace
+bindsym $mod+Tab workspace back_and_forth
+
+# change container layout (tabbed, toggle split)
+bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -57,16 +79,14 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
+# toggle bar
+bindsym $mod+b exec --no-startup-id polybar-msg cmd toggle
+
+set $ws1 "1:[www]"
+set $ws2 "2:code"
+set $ws3 "3:docs"
+set $ws4 "4:social"
+set $ws5 "5:games"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -74,11 +94,6 @@ bindsym $mod+2 workspace number $ws2
 bindsym $mod+3 workspace number $ws3
 bindsym $mod+4 workspace number $ws4
 bindsym $mod+5 workspace number $ws5
-bindsym $mod+6 workspace number $ws6
-bindsym $mod+7 workspace number $ws7
-bindsym $mod+8 workspace number $ws8
-bindsym $mod+9 workspace number $ws9
-bindsym $mod+0 workspace number $ws10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
@@ -86,22 +101,21 @@ bindsym $mod+Shift+2 move container to workspace number $ws2
 bindsym $mod+Shift+3 move container to workspace number $ws3
 bindsym $mod+Shift+4 move container to workspace number $ws4
 bindsym $mod+Shift+5 move container to workspace number $ws5
-bindsym $mod+Shift+6 move container to workspace number $ws6
-bindsym $mod+Shift+7 move container to workspace number $ws7
-bindsym $mod+Shift+8 move container to workspace number $ws8
-bindsym $mod+Shift+9 move container to workspace number $ws9
-bindsym $mod+Shift+0 move container to workspace number $ws10
 
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -c 000000 --nofork
-exec --no-startup-id nm-applet
-exec --no-startup-id dunst
-exec --no-startup-id nitrogen --restore
-exec --no-startup-id /home/agent_denton/.dotfiles/i3/scripts/startup.sh
-exec --no-startup-id /home/agent_denton/.dotfiles/polybar/startup.sh
-
-client.focused          #81a1c1 #3b8eea #ffffff #3b8eea
+client.focused          #81a1c1 #51afef #ffffff #51afef
 client.unfocused        #2e3440 #2e3440 #888888 #2e3440
 client.focused_inactive #2e3440 #2e3440 #888888 #2e3440
 client.placeholder      #2e3440 #2e3440 #888888 #2e3440
 client.urgent           #900000 #900000 #ffffff #900000
 client.background       #242424
+
+# autostart apps
+exec --no-startup-id dunst
+exec --no-startup-id flameshot
+exec --no-startup-id nm-applet
+exec --no-startup-id nitrogen --restore
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -c 000000 --nofork
+
+# run scripts
+exec --no-startup-id $upath/.dotfiles/i3/scripts/startup.sh
+exec --no-startup-id $upath/.dotfiles/polybar/startup.sh

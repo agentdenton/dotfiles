@@ -18,14 +18,7 @@ require('packer').startup(function()
     use 'JuliaEditorSupport/julia-vim'
     use 'rust-lang/rust.vim'
     use 'projekt0n/github-nvim-theme'
-
-    use 'folke/tokyonight.nvim'
-    use "rafamadriz/neon"
-
-	-- use {'junegunn/fzf.vim'}
-    -- use {'junegunn/fzf', dir = '~/.fzf', run = './install --all' }
-
-    -- use 'tpope/vim-fugitive'
+    -- use "mcchrish/zenbones.nvim"
 
     use {
         'hoob3rt/lualine.nvim',
