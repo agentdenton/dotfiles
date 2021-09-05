@@ -1,8 +1,5 @@
 set $mod Mod1
 
-set $conf_dir /home/agent_denton/.dotfiles/i3
-set $scripts_dir /home/agent_denton/.dotfiles/i3/scripts
-
 gaps inner 15
 gaps outer 15
 
@@ -34,7 +31,7 @@ bindsym Print exec --no-startup-id flameshot gui
 bindsym $mod+Shift+r restart
 
 # exit i3
-bindsym $mod+Shift+e exec $scripts_dir/exit.sh
+bindsym $mod+Shift+e exec /home/agent_denton/.config/i3/scripts/exit.sh
 
 # change focus
 bindsym $mod+h focus left
@@ -82,7 +79,7 @@ bindsym $mod+a focus parent
 # toggle bar
 bindsym $mod+b exec --no-startup-id polybar-msg cmd toggle
 
-set $ws1 "1:[www]"
+set $ws1 "1:web"
 set $ws2 "2:code"
 set $ws3 "3:docs"
 set $ws4 "4:social"
@@ -117,5 +114,5 @@ exec --no-startup-id nitrogen --restore
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -c 000000 --nofork
 
 # run scripts
-exec --no-startup-id $upath/.dotfiles/i3/scripts/startup.sh
-exec --no-startup-id $upath/.dotfiles/polybar/startup.sh
+exec --no-startup-id /home/agent_denton/.config/i3/scripts/startup.sh
+exec --no-startup-id /home/agent_denton/.config/polybar/startup.sh

@@ -8,21 +8,21 @@ alert = #bd2c40
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-font-0 = JetBrainsMono Nerd Font:size=10:style=Bold
+font-0 = JetBrainsMono Nerd Font:size=9:style=Medium
 font-1 = JetBrainsMono Nerd Font:fontformat=truetype:size=9;1
 
 dpi = 100
-height = 25
+height = 20
 
-modules-left = i3
+modules-left = bspwm
 modules-center = time
 modules-right = cpu memory pulseaudio battery
 
-wm-restack = i3
+wm-restack = bspwm
 enable-ipc=true
 
 tray-position = right
-tray-padding = 9
+tray-padding = 5
 tray-offset-y = 0%
 tray-offset-x = 0%
 tray-maxsize = 18
@@ -36,50 +36,36 @@ label-color1 = ${colors.foreground}
 label-background = ${colors.background}
 label-padding = 2
 
-[module/i3]
-type = internal/i3
-format = <label-state> <label-mode>
-
-ws-icon-0 = 1;[www]
-ws-icon-1 = 2;code
-ws-icon-2 = 3;docs
-ws-icon-3 = 4;social
-ws-icon-4 = 5;games
-
-pin-workspaces = true
+[module/bspwm]
+type = internal/bspwm
+format = <label-state>
+format-padding = 2
 index-sort = true
 
-label-mode = %name%
-label-mode-padding = 2
-label-mode-foreground = #000
-label-mode-background = ${colors.foreground}
+enable-click = true
+reverse-scroll = false
 
-label-focused = %name%
-label-focused-background = ${colors.background-alt}
-label-focused-padding = 2
+label-focused = 
+label-focused-padding = 1
 
-label-unfocused = %name%
-label-unfocused-padding = 2
+label-occupied = 
+label-occupied-padding = 1
 
-label-visible = %name%
-label-visible-background = ${colors.background}
-
-label-urgent = %name%
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
+label-empty = 
+label-empty-padding = 1
 
 [module/cpu]
 type = internal/cpu
-interval = 2
+interval = 1
 format-prefix = " "
-format-padding = 2
+format-padding = 1
 format-foreground = ${colors.foreground}
 label = %percentage%%
 
 [module/memory]
 type = internal/memory
-interval = 2
-format-padding = 2
+interval = 1
+format-padding = 1
 format-prefix = " "
 format-foreground = ${colors.foreground}
 label = %percentage_used%%
@@ -98,9 +84,9 @@ label-padding = 2
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume-padding = 2
+format-volume-padding = 1
 format-volume = <ramp-volume><label-volume>
-label-volume = %percentage:4:4%%
+label-volume = %percentage:3%%
 use-ui-max = false
 interval = 5
 
@@ -108,7 +94,7 @@ ramp-volume-0 = ""
 ramp-volume-1 = ""
 ramp-volume-2 = ""
 
-format-muted-padding = 2
+format-muted-padding = 1
 label-muted = "  muted"
 label-muted-background = ${colors.background}
 label-muted-foreground = ${colors.foreground}

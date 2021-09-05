@@ -28,6 +28,7 @@ ncd ()
 
 set -o vi
 
+alias ..="cd .."
 alias lg="lazygit"
 alias ls="exa"
 alias ll="exa -la"
@@ -45,14 +46,14 @@ alias mcb="meson . build --cross-file=cross.ini"
 alias mcbd="meson . build --cross-file=cross.ini --buildtype=debug"
 alias mcbr="meson . build --cross-file=cross.ini --buildtype=release"
 
+export PATH="/home/agent_denton/.dotfiles/scripts:$PATH"
+
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 export FZF_DEFAULT_OPTS="-m --height 50% --border"
-
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
---color=fg:#d1d5da,bg:#24292e,hl:#bb9af7
---color=fg+:#d1d5da,bg+:#24292e,hl+:#ff938a
---color=info:#b083f0,prompt:#7dcfff,pointer:#7dcfff
---color=marker:#9ece6a,spinner:#9ece6a,header:#9ece6a'
+--color=dark --color=fg:-1,bg:-1,hl:#c678dd,fg+:#ffffff,bg+:-1,hl+:#d858fe
+--color=info:#98c379,prompt:#61afef,pointer:#be5046,marker:#e5c07b,spinner:#61afef,header:#61afef
+'
 
 export NNN_FIFO=/tmp/nnn.fifo
 export NNN_PLUG='f:finder;o:fzopen;p:mocplay;d:diffs;t:nmount;v:imgview'

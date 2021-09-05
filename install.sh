@@ -6,7 +6,7 @@ rm -rf $HOME/.config/starship.toml
 cp bash/bashrc $HOME/.bashrc
 cp starship/starship.toml $HOME/.config/starship.toml
 
-configs=(i3 rofi dunst zathura polybar alacritty nvim)
+configs=(i3 rofi dunst zathura polybar alacritty nvim flameshot bspwm sxhkd)
 
 # clean old configs
 for conf in ${configs[@]}; do
