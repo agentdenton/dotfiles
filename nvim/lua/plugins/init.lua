@@ -15,9 +15,10 @@ require('packer').startup(function()
     use 'wbthomason/packer.nvim'
     use 'tpope/vim-commentary'
     use 'Yggdroot/indentLine'
-    use 'JuliaEditorSupport/julia-vim'
-    use 'rust-lang/rust.vim'
-    use 'projekt0n/github-nvim-theme'
+    use 'NTBBloodbath/doom-one.nvim'
+    -- use 'JuliaEditorSupport/julia-vim'
+    -- use 'rust-lang/rust.vim'
+    -- use 'projekt0n/github-nvim-theme'
     -- use "mcchrish/zenbones.nvim"
 
     use {
@@ -62,18 +63,18 @@ require('packer').startup(function()
             require('plugins.telescope')
         end
     }
+    use {
+        'kyazdani42/nvim-tree.lua',
+        requires = 'kyazdani42/nvim-web-devicons',
+        config = function()
+            require('plugins.filetree')
+        end
+    }
     -- use {
     --     'lewis6991/gitsigns.nvim',
     --     requires = { 'nvim-lua/plenary.nvim' },
     --     config = function()
     --         require('gitsigns').setup()
-    --     end
-    -- }
-    -- use {
-    --     'kyazdani42/nvim-tree.lua',
-    --     requires = 'kyazdani42/nvim-web-devicons',
-    --     config = function()
-    --         require('plugins.filetree')
     --     end
     -- }
 end)

@@ -1,4 +1,3 @@
-local theme = require("github-theme")
 local api = vim.api
 local cmd = vim.cmd
 local g = vim.g
@@ -56,8 +55,3 @@ cmd [[au BufEnter * set fo-=c fo-=r fo-=o]]
 -- remove all spaces and lines at the end of the file on save
 cmd [[au BufWritePre * %s/\s\+$//e]]
 cmd [[au BufWritePre * %s/\n\+\%$//e]]
-
-theme.setup({
-  functionStyle = "NONE",
-  keywordStyle = "NONE",
-})

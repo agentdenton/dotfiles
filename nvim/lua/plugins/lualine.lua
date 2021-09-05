@@ -1,7 +1,9 @@
+local onedark = require'lualine.themes.onedark'
+
 require('lualine').setup({
     options = {
         icons_enabled = true,
-        theme = 'github',
+        theme = 'onedark',
         component_separators = { '', ' '},
         section_separators = { '', '' },
     },
@@ -24,3 +26,5 @@ require('lualine').setup({
         lualine_z = { 'location' }
     }
 })
+
+onedark.normal.c.bg = "#282c34"

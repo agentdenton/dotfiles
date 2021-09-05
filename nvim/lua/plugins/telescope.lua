@@ -11,7 +11,7 @@ require('telescope').setup{
             '--column',
             '--smart-case'
         },
-        layout_strategy = "center",
+        layout_strategy = "vertical",
     }
 }
 
