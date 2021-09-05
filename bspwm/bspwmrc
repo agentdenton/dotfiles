@@ -1,6 +1,8 @@
 #!/bin/bash
 
+xset s 300 5
 xset r rate 400 100
+
 setxkbmap -option caps:swapescape
 setxkbmap -model pc105 -layout us,ua -variant qwerty -option grp:win_space_toggle
 
@@ -21,7 +23,7 @@ function configure_monitors() {
     fi
 }
 
-bspc config border_width         1
+bspc config border_width         2
 bspc config window_gap           25
 bspc config pointer_modifier mod1
 bspc config pointer_action1 move
@@ -42,6 +44,7 @@ dunst &
 nm-applet
 nitrogen --restore
 pgrep -x sxhkd > /dev/null || sxhkd &
+xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock & disown
 
 configure_monitors
 start_bar

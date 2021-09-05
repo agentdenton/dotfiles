@@ -1,5 +1,4 @@
-ncd ()
-{
+ncd () {
     # Block nesting of nnn in subshells
     if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
         echo "nnn is already running"
@@ -52,8 +51,7 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 export FZF_DEFAULT_OPTS="-m --height 50% --border"
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 --color=dark --color=fg:-1,bg:-1,hl:#c678dd,fg+:#ffffff,bg+:-1,hl+:#d858fe
---color=info:#98c379,prompt:#61afef,pointer:#be5046,marker:#e5c07b,spinner:#61afef,header:#61afef
-'
+--color=info:#98c379,prompt:#61afef,pointer:#be5046,marker:#e5c07b,spinner:#61afef,header:#61afef'
 
 export NNN_FIFO=/tmp/nnn.fifo
 export NNN_PLUG='f:finder;o:fzopen;p:mocplay;d:diffs;t:nmount;v:imgview'
@@ -69,5 +67,9 @@ export LANG=en_US.UTF-8
 
 export EDITOR="nvim"
 export VISUAL="nvim"
+
+export XSECURELOCK_FONT="TerminessTTF Nerd Font"
+export XSECURELOCK_PASSWORD_PROMPT="disco"
+export XSECURELOCK_SHOW_DATETIME=1
 
 eval "$(starship init bash)"
