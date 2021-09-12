@@ -50,8 +50,8 @@ export PATH="/home/agent_denton/.dotfiles/scripts:$PATH"
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 export FZF_DEFAULT_OPTS="-m --height 50% --border"
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
---color=dark --color=fg:-1,bg:-1,hl:#c678dd,fg+:#ffffff,bg+:-1,hl+:#d858fe
---color=info:#98c379,prompt:#61afef,pointer:#be5046,marker:#e5c07b,spinner:#61afef,header:#61afef'
+--color fg:#D8DEE9,bg:#2E3440,hl:#A3BE8C,fg+:#D8DEE9,bg+:#434C5E,hl+:#A3BE8C
+--color pointer:#BF616A,info:#4C566A,spinner:#4C566A,header:#4C566A,prompt:#81A1C1,marker:#EBCB8B'
 
 export NNN_FIFO=/tmp/nnn.fifo
 export NNN_PLUG='f:finder;o:fzopen;p:mocplay;d:diffs;t:nmount;v:imgview'
@@ -72,4 +72,5 @@ export XSECURELOCK_FONT="TerminessTTF Nerd Font"
 export XSECURELOCK_PASSWORD_PROMPT="disco"
 export XSECURELOCK_SHOW_DATETIME=1
 
+eval $(dircolors ~/.dotfiles/bash/dir_colors.sh)
 eval "$(starship init bash)"
