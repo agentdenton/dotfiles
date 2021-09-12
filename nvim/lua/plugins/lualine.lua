@@ -1,9 +1,7 @@
-local onedark = require'lualine.themes.onedark'
-
 require('lualine').setup({
     options = {
         icons_enabled = true,
-        theme = 'onedark',
+        theme = 'nord',
         component_separators = { '', ' '},
         section_separators = { '', '' },
     },
@@ -27,4 +25,5 @@ require('lualine').setup({
     }
 })
 
-onedark.normal.c.bg = "#282c34"
+local nord_theme = require'lualine.themes.nord'
+nord_theme.normal.c.bg = "#2e3440"
