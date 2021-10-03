@@ -3,11 +3,11 @@ set $mod Mod1
 gaps inner 15
 gaps outer 15
 
-font pango:JetBrainsMono Nerd Font, Medium 9
-
 default_border pixel 2
 default_floating_border pixel 2
 floating_modifier $mod
+
+font pango:RobotoMono Nerd Font, Medium 9
 
 # close a window
 bindsym $mod+Shift+c kill
@@ -31,7 +31,7 @@ bindsym Print exec --no-startup-id flameshot gui
 bindsym $mod+Shift+r restart
 
 # exit i3
-bindsym $mod+Shift+e exec /home/agent_denton/.config/i3/scripts/exit.sh
+bindsym $mod+Shift+e exec denton_wm_exit.sh
 
 # change focus
 bindsym $mod+h focus left
@@ -76,21 +76,27 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
-# toggle bar
-bindsym $mod+b exec --no-startup-id polybar-msg cmd toggle
-
-set $ws1 "1:web"
-set $ws2 "2:code"
-set $ws3 "3:docs"
-set $ws4 "4:social"
-set $ws5 "5:games"
+# to display workspaces with icons
+# set $ws1 1:mail
+# set $ws2 2:
+set $ws1 1
+set $ws2 2
+set $ws3 3
+set $ws4 4
+set $ws5 5
+set $ws6 6
+set $ws7 7
+set $ws8 8
 
 # switch to workspace
-bindsym $mod+1 workspace number $ws1
-bindsym $mod+2 workspace number $ws2
-bindsym $mod+3 workspace number $ws3
-bindsym $mod+4 workspace number $ws4
-bindsym $mod+5 workspace number $ws5
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
@@ -98,6 +104,9 @@ bindsym $mod+Shift+2 move container to workspace number $ws2
 bindsym $mod+Shift+3 move container to workspace number $ws3
 bindsym $mod+Shift+4 move container to workspace number $ws4
 bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws5
+bindsym $mod+Shift+7 move container to workspace number $ws5
+bindsym $mod+Shift+9 move container to workspace number $ws5
 
 client.focused          #81a1c1 #51afef #ffffff #51afef
 client.unfocused        #2e3440 #2e3440 #888888 #2e3440
@@ -106,13 +115,5 @@ client.placeholder      #2e3440 #2e3440 #888888 #2e3440
 client.urgent           #900000 #900000 #ffffff #900000
 client.background       #242424
 
-# autostart apps
-exec --no-startup-id dunst
-exec --no-startup-id flameshot
-exec --no-startup-id nm-applet
-exec --no-startup-id nitrogen --restore
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -c 000000 --nofork
-
-# run scripts
-exec --no-startup-id /home/agent_denton/.config/i3/scripts/startup.sh
-exec --no-startup-id /home/agent_denton/.config/polybar/startup.sh
+# launch startup script
+exec --no-startup-id denton_startup.sh

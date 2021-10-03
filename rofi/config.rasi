@@ -1,97 +1,99 @@
 /*******************************************************************************
- * ROFI SQUARED THEME USING THE MATERIAL DARKER PALETTE
+ * MACOS SPOTLIGHT LIKE DARK THEME FOR ROFI
  * User                 : LR-Tech
  * Theme Repo           : https://github.com/lr-tech/rofi-themes-collection
  *******************************************************************************/
 
-configuration {
-    font: "TerminessTTF Nerd Font Medium 12";
-    display-ssh     : "";
-    display-run     : "";
-    display-drun    : "";
-    display-window  : "";
-    display-combi   : "";
-    show-icons:     true;
-}
 * {
-    bg-color            : #212121;
-    bg-light-color      : #404040;
-    fg-color            : #eeffff;
-    accent-color        : #6cb6ff;
-    urgent-color        : #ffcb6b;
+    font:   "Montserrat 12";
 
-    background-color    : @bg-color;
-    text-color          : @fg-color;
+    bg0:    #242424E6;
+    bg1:    #7E7E7E80;
+    bg2:    #0860f2E6;
 
-    highlight:      none;
-    margin              : 0;
+    fg0:    #DEDEDE;
+    fg1:    #FFFFFF;
+    fg2:    #DEDEDE80;
+
+    background-color:   transparent;
+    text-color:         @fg0;
+
+    margin:     0;
+    padding:    0;
+    spacing:    0;
 }
-#window {
-    location            : center;
-    y-offset            : -160;
-    width               : 480;
-    background-color    : @bg-color;
+
+window {
+    background-color:   @bg0;
+
+    location:       center;
+    width:          640;
+    y-offset:       -200;
+    border-radius:  8;
 }
-#mainbox {
-    spacing             : 0;
+
+inputbar {
+    font:       "Montserrat 20";
+    padding:    12px;
+    spacing:    12px;
+    children:   [ icon-search, entry ];
 }
-#inputbar {
-    background-color    : @bg-light-color;
-    spacing             : 16;
-    padding             : 8;
+
+icon-search {
+    expand:     false;
+    filename:   "search";
+    size: 28px;
 }
-#prompt {
-    background-color    : transparent;
-    vertical-align      : 0;
+
+icon-search, entry, element-icon, element-text {
+    vertical-align: 0.5;
 }
-#entry {
-    background-color    : transparent;
+
+entry {
+    font:   inherit;
+
+    placeholder         : "Search";
+    placeholder-color   : @fg2;
 }
-#case-indicator {
-    background-color    : transparent;
+
+message {
+    border:             2px 0 0;
+    border-color:       @bg1;
+    background-color:   @bg1;
 }
-#message {
-    padding             : 0;
+
+textbox {
+    padding:    8px 24px;
 }
-#textbox {
-    padding             : 8;
-    background-color    : @bg-light-color;
+
+listview {
+    lines:      10;
+    columns:    1;
+
+    fixed-height:   false;
+    border:         1px 0 0;
+    border-color:   @bg1;
 }
-#listview {
-    lines               : 8;
-    columns             : 1;
-    fixed-height        : false;
-    spacing             : 0;
-    padding             : 4 0;
+
+element {
+    padding:            8px 16px;
+    spacing:            16px;
+    background-color:   transparent;
 }
-#element {
-    padding             : 8;
-    spacing             : 8;
+
+element normal active {
+    text-color: @bg2;
 }
-#element normal normal {
-    text-color          : @fg-color;
+
+element selected normal, element selected active {
+    background-color:   @bg2;
+    text-color:         @fg1;
 }
-#element normal urgent {
-    text-color          : @urgent-color;
+
+element-icon {
+    size:   1em;
 }
-#element normal active {
-    text-color          : @accent-color;
-}
-#element selected normal {
-    background-color    : @accent-color;
-    text-color          : @bg-color;
-}
-#element selected urgent {
-    background-color    : @urgent-color;
-    text-color          : @bg-color;
-}
-#element selected active {
-    background-color    : @accent-color;
-    text-color          : @bg-color;
-}
-#element-icon {
-    size                : 0.8em;
-}
-#mode-switcher {
-    padding             : 0;
+
+element-text {
+    text-color: inherit;
 }

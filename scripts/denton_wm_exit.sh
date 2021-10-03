@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 
 confirm_exit() {
     rofi -dmenu -i -no-fixed-num-lines -p "Are You Sure?: "
@@ -41,7 +41,7 @@ case $var in
     $logout)
         ans=$(confirm_exit &)
         if [[ $ans == "y" ]]; then
-            killall bspwm
+            killall i3
         elif [[ $ans == "n" ]]; then
             exit 0
         else

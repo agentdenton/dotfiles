@@ -15,7 +15,7 @@ require('packer').startup(function()
     use 'wbthomason/packer.nvim'
     use 'tpope/vim-commentary'
     use 'Yggdroot/indentLine'
-    use 'shaunsingh/nord.nvim'
+    use "projekt0n/github-nvim-theme"
 
     use {
         'hoob3rt/lualine.nvim',

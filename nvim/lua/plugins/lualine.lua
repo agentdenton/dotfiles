@@ -1,7 +1,7 @@
 require('lualine').setup({
     options = {
         icons_enabled = true,
-        theme = 'nord',
+        theme = 'github',
         component_separators = { '', ' '},
         section_separators = { '', '' },
     },
@@ -24,6 +24,3 @@ require('lualine').setup({
         lualine_z = { 'location' }
     }
 })
-
-local nord_theme = require'lualine.themes.nord'
-nord_theme.normal.c.bg = "#2e3440"
