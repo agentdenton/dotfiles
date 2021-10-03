@@ -45,8 +45,6 @@ alias mcb="meson . build --cross-file=cross.ini"
 alias mcbd="meson . build --cross-file=cross.ini --buildtype=debug"
 alias mcbr="meson . build --cross-file=cross.ini --buildtype=release"
 
-export PATH="/home/agent_denton/.dotfiles/scripts:$PATH"
-
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 export FZF_DEFAULT_OPTS="-m --height 50% --border"
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
@@ -72,5 +70,4 @@ export XSECURELOCK_FONT="TerminessTTF Nerd Font"
 export XSECURELOCK_PASSWORD_PROMPT="disco"
 export XSECURELOCK_SHOW_DATETIME=1
 
-eval $(dircolors ~/.dotfiles/bash/dir_colors.sh)
 eval "$(starship init bash)"
