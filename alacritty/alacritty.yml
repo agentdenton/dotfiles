@@ -21,7 +21,7 @@ colors:
   # Default colors
   primary:
     background: '0x22272e'
-    foreground: '0x768390'
+    foreground: '0xd1d5da'
 
   # Normal colors
   normal:
@@ -32,7 +32,7 @@ colors:
     blue:    '0x6cb6ff'
     magenta: '0xb083f0'
     cyan:    '0x56d4dd'
-    white:   '0x768390'
+    white:   '0xd1d5da'
 
   # Bright colors
   bright:
@@ -43,8 +43,10 @@ colors:
     blue:    '0x6cb6ff'
     magenta: '0xdcbdfb'
     cyan:    '0x56d4dd'
-    white:   '0x768390'
+    white:   '0xd1d5da'
 
   indexed_colors:
     - { index: 16, color: '0xd18616' }
     - { index: 17, color: '0xff938a' }
+
+background_opacity: 1.0
