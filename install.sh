@@ -7,18 +7,12 @@ rm -rf $HOME/.config/starship.toml
 cp bash/bashrc $HOME/.bashrc
 cp starship.toml $HOME/.config/starship.toml
 cp tmux.conf $HOME/.tmux.conf
+cp -r scripts/* /usr/bin/
 
 configs=(i3 rofi dunst zathura polybar alacritty nvim flameshot)
-
-# clean old configs
 for conf in ${configs[@]}; do
+    # clean old configs
     rm -rf $HOME/.config/$conf
+    # copy new configs
+    cp -r $conf $HOME/.config/
 done
-
-# copy new configs
-for conf in ${configs[@]}; do
-    cp -r $conf $HOME/.config
-done
-
-# copy scripts to binaries dir
-cp -r scripts/* /usr/bin/

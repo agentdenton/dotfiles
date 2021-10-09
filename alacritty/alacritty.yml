@@ -5,7 +5,7 @@ shell:
   program: /usr/bin/bash
 
 font:
-  size: 9
+  size: 10
   normal:
     family: RobotoMono Nerd Font
     style:  Medium
@@ -20,7 +20,7 @@ font:
 colors:
   # Default colors
   primary:
-    background: '0x22272e'
+    background: '0x24292e'
     foreground: '0xd1d5da'
 
   # Normal colors
@@ -36,7 +36,7 @@ colors:
 
   # Bright colors
   bright:
-    black:   '0x636e7b'
+    black:   '0x56d4dd'
     red:     '0xff938a'
     green:   '0x6bc46d'
     yellow:  '0xdaaa3f'

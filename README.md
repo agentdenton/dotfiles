@@ -4,13 +4,13 @@
 ```
 paru -S alacritty vim neovim curl bat ripgrep fd exa flameshot zathura \
     firefox htop xclip feh lazygit ranger mpv i3 dunst xss-lock rofi \
-    tmux picom polybar
+    tmux picom polybar font-manager
 ```
 
 ### Install fonts
 ```
 paru -S ttf-font-awesome nerd-fonts-terminus nerd-fonts-jetbrains-mono \
-    nerd-fonts-roboto-mono font-manager
+    nerd-fonts-roboto-mono adobe-source-han-sans-jp-fonts
 ```
 
 ### Install starship-rs
