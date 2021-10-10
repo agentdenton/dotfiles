@@ -46,6 +46,19 @@ api.nvim_exec(
     false
 )
 
+-- disable line numbers in terminal
+api.nvim_exec(
+[[
+    augroup neovim_terminal
+        autocmd!
+        autocmd TermOpen * startinsert
+        autocmd TermOpen * :set nonumber norelativenumber
+        autocmd TermOpen * nnoremap <buffer> <C-c> i<C-c>
+    augroup END
+]],
+    false
+)
+
 cmd [[let g:rustfmt_autosave = 1]]
 cmd [[let g:indentLine_char = '|']]
 
