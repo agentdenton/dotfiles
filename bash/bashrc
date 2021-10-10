@@ -50,6 +50,11 @@ alias mcbr="meson . build --cross-file=cross.ini --buildtype=release"
 
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 export FZF_DEFAULT_OPTS="-m --height 50% --border"
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+ --color=fg:#c9d1d9,bg:#1f2428,hl:#c9d1d9
+ --color=fg+:#51afef,bg+:-1,hl+:#ff938a
+ --color=info:#b083f0,prompt:#3b8eea,pointer:#3b8eea
+ --color=marker:#f14c4c,spinner:#3b8eea,header:#a5a5a5'
 
 export NNN_FIFO=/tmp/nnn.fifo
 export NNN_PLUG='f:finder;o:fzopen;p:mocplay;d:diffs;t:nmount;v:imgview'

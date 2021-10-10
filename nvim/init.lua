@@ -49,8 +49,12 @@ require('nvim-treesitter.configs').setup({
     },
 })
 
+local custom_github = require'lualine.themes.github'
+custom_github.normal.c.bg = '#24292e'
+
 require('lualine').setup({
     options = {
+        theme  = custom_github,
         icons_enabled = true,
         theme = 'github',
         component_separators = { ' ', ' ' },
