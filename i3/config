@@ -3,11 +3,11 @@ set $mod Mod1
 # gaps inner 10
 # gaps outer 10
 
-default_border pixel 2
-default_floating_border pixel 2
+default_border pixel 1
+default_floating_border pixel 1
 floating_modifier $mod
 
-font pango:RobotoMono Nerd Font, Medium 9
+font pango:TerminessTTF Nerd Font, Bold 11
 
 # close a window
 bindsym $mod+Shift+c kill
@@ -107,6 +107,26 @@ bindsym $mod+Shift+5 move container to workspace number $ws5
 bindsym $mod+Shift+6 move container to workspace number $ws5
 bindsym $mod+Shift+7 move container to workspace number $ws5
 bindsym $mod+Shift+9 move container to workspace number $ws5
+
+# resize window
+mode "resize" {
+        bindsym l resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym j resize shrink height 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
 
 client.focused          #81a1c1 #51afef #ffffff #51afef
 client.unfocused        #2e3440 #2e3440 #888888 #2e3440

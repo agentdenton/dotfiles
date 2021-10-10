@@ -64,7 +64,7 @@
 }
 
 #element.normal.active {
-    background-color: @active-background;
+    background-color: @active-current-background;
     text-color:       @foreground;
 }
 
