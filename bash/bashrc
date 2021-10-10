@@ -1,3 +1,6 @@
+source $HOME/.dotfiles/bash/completion.bash
+source $HOME/.dotfiles/bash/key-bindings.bash
+
 set -o vi
 
 ncd () {
@@ -36,11 +39,11 @@ alias tmux="tmux -2"
 alias yy="xclip"
 alias pp="xclip -o"
 
-alias l="exa -l"
-alias ls="exa"
-alias ll="exa -la"
-alias lse="exa -l -s extension"
-alias lss="exa -l -s size"
+alias ls="exa --icons"
+alias ll="exa -la --icons"
+alias l="exa -l --icons"
+alias lse="exa -l -s extension --icons"
+alias lss="exa -l -s size --icons"
 
 alias wb="west build"
 alias wf="west flash"
