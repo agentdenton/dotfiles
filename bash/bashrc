@@ -29,14 +29,18 @@ ncd () {
 
 alias ..="cd .."
 alias lg="lazygit"
-alias ls="exa"
-alias ll="exa -la"
-alias l="exa -l"
 alias vim="nvim"
 alias nnn="nnn -e"
-alias xcy="xclip"
-alias xcp="xclip -o"
 alias tmux="tmux -2"
+
+alias yy="xclip"
+alias pp="xclip -o"
+
+alias l="exa -l"
+alias ls="exa"
+alias ll="exa -la"
+alias lse="exa -l -s extension"
+alias lss="exa -l -s size"
 
 alias wb="west build"
 alias wf="west flash"

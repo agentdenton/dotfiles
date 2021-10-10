@@ -3,8 +3,8 @@
 ### Install programs (Arch Linux)
 ```
 paru -S alacritty vim neovim curl bat ripgrep fd exa flameshot zathura \
-    firefox htop xclip feh lazygit ranger mpv i3 dunst xss-lock rofi \
-    tmux picom polybar font-manager
+    firefox htop xclip feh lazygit mpv i3 dunst xss-lock rofi \
+    tmux picom polybar font-manager lxappearance-gtk3
 ```
 
 ### Install fonts
