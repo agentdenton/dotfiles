@@ -13,6 +13,11 @@ paru -S ttf-font-awesome nerd-fonts-terminus nerd-fonts-jetbrains-mono \
     nerd-fonts-roboto-mono adobe-source-han-sans-jp-fonts
 ```
 
+### Install themes
+```
+paru -S volantes-cursors papirus-icon-theme
+```
+
 ### Install starship-rs
 ```
 sh -c "$(curl -fsSL https://starship.rs/install.sh)"
@@ -21,4 +26,5 @@ sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 ### Run install script
 ```
 ./install.sh
+./install_root.sh
 ```
