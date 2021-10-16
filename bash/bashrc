@@ -35,15 +35,17 @@ alias lg="lazygit"
 alias vim="nvim"
 alias nnn="nnn -e -d -U"
 alias tmux="tmux -2"
+alias bshsrc="source ~/.bashrc"
 
-alias yy="xclip"
-alias pp="xclip -o"
+alias yy="xclip -i -selection clipboard -rmlastnl"
+alias pp="xclip -o -selection clipboard"
 
-alias ls="exa --icons"
-alias ll="exa -la --icons"
 alias l="exa -l --icons"
+alias ls="exa -s extension --icons "
+alias ll="exa -la --icons"
 alias lse="exa -l -s extension --icons"
 alias lss="exa -l -s size --icons"
+alias lst="exa -l -s size --icons -T"
 
 alias wb="west build"
 alias wf="west flash"
@@ -67,7 +69,8 @@ export NNN_FIFO=/tmp/nnn.fifo
 export NNN_PLUG='f:finder;o:fzopen;p:mocplay;d:diffs;t:nmount;v:imgview'
 export NNN_FCOLORS="0B0B04060006060009060B06"
 
-# export MANPAGER="nvim -c 'set ft=man' -"
+# export MANPAGER="nvim -c -M 'set ft=man' -"
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 export EXA_STRICT=1
 export BAT_THEME="ansi"
