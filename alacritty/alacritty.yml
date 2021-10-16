@@ -31,6 +31,17 @@ colors:
     cyan:    '0x56d4dd'
     white:   '0xbbc2cf'
 
+  # Bright colors
+  bright:
+    black:   '0x56d4dd'
+    red:     '0xff938a'
+    green:   '0x6bc46d'
+    yellow:  '0xdaaa3f'
+    blue:    '0x6cb6ff'
+    magenta: '0xdcbdfb'
+    cyan:    '0x56d4dd'
+    white:   '0xd1d5da'
+
   indexed_colors:
     - { index: 16, color: '0xd18616' }
     - { index: 17, color: '0xff938a' }
