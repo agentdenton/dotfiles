@@ -128,7 +128,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-client.focused          #81a1c1 #51afef #ffffff #51afef
+client.focused          #81a1c1 #51afef #24292e #51afef
 client.unfocused        #2e3440 #2e3440 #888888 #2e3440
 client.focused_inactive #2e3440 #2e3440 #888888 #2e3440
 client.placeholder      #2e3440 #2e3440 #888888 #2e3440
