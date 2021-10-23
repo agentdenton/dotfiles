@@ -28,9 +28,9 @@ echo "Installing nnn..."
 if [[ -d $HOME/github/nnn ]]; then
     echo "NNN dir already exists!"
     echo "Compiling nnn..."
-    cd $HOME/github/nnn && O_ICONS=1 make && sudo make install && cd -
+    cd $HOME/github/nnn && O_NERD=1 O_ICONS=1 make && sudo make install && cd -
 else
     mkdir -p $HOME/github
     git clone https://github.com/jarun/nnn.git $HOME/github/nnn
-    cd $HOME/github/nnn && O_ICONS=1 make && sudo make install && cd -
+    cd $HOME/github/nnn && O_NERD=1 O_ICONS=1 make && sudo make install && cd -
 fi

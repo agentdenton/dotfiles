@@ -15,7 +15,7 @@ paru -S ttf-font-awesome nerd-fonts-terminus nerd-fonts-jetbrains-mono \
 
 ### Install themes
 ```
-paru -S volantes-cursors papirus-icon-theme
+paru -S volantes-cursors papirus-icon-theme lightdm-webkit2-greeter
 ```
 
 ### Install starship-rs
@@ -26,5 +26,4 @@ sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 ### Run install script
 ```
 ./install.sh
-./install_root.sh
 ```
