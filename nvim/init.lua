@@ -61,9 +61,8 @@ require('lualine').setup({
     options = {
         theme  = custom_github,
         icons_enabled = true,
-        theme = 'github',
         component_separators = { ' ', ' ' },
-        section_separators = { '', '' },
+        section_separators = { ' ', ' ' },
     },
     sections = {
         lualine_a = { 'mode' },
@@ -90,6 +89,5 @@ require("github-theme").setup({
     transparent = false,
     function_style = "NONE",
     keyword_style = "NONE",
-    sidebars = {"qf", "vista_kind", "terminal", "packer"},
     colors = {hint = "orange", error = "#ff0000"}
 })
