@@ -33,7 +33,7 @@ ncd () {
 alias ..="cd .."
 alias lg="lazygit"
 alias vim="nvim"
-alias nnn="nnn -e -d -U"
+alias nnn="nnn -e -U"
 alias tmux="tmux -2"
 alias bshsrc="source ~/.bashrc"
 
@@ -68,6 +68,7 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 export NNN_FIFO=/tmp/nnn.fifo
 export NNN_PLUG='f:finder;o:fzopen;p:mocplay;d:diffs;t:nmount;v:imgview'
 export NNN_FCOLORS="0B0B04060006060009060B06"
+export NNN_OPENER="xdg-open"
 
 # export MANPAGER="nvim -c -M 'set ft=man' -"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"

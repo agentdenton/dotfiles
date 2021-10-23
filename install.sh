@@ -1,10 +1,14 @@
 #!/usr/bin/bash
 
+set -e
+
 DOTS_DIR=$HOME/.dotfiles
 if [[ $(pwd) != $DOTS_DIR ]]; then
     echo "Run this script from $DOTS_DIR"
     exit
 fi
+
+mkdir -p $HOME/github
 
 rm -rf $HOME/.bashrc
 rm -rf $HOME/.tmux.conf
@@ -13,7 +17,6 @@ rm -rf $HOME/.config/starship.toml
 cp bash/bashrc $HOME/.bashrc
 cp starship.toml $HOME/.config/starship.toml
 cp tmux.conf $HOME/.tmux.conf
-sudo cp -r scripts/* /usr/bin/
 
 echo "Installing configs..."
 configs=(i3 rofi dunst zathura polybar alacritty nvim flameshot)
@@ -23,14 +26,19 @@ for conf in ${configs[@]}; do
     # copy new configs
     cp -r $conf $HOME/.config/
 done
+echo "Configs installed!"
 
 echo "Installing nnn..."
-if [[ -d $HOME/github/nnn ]]; then
-    echo "NNN dir already exists!"
-    echo "Compiling nnn..."
-    cd $HOME/github/nnn && O_NERD=1 O_ICONS=1 make && sudo make install && cd -
-else
-    mkdir -p $HOME/github
+if [[ ! -d $HOME/github/nnn ]]; then
     git clone https://github.com/jarun/nnn.git $HOME/github/nnn
-    cd $HOME/github/nnn && O_NERD=1 O_ICONS=1 make && sudo make install && cd -
 fi
+
+cd $HOME/github/nnn
+# remove annoying arrow in detailed mode
+sed -i 's/addstr(MD_ARROW_FORWARD);//' src/nnn.c
+make O_NERD=1
+sudo make install
+cd -
+echo "NNN installed!"
+
+sudo cp -r scripts/* /usr/bin/
