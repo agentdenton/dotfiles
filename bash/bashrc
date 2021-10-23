@@ -1,5 +1,5 @@
-source $HOME/.dotfiles/bash/completion.bash
-source $HOME/.dotfiles/bash/key-bindings.bash
+source $HOME/.dotfiles/bash/fzf-completion.bash
+source $HOME/.dotfiles/bash/fzf-key-bindings.bash
 
 set -o vi
 
@@ -40,9 +40,9 @@ alias bshsrc="source ~/.bashrc"
 alias yy="xclip -i -selection clipboard -rmlastnl"
 alias pp="xclip -o -selection clipboard"
 
-alias l="exa -l --icons"
+alias l="exa -l -s extension --icons"
 alias ls="exa -s extension --icons "
-alias ll="exa -la --icons"
+alias ll="exa -la -s extension --icons"
 alias lse="exa -l -s extension --icons"
 alias lss="exa -l -s size --icons"
 alias lst="exa -l -s size --icons -T"
