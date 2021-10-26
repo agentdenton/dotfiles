@@ -31,9 +31,32 @@ require('packer').startup(function()
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate',
     }
+    use {
+        'nvim-telescope/telescope.nvim',
+        requires = 'nvim-lua/plenary.nvim'
+    }
+    use {
+        "projekt0n/circles.nvim",
+        requires = 'kyazdani42/nvim-web-devicons'
+    }
+    use {
+        'kyazdani42/nvim-tree.lua',
+        requires = 'kyazdani42/nvim-web-devicons'
+    }
 end)
 
+require'nvim-tree'.setup()
+
 require('colorizer').setup()
+
+require("circles").setup({
+    icons = {
+        empty = "",
+        filled = "",
+        lsp_prefix = ""
+    },
+    lsp = true
+})
 
 require('nvim-treesitter.configs').setup({
     highlight = {
@@ -49,17 +72,9 @@ require('nvim-treesitter.configs').setup({
     },
 })
 
-local custom_github = require'lualine.themes.github'
-custom_github.normal.c.bg = '#24292e'
-custom_github.visual.c.bg = '#24292e'
-custom_github.replace.c.bg = '#24292e'
-custom_github.insert.c.bg = '#24292e'
-custom_github.inactive.c.bg = '#24292e'
-custom_github.command.c.bg = '#24292e'
-
 require('lualine').setup({
     options = {
-        theme  = custom_github,
+        theme  = 'github',
         icons_enabled = true,
         component_separators = { ' ', ' ' },
         section_separators = { ' ', ' ' },
@@ -84,10 +99,29 @@ require('lualine').setup({
     }
 })
 
+require('telescope').setup({
+    defaults = {
+        layout_config = {
+            horizontal = {
+                width = 0.5,
+                height = 0.5
+            }
+        }
+    },
+    pickers = {
+        find_files = {
+            previewer = false,
+        },
+        git_files = {
+            previewer = false,
+        }
+    },
+})
+
 require("github-theme").setup({
     theme_style = "dark",
     transparent = false,
+    hide_inactive_statusline = false,
     function_style = "NONE",
     keyword_style = "NONE",
-    colors = {hint = "orange", error = "#ff0000"}
 })
