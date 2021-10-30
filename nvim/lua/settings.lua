@@ -4,6 +4,8 @@ local g = vim.g
 local o = vim.o
 local opt = vim.opt
 
+g.markdown_folding = 1
+
 o.completeopt = "menuone,noselect" -- better completion
 
 opt.ignorecase = true -- case insensitive search
@@ -28,10 +30,11 @@ opt.smartindent = true
 opt.showcmd = true
 opt.wrap = true
 opt.breakindent = true
-opt.showbreak = string.rep(" ", 3)
+opt.showbreak = string.rep(">>>", 3)
 opt.linebreak = true
 opt.linebreak = true
 opt.laststatus = 2
+opt.list = true -- show empty spaces
 opt.mouse = "a"
 opt.scl = "yes"
 opt.clipboard = "unnamedplus"
@@ -71,3 +74,12 @@ cmd [[au BufEnter * set fo-=c fo-=r fo-=o]]
 -- remove all spaces and lines at the end of the file on save
 cmd [[au BufWritePre * %s/\s\+$//e]]
 cmd [[au BufWritePre * %s/\n\+\%$//e]]
+
+-- markdown folding
+cmd [[ au FileType markdown setlocal foldlevel=99 ]]
+
+-- UNUSED
+
+-- remove all spaces and lines at the end of the file on save
+-- cmd [[au BufWritePre * %s/\s\+$//e]]
+-- cmd [[au BufWritePre * %s/\n\+\%$//e]]

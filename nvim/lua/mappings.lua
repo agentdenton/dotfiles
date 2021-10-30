@@ -36,3 +36,10 @@ map('n', '<leader>h', '<cmd>Telescope help_tags<cr>', { noremap = true })
 
 -- Nvim Tree
 map('n', '<leader>e', '<cmd>NvimTreeToggle<cr>', { noremap = true })
+
+-- UNUSED
+
+-- map('i', '"', '""<left>', { noremap = true })
+-- map('i', "'", "''<left>", { noremap = true })
+-- map('i', '(', '()<left>', { noremap = true })
+-- map('i', '[', '[]<left>', { noremap = true })

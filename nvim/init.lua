@@ -45,9 +45,14 @@ require('packer').startup(function()
     }
 end)
 
-require'nvim-tree'.setup()
-
 require('colorizer').setup()
+
+-- TODO: move it into the setup function somehow?
+g.nvim_tree_quit_on_open = 1
+require'nvim-tree'.setup({
+    auto_close = true,
+    quit_on_open = true,
+})
 
 require("circles").setup({
     icons = {
