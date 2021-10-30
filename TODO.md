@@ -1,2 +1,1 @@
-## TODO
-    * Save current configs script?
+[] - Save current configs script

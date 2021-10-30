@@ -47,6 +47,9 @@ alias lse="exa -l -s extension --icons"
 alias lss="exa -l -s size --icons"
 alias lst="exa -l -s size --icons -T"
 
+alias cd="z"
+alias cdi="zi"
+
 alias wb="west build"
 alias wf="west flash"
 
@@ -68,7 +71,9 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 export NNN_FIFO=/tmp/nnn.fifo
 export NNN_PLUG='f:finder;o:fzopen;p:mocplay;d:diffs;t:nmount;v:imgview'
 export NNN_FCOLORS="0B0B04060006060009060B06"
-export NNN_OPENER="xdg-open"
+
+export _ZO_DATA_DIR=/tmp
+# export _ZO_ECHO=1
 
 # export MANPAGER="nvim -c -M 'set ft=man' -"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
@@ -83,3 +88,4 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 
 eval "$(starship init bash)"
+eval "$(zoxide init bash)"
