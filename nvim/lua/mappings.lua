@@ -25,10 +25,14 @@ map('v', '>', '>gv', { noremap = true })
 map('v', 'E', '$h',    { noremap = true })
 map('v', 'B', '^h',    { noremap = true })
 
-map('i', '"', '""<left>', { noremap = true })
-map('i', "'", "''<left>", { noremap = true })
-map('i', '(', '()<left>', { noremap = true })
-map('i', '[', '[]<left>', { noremap = true })
+map('n', '<leader><space>', ':set hlsearch!<CR>', { noremap = true })
+map('n', '<leader>t', ':term<CR>', { noremap = true })
 
-map('n', '<Leader><Space>', ':set hlsearch!<CR>', { noremap = true })
-map('n', '<Leader>t', ':term<CR>', { noremap = true })
+-- Telescope
+map('n', '<leader>f', '<cmd>Telescope find_files<cr>', { noremap = true })
+map('n', '<leader>g', '<cmd>Telescope git_files<cr>', { noremap = true })
+map('n', '<leader>b', '<cmd>Telescope buffers<cr>', { noremap = true })
+map('n', '<leader>h', '<cmd>Telescope help_tags<cr>', { noremap = true })
+
+-- Nvim Tree
+map('n', '<leader>e', '<cmd>NvimTreeToggle<cr>', { noremap = true })
