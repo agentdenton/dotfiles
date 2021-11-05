@@ -36,6 +36,8 @@ alias vim="nvim"
 alias nnn="nnn -e -U"
 alias tmux="tmux -2"
 alias bshsrc="source ~/.bashrc"
+alias clc="clear"
+alias todo="vim ~/TODO.md"
 
 alias yy="xclip -i -selection clipboard -rmlastnl"
 alias pp="xclip -o -selection clipboard"
@@ -72,7 +74,7 @@ export NNN_FIFO=/tmp/nnn.fifo
 export NNN_PLUG='f:finder;o:fzopen;p:mocplay;d:diffs;t:nmount;v:imgview'
 export NNN_FCOLORS="0B0B04060006060009060B06"
 
-export _ZO_DATA_DIR=/tmp
+# export _ZO_DATA_DIR=/tmp
 # export _ZO_ECHO=1
 
 # export MANPAGER="nvim -c -M 'set ft=man' -"
