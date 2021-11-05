@@ -119,7 +119,10 @@ require('telescope').setup({
         },
         git_files = {
             previewer = false,
-        }
+        },
+        buffers = {
+            previewer = false,
+        },
     },
 })
 

@@ -11,6 +11,7 @@ map('n', '<c-l>', '<c-w>l', { noremap = true })
 
 map('n', '<C-n>', ':bnext<CR>', { noremap = true })
 map('n', '<C-p>', ':bprev<CR>', { noremap = true })
+map('n', '<C-c>', ':bd<CR>', { noremap = true })
 
 map('n', 'E', '$', { noremap = true })
 map('n', 'B', '^', { noremap = true })
@@ -30,9 +31,8 @@ map('n', '<leader>t', ':term<CR>', { noremap = true })
 
 -- Telescope
 map('n', '<leader>f', '<cmd>Telescope find_files<cr>', { noremap = true })
-map('n', '<leader>g', '<cmd>Telescope git_files<cr>', { noremap = true })
+map('n', '<leader>gb', '<cmd>Telescope git_files<cr>', { noremap = true })
 map('n', '<leader>b', '<cmd>Telescope buffers<cr>', { noremap = true })
-map('n', '<leader>h', '<cmd>Telescope help_tags<cr>', { noremap = true })
 
 -- Nvim Tree
 map('n', '<leader>e', '<cmd>NvimTreeToggle<cr>', { noremap = true })
@@ -43,3 +43,8 @@ map('n', '<leader>e', '<cmd>NvimTreeToggle<cr>', { noremap = true })
 -- map('i', "'", "''<left>", { noremap = true })
 -- map('i', '(', '()<left>', { noremap = true })
 -- map('i', '[', '[]<left>', { noremap = true })
+
+-- Telescope
+-- map('n', '<leader>gc', '<cmd>Telescope git_commits<cr>', { noremap = true })
+-- map('n', '<leader>h', '<cmd>Telescope help_tags<cr>', { noremap = true })
+-- map('n', '<leader>g', '<cmd>Telescope git_branches<cr>', { noremap = true })
