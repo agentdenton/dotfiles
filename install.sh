@@ -2,7 +2,9 @@
 
 set -e
 
+INSTALL_DIR="/usr/local/bin"
 DOTS_DIR=$HOME/.dotfiles
+
 if [[ $(pwd) != $DOTS_DIR ]]; then
     echo "Run this script from $DOTS_DIR"
     exit
@@ -41,4 +43,4 @@ sudo make install
 cd -
 echo "NNN installed!"
 
-sudo cp -r scripts/* /usr/bin/
+sudo cp -r scripts/* $INSTALL_DIR

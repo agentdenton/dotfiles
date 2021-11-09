@@ -8,9 +8,9 @@ msg() {
     rofi -e "Available Options - y / n"
 }
 
-poweroff="PowerOff"
-reboot="Reboot"
-logout="Logout"
+poweroff="shutdown"
+reboot="reboot"
+logout="logout"
 
 opt="$poweroff\n$reboot\n$logout\n"
 var=$(echo -e "$opt" | rofi -lines 3 -dmenu)
