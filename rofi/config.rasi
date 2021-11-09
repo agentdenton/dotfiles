@@ -1,5 +1,5 @@
 * {
-    font: "TerminessTTF Nerd Font Bold 12";
+    font: "RobotoMono Nerd Font 10";
 
     foreground: #d1d5da;
     background: #1f2428;
