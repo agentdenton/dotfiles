@@ -66,7 +66,7 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 export FZF_DEFAULT_OPTS="-m --height 50% --border"
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
  --color=fg:#c9d1d9,bg:#1f2428,hl:#c9d1d9
- --color=fg+:#51afef,bg+:-1,hl+:#ff938a
+ --color=fg+:#51afef,bg+:-1,hl+:#ef99f3
  --color=info:#b083f0,prompt:#3b8eea,pointer:#3b8eea
  --color=marker:#f14c4c,spinner:#3b8eea,header:#a5a5a5'
 
@@ -74,7 +74,7 @@ export NNN_FIFO=/tmp/nnn.fifo
 export NNN_PLUG='f:finder;o:fzopen;p:mocplay;d:diffs;t:nmount;v:imgview'
 export NNN_FCOLORS="0B0B04060006060009060B06"
 
-# export _ZO_DATA_DIR=/tmp
+export _ZO_DATA_DIR=~/
 # export _ZO_ECHO=1
 
 # export MANPAGER="nvim -c -M 'set ft=man' -"

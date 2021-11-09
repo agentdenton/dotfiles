@@ -1,7 +1,7 @@
 set $mod Mod4
 
-# gaps inner 10
-# gaps outer 10
+gaps inner 15
+gaps outer 15
 
 default_border pixel 1
 default_floating_border pixel 1
@@ -116,30 +116,30 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # resize window
 mode "resize" {
-        bindsym l resize grow width 10 px or 10 ppt
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym j resize shrink height 10 px or 10 ppt
+    bindsym l resize grow width 10 px or 10 ppt
+    bindsym h resize shrink width 10 px or 10 ppt
+    bindsym k resize grow height 10 px or 10 ppt
+    bindsym j resize shrink height 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+    # same bindings, but for the arrow keys
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
 
 bindsym $mod+r mode "resize"
 
-client.focused          #81a1c1 #51afef #24292e #51afef
+client.focused          #81a1c1 #ffffff #24292e #000000
 client.unfocused        #2e3440 #2e3440 #888888 #2e3440
 client.focused_inactive #2e3440 #2e3440 #888888 #2e3440
 client.placeholder      #2e3440 #2e3440 #888888 #2e3440
-client.urgent           #900000 #900000 #ffffff #900000
+client.urgent           #ff1f1f #ff1f1f #ffffff #ff1f1f
 client.background       #242424
 
 # launch startup script
-exec --no-startup-id denton_startup.sh
+exec --no-startup-id wm_startup.sh
