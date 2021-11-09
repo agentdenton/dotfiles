@@ -16,4 +16,4 @@ dunst &
 flameshot &
 polybar top_bar &
 xss-lock --transfer-sleep-lock -- i3lock -i ~/pictures/lock_screen/retro_anime_girl.png --nofork &
-feh --bg-scale $HOME/pictures/wallpapers/space_man.jpg
+feh --bg-scale $HOME/pictures/wallpapers/retro_anime_girl.png
