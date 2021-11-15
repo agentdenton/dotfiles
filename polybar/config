@@ -2,9 +2,6 @@
 background = #24292e
 foreground = #dfdfdf
 
-background-alt = #666
-alert = #bd2c40
-
 [bar/top_bar]
 monitor = DVI-D-1
 width = 100%
@@ -116,18 +113,16 @@ label-mode-foreground = #000
 label-mode-background = ${colors.foreground}
 
 label-focused = %index%
-label-focused-background = ${colors.background-alt}
 label-focused-padding = 2
+label-focused-underline = #f97583
 
 label-unfocused = %index%
 label-unfocused-padding = 2
 
 label-visible = %index%
-label-visible-background = ${self.label-focused-background}
-label-visible-padding = ${self.label-focused-padding}
 
 label-urgent = %index%
-label-urgent-background = ${colors.alert}
+label-urgent-background = #f97583
 label-urgent-padding = 2
 
 [module/battery]
@@ -136,29 +131,8 @@ battery = BAT0
 adapter = ADP1
 full-at = 98
 
-format-charging = <animation-charging> <label-charging>
-
-format-discharging = <animation-discharging> <label-discharging>
-
-format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground}
-
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-foreground = ${colors.foreground}
-
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-foreground = ${colors.foreground}
-animation-charging-framerate = 750
-
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
-animation-discharging-foreground = ${colors.foreground}
-animation-discharging-framerate = 750
+format-charging = "battery: %percentage%%"
+format-discharging = "battery: %percentage%%"
 
 [global/wm]
 margin-top = 5
