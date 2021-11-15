@@ -31,7 +31,7 @@ map('n', '<leader>t', ':term<CR>', { noremap = true })
 
 -- Telescope
 map('n', '<leader>f', '<cmd>Telescope find_files<cr>', { noremap = true })
-map('n', '<leader>gb', '<cmd>Telescope git_files<cr>', { noremap = true })
+map('n', '<leader>g', '<cmd>Telescope git_files<cr>', { noremap = true })
 map('n', '<leader>b', '<cmd>Telescope buffers<cr>', { noremap = true })
 
 -- Nvim Tree

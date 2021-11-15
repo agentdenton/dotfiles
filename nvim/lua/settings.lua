@@ -32,7 +32,6 @@ opt.wrap = true
 opt.breakindent = true
 opt.showbreak = string.rep(">>>", 3)
 opt.linebreak = true
-opt.linebreak = true
 opt.laststatus = 2
 opt.list = true -- show empty spaces
 opt.mouse = "a"
