@@ -30,9 +30,14 @@ map('n', '<leader><space>', ':set hlsearch!<CR>', { noremap = true })
 map('n', '<leader>t', ':term<CR>', { noremap = true })
 
 -- Telescope
-map('n', '<leader>f', '<cmd>Telescope find_files<cr>', { noremap = true })
-map('n', '<leader>g', '<cmd>Telescope git_files<cr>', { noremap = true })
-map('n', '<leader>b', '<cmd>Telescope buffers<cr>', { noremap = true })
+map('n', '<leader>ff', '<cmd>Telescope find_files<cr>', { noremap = true })
+map('n', '<leader>fg', '<cmd>Telescope git_files<cr>', { noremap = true })
+map('n', '<leader>fb', '<cmd>Telescope buffers<cr>', { noremap = true })
+
+map('n', '<leader>gc', '<cmd>Telescope current_buffer_fuzzy_find<cr>', { noremap = true })
+
+map('n', '<leader>h', '<cmd>Telescope command_history<cr>', { noremap = true })
+map('n', '<leader>m', '<cmd>Telescope marks<cr>', { noremap = true })
 
 -- Nvim Tree
 map('n', '<leader>e', '<cmd>NvimTreeToggle<cr>', { noremap = true })
@@ -48,3 +53,4 @@ map('n', '<leader>e', '<cmd>NvimTreeToggle<cr>', { noremap = true })
 -- map('n', '<leader>gc', '<cmd>Telescope git_commits<cr>', { noremap = true })
 -- map('n', '<leader>h', '<cmd>Telescope help_tags<cr>', { noremap = true })
 -- map('n', '<leader>g', '<cmd>Telescope git_branches<cr>', { noremap = true })
+-- map('n', '<leader>ft', '<cmd>Telescope file_browser<cr>', { noremap = true })

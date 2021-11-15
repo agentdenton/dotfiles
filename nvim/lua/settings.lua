@@ -21,8 +21,8 @@ opt.tabstop = 4
 opt.shiftwidth = 4
 opt.softtabstop = 4
 opt.expandtab = true
-opt.number = true
-opt.relativenumber = true
+-- opt.number = true
+-- opt.relativenumber = true
 opt.cursorline = true
 opt.scrolloff = 12
 opt.exrc = true
@@ -39,6 +39,7 @@ opt.scl = "yes"
 opt.clipboard = "unnamedplus"
 opt.termguicolors = true
 opt.background = 'dark'
+opt.scl = "no"
 
 -- highlight on yank
 api.nvim_exec(

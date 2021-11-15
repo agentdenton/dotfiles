@@ -47,12 +47,7 @@ end)
 
 require('colorizer').setup()
 
--- TODO: move it into the setup function somehow?
-g.nvim_tree_quit_on_open = 1
-require'nvim-tree'.setup({
-    auto_close = true,
-    quit_on_open = true,
-})
+require'nvim-tree'.setup()
 
 require("circles").setup({
     icons = {
@@ -122,6 +117,12 @@ require('telescope').setup({
         },
         buffers = {
             previewer = false,
+        },
+        current_buffer_fuzzy_find = {
+            layout_config = {
+                width = 0.8,
+                height = 0.6
+            },
         },
     },
 })
