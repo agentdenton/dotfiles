@@ -131,8 +131,19 @@ battery = BAT0
 adapter = ADP1
 full-at = 98
 
-format-charging = "battery: %percentage%%"
-format-discharging = "battery: %percentage%%"
+label-charging = "chrg: %percentage%%"
+label-discharging = "discrg: %percentage%%"
+label-disconnected = "battery:"
+
+format-charging = <label-charging>
+format-discharging = <label-discharging>
+format-disconnected = <label-disconnected> "disconnected"
+
+format-charging-foreground = ${colors.foreground}
+format-charging-background = ${colors.background}
+
+format-discharging-foreground = ${colors.foreground}
+format-discharging-background = ${colors.background}
 
 [global/wm]
 margin-top = 5
