@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 # Backup source
 BACKUP_SOURCE=/home/agent_denton/

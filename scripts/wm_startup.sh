@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 setxkbmap -option caps:swapescape
 setxkbmap -model pc105 -layout us,ua -variant qwerty -option grp:win_space_toggle

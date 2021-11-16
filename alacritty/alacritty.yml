@@ -2,7 +2,7 @@ cursor:
   unfocused_hollow: true
   thickness: 0.15
 shell:
-  program: /usr/bin/bash
+  program: /bin/bash
 
 font:
   size: 10.5
