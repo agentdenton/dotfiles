@@ -20,9 +20,10 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 require('packer').startup(function()
-    use 'wbthomason/packer.nvim'
     use 'tpope/vim-commentary'
     use 'Yggdroot/indentLine'
+
+    use 'wbthomason/packer.nvim'
     use "projekt0n/github-nvim-theme"
     use 'hoob3rt/lualine.nvim'
     use 'norcalli/nvim-colorizer.lua'
@@ -31,32 +32,9 @@ require('packer').startup(function()
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate',
     }
-    use {
-        'nvim-telescope/telescope.nvim',
-        requires = 'nvim-lua/plenary.nvim'
-    }
-    use {
-        "projekt0n/circles.nvim",
-        requires = 'kyazdani42/nvim-web-devicons'
-    }
-    use {
-        'kyazdani42/nvim-tree.lua',
-        requires = 'kyazdani42/nvim-web-devicons'
-    }
 end)
 
 require('colorizer').setup()
-
-require'nvim-tree'.setup()
-
-require("circles").setup({
-    icons = {
-        empty = "",
-        filled = "",
-        lsp_prefix = ""
-    },
-    lsp = true
-})
 
 require('nvim-treesitter.configs').setup({
     highlight = {
@@ -97,34 +75,6 @@ require('lualine').setup({
         lualine_y = { 'filetype' },
         lualine_z = { 'location' }
     }
-})
-
-require('telescope').setup({
-    defaults = {
-        layout_config = {
-            horizontal = {
-                width = 0.5,
-                height = 0.5
-            }
-        }
-    },
-    pickers = {
-        find_files = {
-            previewer = false,
-        },
-        git_files = {
-            previewer = false,
-        },
-        buffers = {
-            previewer = false,
-        },
-        current_buffer_fuzzy_find = {
-            layout_config = {
-                width = 0.8,
-                height = 0.6
-            },
-        },
-    },
 })
 
 require("github-theme").setup({

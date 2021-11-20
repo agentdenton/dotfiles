@@ -21,8 +21,6 @@ opt.tabstop = 4
 opt.shiftwidth = 4
 opt.softtabstop = 4
 opt.expandtab = true
--- opt.number = true
--- opt.relativenumber = true
 opt.cursorline = true
 opt.scrolloff = 12
 opt.exrc = true
@@ -40,6 +38,8 @@ opt.clipboard = "unnamedplus"
 opt.termguicolors = true
 opt.background = 'dark'
 opt.scl = "no"
+-- opt.number = true
+-- opt.relativenumber = true
 
 -- highlight on yank
 api.nvim_exec(
@@ -77,8 +77,6 @@ cmd [[au BufWritePre * %s/\n\+\%$//e]]
 
 -- markdown folding
 cmd [[ au FileType markdown setlocal foldlevel=99 ]]
-
--- UNUSED
 
 -- remove all spaces and lines at the end of the file on save
 -- cmd [[au BufWritePre * %s/\s\+$//e]]
