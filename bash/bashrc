@@ -2,6 +2,7 @@ source $HOME/.dotfiles/bash/fzf-completion.bash
 source $HOME/.dotfiles/bash/fzf-key-bindings.bash
 
 set -o vi
+set completion-query-items 500
 
 alias ..="cd .."
 alias lg="lazygit"
@@ -86,6 +87,8 @@ vim_fzf() {
 }
 
 bind -x '"\C-t": vim_fzf'
+bind 'set show-all-if-ambiguous on'
+bind 'TAB:menu-complete'
 
 eval "$(starship init bash)"
 eval "$(zoxide init bash)"
