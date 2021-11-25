@@ -1,5 +1,5 @@
 * {
-    font: "RobotoMono Nerd Font 10";
+    font: "UbuntuMono Nerd Font 12";
 
     foreground: #d1d5da;
     background: #1f2428;
