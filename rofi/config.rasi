@@ -1,8 +1,9 @@
 * {
-    font: "UbuntuMono Nerd Font 12";
+    font: "Iosevka Nerd Font 10";
 
     foreground: #d1d5da;
-    background: #1f2428;
+    foreground-selected: #1e2127;
+    background: #1e2127;
 
     active-background: #51afef;
     active-current-background: #b083f0;
@@ -52,6 +53,7 @@
 #element {
     border:  0;
     padding: 1px ;
+    highlight: none;
 }
 
 #element.normal.normal {
@@ -71,7 +73,7 @@
 
 #element.selected.normal {
     background-color: @selected-background;
-    text-color:       @foreground;
+    text-color:       @foreground-selected;
 }
 
 #element.selected.urgent {
