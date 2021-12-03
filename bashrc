@@ -7,10 +7,10 @@ set completion-query-items 500
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 export FZF_DEFAULT_OPTS="-m --height 50% --border"
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
- --color=fg:#c9d1d9,bg:#1f2428,hl:#c9d1d9
- --color=fg+:#51afef,bg+:-1,hl+:#ef99f3
- --color=info:#b083f0,prompt:#3b8eea,pointer:#3b8eea
- --color=marker:#f14c4c,spinner:#3b8eea,header:#a5a5a5'
+ --color=fg:#abb2bf,bg:#121212,hl:#48b0bd
+ --color=fg+:#ffffff,bg+:#1e2127,hl+:#e55561
+ --color=info:#abb2bf,prompt:#48b0bd,pointer:#bf68d9
+ --color=marker:#8ebd6b,spinner:#bf68d9,header:#87afaf'
 
 export NNN_FIFO=/tmp/nnn.fifo
 export NNN_PLUG='f:finder;o:fzopen;p:mocplay;d:diffs;t:nmount;v:imgview'
@@ -30,7 +30,11 @@ export LANG=en_US.UTF-8
 export EDITOR="nvim"
 export VISUAL="nvim"
 
-alias ..="cd .."
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
 alias lg="lazygit"
 alias vim="nvim"
 alias nnn="nnn -e -U"
