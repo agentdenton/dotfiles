@@ -1,8 +1,34 @@
-source $HOME/.dotfiles/bash/fzf-completion.bash
-source $HOME/.dotfiles/bash/fzf-key-bindings.bash
+source ~/.dotfiles/bash/fzf-completion.bash
+source ~/.dotfiles/bash/fzf-key-bindings.bash
 
 set -o vi
 set completion-query-items 500
+
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
+export FZF_DEFAULT_OPTS="-m --height 50% --border"
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+ --color=fg:#c9d1d9,bg:#1f2428,hl:#c9d1d9
+ --color=fg+:#51afef,bg+:-1,hl+:#ef99f3
+ --color=info:#b083f0,prompt:#3b8eea,pointer:#3b8eea
+ --color=marker:#f14c4c,spinner:#3b8eea,header:#a5a5a5'
+
+export NNN_FIFO=/tmp/nnn.fifo
+export NNN_PLUG='f:finder;o:fzopen;p:mocplay;d:diffs;t:nmount;v:imgview'
+export NNN_FCOLORS="0B0B04060006060009060B06"
+export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
+
+export _ZO_DATA_DIR=~/
+
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
+export EXA_STRICT=1
+export BAT_THEME="ansi"
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+export EDITOR="nvim"
+export VISUAL="nvim"
 
 alias ..="cd .."
 alias lg="lazygit"
@@ -36,34 +62,6 @@ alias njb="clear && ninja -C build"
 alias mcb="meson . build --cross-file=cross.ini"
 alias mcbd="meson . build --cross-file=cross.ini --buildtype=debug"
 alias mcbr="meson . build --cross-file=cross.ini --buildtype=release"
-
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
-export FZF_DEFAULT_OPTS="-m --height 50% --border"
-export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
- --color=fg:#c9d1d9,bg:#1f2428,hl:#c9d1d9
- --color=fg+:#51afef,bg+:-1,hl+:#ef99f3
- --color=info:#b083f0,prompt:#3b8eea,pointer:#3b8eea
- --color=marker:#f14c4c,spinner:#3b8eea,header:#a5a5a5'
-
-export NNN_FIFO=/tmp/nnn.fifo
-export NNN_PLUG='f:finder;o:fzopen;p:mocplay;d:diffs;t:nmount;v:imgview'
-export NNN_FCOLORS="0B0B04060006060009060B06"
-export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
-
-export _ZO_DATA_DIR=~/
-# export _ZO_ECHO=1
-
-# export MANPAGER="nvim -c -M 'set ft=man' -"
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-
-export EXA_STRICT=1
-export BAT_THEME="ansi"
-
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-
-export EDITOR="nvim"
-export VISUAL="nvim"
 
 ncd () {
     # Block nesting of nnn in subshells
