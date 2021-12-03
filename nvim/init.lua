@@ -24,17 +24,12 @@ require('packer').startup(function()
     use 'Yggdroot/indentLine'
 
     use 'wbthomason/packer.nvim'
-    use "projekt0n/github-nvim-theme"
-    use 'hoob3rt/lualine.nvim'
-    use 'norcalli/nvim-colorizer.lua'
 
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate',
     }
 end)
-
-require('colorizer').setup()
 
 require('nvim-treesitter.configs').setup({
     highlight = {
@@ -48,39 +43,4 @@ require('nvim-treesitter.configs').setup({
         'rust',
         'julia',
     },
-})
-
-require('lualine').setup({
-    options = {
-        theme  = 'github',
-        icons_enabled = true,
-        component_separators = { ' ', ' ' },
-        section_separators = { ' ', ' ' },
-    },
-    sections = {
-        lualine_a = { 'mode' },
-        lualine_b = { 'branch' },
-        lualine_c = { 'filename' },
-        lualine_x = {
-            {
-                'diagnostics',
-                sources = { 'nvim_lsp' },
-                symbols = {
-                    hint = '  ',
-                },
-                sections = { 'error', 'warn', 'info', 'hint' },
-            },
-            'progress',
-        },
-        lualine_y = { 'filetype' },
-        lualine_z = { 'location' }
-    }
-})
-
-require("github-theme").setup({
-    theme_style = "dark",
-    transparent = false,
-    hide_inactive_statusline = false,
-    function_style = "NONE",
-    keyword_style = "NONE",
 })

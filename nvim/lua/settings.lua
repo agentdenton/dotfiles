@@ -4,8 +4,6 @@ local g = vim.g
 local o = vim.o
 local opt = vim.opt
 
-g.markdown_folding = 1
-
 o.completeopt = "menuone,noselect" -- better completion
 
 opt.ignorecase = true -- case insensitive search
@@ -13,7 +11,6 @@ opt.smartcase = true -- case sensitive when uppercase
 opt.undofile = true  -- enable undo file
 opt.swapfile = false  -- disable swap file
 opt.hidden = true -- don't save on buffer change
-opt.showmode = false
 opt.shortmess = opt.shortmess + 'c'
 opt.splitright = true
 opt.splitbelow = true
@@ -30,14 +27,15 @@ opt.wrap = true
 opt.breakindent = true
 opt.showbreak = string.rep(">>>", 3)
 opt.linebreak = true
-opt.laststatus = 2
 opt.list = true -- show empty spaces
+opt.ruler = true
+opt.laststatus = 0
+opt.showmode = false
 opt.mouse = "a"
-opt.scl = "yes"
+opt.scl = "no"
 opt.clipboard = "unnamedplus"
 opt.termguicolors = true
 opt.background = 'dark'
-opt.scl = "no"
 -- opt.number = true
 -- opt.relativenumber = true
 
@@ -65,19 +63,7 @@ api.nvim_exec(
     false
 )
 
-cmd [[let g:rustfmt_autosave = 1]]
 cmd [[let g:indentLine_char = '|']]
 
 -- disable new line comments
 cmd [[au BufEnter * set fo-=c fo-=r fo-=o]]
-
--- remove all spaces and lines at the end of the file on save
-cmd [[au BufWritePre * %s/\s\+$//e]]
-cmd [[au BufWritePre * %s/\n\+\%$//e]]
-
--- markdown folding
-cmd [[ au FileType markdown setlocal foldlevel=99 ]]
-
--- remove all spaces and lines at the end of the file on save
--- cmd [[au BufWritePre * %s/\s\+$//e]]
--- cmd [[au BufWritePre * %s/\n\+\%$//e]]
