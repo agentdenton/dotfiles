@@ -7,7 +7,7 @@ DOTS_DIR=~/.dotfiles
 
 if [[ $(pwd) != $DOTS_DIR ]]; then
     echo "Run this script from $DOTS_DIR"
-    exit
+    exit 1
 fi
 
 function usage() {
@@ -62,6 +62,11 @@ function install_scripts() {
     echo "Scripts are installed!"
 }
 
+if [[ ! $@ =~ ^\-.+ ]]; then
+    usage
+    exit 0
+fi
+
 SHORT=a,c,s,p,h
 OPTS=$(getopt -n qqq -o $SHORT -- "$@")
 if [[ $? -ne 0 ]]; then
@@ -110,8 +115,6 @@ while true; do
             continue
         ;;
         '--')
-            usage
-
             shift
             break
         ;;
