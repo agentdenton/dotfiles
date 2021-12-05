@@ -1,5 +1,6 @@
+
 [colors]
-background = #24292e
+background = #1e2127
 foreground = #dfdfdf
 
 [bar/top_bar]
