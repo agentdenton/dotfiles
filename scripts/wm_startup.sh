@@ -9,7 +9,7 @@ declare -A apps=(
     ["flameshot"]=""
     ["polybar"]="top_bar"
     ["xss-lock"]="--transfer-sleep-lock -- i3lock -i ~/pictures/lock_screen/retro_anime_girl.png --nofork"
-    ["feh"]="--bg-scale $HOME/pictures/wallpapers/retro_anime_girl.png"
+    ["feh"]="--bg-scale $HOME/pictures/wallpapers/retro_anime_girl_gimped.png"
 )
 
 # auto start apps with arguments, key = arg, vals[key] = app name
