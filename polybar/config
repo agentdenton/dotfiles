@@ -1,7 +1,6 @@
-
 [colors]
 background = #1e2127
-foreground = #dfdfdf
+foreground = #abb2bf
 
 [bar/top_bar]
 monitor = DVI-D-0
