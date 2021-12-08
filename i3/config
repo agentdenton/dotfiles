@@ -3,8 +3,8 @@ set $mod Mod4
 gaps inner 8
 gaps outer 8
 
-default_border pixel 2
-default_floating_border pixel 2
+default_border pixel 1
+default_floating_border pixel 1
 floating_modifier $mod
 
 font pango:Tamzen Bold 11
@@ -63,9 +63,8 @@ bindsym $mod+f fullscreen toggle
 # switch to a previous workspace
 bindsym $mod+Tab workspace back_and_forth
 
-# change container layout (tabbed, toggle split)
-bindsym $mod+t layout tabbed
-bindsym $mod+e layout toggle split
+# change container layout (toggle split)
+bindsym $mod+Shift+s layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+f floating toggle
