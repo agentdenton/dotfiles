@@ -7,7 +7,7 @@ default_border pixel 1
 default_floating_border pixel 1
 floating_modifier $mod
 
-font pango:Tamzen Bold 11
+font pango:CozetteVector 10
 
 # close a window
 bindsym $mod+Shift+c kill

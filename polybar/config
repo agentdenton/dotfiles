@@ -21,7 +21,7 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = UbuntuMono Nerd Font:size=10:antialias=false;
+font-0 = CozetteVector:size=9:antialias=false;
 
 tray-position = right
 tray-padding = 2
@@ -120,6 +120,7 @@ label-visible = %index%
 
 label-urgent = %index%
 label-urgent-background = #f97583
+label-urgent-foreground = #1e2127
 label-urgent-padding = 2
 
 [module/battery]

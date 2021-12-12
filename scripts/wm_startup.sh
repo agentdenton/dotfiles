@@ -8,5 +8,5 @@ setxkbmap -model pc105 -layout us,ua -variant qwerty -option grp:win_space_toggl
 start_app "dunst"
 start_app "flameshot"
 start_app "polybar" "top_bar"
-start_app "xss-lock" "--transfer-sleep-lock -- i3lock -i ~/pictures/wallpapers/onedark_triangles.png --nofork"
+start_app "xss-lock" "--transfer-sleep-lock -- i3lock -c 1e2127 --nofork"
 start_app "feh" "--bg-scale ~/pictures/wallpapers/onedark_triangles.png"

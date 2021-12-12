@@ -10,7 +10,7 @@ paru -S alacritty vim neovim curl bat ripgrep fd exa flameshot zathura \
 ### Install fonts
 ```
 paru -S ttf-font-awesome nerd-fonts-terminus nerd-fonts-roboto-mono \
-    adobe-source-han-sans-jp-fonts tamzen-font
+    adobe-source-han-sans-jp-fonts tamzen-font cozette-ttf
 ```
 
 ### Install themes
