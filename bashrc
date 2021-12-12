@@ -6,11 +6,11 @@ set completion-query-items 500
 
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 export FZF_DEFAULT_OPTS="-m --height 50% --border"
-export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
- --color=fg:#abb2bf,bg:#121212,hl:#48b0bd
- --color=fg+:#ffffff,bg+:#1e2127,hl+:#e55561
- --color=info:#abb2bf,prompt:#48b0bd,pointer:#bf68d9
- --color=marker:#8ebd6b,spinner:#bf68d9,header:#87afaf'
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' 
+--color=fg:#c5cdd9,bg:#121212,hl:#6cb6eb 
+--color=fg+:#c5cdd9,bg+:#1e2127,hl+:#5dbbc1 
+--color=info:#88909f,prompt:#ec7279,pointer:#d38aea 
+--color=marker:#a0c980,spinner:#ec7279,header:#5dbbc1'
 
 export NNN_FIFO=/tmp/nnn.fifo
 export NNN_PLUG='f:finder;o:fzopen;p:mocplay;d:diffs;t:nmount;v:imgview'
@@ -43,6 +43,16 @@ alias bshsrc="source ~/.bashrc"
 alias clc="clear"
 alias todo="vim ~/TODO.md"
 alias notes="vim ~/NOTES.md"
+
+alias gc="git clean -fdx"
+alias gs="git status"
+alias gb="git branch"
+alias gl="git remote -v"
+alias gl="git log"
+alias gl1="git log --oneline"
+alias grh="git reset --hard"
+alias grs="git reset --soft"
+alias gdp="git diff -p"
 
 alias yy="xclip -i -selection clipboard -rmlastnl"
 alias pp="xclip -o -selection clipboard"
