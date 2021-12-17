@@ -5,15 +5,15 @@ shell:
   program: /bin/bash
 
 font:
-  size: 10
+  size: 10.5
   normal:
-    family: CozetteVector
+    family: RobotoMono Nerd Font
     style:  Regular
   bold:
-    family: CozetteVector
+    family: RobotoMono Nerd Font
     style:  Bold
   italic:
-    family: CozetteVector
+    family: RobotoMono Nerd Font
     style:  Italic
 
 colors:

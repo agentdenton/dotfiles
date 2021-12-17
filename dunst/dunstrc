@@ -14,7 +14,7 @@
     separator_color = "#E5E9F0"
     sort = yes
     idle_threshold = 120
-    font = "CozetteVector 10"
+    font = "RobotoMono Nerd Font 9"
     line_height = 0
     markup = no
     format = "<b>%s</b>\n%b"
