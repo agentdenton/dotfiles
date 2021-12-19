@@ -35,16 +35,19 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
+
 alias lg="lazygit"
 alias vim="nvim"
 alias nnn="nnn -e -U"
 alias tmux="tmux -2"
 alias bshsrc="source ~/.bashrc"
 alias clc="clear"
+
 alias todo="vim ~/TODO.md"
 alias notes="vim ~/NOTES.md"
 
-alias gc="git clean -fdx"
+alias gc="git commit"
+alias gca="git commit --amend"
 alias gs="git status"
 alias gb="git branch"
 alias gl="git remote -v"
@@ -53,6 +56,7 @@ alias gl1="git log --oneline"
 alias grh="git reset --hard"
 alias grs="git reset --soft"
 alias gdp="git diff -p"
+alias gclc="git clean -fdx"
 
 alias yy="xclip -i -selection clipboard -rmlastnl"
 alias pp="xclip -o -selection clipboard"
@@ -62,6 +66,7 @@ alias ls="exa -s extension --icons "
 alias ll="exa -la -s extension --icons"
 alias lse="exa -l -s extension --icons"
 alias lss="exa -l -s size --icons"
+alias lsd="exa -l -s data --icons"
 alias lst="exa -l -s size --icons -T"
 
 alias cd="z"
