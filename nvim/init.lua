@@ -1,12 +1,11 @@
 require('settings')
 require('mappings')
 
-local api = vim.api
-local fn = vim.fn
-local cmd = vim.md
 local g = vim.g
-local execute = vim.api.nvim_command
 local fn = vim.fn
+local api = vim.api
+local cmd = vim.md
+local execute = vim.api.nvim_command
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -21,8 +20,9 @@ end
 
 require('packer').startup(function()
     use 'tpope/vim-commentary'
-    use 'Yggdroot/indentLine'
 
+    use "lukas-reineke/indent-blankline.nvim"
+    use 'navarasu/onedark.nvim'
     use 'wbthomason/packer.nvim'
 
     use {
@@ -35,6 +35,7 @@ require('nvim-treesitter.configs').setup({
     highlight = {
         enable = true,
     },
+
     ensure_installed = {
         'c',
         'bash',
@@ -44,3 +45,25 @@ require('nvim-treesitter.configs').setup({
         'julia',
     },
 })
+
+require('onedark').setup({
+    style = 'darker',
+    transparent = true,
+
+    code_style = {
+        comments = 'italic',
+        keywords = 'none',
+        functions = 'none',
+        strings = 'none',
+        variables = 'none'
+    },
+
+    diagnostics = {
+        darker = true,
+        undercurl = true,
+        background = true,
+    },
+})
+require('onedark').load()
+
+require("indent_blankline").setup()

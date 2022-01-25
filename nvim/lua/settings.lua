@@ -1,7 +1,7 @@
-local api = vim.api
-local cmd = vim.cmd
 local g = vim.g
 local o = vim.o
+local api = vim.api
+local cmd = vim.cmd
 local opt = vim.opt
 
 o.completeopt = "menuone,noselect" -- better completion
@@ -13,7 +13,7 @@ opt.swapfile = false  -- disable swap file
 opt.hidden = true -- don't save on buffer change
 opt.shortmess = opt.shortmess + 'c'
 opt.splitright = true
-opt.splitbelow = true
+opt.splitbelow = false
 opt.tabstop = 4
 opt.shiftwidth = 4
 opt.softtabstop = 4
@@ -34,10 +34,12 @@ opt.showmode = false
 opt.mouse = "a"
 opt.scl = "no"
 opt.clipboard = "unnamedplus"
+opt.updatetime = 1000
+opt.timeoutlen = 500
 opt.termguicolors = true
 opt.background = 'dark'
--- opt.number = true
--- opt.relativenumber = true
+opt.number = true
+opt.relativenumber = true
 
 -- highlight on yank
 api.nvim_exec(
@@ -63,7 +65,13 @@ api.nvim_exec(
     false
 )
 
-cmd [[let g:indentLine_char = '|']]
+-- open help in vertical split
+api.nvim_exec(
+[[
+    autocmd! BufEnter * if &ft ==# 'help' | wincmd L | endif
+]],
+    false
+)
 
 -- disable new line comments
 cmd [[au BufEnter * set fo-=c fo-=r fo-=o]]
