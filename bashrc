@@ -49,9 +49,11 @@ alias notes="vim ~/NOTES.md"
 alias gc="git commit"
 alias gca="git commit --amend"
 alias gs="git status"
+alias grv="git remote -v"
 alias gb="git branch"
-alias gl="git remote -v"
+alias gba="git branch -a"
 alias gl="git log"
+alias glp="git log -p"
 alias gl1="git log --oneline"
 alias grh="git reset --hard"
 alias grs="git reset --soft"
@@ -66,7 +68,7 @@ alias ls="exa -s extension --icons "
 alias ll="exa -la -s extension --icons"
 alias lse="exa -l -s extension --icons"
 alias lss="exa -l -s size --icons"
-alias lsd="exa -l -s data --icons"
+alias lsd="exa -l -s date --icons"
 alias lst="exa -l -s size --icons -T"
 
 alias cd="z"
@@ -104,8 +106,6 @@ vim_fzf() {
 }
 
 bind -x '"\C-t": vim_fzf'
-bind 'set show-all-if-ambiguous on'
-bind 'TAB:menu-complete'
 
 eval "$(starship init bash)"
 eval "$(zoxide init bash)"
