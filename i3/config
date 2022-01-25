@@ -1,8 +1,5 @@
 set $mod Mod4
 
-gaps inner 8
-gaps outer 8
-
 default_border pixel 1
 default_floating_border pixel 1
 floating_modifier $mod
@@ -29,9 +26,6 @@ bindsym Print exec --no-startup-id flameshot gui
 
 # restart i3 inplace
 bindsym $mod+Shift+r restart
-
-# exit i3
-bindsym $mod+Shift+e exec wm_exit.sh
 
 # change focus
 bindsym $mod+h focus left
@@ -139,6 +133,3 @@ client.focused_inactive #2e3440 #2e3440 #888888 #2e3440
 client.placeholder      #2e3440 #2e3440 #888888 #2e3440
 client.urgent           #ff1f1f #ff1f1f #ffffff #ff1f1f
 client.background       #242424
-
-# launch startup script
-exec --no-startup-id wm_startup.sh
