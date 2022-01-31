@@ -6,16 +6,16 @@ set completion-query-items 500
 
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 export FZF_DEFAULT_OPTS="-m --height 50% --border"
-export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' 
---color=fg:#c5cdd9,bg:#121212,hl:#6cb6eb 
---color=fg+:#c5cdd9,bg+:#1e2127,hl+:#5dbbc1 
---color=info:#88909f,prompt:#ec7279,pointer:#d38aea 
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+--color=fg:#c5cdd9,bg:#121212,hl:#6cb6eb
+--color=fg+:#c5cdd9,bg+:#1e2127,hl+:#5dbbc1
+--color=info:#88909f,prompt:#98c379,pointer:#d38aea
 --color=marker:#a0c980,spinner:#ec7279,header:#5dbbc1'
 
 export NNN_FIFO=/tmp/nnn.fifo
 export NNN_PLUG='f:finder;o:fzopen;p:mocplay;d:diffs;t:nmount;v:imgview'
 export NNN_FCOLORS="0B0B04060006060009060B06"
-export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
+export NNN_TMPFILE="/tmp/lastd"
 
 export _ZO_DATA_DIR=~/
 
