@@ -52,8 +52,8 @@ require('onedark').setup({
 
     code_style = {
         comments = 'italic',
-        keywords = 'none',
-        functions = 'none',
+        keywords = 'none', 
+        functions = 'none', 
         strings = 'none',
         variables = 'none'
     },

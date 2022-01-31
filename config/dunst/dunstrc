@@ -43,7 +43,7 @@
     mouse_middle_click = do_action
     mouse_right_click = close_all
 
-    font = "RobotoMono Nerd Font 8"
+    font = "Iosevka Nerd Font 10"
 
 [shortcuts]
     close = ctrl+space
