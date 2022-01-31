@@ -1,3 +1,4 @@
 #!/bin/sh
 
-exec dwm
+xrdb ~/.Xresources
+exec bspwm
