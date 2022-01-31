@@ -1,0 +1,63 @@
+# terminal emulator
+super + Return
+	alacritty
+
+# program launcher
+super + d
+	rofi -show run
+
+# quit/restart bspwjl
+super + shift + {q,r}
+	bspc {quit,wm -r}
+
+# kill window
+super + shift + c
+	bspc node -k
+
+# swap the current node and the biggest window
+super + m
+	bspc node -s biggest.window
+
+# set the window state
+super + shift + {t,f}
+	bspc node -t {tiled,floating}
+
+# set window to fullscreen mode
+super + f
+    bspc node -t \~fullscreen
+
+# set the node flags
+super + ctrl + {m,l,s,p}
+	bspc node -g {marked,locked,sticky,private}
+
+# focus the node in the given direction
+super + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+
+# focus the next/previous window in the current desktop
+super + {_,shift + }n
+	bspc node -f {next,prev}.local.!hidden.window
+
+# focus the next/previous desktop in the current monitor
+super + bracket{left,right}
+	bspc desktop -f {prev,next}.local
+
+# focus the last node/desktop
+super + {grave,Tab}
+	bspc {node,desktop} -f last
+
+# focus or send to the given desktop
+super + {_,shift + }{1-6}
+	bspc {desktop -f,node -d} '^{1-6}'
+
+# preselect the direction
+super + ctrl + {h,j,k,l}
+	bspc node -p {west,south,north,east}
+
+# cancel the preselection for the focused node
+super + alt + ctrl
+	bspc node -p cancel
+
+# move a floating window
+super + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
