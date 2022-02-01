@@ -13,6 +13,7 @@ fi
 cp bashrc ~/.bashrc
 cp tmux.conf ~/.tmux.conf
 cp vimrc ~/.vimrc
+cp inputrc ~/.inputrc
 cp xinitrc ~/.xinitrc
 cp Xresources ~/.Xresources
 
