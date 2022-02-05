@@ -30,5 +30,12 @@ map('v', '>', '>gv', {noremap = true})
 map('v', 'E', '$h',    {noremap = true})
 map('v', 'B', '^h',    {noremap = true})
 
+map('n', '<c-w>', ':w<CR>', {noremap = true})
+map('n', '<c-q>', ':q<CR>', {noremap = true})
+
 map('n', '<leader><space>', ':set hlsearch!<CR>', {noremap = true})
 map('n', '<leader>t', ':term<CR>', {noremap = true})
+
+-- fzf
+map('n', '<leader>f', ':Files<CR>', {noremap = true})
+map('n', '<leader>b', ':Buffers<CR>', {noremap = true})
