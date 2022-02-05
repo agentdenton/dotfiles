@@ -148,10 +148,11 @@ fgchc() {
 fgsh() {
     is_in_git_repo || return
     git log --oneline --date=short --color=always \
-        | fzf --ansi --no-sort --reverse --multi --preview \
+        | fzf --ansi --no-sort --reverse --multi \
+            -m --height 100% --border sharp --preview \
             'grep -o "[a-f0-9]\{7,\}" <<< {} | xargs git show --color=always' \
         | grep -o "[a-f0-9]\{7,\}" > /dev/null
-}
+    }
 
 fgst() {
     is_in_git_repo || return
