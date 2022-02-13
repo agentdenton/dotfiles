@@ -5,7 +5,7 @@ shell:
   program: /bin/bash
 
 font:
-  size: 10.5
+  size: 10
   normal:
     family: JetBrainsMono Nerd Font
     style:  Regular
@@ -18,8 +18,8 @@ font:
 
 colors:
   primary:
-    background: '0x1e2127'
-    foreground: '0xabb2bf'
+    background: '0x24292e'
+    foreground: '0xc9d1d9'
 
   normal:
     black:   '0x1e2127'
@@ -40,5 +40,3 @@ colors:
     magenta: '0xc678dd'
     cyan:    '0x56b6c2'
     white:   '0xffffff'
-
-background_opacity: 1.0
