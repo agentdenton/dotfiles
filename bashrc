@@ -41,6 +41,11 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 
+alias pacrm="sudo pacman -R"
+alias pacinst="sudo pacman -S"
+alias pacupd="sudo pacman -Syu"
+alias pacls="pacman -Q"
+
 alias lg="lazygit"
 alias vi="nvim"
 alias nnn="nnn -e -U"
@@ -50,8 +55,8 @@ alias clc="clear"
 alias bsrc="source ~/.bashrc"
 alias bedit="$EDITOR ~/.bashrc"
 
-alias todo="vim ~/TODO.md"
-alias notes="vim ~/NOTES.md"
+alias todo="$EDITOR ~/TODO.md"
+alias notes="$EDITOR ~/NOTES.md"
 
 alias gc="git commit"
 alias gca="git commit --amend"
@@ -77,9 +82,9 @@ alias yy="xclip -i -selection clipboard -rmlastnl"
 alias pp="xclip -o -selection clipboard"
 
 alias l="exa -l -s extension --icons"
-alias ls="exa -s extension --icons "
+alias ls="exa -s extension --icons"
 alias ll="exa -la -s extension --icons"
-alias la="exa -a -s extension --icons "
+alias la="exa -a -s extension --icons"
 alias lsa="exa -a -s extension --icons"
 alias lse="exa -l -s extension --icons"
 alias lss="exa -l -s size --icons"
@@ -152,13 +157,13 @@ fgsh() {
             -m --height 100% --border sharp --preview \
             'grep -o "[a-f0-9]\{7,\}" <<< {} | xargs git show --color=always' \
         | grep -o "[a-f0-9]\{7,\}" > /dev/null
-    }
+}
 
 fgst() {
     is_in_git_repo || return
     git stash list | fzf --reverse -d: --preview 'git show --color=always {1}' \
         | cut -d: -f1
-    }
+}
 
 bind -x '"\C-t": vim_fzf'
 
