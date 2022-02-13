@@ -40,6 +40,7 @@ opt.termguicolors = true
 opt.background = 'dark'
 opt.number = true
 opt.relativenumber = true
+opt.guicursor = ""
 
 -- highlight on yank
 api.nvim_exec(
@@ -73,5 +74,18 @@ api.nvim_exec(
     false
 )
 
+-- yaml
+api.nvim_exec(
+[[
+    autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+]],
+    false
+)
+
 -- disable new line comments
 cmd [[au BufEnter * set fo-=c fo-=r fo-=o]]
+
+-- fzf
+cmd [[ let g:fzf_preview_window = [] ]]
+cmd [[let g:fzf_layout = { 'down': '~40%' }]]
+
