@@ -1,15 +1,25 @@
 #!/bin/sh
 
-killall sxhkd dunst lemonbar.sh || sleep 1
+killall sxhkd dunst
+
+# TODO: proper multi monitor handling
+num_of_mon=$(xrandr --query | rg -w connected | wc -l)
+if [[ $num_of_mon > 1 ]]; then
+    bspc monitor DVI-D-1 -d 1 2 3 4 5
+    bspc monitor HDMI-0 -d 6
+
+    xrandr --output DVI-D-1 --primary --left-of HDMI-0
+else
+    bspc monitor -d 1 2 3 4 5 6
+fi
 
 xset r rate 400 100
 xsetroot -cursor_name left_ptr
-xrandr --output DVI-D-1 --primary --left-of HDMI-0
 setxkbmap -model pc105 -layout us,ua -variant qweety \
     -option grp:win_space_toggle
 
-bspc config border_width 1
-bspc config window_gap 15
+bspc config border_width 0
+bspc config window_gap 10
 
 bspc config pointer_modifier mod4
 bspc config pointer_action1 move
@@ -25,21 +35,8 @@ bspc config normal_border_color "#7e7e7e"
 bspc config active_border_color "#ec7279"
 bspc config presel_feedback_color "#569CD6"
 
-monitors=$(xrandr --query | rg -w connected | wc -l)
-if [[ $monitors > 1 ]]; then
-    bspc monitor DVI-D-1 -d 1 2 3 4 5
-    bspc monitor HDMI-0 -d 6
-else
-    bspc monitor -d 1 2 3 4 5 6
-fi
-
 sxhkd &
 dunst &
 alacritty &
-lemonbar.sh | lemonbar \
-    -F "#abb2bf" \
-    -B "#1e2127" \
-    -g "x20+0+0" \
-    -f "Iosevka Nerd Font:size=11:antialias=false:style=Bold" &
 
 feh --bg-scale ~/pictures/wallpapers/night_ghibli.jpg
