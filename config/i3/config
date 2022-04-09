@@ -1,13 +1,46 @@
-set $mod Mod4
+# Mod key Alt
+set $mod Mod1
+
+font pango:Noto Nerd Font Bold 12
+
+gaps inner 20
+gaps outer 5
 
 default_border pixel 1
 default_floating_border pixel 1
-floating_modifier $mod
 
-font pango:RobotoMono 9
+floating_modifier $mod
 
 # close a window
 bindsym $mod+Shift+c kill
+
+# horizontal split
+bindsym $mod+Ctrl+h split h
+
+# vertical split
+bindsym $mod+Ctrl+v split v
+
+# restart i3 inplace
+bindsym $mod+Shift+r restart
+
+# fullscreen mode
+bindsym $mod+f fullscreen toggle
+
+# switch to a previous workspace
+bindsym $mod+Tab workspace back_and_forth
+
+# change container layout (toggle split, tabbed)
+bindsym $mod+Shift+s layout toggle split
+bindsym $mod+Shift+t layout tabbed
+
+# toggle tiling / floating
+bindsym $mod+Shift+f floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
 
 # launch terminal
 bindsym $mod+Return exec alacritty
@@ -23,9 +56,6 @@ bindsym $mod+s exec --no-startup-id rofi -show ssh
 
 # take a screen show
 bindsym Print exec --no-startup-id flameshot gui
-
-# restart i3 inplace
-bindsym $mod+Shift+r restart
 
 # change focus
 bindsym $mod+h focus left
@@ -45,33 +75,7 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# vertical split
-bindsym $mod+Ctrl+h split h
-
-# horizontal split
-bindsym $mod+Ctrl+v split v
-
-# fullscreen mode
-bindsym $mod+f fullscreen toggle
-
-# switch to a previous workspace
-bindsym $mod+Tab workspace back_and_forth
-
-# change container layout (toggle split)
-bindsym $mod+Shift+s layout toggle split
-
-# toggle tiling / floating
-bindsym $mod+Shift+f floating toggle
-
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
-
-# focus the parent container
-bindsym $mod+a focus parent
-
 # to display workspaces with icons
-# set $ws1 1:mail
-# set $ws2 2:
 set $ws1 1
 set $ws2 2
 set $ws3 3
@@ -107,12 +111,13 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
-# resize window
+# resize window mode
 mode "resize" {
-    bindsym l resize grow width 10 px or 10 ppt
+    # vim keys
     bindsym h resize shrink width 10 px or 10 ppt
-    bindsym k resize grow height 10 px or 10 ppt
-    bindsym j resize shrink height 10 px or 10 ppt
+    bindsym j resize grow height 10 px or 10 ppt
+    bindsym k resize shrink height 10 px or 10 ppt
+    bindsym l resize grow width 10 px or 10 ppt
 
     # same bindings, but for the arrow keys
     bindsym Left resize shrink width 10 px or 10 ppt
@@ -124,12 +129,39 @@ mode "resize" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-
 bindsym $mod+r mode "resize"
 
-client.focused          #81a1c1 #51afef #24292e #51afef
-client.unfocused        #2e3440 #2e3440 #888888 #2e3440
-client.focused_inactive #2e3440 #2e3440 #888888 #2e3440
-client.placeholder      #2e3440 #2e3440 #888888 #2e3440
-client.urgent           #ff1f1f #ff1f1f #ffffff #ff1f1f
+bar {
+    height 30
+    position top
+    font pango:Noto Nerd Font 11
+    status_command i3status
+    tray_padding 1
+    strip_workspace_numbers yes
+
+    colors {
+        separator  #1f222d
+        background #1f222d
+        statusline #81a1c1
+
+        focused_workspace   #1f222d #1f222d #81a1c1
+        active_workspace    #1f222d #252936 #5e81ac
+        inactive_workspace  #1f222d #1f222d #4c566a
+        urgent_workspace    #1f222d #1f222d #ee829f
+        binding_mode        #1f222d #81a1c1 #2e3440
+    }
+}
+
+client.focused          #81a1c1 #81a1c1 #ffffff #81a1c1
+client.unfocused        #2e3440 #1f222d #888888 #1f222d
+client.focused_inactive #2e3440 #1f222d #888888 #1f222d
+client.placeholder      #2e3440 #1f222d #888888 #1f222d
+client.urgent           #900000 #900000 #ffffff #900000
 client.background       #242424
+
+exec --no-startup-id xset r rate 400 100
+exec --no-startup-id setroot -cursor_name left_ptr
+exec --no-startup-id setxkbmap -model pc105 -layout us,ua -variant qweety -option grp:win_space_toggle 
+
+# set wallpaper
+exec --no-startup-id feh --bg-scale ~/git/nordic-wallpapers/wallpapers/ign_chineseIG.png 
