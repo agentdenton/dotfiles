@@ -19,10 +19,13 @@ export NNN_PLUG='f:finder;o:fzopen;p:mocplay;d:diffs;t:nmount;v:imgview'
 export NNN_FCOLORS="0B0B04060006060009060B06"
 export NNN_TMPFILE="/tmp/lastd"
 
+export XSECURELOCK_FONT="RobotoMono Nerd Font Bold"
+export XSECURELOCK_PASSWORD_PROMPT="disco"
+
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 export EXA_STRICT=1
-export BAT_THEME="ansi"
+export BAT_THEME="nord"
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8

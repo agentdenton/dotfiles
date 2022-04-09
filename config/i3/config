@@ -1,7 +1,7 @@
 # Mod key Alt
 set $mod Mod1
 
-font pango:Noto Nerd Font Bold 12
+font pango:Iosevka Nerd Font 12
 
 gaps inner 20
 gaps outer 5
@@ -142,8 +142,9 @@ bar {
     position top
     font pango:RobotoMono Nerd Font Bold 11
     status_command i3status
-    tray_padding 1
     strip_workspace_numbers yes
+    tray_padding 1
+    tray_output none
 
     colors {
         separator  #1f222d
@@ -166,9 +167,11 @@ client.urgent           #900000 #900000 #ffffff #900000
 client.background       #242424
 
 exec --no-startup-id dunst
+exec --no-startup-id xset s 300 5
 exec --no-startup-id xset r rate 400 100
 exec --no-startup-id setroot -cursor_name left_ptr
 exec --no-startup-id setxkbmap -model pc105 -layout us,ua -variant qweety -option grp:win_space_toggle 
+exec --no-startup-id xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock
 
 # set wallpaper
 exec --no-startup-id feh --bg-scale ~/git/nordic-wallpapers/wallpapers/ign_chineseIG.png
