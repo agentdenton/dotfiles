@@ -1,12 +1,12 @@
 * {
-    font: "RobotoMono Nerd Font 9";
+    font: "Iosevka Nerd Font 13";
 
-    foreground: #d1d5da;
-    foreground-selected: #1e2127;
-    background: #1e2127;
+    foreground: #ECEFF4;
+    foreground-selected: #2E3440;
+    background: #2E3440;
 
-    active-background: #51afef;
-    active-current-background: #b083f0;
+    active-background: #88C0D0;
+    active-current-background: #BF616A;
     urgent-background: #ff5555;
 
     selected-background: @active-background;
