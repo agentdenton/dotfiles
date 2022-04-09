@@ -2,18 +2,17 @@ source ~/.dotfiles/bash/fzf-completion.bash
 source ~/.dotfiles/bash/fzf-key-bindings.bash
 
 set -o vi
-
 set completion-query-items 500
 
 ### environment variables
 
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
-export FZF_DEFAULT_OPTS="-m --height 50% --border"
+export FZF_DEFAULT_OPTS="-m --height 50%"
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
---color=fg:#c5cdd9,bg:#121212,hl:#6cb6eb
---color=fg+:#c5cdd9,bg+:#1e2127,hl+:#5dbbc1
---color=info:#88909f,prompt:#98c379,pointer:#d38aea
---color=marker:#a0c980,spinner:#ec7279,header:#5dbbc1'
+    --color=fg:#e5e9f0,bg:#2E3440,hl:#81a1c1
+    --color=fg+:#e5e9f0,bg+:#2E3440,hl+:#81a1c1
+    --color=info:#eacb8a,prompt:#bf6069,pointer:#b48dac
+    --color=marker:#a3be8b,spinner:#b48dac,header:#a3be8b'
 
 export NNN_FIFO=/tmp/nnn.fifo
 export NNN_PLUG='f:finder;o:fzopen;p:mocplay;d:diffs;t:nmount;v:imgview'
@@ -169,3 +168,6 @@ bind -x '"\C-t": vim_fzf'
 
 eval "$(starship init bash)"
 eval "$(zoxide init bash)"
+
+test -r ~/.dotfiles/bash/nord_dir_colors && \
+    eval $(dircolors ~/.dotfiles/bash/nord_dir_colors)
