@@ -1,5 +1,5 @@
 * {
-    font: "Iosevka Nerd Font 13";
+    font: "Iosevka Nerd Font 12";
 
     foreground: #ECEFF4;
     foreground-selected: #2E3440;
