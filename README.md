@@ -3,14 +3,14 @@
 ## Install programs (Arch Linux)
 ```
 paru -S alacritty vim neovim curl bat zoxide ripgrep fd exa flameshot zathura \
-         htop xclip feh lazygit mpv bspwm dunst rofi tmux xorg-xsetroot \
-         xdotool lemonbar-xft-git
+         htop xclip feh lazygit mpv i3 dunst rofi tmux xorg-xsetroot xdotool \
+         lxappearance-gtk3
  ```
 
 ## Install fonts
 ```
-paru -S ttf-font-awesome nerd-fonts-jetbrains-mono ttf-iosevka-nerd \
-         adobe-source-han-sans-jp-fonts cozette-ttf
+paru -S ttf-font-awesome ttf-iosevka-nerd nerd-fonts-roboto-mono \
+         nerd-fonts-source-code-pro adobe-source-han-sans-jp-fonts
 ```
 
 ## Install themes
