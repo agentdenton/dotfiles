@@ -53,7 +53,7 @@ wireless _first_ {
 }
 
 battery all {
-    format = "bat: %percentage"
+    format = "bat: %percentage ●"
 
     hide_seconds = true
     integer_battery_capacity = true
@@ -61,5 +61,5 @@ battery all {
 }
 
 tztime local {
-    format = "    %a %d-%m-%Y  %H:%M "
+    format = " %a %d-%m-%Y  %H:%M "
 }
