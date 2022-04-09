@@ -2,10 +2,8 @@
     monitor = 0
     geometry = "280x6-10+43"
     notification_height = 0
-    separator_height = 2
     padding = 20
     horizontal_padding = 20
-    separator_color = "#E5E9F0"
     idle_threshold = 120
     line_height = 0
     format = "<b>%s</b>\n%b"
@@ -16,7 +14,10 @@
     max_icon_size = 24
 
     frame_width = 3
-    frame_color = "#46d9ff"
+    frame_color = "#E5E9F0"
+
+    separator_height = 2
+    separator_color = "#E5E9F0"
 
     ellipsize = middle
     alignment = center
@@ -50,16 +51,16 @@
     close_all = ctrl+shift+space
 
 [urgency_low]
-    background = "#1e2127"
-    foreground = "#abb2bf"
+    background = "#3B4252"
+    foreground = "#4C566A"
     timeout = 10
 
 [urgency_normal]
-    background = "#1e2127"
-    foreground = "#abb2bf"
+    background = "#434C5E"
+    foreground = "#E5E9F0"
     timeout = 10
 
 [urgency_critical]
-    background = "#1e2127"
-    foreground = "#abb2bf"
+    background = "#88C0D0"
+    foreground = "#ECEFF4"
     timeout = 60
