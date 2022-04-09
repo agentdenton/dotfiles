@@ -17,11 +17,11 @@ order += "battery all"
 order += "tztime local"
 
 disk "/" {
-    format = "root: %free ●"
+    format = "root_avail: %free ●"
 }
 
 disk "/home" {
-    format = "home: %free ●"
+    format = "home_avail: %free ●"
 }
 
 cpu_usage {
