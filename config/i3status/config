@@ -1,0 +1,65 @@
+general {
+    interval = 5
+    colors = true
+    color_good = "#81a1c1" # Light green
+    color_degraded = "#fafe7c" # Light yellow
+    color_bad = "#ff7770" # Light red
+}
+
+order += "disk /"
+order += "disk /home"
+order += "cpu_usage"
+order += "memory"
+order += "volume master"
+order += "ethernet _first_"
+order += "wireless _first_"
+order += "battery all"
+order += "tztime local"
+
+disk "/" {
+    format = "root: %free ●"
+}
+
+disk "/home" {
+    format = "home: %free ●"
+}
+
+cpu_usage {
+    format = "cpu: %usage ●"
+}
+
+memory {
+    format = "ram: %used ●"
+    threshold_degraded = "ram: ~1G left ●"
+    format_degraded = "ram < %available ●"
+}
+
+volume master {
+    format = "volume: %volume ●"
+    format_muted = "volume: muted ●"
+    device = "default"
+    mixer = "Master"
+    mixer_idx = 0
+}
+
+ethernet _first_ {
+    format_up = "eth: %ip (%speed) ●"
+    format_down = "eth: down ●"
+}
+
+wireless _first_ {
+    format_up = "wifi: %essid ●"
+    format_down = "wifi: down ●"
+}
+
+battery all {
+    format = "bat: %percentage"
+
+    hide_seconds = true
+    integer_battery_capacity = true
+    last_full_capacity = true
+}
+
+tztime local {
+    format = "    %a %d-%m-%Y  %H:%M "
+}
