@@ -37,5 +37,7 @@ map('n', '<leader><space>', ':set hlsearch!<CR>', {noremap = true})
 map('n', '<leader>t', ':term<CR>', {noremap = true})
 
 -- fzf
-map('n', '<leader>f', ':Files<CR>', {noremap = true})
-map('n', '<leader>b', ':Buffers<CR>', {noremap = true})
+map('n', '<leader>f', ":lua require('fzf-lua').files()<CR>", {noremap = true})
+map('n', '<leader>g', ":lua require('fzf-lua').grep()<CR>", {noremap = true})
+map('n', '<leader>gc', ":lua require('fzf-lua').grep_curbuf()<CR>", {noremap = true})
+map('n', '<leader>ch', ":lua require('fzf-lua').command_history()<CR>", {noremap = true})
