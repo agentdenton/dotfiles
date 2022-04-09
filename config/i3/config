@@ -16,7 +16,6 @@ bindsym $mod+Shift+c kill
 
 # horizontal split
 bindsym $mod+Ctrl+h split h
-
 # vertical split
 bindsym $mod+Ctrl+v split v
 
@@ -38,24 +37,31 @@ bindsym $mod+Shift+f floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
-
 # focus the parent container
 bindsym $mod+a focus parent
 
 # launch terminal
 bindsym $mod+Return exec alacritty
 
+# take a screen show
+bindsym Print exec --no-startup-id flameshot gui
+
 # launch programs
 bindsym $mod+d exec --no-startup-id rofi -show run
-
 # switch windows
 bindsym $mod+w exec --no-startup-id rofi -show window
-
 # ssh session
 bindsym $mod+s exec --no-startup-id rofi -show ssh
 
-# take a screen show
-bindsym Print exec --no-startup-id flameshot gui
+# volume control
+bindsym $mod+Shift+m exec pactl set-sink-mute @DEFAULT_SINK@ toggle # Mute
+bindsym $mod+F2 exec pactl set-sink-volume @DEFAULT_SINK@ -5%  # Up
+bindsym $mod+F3 exec pactl set-sink-volume @DEFAULT_SINK@ +5%  # Down
+
+# screen brightness
+# cat /sys/class/backlight/amdgpu_bl0/brightness
+bindsym $mod+F4 exec light -A 1 # increase screen brightness
+bindsym $mod+F5 exec light -U 1 # decrease screen brightness
 
 # change focus
 bindsym $mod+h focus left
@@ -134,7 +140,7 @@ bindsym $mod+r mode "resize"
 bar {
     height 30
     position top
-    font pango:Noto Nerd Font 11
+    font pango:RobotoMono Nerd Font Bold 11
     status_command i3status
     tray_padding 1
     strip_workspace_numbers yes
@@ -159,9 +165,10 @@ client.placeholder      #2e3440 #1f222d #888888 #1f222d
 client.urgent           #900000 #900000 #ffffff #900000
 client.background       #242424
 
+exec --no-startup-id dunst
 exec --no-startup-id xset r rate 400 100
 exec --no-startup-id setroot -cursor_name left_ptr
 exec --no-startup-id setxkbmap -model pc105 -layout us,ua -variant qweety -option grp:win_space_toggle 
 
 # set wallpaper
-exec --no-startup-id feh --bg-scale ~/git/nordic-wallpapers/wallpapers/ign_chineseIG.png 
+exec --no-startup-id feh --bg-scale ~/git/nordic-wallpapers/wallpapers/ign_chineseIG.png
