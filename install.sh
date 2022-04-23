@@ -15,3 +15,5 @@ cp starship.toml ~/.config
 cp xinitrc ~/.xinitrc
 cp Xresources ~/.Xresources
 cp -r config/* ~/.config
+
+sudo cp scripts/* /usr/local/bin
