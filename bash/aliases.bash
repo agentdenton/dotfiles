@@ -3,28 +3,30 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 
 alias prm="sudo pacman -R"
-alias pinst="sudo pacman -S"
-alias pupdt="sudo pacman -Syu"
+alias pinstall="sudo pacman -S"
+alias pupdate="sudo pacman -Syu"
 alias pquery="pacman -Q"
 
 alias lg="lazygit"
 alias vi="nvim"
+alias bat="bat -p --theme Nord"
 alias nnn="nnn -e -U"
-alias tmux="tmux -2"
 alias clc="clear"
 
 alias bsrc="source ~/.bashrc"
 alias bedit="$EDITOR ~/.bashrc"
 
-alias todo="$EDITOR ~/TODO.md"
-alias notes="$EDITOR ~/NOTES.md"
+alias todo="$EDITOR ~/todo.md"
+alias notes="$EDITOR ~/notes.md"
 
 alias gc="git commit"
 alias gca="git commit --amend"
 
 alias gs="git status"
+alias gsh="git show"
 alias grv="git remote -v"
 alias gba="git branch -a"
+alias gck="git checkout"
 
 alias gl="git log"
 alias glp="git log -p"

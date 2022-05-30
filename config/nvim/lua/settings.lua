@@ -14,23 +14,23 @@ opt.hidden = true -- don't save on buffer change
 opt.shortmess = opt.shortmess + 'c'
 opt.splitright = true
 opt.splitbelow = false
-opt.tabstop = 4
-opt.shiftwidth = 4
-opt.softtabstop = 4
+opt.tabstop = 2
+opt.shiftwidth = 2
+opt.softtabstop = 2
 opt.expandtab = true
 opt.cursorline = true
 opt.scrolloff = 12
 opt.exrc = true
 opt.smartindent = true
 opt.showcmd = true
+opt.showmode = false
 opt.wrap = true
 opt.breakindent = true
 opt.showbreak = string.rep(">>>", 3)
 opt.linebreak = true
 opt.list = true -- show empty spaces
 opt.ruler = true
-opt.laststatus = 0
-opt.showmode = false
+opt.laststatus = 2 -- enable status lin
 opt.mouse = "a"
 opt.scl = "no"
 opt.clipboard = "unnamedplus"
@@ -45,23 +45,23 @@ opt.guicursor = ""
 -- highlight on yank
 api.nvim_exec(
 [[
-    augroup YankHighlight
-    autocmd!
-    autocmd TextYankPost * silent! lua vim.highlight.on_yank()
-    augroup end
+  augroup YankHighlight
+  autocmd!
+  autocmd TextYankPost * silent! lua vim.highlight.on_yank()
+  augroup end
 ]],
-    false
+  false
 )
 
 -- disable line numbers in terminal
 api.nvim_exec(
 [[
-    augroup neovim_terminal
-        autocmd!
-        autocmd TermOpen * startinsert
-        autocmd TermOpen * :set nonumber norelativenumber
-        autocmd TermOpen * nnoremap <buffer> <C-c> i<C-c>
-    augroup END
+  augroup neovim_terminal
+    autocmd!
+    autocmd TermOpen * startinsert
+    autocmd TermOpen * :set nonumber norelativenumber
+    autocmd TermOpen * nnoremap <buffer> <C-c> i<C-c>
+  augroup END
 ]],
     false
 )
@@ -69,9 +69,17 @@ api.nvim_exec(
 -- open help in vertical split
 api.nvim_exec(
 [[
-    autocmd! BufEnter * if &ft ==# 'help' | wincmd L | endif
+  autocmd! BufEnter * if &ft ==# 'help' | wincmd L | endif
 ]],
-    false
+  false
+)
+
+-- yaml indent
+api.nvim_exec(
+[[
+  autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+]],
+  false
 )
 
 -- disable new line comments
@@ -79,3 +87,7 @@ cmd [[ au BufEnter * set fo-=c fo-=r fo-=o ]]
 
 -- share system clipboard
 cmd [[ set clipboard+=unnamedplus ]]
+
+-- enable italics in tmux
+cmd [[ set t_ZH=^[[3m] ]]
+cmd [[ set t_ZR=^[[23m ]]

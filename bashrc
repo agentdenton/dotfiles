@@ -1,15 +1,16 @@
 set -o vi
-set completion-query-items 500
+shopt -s histverify
 
-source ~/.dotfiles/bash/fzf-completion.bash
-source ~/.dotfiles/bash/fzf-key-bindings.bash
+prefix="$HOME/.dotfiles/bash"
+test -r $prefix/env.bash && source $prefix/env.bash
+test -r $prefix/aliases.bash && source $prefix/aliases.bash
+test -r $prefix/func.sh && source $prefix/func.sh
+test -r $prefix/nord_dir_colors.bash && \
+  eval $(dircolors ~/.dotfiles/bash/nord_dir_colors.bash)
 
-source ~/.dotfiles/bash/exports.bash
-source ~/.dotfiles/bash/aliases.bash
-source ~/.dotfiles/bash/functions.bash
+test -f ~/.fzf.bash && source ~/.fzf.bash
+test -r $HOME/.cargo/env && source $HOME/.cargo/env
 
 eval "$(starship init bash)"
 eval "$(zoxide init bash)"
 
-test -r ~/.dotfiles/bash/nord_dir_colors && \
-  eval $(dircolors ~/.dotfiles/bash/nord_dir_colors)

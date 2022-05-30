@@ -1,2 +1,5 @@
-nvim/plugin
-nvim/.netrwhist
+plugin
+.netrwhist
+__pycache__
+
+*.pyc

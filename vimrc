@@ -5,10 +5,10 @@ syntax on
 filetype plugin indent on
 
 set exrc
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set expandtab
+set tabstop=8
+set shiftwidth=8
+set softtabstop=8
+set noexpandtab
 set smartindent
 set hlsearch
 set noerrorbells
@@ -30,6 +30,8 @@ set updatetime=300
 
 nnoremap E $
 nnoremap B ^
+vmap E $h
+vmap B ^h
 
 nnoremap Y y$
 nnoremap n nzzzv
@@ -40,6 +42,3 @@ inoremap , ,<c-g>u
 inoremap . .<c-g>u
 inoremap ! !<c-g>u
 inoremap ? ?<c-g>u
-
-vmap E $h
-vmap B ^h

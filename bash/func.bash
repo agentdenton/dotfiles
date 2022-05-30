@@ -23,6 +23,14 @@ is_in_git_repo() {
   git rev-parse HEAD > /dev/null 2>&1
 }
 
+vifg() {
+  is_in_git_repo || return
+  local file=$(git status | grep "modified:" | awk '{print $2}' | fzf);
+  if [ -n "$file" ]; then
+    ${EDITOR:-vi} "$file"
+  fi
+}
+
 fgb() {
   is_in_git_repo || return
   branch=$(git branch --color=always --all --sort=-committerdate |

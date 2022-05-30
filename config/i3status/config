@@ -1,8 +1,8 @@
 general {
     interval = 10
-    color_good = "#81a1c1" # Light green
-    color_degraded = "#fafe7c" # Light yellow
-    color_bad = "#ff7770" # Light red
+    color_good = "#d8dee9" # Light green
+    color_degraded = "#ebcb8b" # Light yellow
+    color_bad = "#bf616a" # Light red
 }
 
 order += "ethernet _first_"

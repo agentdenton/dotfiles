@@ -1,9 +1,9 @@
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 export FZF_DEFAULT_OPTS="-m --height 50%"
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
-  --color=fg:#e5e9f0,bg:#2E3440,hl:#81a1c1
-  --color=fg+:#e5e9f0,bg+:#2E3440,hl+:#81a1c1
-  --color=info:#eacb8a,prompt:#bf6069,pointer:#b48dac
+  --color=fg:#e5e9f0,bg:#2E3440,hl:#B48EAD
+  --color=fg+:#e5e9f0,bg+:#2E3440,hl+:#A3BE8C
+  --color=info:#eacb8a,prompt:#88C0D0,pointer:#A3BE8C
   --color=marker:#a3be8b,spinner:#b48dac,header:#a3be8b'
 
 export NNN_FIFO=/tmp/nnn.fifo
@@ -24,5 +24,3 @@ export LANG=en_US.UTF-8
 
 export EDITOR="nvim"
 export VISUAL="nvim"
-
-export _ZO_DATA_DIR=~/
