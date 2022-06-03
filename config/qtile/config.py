@@ -160,7 +160,15 @@ mouse = [
     Click([mod], "Button2", lazy.window.bring_to_front()),
 ]
 
+
+float_layout_theme = {
+    "border_focus": "#88C0D0",
+    "border_normal": "#3b4252",
+    "border_width": DEFALT_BORDER_WIDTH,
+}
+
 floating_layout = layout.Floating(
+    **float_layout_theme,
     float_rules=[
         # Run the utility of `xprop` to see the wm class and name of an X client.
         *layout.Floating.default_float_rules,
