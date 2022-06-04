@@ -72,6 +72,9 @@ keys = [
     Key([mod], "F2", lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ -5%"), desc="Volume down"),
     Key([mod], "F3", lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ +5%"), desc="Volume up"),
 
+    # Lock the screen
+    Key([mod], "F9", lazy.spawn("i3lock -u -c 2e3440"), desc="Start the screenlocker"),
+
 	# TODO: brightness control
     # Key([mod], "F4", lazy.spawn("light -A 1"), desc="Volume up"),
     # Key([mod], "F5", lazy.spawn("light -U 1"), desc="Volume up"),

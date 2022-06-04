@@ -22,3 +22,4 @@ xdotool
 lxappearance-gtk3
 xorg-xinput
 qtile
+i3lock

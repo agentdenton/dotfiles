@@ -13,4 +13,5 @@ if [[ $num_of_mon -gt 1 ]]; then
   xrandr --output DisplayPort-1 --mode 3440x1440 --rate 144
 fi
 
+xss-lock --transfer-sleep-lock -- i3lock -u -c 2e3440
 exec qtile start
