@@ -4,7 +4,7 @@ shopt -s histverify
 prefix="$HOME/.dotfiles/bash"
 test -r $prefix/env.bash && source $prefix/env.bash
 test -r $prefix/aliases.bash && source $prefix/aliases.bash
-test -r $prefix/func.sh && source $prefix/func.sh
+test -r $prefix/func.bash && source $prefix/func.bash
 test -r $prefix/nord_dir_colors.bash && \
   eval $(dircolors ~/.dotfiles/bash/nord_dir_colors.bash)
 
