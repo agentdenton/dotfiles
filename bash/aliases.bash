@@ -68,3 +68,7 @@ alias njb="clear && ninja -C build"
 alias mcb="meson . build --cross-file=cross.ini"
 alias mcbd="meson . build --cross-file=cross.ini --buildtype=debug"
 alias mcbr="meson . build --cross-file=cross.ini --buildtype=release"
+
+alias toeng="trans uk: "
+alias touk="trans :uk "
+alias tdict="trans -d "
