@@ -1,14 +1,15 @@
 general {
-    interval = 10
-    color_good = "#d8dee9" # Light green
-    color_degraded = "#ebcb8b" # Light yellow
-    color_bad = "#bf616a" # Light red
+    colors = true
+    interval = 5
+    color_good = "#81a1c1" # Light green
+    color_degraded = "#fafe7c" # Light yellow
+    color_bad = "#ff7770" # Light red
 }
 
-order += "ethernet _first_"
-order += "wireless _first_"
-order += "volume master"
-order += "battery all"
+# order += "ethernet _first_"
+# order += "wireless _first_"
+# order += "volume master"
+# order += "battery all"
 order += "tztime local"
 
 ethernet _first_ {
@@ -38,5 +39,5 @@ battery all {
 }
 
 tztime local {
-    format = " %a %d-%m-%Y  %H:%M "
+    format = "%a %d %H:%M "
 }
