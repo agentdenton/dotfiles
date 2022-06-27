@@ -21,16 +21,14 @@ end
 
 require('packer').startup(function()
   use "arcticicestudio/nord-vim"
+  use 'folke/tokyonight.nvim'
   use 'tpope/vim-commentary'
 
   use "ibhagwan/fzf-lua"
   use "lukas-reineke/indent-blankline.nvim"
   use 'wbthomason/packer.nvim'
 
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  }
+  use 'nvim-lualine/lualine.nvim'
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
@@ -73,4 +71,4 @@ require('lualine').setup({
 
 require('indent_blankline').setup()
 
-cmd [[ colorscheme nord ]]
+cmd [[colorscheme nord]]

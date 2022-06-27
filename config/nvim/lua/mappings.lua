@@ -5,14 +5,16 @@ local map = vim.api.nvim_set_keymap
 
 g.mapleader = ' '
 
+-- disable annoying man pages
+map('n', 'K', '<nop>', {noremap = true})
+
+-- switch between buffers
+map('n', '<c-p>', ':edit #<CR>', {noremap = true})
+
 map('n', '<c-h>', '<c-w>h', {noremap = true})
 map('n', '<c-j>', '<c-w>j', {noremap = true})
 map('n', '<c-k>', '<c-w>k', {noremap = true})
 map('n', '<c-l>', '<c-w>l', {noremap = true})
-
-map('n', '<c-n>', ':bnext<CR>', {noremap = true})
-map('n', '<c-p>', ':bprev<CR>', {noremap = true})
-map('n', '<c-c>', ':bd<CR>', {noremap = true})
 
 map('n', 'E', '$', {noremap = true})
 map('n', 'B', '^', {noremap = true})
@@ -30,9 +32,6 @@ map('v', 'B', '^h',    {noremap = true})
 map('n', '<leader><space>', ':set hlsearch!<CR>', {noremap = true})
 map('n', '<leader>t', ':term<CR>', {noremap = true})
 
--- disable annoying man pages
-map('n', 'K', '<nop>', {noremap = true})
-
 -- remove all empty spaces
 map('n', '<leader>rs', ':%s/\\s\\+$//e<CR>', {noremap = true})
 
@@ -42,4 +41,5 @@ map('n', '<leader>b', ":lua require('fzf-lua').buffers()<CR>", {noremap = true})
 map('n', '<leader>g', ":lua require('fzf-lua').grep()<CR>", {noremap = true})
 map('n', '<leader>gc', ":lua require('fzf-lua').grep_curbuf()<CR>", {noremap = true})
 map('n', '<leader>gl', ":lua require('fzf-lua').grep_last()<CR>", {noremap = true})
+map('n', '<leader>sh', ":lua require('fzf-lua').search_history()<CR>", {noremap = true})
 map('n', '<leader>ch', ":lua require('fzf-lua').command_history()<CR>", {noremap = true})
