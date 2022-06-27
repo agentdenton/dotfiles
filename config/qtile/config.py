@@ -60,7 +60,6 @@ keys = [
 
     Key([mod, "shift"], "c", lazy.window.kill(), desc="Close focused window"),
     Key([mod, "shift"], "r", lazy.reload_config(), desc="Reload the config"),
-    Key([mod, "shift"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
 
     Key([mod], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen mode"),
 	Key([mod], "Tab", lazy.screen.toggle_group(), desc="Toggle between previous and current group"),
@@ -121,28 +120,28 @@ monadwide_layout_theme = {
     "single_border_width": DEFAULT_BORDER_WIDTH,
 }
 
+layouts = [
+    layout.Columns(**column_layout_theme),
+    layout.MonadWide(**monadwide_layout_theme),
+]
+
 float_layout_theme = {
     "border_focus": "#88C0D0",
     "border_normal": "#3b4252",
     "border_width": DEFAULT_BORDER_WIDTH,
 }
 
-layouts = [
-    layout.Columns(**column_layout_theme),
-    layout.MonadWide(**monadwide_layout_theme),
-    layout.Floating(
-        **float_layout_theme,
-        float_rules=[
-                *layout.Floating.default_float_rules,
-                Match(wm_class="confirmreset"),
-                Match(wm_class="makebranch"),
-                Match(wm_class="maketag"),
-                Match(wm_class="ssh-askpass"),
-                Match(title="branchdialog"),
-                Match(title="pinentry"),
-            ]
-        )
-]
+floating_layout = layout.Floating(
+    **float_layout_theme,
+    float_rules=[
+        Match(wm_class="confirmreset"),  # gitk
+        Match(wm_class="makebranch"),  # gitk
+        Match(wm_class="maketag"),  # gitk
+        Match(wm_class="ssh-askpass"),  # ssh-askpass
+        Match(title="branchdialog"),  # gitk
+        Match(title="pinentry"),  # GPG key password entry
+    ]
+)
 
 widget_defaults = dict(
     font="RobotoMono Nerd Font",
