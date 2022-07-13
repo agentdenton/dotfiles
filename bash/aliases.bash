@@ -9,6 +9,7 @@ alias pquery="pacman -Q"
 
 alias lg="lazygit"
 alias vi="nvim"
+alias hx="helix"
 alias bat="bat -p --theme Nord"
 alias nnn="nnn -e -U"
 alias clc="clear"

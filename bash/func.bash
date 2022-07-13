@@ -1,12 +1,12 @@
 ncd() {
   # Block nesting of nnn in subshells
-  if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
+  if [[ -n $NNNLVL ]] && [[ "${NNNLVL:-0}" -ge 1 ]]; then
     echo "nnn is already running"
     return
   fi
 
   nnn "$@"
-  if [ -f "$NNN_TMPFILE" ]; then
+  if [[ -f "$NNN_TMPFILE" ]]; then
     . "$NNN_TMPFILE"
     rm -f "$NNN_TMPFILE" > /dev/null
   fi
@@ -14,8 +14,24 @@ ncd() {
 
 vif() {
   local file=$(fd | fzf)
-  if [ -n "$file" ]; then
+  if [[ -n "$file" ]]; then
     ${EDITOR:-vim} "$file"
+  fi
+}
+
+cdf() {
+  local dir=$(fd -t d | fzf)
+  if [[ -n $dir ]]; then
+    cd $dir
+  fi
+}
+
+manf() {
+  local tmp=$(man -k . | fzf | awk '{print $1 " " $2}')
+  if [[ -n $tmp ]]; then
+    local page=$(echo $tmp | awk '{print $1}')
+    local type=$(echo $tmp | awk '{print $2}')
+    man $type $page
   fi
 }
 
