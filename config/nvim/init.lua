@@ -1,11 +1,11 @@
 require('settings')
 require('mappings')
+require('autocmds')
 
 local g = vim.g
 local fn = vim.fn
 local api = vim.api
 local cmd = vim.cmd
-local opt = vim.opt
 
 local execute = vim.api.nvim_command
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
@@ -19,28 +19,60 @@ if fn.empty(fn.glob(install_path)) > 0 then
   execute 'packadd packer.nvim'
 end
 
-require('packer').startup(function()
-  use "arcticicestudio/nord-vim"
-  use 'folke/tokyonight.nvim'
-  use 'tpope/vim-commentary'
+local disable_plugins = {
+  "netrw",
+  "netrwPlugin",
+  "netrwSettings",
+  "netrwFileHandlers",
+  "gzip",
+  "zip",
+  "zipPlugin",
+  "tar",
+  "tarPlugin",
+  "getscript",
+  "getscriptPlugin",
+  "vimball",
+  "vimballPlugin",
+  "2html_plugin",
+  "logipat",
+  "rrhelper",
+  "spellfile_plugin",
+  "matchit"
+}
 
-  use "ibhagwan/fzf-lua"
-  use "lukas-reineke/indent-blankline.nvim"
+-- disable unused default plugins
+for _, plugin in pairs(disable_plugins) do
+  g["loaded_" .. plugin] = 1
+end
+
+
+local packer = require('packer')
+packer.startup(function()
+  -- use 'bhagwan/fzf-lua'
+
   use 'wbthomason/packer.nvim'
-
+  use 'catppuccin/nvim'
+  use 'lukas-reineke/indent-blankline.nvim'
   use 'nvim-lualine/lualine.nvim'
+
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
   }
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
 end)
 
-require('nvim-treesitter.configs').setup({
+local treesitter = require('nvim-treesitter.configs')
+treesitter.setup({
   highlight = {
     enable = true,
   },
   ensure_installed = {
     'c',
+    'yaml',
     'bash',
     'lua',
     'python',
@@ -49,26 +81,10 @@ require('nvim-treesitter.configs').setup({
   },
 })
 
-require('lualine').setup({
-  options = {
-    theme = require('lline_theme').theme(),
-    component_separators = { left = '', right = ''},
-    section_separators = { left = '', right = ''},
-  },
-  sections = {
-    lualine_a = {'mode'},
-    lualine_b = {'branch', 'diff', 'diagnostics'},
-    lualine_c = {''},
-    lualine_x = {''},
-    lualine_y = {'filename'},
-    lualine_z = {'location'}
-  },
-  inactive_sections = {
-    lualine_c = {'filename'},
-    lualine_x = {'location'},
-  },
-})
+local indent_blankline = require('indent_blankline')
+indent_blankline.setup()
 
-require('indent_blankline').setup()
+local telescope = require('telescope')
 
-cmd [[colorscheme nord]]
+require('lualine_theme')
+require('theme')
