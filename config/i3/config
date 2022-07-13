@@ -1,13 +1,13 @@
-# Mod key Alt
 set $mod Mod4
 
-font pango:RobotoMono Nerd Font 12
+font pango:JetBrainsMono Nerd Font 10
 
 gaps inner 7
 gaps outer 3
 
-default_border pixel 2
+default_border pixel 3
 default_floating_border pixel 1
+focus_follows_mouse yes
 
 floating_modifier $mod
 
@@ -21,9 +21,6 @@ bindsym $mod+Ctrl+v split v
 
 # restart i3 inplace
 bindsym $mod+Shift+r restart
-
-# exit i3
-bindsym $mod+Shift+e exec --no-startup-id i3exit.sh
 
 # fullscreen mode
 bindsym $mod+f fullscreen toggle
@@ -49,8 +46,11 @@ bindsym $mod+Return exec alacritty
 # take a screen show
 bindsym Print exec --no-startup-id flameshot gui
 
+# exit i3
+bindsym $mod+Shift+e exec --no-startup-id i3exit.sh
+
 # lock the screen
-bindsym $mod+F9 exec --no-startup-id i3lock -c #2e3440 --nofork
+bindsym $mod+F9 exec --no-startup-id i3lock -u -c a4b9ef --nofork
 
 # launch programs
 bindsym $mod+d exec --no-startup-id rofi -show run
@@ -95,11 +95,11 @@ set $ws4 4
 set $ws5 5
 set $ws10 10
 
-workspace $ws1 output DisplayPort-1
-workspace $ws2 output DisplayPort-1
-workspace $ws3 output DisplayPort-1
-workspace $ws4 output DisplayPort-1
-workspace $ws5 output DisplayPort-1
+workspace $ws1 output DisplayPort-0
+workspace $ws2 output DisplayPort-0
+workspace $ws3 output DisplayPort-0
+workspace $ws4 output DisplayPort-0
+workspace $ws5 output DisplayPort-0
 workspace $ws10 output eDP
 
 # switch to workspace
@@ -139,11 +139,11 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # class                 border  backgr. text    indicator
-client.focused          #81a1c1 #81a1c1 #ffffff #81a1c1
-client.unfocused        #2e3440 #1f222d #888888 #1f222d
-client.focused_inactive #2e3440 #1f222d #888888 #1f222d
-client.placeholder      #2e3440 #1f222d #888888 #1f222d
-client.urgent           #900000 #900000 #ffffff #900000
+client.focused          #303446 #CFF0F5 #C6D0F5 #FFF5EE
+client.unfocused        #303446 #949cbb #C6D0F5 #1f222d
+client.focused_inactive #303446 #949cbb #C6D0F5 #1f222d
+client.placeholder      #303446 #949cbb #C6D0F5 #1f222d
+client.urgent           #E78284 #BF616A #303446 #BF616A
 
 bar {
   height 30
@@ -155,18 +155,20 @@ bar {
   strip_workspace_numbers yes
 
   colors {
-    separator  #2E3440
-    background #2E3440
-    statusline #88C0D0
+    separator  #303446
+    background #303446
+    statusline #C6D0F5
 
     # colorclass       border    background text
-    focused_workspace  #88C0D0   #2E3440    #88C0D0
-    active_workspace   #88C0D0   #2E3440    #88C0D0
-    inactive_workspace #2E3440   #2E3440    #88C0D0
-    urgent_workspace   #BF616A   #BF616A    #2E3440
-    binding_mode       #88C0D0   #2E3440    #88C0D0
+    focused_workspace  #C6D0F5   #303446    #C6D0F5
+    active_workspace   #C6D0F5   #303446    #C6D0F5
+    inactive_workspace #303446   #303446    #C6D0F5
+    urgent_workspace   #E78284   #E78284    #303446
+    binding_mode       #C6D0F5   #303446    #C6D0F5
   }
 }
 
 # set wallpaper
-exec --no-startup-id feh --bg-scale ~/pictures/wallpapers/mountains.jpg &
+exec --no-startup-id feh --bg-scale ~/git_repos/wallpapers/solids/blue.png &
+# enable lock screen  after some time
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -u -c a4b9ef --nofork &
