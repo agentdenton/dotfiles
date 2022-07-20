@@ -3,27 +3,13 @@
 ## Install
 
 ```
-# install configs as symlinks
 ./install.sh symlink
-
-# or as copies
-./install.sh copy
 ```
 
-### Install packages
+### Used fonts, themes, etc.
 
-```
-sudo pacman -S - < core_pkg.txt
-```
-
-### Install fonts, themes, etc.
-
-```
-paru -S - < paru_pkg.txt
-```
-
-#### Install starship-rs
-
-```
-sh -c "$(curl -fsSL https://starship.rs/install.sh)"
-```
+**ttf-font-awesome**
+**nerd-fonts-roboto-mono**
+**nerd-fonts-jetbrains-mono**
+**adobe-source-han-sans-jp-fonts**
+**volantes-cursors papirus-icon-theme**
