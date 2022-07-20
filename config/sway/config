@@ -133,26 +133,3 @@ client.unfocused        #303446 #949cbb #C6D0F5 #1f222d
 client.focused_inactive #303446 #949cbb #C6D0F5 #1f222d
 client.placeholder      #303446 #949cbb #C6D0F5 #1f222d
 client.urgent           #E78284 #BF616A #303446 #BF616A
-
-bar {
-  height 30
-  workspace_min_width 40
-  position top
-  font pango:RobotoMono Nerd Font 13
-  status_command i3status
-  tray_padding 1
-  strip_workspace_numbers yes
-
-  colors {
-    separator  #303446
-    background #303446
-    statusline #C6D0F5
-
-    # colorclass       border    background text
-    focused_workspace  #C6D0F5   #303446    #C6D0F5
-    active_workspace   #C6D0F5   #303446    #C6D0F5
-    inactive_workspace #303446   #303446    #C6D0F5
-    urgent_workspace   #E78284   #E78284    #303446
-    binding_mode       #C6D0F5   #303446    #C6D0F5
-  }
-}
