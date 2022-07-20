@@ -31,15 +31,8 @@ autocmd('BufEnter', {
 augroup('setIndent', {clear = true})
 autocmd('Filetype', {
   group = 'setIndent',
-  pattern = {'python'},
-  command = 'softtabstop=4 shiftwidth=4 tabstop=4'
-})
--- set indentation to 2 spaces
-augroup('setIndent', {clear = false})
-autocmd('Filetype', {
-  group = 'setIndent',
-  pattern = {'yml'},
-  command = 'softtabstop=2 shiftwidth=2 tabstop=2'
+  pattern = {'python', 'rust'},
+  command = 'set softtabstop=4 shiftwidth=4 tabstop=4'
 })
 
 -- remove line numbers in terminal mode
