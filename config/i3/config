@@ -50,7 +50,7 @@ bindsym Print exec --no-startup-id flameshot gui
 bindsym $mod+Shift+e exec --no-startup-id i3exit.sh
 
 # lock the screen
-bindsym $mod+F9 exec --no-startup-id i3lock -u -c a4b9ef --nofork
+# bindsym $mod+F9 exec --no-startup-id i3lock -u -c a4b9ef --nofork
 
 # launch programs
 bindsym $mod+d exec --no-startup-id rofi -show run
@@ -139,7 +139,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # class                 border  backgr. text    indicator
-client.focused          #303446 #CFF0F5 #C6D0F5 #FFF5EE
+client.focused          #303446 #FFFFFF #C6D0F5 #FFF5EE
 client.unfocused        #303446 #949cbb #C6D0F5 #1f222d
 client.focused_inactive #303446 #949cbb #C6D0F5 #1f222d
 client.placeholder      #303446 #949cbb #C6D0F5 #1f222d
@@ -171,4 +171,4 @@ bar {
 # set wallpaper
 exec --no-startup-id feh --bg-scale ~/git_repos/wallpapers/solids/blue.png &
 # enable lock screen  after some time
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -u -c a4b9ef --nofork &
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -u -c a4b9ef --nofork &
