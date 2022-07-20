@@ -1,6 +1,0 @@
-ttf-font-awesome
-nerd-fonts-roboto-mono
-adobe-source-han-sans-jp-fonts
-nerd-fonts-jetbrains-mono
-volantes-cursors papirus-icon-theme
-nordic-theme
