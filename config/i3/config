@@ -152,6 +152,7 @@ bar {
   font pango:RobotoMono Nerd Font 13
   status_command i3status
   tray_padding 1
+  tray_output none
   strip_workspace_numbers yes
 
   colors {
@@ -170,5 +171,3 @@ bar {
 
 # set wallpaper
 exec --no-startup-id feh --bg-scale ~/git_repos/wallpapers/solids/blue.png &
-# enable lock screen  after some time
-# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -u -c a4b9ef --nofork &
