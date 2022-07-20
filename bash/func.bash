@@ -13,7 +13,7 @@ ncd() {
 }
 
 vif() {
-  local file=$(fd | fzf)
+  local file=$(fd -t f | fzf)
   if [[ -n "$file" ]]; then
     ${EDITOR:-vim} "$file"
   fi
