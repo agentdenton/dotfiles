@@ -42,6 +42,7 @@ alias gba="git branch -a"
 alias gl="git log"
 alias glp="git log -p"
 alias gl1="git log --oneline"
+alias gwhat="git log --diff-filter=A --"
 
 alias gbl="git blame"
 alias gdp="git diff -p"
