@@ -32,29 +32,29 @@ local colors = {
 local custom_frappe = {
   normal = {
     a = {bg = colors.blue, fg = colors.mantle, gui = "bold"},
-    b = {bg = colors.surface0, fg = colors.blue},
-    c = {bg = colors.surface0, fg = colors.text},
+    b = {bg = colors.base, fg = colors.blue},
+    c = {bg = colors.base, fg = colors.text},
   },
   insert = {
     a = {bg = colors.green, fg = colors.base, gui = "bold"},
-    b = {bg = colors.surface1, fg = colors.teal},
+    b = {bg = colors.base, fg = colors.teal},
   },
   command = {
     a = {bg = colors.peach, fg = colors.base, gui = "bold"},
-    b = {bg = colors.surface1, fg = colors.peach},
+    b = {bg = colors.base, fg = colors.peach},
   },
   visual = {
     a = {bg = colors.mauve, fg = colors.base, gui = "bold"},
-    b = {bg = colors.surface1, fg = colors.mauve},
+    b = {bg = colors.base, fg = colors.mauve},
   },
   replace = {
     a = {bg = colors.red, fg = colors.base, gui = "bold"},
-    b = {bg = colors.surface1, fg = colors.red},
+    b = {bg = colors.base, fg = colors.red},
   },
   inactive = {
     a = {bg = colors.mantle, fg = colors.blue},
     b = {bg = colors.mantle, fg = colors.surface1, gui = "bold"},
-    c = {bg = colors.surface0, fg = colors.overlay0},
+    c = {bg = colors.base, fg = colors.overlay0},
   },
 }
 
@@ -66,10 +66,11 @@ lualine.setup({
     section_separators = { left = '', right = '' },
   },
   sections = {
-    lualine_b = { 'filename', 'branch' },
-    lualine_c = {},
-    lualine_x = {},
-    lualine_y = { 'filetype', 'diff' },
+    lualine_b = {'filename', 'location'},
+    lualine_c = {''},
+    lualine_x = {'branch'},
+    lualine_y = {''},
+    lualine_z = {''},
   },
   tabline = {},
   extensions = {},
