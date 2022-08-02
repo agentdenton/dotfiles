@@ -5,7 +5,7 @@ font pango:JetBrainsMono Nerd Font 10
 gaps inner 7
 gaps outer 3
 
-default_border pixel 3
+default_border pixel 5
 default_floating_border pixel 1
 focus_follows_mouse yes
 
@@ -139,7 +139,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # class                 border  backgr. text    indicator
-client.focused          #303446 #FFFFFF #C6D0F5 #FFF5EE
+client.focused          #303446 #c6d0f5 #C6D0F5 #c6d0f5
 client.unfocused        #303446 #949cbb #C6D0F5 #1f222d
 client.focused_inactive #303446 #949cbb #C6D0F5 #1f222d
 client.placeholder      #303446 #949cbb #C6D0F5 #1f222d
@@ -170,4 +170,4 @@ bar {
 }
 
 # set wallpaper
-exec --no-startup-id feh --bg-scale ~/git_repos/wallpapers/solids/blue.png &
+exec --no-startup-id feh --bg-scale ~/git_repos/wallpapers/gradients/magenta_blue.png &
