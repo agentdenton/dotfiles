@@ -1,7 +1,3 @@
-sway
-swaylock
-swaybg
-alacritty
 zoxide
 ripgrep
 bat
@@ -11,5 +7,4 @@ vim
 neovim
 htop
 curl
-zathura
-rofi
+git
