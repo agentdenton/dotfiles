@@ -43,6 +43,9 @@ map('n', '<c-p>', ':edit #<CR>', {noremap = true})
 -- close the buffer
 map('n', '<c-c>', ':bdelete<CR>', {noremap = true})
 
+-- close all buffers except current one
+map('n', '<c-c>a', ':%bd|e#<CR>', {noremap = true})
+
 -- create a terminal in a split below
 map('n', '<leader>t', ':split | term<CR>', {noremap = true})
 -- remove highlight from words

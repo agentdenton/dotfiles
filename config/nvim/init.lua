@@ -46,10 +46,7 @@ for _, plugin in pairs(disable_plugins) do
 end
 
 
-local packer = require('packer')
-packer.startup(function()
-  -- use 'bhagwan/fzf-lua'
-
+require('packer').startup(function()
   use 'wbthomason/packer.nvim'
   use 'catppuccin/nvim'
   use 'lukas-reineke/indent-blankline.nvim'
@@ -65,8 +62,7 @@ packer.startup(function()
   }
 end)
 
-local treesitter = require('nvim-treesitter.configs')
-treesitter.setup({
+require('nvim-treesitter.configs').setup({
   highlight = {
     enable = true,
   },
@@ -81,10 +77,8 @@ treesitter.setup({
   },
 })
 
-local indent_blankline = require('indent_blankline')
-indent_blankline.setup()
-
-local telescope = require('telescope')
+require('indent_blankline').setup()
+require('telescope').setup()
 
 require('lualine_theme')
 require('theme')
