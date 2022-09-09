@@ -5,7 +5,7 @@ font pango:JetBrainsMono Nerd Font 10
 gaps inner 7
 gaps outer 3
 
-default_border pixel 5
+default_border pixel 3
 default_floating_border pixel 1
 focus_follows_mouse yes
 
@@ -95,12 +95,12 @@ set $ws4 4
 set $ws5 5
 set $ws10 10
 
-workspace $ws1 output DisplayPort-0
-workspace $ws2 output DisplayPort-0
-workspace $ws3 output DisplayPort-0
-workspace $ws4 output DisplayPort-0
-workspace $ws5 output DisplayPort-0
-workspace $ws10 output eDP
+workspace $ws1 output DP-2
+workspace $ws2 output DP-2
+workspace $ws3 output DP-2
+workspace $ws4 output DP-2
+workspace $ws5 output DP-2
+workspace $ws10 output eDP-1
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -149,7 +149,7 @@ bar {
   height 30
   workspace_min_width 40
   position top
-  font pango:RobotoMono Nerd Font 13
+  font pango:RobotoMono Nerd Font 12
   status_command i3status
   tray_padding 1
   tray_output none
