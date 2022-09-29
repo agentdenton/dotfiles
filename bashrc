@@ -14,8 +14,8 @@ export NNN_PLUG='f:finder;o:fzopen;p:mocplay;d:diffs;t:nmount;v:imgview'
 export NNN_FCOLORS="0B0B04060006060009060B06"
 export NNN_TMPFILE="/tmp/lastd"
 
-# export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-export MANPAGER="less -s -M +Gg"
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+# export MANPAGER="less -s -M +Gg"
 
 export EXA_STRICT=1
 export BAT_THEME="base16"
@@ -36,13 +36,18 @@ alias vim="nvim"
 alias hx="helix"
 alias bat="bat -p"
 alias fd="fd --color=never"
-alias nnn="nnn -e -U"
+alias nnn="nnn -e -U -A"
 alias clc="clear"
 
 alias cd="z"
 alias cdi="zi"
 
 alias mkin="sudo make install"
+alias mc="rm -rf build"
+alias msd="meson setup build --buildtype debug"
+alias msr="meson setup build --buildtype release"
+alias nb="ninja -C build"
+alias nc="ninja -C build clean"
 
 alias l="exa -l -s extension --icons"
 alias ls="exa -s extension --icons"
@@ -109,20 +114,11 @@ cdf() {
   fi
 }
 
-manf() {
-  local tmp=$(man -k . | fzf | awk '{print $1 " " $2}')
-  if [[ -n $tmp ]]; then
-    local page=$(echo $tmp | awk '{print $1}')
-    local type=$(echo $tmp | awk '{print $2}')
-    man $type $page
-  fi
-}
-
 is_in_git_repo() {
   git rev-parse HEAD > /dev/null 2>&1
 }
 
-vifg() {
+gvif() {
   is_in_git_repo || return
   local file=$(git status | grep "modified:" | awk '{print $2}' | fzf);
   if [ -n "$file" ]; then
@@ -130,7 +126,7 @@ vifg() {
   fi
 }
 
-fgb() {
+gckf() {
   is_in_git_repo || return
   branch=$(git branch --color=always --all --sort=-committerdate |
     grep -v HEAD |
@@ -150,8 +146,11 @@ fgb() {
   fi
 }
 
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
 bind -x '"\C-n":"ncd"'
 bind -x '"\C-f":"vif"'
+bind -x '"\C-p":"cdf"'
 
 eval "$(starship init bash)"
 eval "$(zoxide init bash)"

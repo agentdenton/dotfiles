@@ -45,13 +45,11 @@ for _, plugin in pairs(disable_plugins) do
   g["loaded_" .. plugin] = 1
 end
 
-
 require('packer').startup(function()
   use 'wbthomason/packer.nvim'
   use 'catppuccin/nvim'
   use 'lukas-reineke/indent-blankline.nvim'
   use 'nvim-lualine/lualine.nvim'
-
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',

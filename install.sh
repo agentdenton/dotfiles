@@ -9,6 +9,6 @@ if [[ $(dirs) != $dots_dir ]]; then
 fi
 
 ln -fns ~/.dotfiles/bashrc ~/.bashrc
-ln -fns ~/.dotfiles/vimrc ~/.vimrc
 ln -fns ~/.dotfiles/starship.toml ~/.config/starship.toml
-ln -fns ~/.dotfiles/config/nvim ~/.config
+ln -fns ~/.dotfiles/vimrc ~/.vimrc
+ln -fns ~/.dotfiles/nvim ~/.config
