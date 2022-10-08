@@ -1,6 +1,8 @@
 set -o vi
 shopt -s histverify
 
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 export FZF_DEFAULT_OPTS="-m --height 50%"
 
@@ -31,16 +33,11 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 
 alias lg="lazygit"
-alias vi="nvim"
-alias vim="nvim"
 alias hx="helix"
 alias bat="bat -p"
 alias fd="fd --color=never"
 alias nnn="nnn -e -U -A"
 alias clc="clear"
-
-alias cd="z"
-alias cdi="zi"
 
 alias mkin="sudo make install"
 alias mc="rm -rf build"
@@ -48,13 +45,6 @@ alias msd="meson setup build --buildtype debug"
 alias msr="meson setup build --buildtype release"
 alias nb="ninja -C build"
 alias nc="ninja -C build clean"
-
-alias l="exa -l -s extension --icons"
-alias ls="exa -s extension --icons"
-alias ll="exa -la -s extension --icons"
-alias lss="exa -l -s size --icons"
-alias lsd="exa -l -s date --icons"
-alias lst="exa -l -s size --icons -T"
 
 alias bsrc="source ~/.bashrc"
 alias bedit="$EDITOR ~/.bashrc"
@@ -72,6 +62,7 @@ alias gca="git commit --amend"
 alias gs="git status"
 alias grv="git remote -v"
 alias gba="git branch -a"
+alias gck="git checkout"
 
 alias gl="git log"
 alias glp="git log -p"
@@ -85,6 +76,21 @@ alias grh="git reset --hard"
 alias grs="git reset --soft"
 
 alias gclc="git clean -fdx"
+
+if [[ $(cat /etc/hostname) == "denton-lp" ]]; then
+  alias vi="nvim"
+  alias vim="nvim"
+
+  alias cd="z"
+  alias cdi="zi"
+
+  alias l="exa -l -s extension --icons"
+  alias ls="exa -s extension --icons"
+  alias ll="exa -la -s extension --icons"
+  alias lss="exa -l -s size --icons"
+  alias lsd="exa -l -s date --icons"
+  alias lst="exa -l -s size --icons -T"
+fi
 
 ncd() {
   # Block nesting of nnn in subshells
@@ -145,8 +151,6 @@ gckf() {
     git checkout $branch;
   fi
 }
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 bind -x '"\C-n":"ncd"'
 bind -x '"\C-f":"vif"'
