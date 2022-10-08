@@ -47,9 +47,11 @@ end
 
 require('packer').startup(function()
   use 'wbthomason/packer.nvim'
-  use 'catppuccin/nvim'
+  use 'neovim/nvim-lspconfig'
   use 'lukas-reineke/indent-blankline.nvim'
   use 'nvim-lualine/lualine.nvim'
+  use 'catppuccin/nvim'
+  use 'Shatur/neovim-ayu'
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
@@ -75,8 +77,13 @@ require('nvim-treesitter.configs').setup({
   },
 })
 
+require('lspconfig')['clangd'].setup({
+    on_attach = on_attach,
+    flags = lsp_flags,
+})
+
 require('indent_blankline').setup()
 require('telescope').setup()
 
-require('lualine_theme')
-require('theme')
+g.catppuccin_flavour = "frappe"
+cmd [[ colorscheme catppuccin ]]

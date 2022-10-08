@@ -53,7 +53,12 @@ map('n', '<leader>t', ':split | term<CR>', {noremap = true})
 map('n', '<leader><space>', ':set hlsearch!<CR>', {noremap = true})
 
 -- telescope mappings
-map('n', '<leader>ff', ':lua require("telescope.builtin").find_files()<CR>', {noremap = true})
-map('n', '<leader>fg', ':lua require("telescope.builtin").live_grep()<CR>', {noremap = true})
-map('n', '<leader>fb', ':lua require("telescope.builtin").buffers()<CR>', {noremap = true})
-map('n', '<leader>fgc', ':lua require("telescope.builtin").current_buffer_fuzzy_find()<CR>', {noremap = true})
+map('n', '<leader>ff', ':Telescope find_files<CR>', {noremap = true})
+map('n', '<leader>fg', ':Telescope live_grep<CR>', {noremap = true})
+map('n', '<leader>fb', ':Telescope buffers<CR>', {noremap = true})
+map('n', '<leader>fgc', ':Telescope current_buffer_fuzzy_find<CR>', {noremap = true})
+
+-- lsp mappings
+vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, {noremap = true})
+vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, {noremap = true})
+vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {noremap = true})
