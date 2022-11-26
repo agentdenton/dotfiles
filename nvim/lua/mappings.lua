@@ -53,10 +53,10 @@ map('n', '<leader>t', ':split | term<CR>', {noremap = true})
 map('n', '<leader><space>', ':set hlsearch!<CR>', {noremap = true})
 
 -- telescope mappings
-map('n', '<leader>ff', ':Telescope find_files<CR>', {noremap = true})
-map('n', '<leader>fg', ':Telescope live_grep<CR>', {noremap = true})
-map('n', '<leader>fb', ':Telescope buffers<CR>', {noremap = true})
-map('n', '<leader>fgc', ':Telescope current_buffer_fuzzy_find<CR>', {noremap = true})
+map('n', '<leader>f', ':Telescope find_files<CR>', {noremap = true})
+map('n', '<leader>g', ':Telescope live_grep<CR>', {noremap = true})
+map('n', '<leader>b', ':Telescope buffers<CR>', {noremap = true})
+map('n', '<leader>gc', ':Telescope current_buffer_fuzzy_find<CR>', {noremap = true})
 
 -- lsp mappings
 vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, {noremap = true})

@@ -52,6 +52,7 @@ require('packer').startup(function()
   use 'nvim-lualine/lualine.nvim'
   use 'catppuccin/nvim'
   use 'Shatur/neovim-ayu'
+  use 'folke/tokyonight.nvim'
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
@@ -85,5 +86,4 @@ require('lspconfig')['clangd'].setup({
 require('indent_blankline').setup()
 require('telescope').setup()
 
-g.catppuccin_flavour = "frappe"
-cmd [[ colorscheme catppuccin ]]
+cmd [[ colorscheme catppuccin-frappe ]]
