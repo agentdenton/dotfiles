@@ -12,4 +12,5 @@
 
 - **ttf-font-awesome**
 - **nerd-fonts-jetbrains-mono**
+- **nerd-fonts-ubuntu**
 - **adobe-source-han-sans-jp-fonts**
