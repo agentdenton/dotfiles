@@ -52,6 +52,8 @@ bindsym $mod+F7 exec sway_brightness_keyboard.py +1
 
 bindsym $mod+Shift+e exec sway_exit.sh
 
+bindsym $mod+F9 exec swaylock -k -i ~/Pictures/wallpapers/avatar_fish_realistic.jpg
+
 # close a window
 bindsym $mod+Shift+c kill
 
