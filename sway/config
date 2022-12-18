@@ -1,0 +1,129 @@
+set $mod Mod1
+set $term alacritty
+set $wallpaper_path ~/Pictures/wallpapers/avatar_fish_realistic.jpg
+
+font pango:Iosevka Nerd Font 12
+
+output eDP-1 bg $wallpaper_path stretch
+
+gaps inner 10
+gaps outer 10
+
+default_border pixel 3
+default_floating_border pixel 1
+
+focus_follows_mouse yes
+
+floating_modifier $mod normal
+
+# launch terminal
+bindsym $mod+Return exec alacritty
+
+# launch programs
+bindsym $mod+d exec --no-startup-id rofi -show run
+
+# switch windows
+bindsym $mod+w exec --no-startup-id rofi -show window
+
+# ssh session
+bindsym $mod+s exec --no-startup-id rofi -show ssh
+
+# volume control
+bindsym $mod+F1 exec pactl set-sink-mute @DEFAULT_SINK@ toggle # Mute
+bindsym $mod+F2 exec pactl set-sink-volume @DEFAULT_SINK@ -5%  # Up
+bindsym $mod+F3 exec pactl set-sink-volume @DEFAULT_SINK@ +5%  # Down
+
+# close a window
+bindsym $mod+Shift+c kill
+
+# horizontal split
+bindsym $mod+Ctrl+h split h
+
+# vertical split
+bindsym $mod+Ctrl+v split v
+
+# reload
+bindsym $mod+Shift+r reload
+
+# fullscreen mode
+bindsym $mod+f fullscreen toggle
+
+# switch to a previous workspace
+bindsym $mod+Tab workspace back_and_forth
+
+# change container layout (toggle split, tabbed)
+bindsym $mod+Shift+s layout toggle split
+bindsym $mod+Shift+t layout tabbed
+
+# toggle tiling / floating
+bindsym $mod+Shift+f floating toggle
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# to display workspaces with icons
+set $ws1 1
+set $ws2 2
+set $ws3 3
+set $ws4 4
+set $ws5 5
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+
+# resize window mode
+mode "resize" {
+  bindsym h resize shrink width 10 px or 10 ppt
+  bindsym j resize grow height 10 px or 10 ppt
+  bindsym k resize shrink height 10 px or 10 ppt
+  bindsym l resize grow width 10 px or 10 ppt
+
+  bindsym Left resize shrink width 10 px or 10 ppt
+  bindsym Down resize grow height 10 px or 10 ppt
+  bindsym Up resize shrink height 10 px or 10 ppt
+  bindsym Right resize grow width 10 px or 10 ppt
+
+  # back to normal: Enter or Escape
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+bar {
+    swaybar_command waybar
+}
+
+# class                 border  backgr. text    indicator
+client.focused          #cba6f7 #cba6f7 #000000 #cba6f7
+client.unfocused        #303446 #949cbb #C6D0F5 #1f222d
+client.focused_inactive #303446 #949cbb #C6D0F5 #1f222d
+client.placeholder      #303446 #949cbb #C6D0F5 #1f222d
+client.urgent           #E78284 #BF616A #303446 #BF616A
+
+include /etc/sway/config.d/*
