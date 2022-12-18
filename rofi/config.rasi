@@ -1,6 +1,6 @@
 configuration{
     modi: "run";
-    show-icons: true;
+    show-icons: false;
     terminal: "alacritty";
     drun-display-format: "{icon} {name}";
     location: 0;
