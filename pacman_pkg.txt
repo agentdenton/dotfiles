@@ -3,8 +3,12 @@ ripgrep
 bat
 fd
 exa
+alacritty
 vim
 neovim
 htop
 curl
 git
+sway
+waybar
+rofi

@@ -70,6 +70,7 @@ require('nvim-treesitter.configs').setup({
   ensure_installed = {
     'c',
     'yaml',
+    'json',
     'bash',
     'lua',
     'python',

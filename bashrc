@@ -65,6 +65,7 @@ alias gck="git checkout"
 alias gl="git log"
 alias glp="git log -p"
 alias gl1="git log --oneline"
+alias gshow="git show"
 alias gwhat="git log --diff-filter=A --"
 
 alias gbl="git blame"
