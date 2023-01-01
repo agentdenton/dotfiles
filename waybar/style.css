@@ -13,6 +13,10 @@ window#waybar {
 	background-color: #313244;
 }
 
+#mode {
+    background-color: #313244;
+}
+
 #workspaces {
 	background-color: #313244;
 }
