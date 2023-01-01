@@ -21,6 +21,7 @@ def main():
     with open(fdpath, 'r+') as fd:
         cur_br = int(fd.readline())
         logging.info(f'current brightness = {cur_br}')
+
         if br.startswith('+'):
             br = cur_br + int(br.split('+')[1])
         elif br.startswith('-'):
