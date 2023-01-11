@@ -35,11 +35,6 @@ window#waybar {
     background-color: #f38ba8;
 }
 
-.modules-right {
-	background-color: #313244;
-	border-radius: 2rem;
-}
-
 #clock, #battery {
     margin: 4px;
     padding-left: 8px;
