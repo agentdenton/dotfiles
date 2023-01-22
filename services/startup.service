@@ -1,9 +1,0 @@
-[Unit]
-Description=Hacky startup
-
-[Service]
-Type=oneshot
-ExecStart=/usr/local/bin/startup.py
-
-[Install]
-WantedBy=multi-user.target
