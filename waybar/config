@@ -3,10 +3,21 @@
     "position": "top",
     "modules-left": ["sway/workspaces", "sway/window", "sway/mode"],
     "modules-center": [""],
-    "modules-right": ["battery", "clock"],
+    "modules-right": ["network", "backlight", "pulseaudio", "battery", "clock"],
     "height": 15,
     "sway/window": {
         "max-length": 50
+    },
+    "network": {
+        "format-wifi": "net: {essid}",
+        "format-ethernet": "net: {ipaddr}",
+        "format-disconnected": "net: disconnected",
+    },
+    "backlight": {
+        "format": "backlight: {percent}%",
+    },
+    "pulseaudio": {
+        "format": "vol: {volume}%",
     },
     "battery": {
         "format": "bat: {capacity}%",

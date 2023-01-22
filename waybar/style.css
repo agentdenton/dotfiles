@@ -5,6 +5,7 @@
 
 window#waybar {
     background-color: transparent;
+    color: #c6d0f5;
 }
 
 #window {
@@ -15,10 +16,12 @@ window#waybar {
 
 #mode {
     background-color: #313244;
+    color: #c6d0f5;
 }
 
-#workspaces {
+#workspaces button {
 	background-color: #313244;
+    color: #c6d0f5;
 }
 
 #workspaces button:hover {
@@ -35,18 +38,33 @@ window#waybar {
     background-color: #f38ba8;
 }
 
-#clock, #battery {
+#network, #backlight, #pulseaudio, #clock, #battery {
     margin: 4px;
     padding-left: 8px;
     padding-right: 8px;
 }
 
 #clock {
-    background-color: #85c1dc;
-    color: #45475a;
+    background-color: #313244;
+    color: #c6d0f5;
 }
 
 #battery {
-    background-color: #a6d189;
-    color: #45475a;
+    background-color: #313244;
+    color: #c6d0f5;
+}
+
+#pulseaudio {
+    background-color: #313244;
+    color: #c6d0f5;
+}
+
+#backlight {
+    background-color: #313244;
+    color: #c6d0f5;
+}
+
+#network {
+    background-color: #313244;
+    color: #c6d0f5;
 }
