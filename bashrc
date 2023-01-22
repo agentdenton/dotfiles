@@ -27,6 +27,8 @@ export EXA_STRICT=1
 export BAT_THEME="base16"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
+export PATH="$HOME/.local/bin:$PATH"
+
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
