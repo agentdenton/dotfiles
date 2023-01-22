@@ -7,13 +7,13 @@ shell:
 font:
   size: 15
   normal:
-    family: UbuntuMono Nerd Font
+    family: UbuntuMono
     style:  Regular
   bold:
-    family: UbuntuMono Nerd Font
+    family: UbuntuMono
     style:  Bold
   italic:
-    family: UbuntuMono Nerd Font
+    family: UbuntuMono
     style:  Italic
 
 colors:
