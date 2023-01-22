@@ -51,8 +51,6 @@ require('packer').startup(function()
   use 'lukas-reineke/indent-blankline.nvim'
   use 'nvim-lualine/lualine.nvim'
   use 'catppuccin/nvim'
-  use 'Shatur/neovim-ayu'
-  use 'folke/tokyonight.nvim'
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
@@ -64,9 +62,6 @@ require('packer').startup(function()
 end)
 
 require('nvim-treesitter.configs').setup({
-  highlight = {
-    enable = true,
-  },
   ensure_installed = {
     'c',
     'yaml',
@@ -77,11 +72,13 @@ require('nvim-treesitter.configs').setup({
     'rust',
     'julia',
   },
-})
-
-require('lspconfig')['clangd'].setup({
-    on_attach = on_attach,
-    flags = lsp_flags,
+  highlight = {
+    enable = true,
+  },
+  indent = {
+    enable = true,
+    disable = {"python"}
+  },
 })
 
 require('indent_blankline').setup()
