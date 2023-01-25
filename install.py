@@ -12,6 +12,7 @@ def install_configs() -> None:
         'ln -fns ~/.dotfiles/sway ~/.config',
         'ln -fns ~/.dotfiles/waybar ~/.config',
         'ln -fns ~/.dotfiles/rofi ~/.config',
+        'ln -fns ~/.dotfiles/ranger ~/.config',
         'ln -fns ~/.dotfiles/zathura ~/.config',
         'ln -fns ~/.dotfiles/starship.toml ~/.config/starship.toml',
         'ln -fns ~/.dotfiles/alacritty.yml ~/.config/alacritty/alacritty.yml',
@@ -45,7 +46,7 @@ def main() -> None:
         'variants',
         nargs='+',
         type=str,
-        help=f'Possible variants {variants}'
+        help=f'Possible variants {list(variants.keys())}'
     )
     args = parser.parse_args()
     if 'all' in args.variants:
