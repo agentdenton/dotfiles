@@ -5,12 +5,11 @@
 ### Run the following:
 
 ```
-./install.sh
+./install.py all
 ```
 
 ### Fonts
 
 - **ttf-font-awesome**
-- **nerd-fonts-jetbrains-mono**
-- **nerd-fonts-ubuntu**
+- **ttf-ubuntumono-nerd**
 - **adobe-source-han-sans-jp-fonts**
