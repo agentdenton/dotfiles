@@ -1,5 +1,6 @@
 set -o vi
 shopt -s histverify
+shopt -s autocd
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
@@ -38,6 +39,7 @@ alias hx="helix"
 alias bat="bat -p"
 alias fd="fd --color=never"
 alias nnn="nnn -e -U -A"
+alias ranger="ranger --choosedir=$HOME/.rangerdir"
 alias clc="clear"
 
 alias mkin="sudo make install"
@@ -117,6 +119,13 @@ ncd() {
     fi
 }
 
+rng() {
+    ranger
+    if [[ -f $HOME/.rangerdir ]]; then
+        cd $(cat $HOME/.rangerdir)
+    fi
+}
+
 vif() {
     local file=$(fd -t f | fzf)
     if [[ -n "$file" ]]; then
@@ -125,7 +134,7 @@ vif() {
 }
 
 cdf() {
-    local dir=$(fd -t d | fzf)
+    local dir=$(fd -t d --max-depth 1 | fzf)
     if [[ -n $dir ]]; then
         cd $dir
     fi
@@ -163,6 +172,5 @@ gcf() {
     fi
 }
 
-bind -x '"\C-n":"ncd"'
 bind -x '"\C-f":"vif"'
 bind -x '"\C-p":"cdf"'
