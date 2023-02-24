@@ -140,6 +140,14 @@ cdf() {
     fi
 }
 
+exf() {
+    local file=$(fd -t f --max-depth 1| fzf)
+    local exe_perm=$(ls -la $file | cut -d ' ' -f 1 | grep -o . | sed '4q;d')
+    if [[ $exe_perm == 'x' ]]; then
+        ./$file
+    fi
+}
+
 is_in_git_repo() {
     git rev-parse HEAD > /dev/null 2>&1
 }
@@ -174,3 +182,4 @@ gcf() {
 
 bind -x '"\C-f":"vif"'
 bind -x '"\C-p":"cdf"'
+bind -x '"\C-e":"exf"'
