@@ -18,6 +18,7 @@
     },
     "pulseaudio": {
         "format": "vol: {volume}%",
+        "format-muted": "vol: muted",
     },
     "battery": {
         "format": "bat: {capacity}%",
