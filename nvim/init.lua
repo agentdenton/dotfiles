@@ -73,10 +73,9 @@ require('nvim-treesitter.configs').setup({
     'julia',
   },
   highlight = {
-    enable = true,
+    disable = {"python", "c"},
   },
   indent = {
-    enable = true,
     disable = {"python"}
   },
 })
