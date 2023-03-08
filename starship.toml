@@ -14,13 +14,13 @@ $character"""
 style = "blue"
 
 [character]
-success_symbol = "[❯](purple)"
-error_symbol = "[❯](red)"
-vimcmd_symbol = "[❮](green)"
+success_symbol = "[\\$](green)"
+error_symbol = "[\\$](red)"
+vimcmd_symbol = "[\\$](purple)"
 
 [git_branch]
 format = "on [$branch]($style)"
-style = "bright-black"
+style = "purple"
 
 [git_status]
 format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
@@ -43,4 +43,4 @@ style = "yellow"
 
 [python]
 format = "[$virtualenv]($style) "
-style = "bright-black"
+style = "yellow"
