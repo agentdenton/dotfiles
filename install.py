@@ -7,6 +7,7 @@ from subprocess import run
 def install_configs() -> None:
     cmds = [
         'ln -fns ~/.dotfiles/bashrc ~/.bashrc',
+        'ln -fns ~/.dotfiles/inputrc ~/.inputrc',
         'ln -fns ~/.dotfiles/vimrc ~/.vimrc',
         'ln -fns ~/.dotfiles/nvim ~/.config',
         'ln -fns ~/.dotfiles/sway ~/.config',
