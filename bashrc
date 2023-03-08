@@ -17,7 +17,6 @@ export NNN_PLUG='f:finder;o:fzopen;p:mocplay;d:diffs;t:nmount;v:imgview'
 export NNN_FCOLORS="0B0B04060006060009060B06"
 export NNN_TMPFILE="/tmp/lastd"
 
-
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
@@ -29,6 +28,7 @@ export BAT_THEME="base16"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 alias ..='cd ..'
 alias ...='cd ../..'
