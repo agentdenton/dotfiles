@@ -1,6 +1,7 @@
 require('settings')
 require('mappings')
 require('autocmds')
+require('commands')
 
 local g = vim.g
 local fn = vim.fn
@@ -47,9 +48,7 @@ end
 
 require('packer').startup(function()
   use 'wbthomason/packer.nvim'
-  use 'neovim/nvim-lspconfig'
   use 'lukas-reineke/indent-blankline.nvim'
-  use 'nvim-lualine/lualine.nvim'
   use 'catppuccin/nvim'
   use {
     'nvim-treesitter/nvim-treesitter',
