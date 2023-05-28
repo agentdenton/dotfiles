@@ -5,7 +5,7 @@ shell:
   program: /bin/bash
 
 font:
-  size: 12.5
+  size: 13
   normal:
     family: JetBrainsMono Nerd Font
     style:  Medium
