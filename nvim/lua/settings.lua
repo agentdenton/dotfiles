@@ -1,7 +1,7 @@
 vim.opt.completeopt = 'menuone,noinsert,noselect' -- better completion
 vim.opt.ignorecase = true -- case insensitive search
 -- opt.smartcase = true -- case sensitive when uppercase
-vim.opt.undofile = true  -- enable undo file
+vim.opt.undofile = false  -- enable undo file
 vim.opt.swapfile = false  -- disable swap file
 vim.opt.hidden = true -- don't save on buffer change
 vim.opt.shortmess = vim.opt.shortmess + 'c'
@@ -34,3 +34,6 @@ vim.opt.termguicolors = true
 vim.opt.background = 'dark'
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.opt.colorcolumn = '81'
+-- vim.opt.iskeyword:remove{'_'}
+-- vim.o.guicursor = "n-v-c-i:block"
