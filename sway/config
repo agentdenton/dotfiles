@@ -9,6 +9,13 @@ output eDP-1 bg $wallpaper_path stretch
 gaps inner 10
 gaps outer 10
 
+# disable antialiasing?
+output * subpixel none
+
+# set $opacity 0.9
+# for_window [class=".*"] opacity $opacity
+# for_window [app_id=".*"] opacity $opacity
+
 default_border pixel 2
 default_floating_border pixel 1
 
