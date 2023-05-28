@@ -1,16 +1,18 @@
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
 set -o vi
 shopt -s histverify
-shopt -s autocd
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 export FZF_DEFAULT_OPTS="-m --height 50%"
-
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS" \
-    --color=bg+:#414559,bg:#303446,spinner:#f2d5cf,hl:#e78284 \
-    --color=fg:#c6d0f5,header:#e78284,info:#ca9ee6,pointer:#f2d5cf \
-    --color=marker:#f2d5cf,fg+:#c6d0f5,prompt:#ca9ee6,hl+:#e78284"
+--color=bg+:#414559,bg:#303446,spinner:#f2d5cf,hl:#e78284 \
+--color=fg:#c6d0f5,header:#e78284,info:#ca9ee6,pointer:#f2d5cf \
+--color=marker:#f2d5cf,fg+:#c6d0f5,prompt:#ca9ee6,hl+:#e78284"
+# export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS" \
+# --color=bg+:#ccd0da,bg:#eff1f5,spinner:#dc8a78,hl:#d20f39 \
+# --color=fg:#4c4f69,header:#d20f39,info:#8839ef,pointer:#dc8a78 \
+# --color=marker:#dc8a78,fg+:#4c4f69,prompt:#8839ef,hl+:#d20f39"
 
 export NNN_FIFO=/tmp/nnn.fifo
 export NNN_PLUG='f:finder;o:fzopen;p:mocplay;d:diffs;t:nmount;v:imgview'
@@ -24,7 +26,7 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 
 export EXA_STRICT=1
-export BAT_THEME="base16"
+export BAT_THEME="ansi"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 export PATH="$HOME/.local/bin:$PATH"
@@ -36,6 +38,7 @@ alias ....='cd ../../..'
 
 alias lg="lazygit"
 alias hx="helix"
+alias zel="zellij options --theme catppuccin-frappe"
 alias bat="bat -p"
 alias fd="fd --color=never"
 alias nnn="nnn -e -U -A"
@@ -60,30 +63,26 @@ alias dict="trans -d "
 
 alias gc="git commit"
 alias gca="git commit --amend"
-
 alias gs="git status"
 alias grv="git remote -v"
 alias gba="git branch -a"
 alias gck="git checkout"
-
+alias gdiff="git diff"
 alias gl="git log"
 alias glp="git log -p"
 alias gl1="git log --oneline"
 alias gshow="git show"
 alias gwhat="git log --diff-filter=A --"
-
 alias gbl="git blame"
 alias gdp="git diff -p"
-
 alias grh="git reset --hard"
 alias grs="git reset --soft"
-
 alias gclc="git clean -fdx"
 
 if [[ -x $(command -v exa) ]]; then
-    alias l="exa -l -s extension"
-    alias ls="exa -s extension"
-    alias ll="exa -la -s extension"
+    alias l="exa -l --group-directories-first"
+    alias ls="exa --group-directories-first"
+    alias ll="exa -la --group-directories-first"
     alias lss="exa -l -s size"
     alias lsd="exa -l -s date"
     alias lst="exa -l -s size -T"
@@ -134,7 +133,7 @@ vif() {
 }
 
 cdf() {
-    local dir=$(fd -t d --max-depth 1 | fzf)
+    local dir=$(fd -I -t d --max-depth 1 | fzf)
     if [[ -n $dir ]]; then
         cd $dir
     fi
@@ -167,19 +166,13 @@ gcf() {
         fzf --height 50% --ansi --no-multi |
         sed "s/.* //"
     )
-
     if [[ "$branch" = "" ]]; then
         echo "No branch selected."
         return
     fi
-
     if [[ "$branch" = 'remotes/'* ]]; then
         git checkout --track $branch
     else
         git checkout $branch;
     fi
 }
-
-bind -x '"\C-f":"vif"'
-bind -x '"\C-p":"cdf"'
-bind -x '"\C-e":"exf"'
