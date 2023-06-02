@@ -1,15 +1,26 @@
-# Dotfiles
+Create symlinks
+----------------
 
-## Install
+`./install.sh`
 
-### Run the following:
+Install scripts
+------------
 
-```
-./install.py all
-```
+`sudo cp scripts/* /usr/local/bin`
 
-### Fonts
+Install services
+----------------
 
-- **ttf-font-awesome**
-- **ttf-ubuntumono-nerd**
-- **adobe-source-han-sans-jp-fonts**
+`sudo cp services/* /etc/systemd/system`
+
+Install config files
+--------------------
+
+`sudo cp 99-sysctl-override.conf /etc/sysctl.d`
+
+Font list
+----------
+
+* **ttf-font-awesome**
+* **ttf-jetbrains-mono-nerd**
+* **adobe-source-han-sans-jp-fonts**
