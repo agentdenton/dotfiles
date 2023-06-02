@@ -38,7 +38,7 @@ map('v', 'B', '^h',    {noremap = true})
 map('n', 'K', '<nop>', {noremap = true})
 
 -- switch between buffers
-map('n', '<c-p>', ':edit #<CR>', {noremap = true})
+map('n', '<leader>p', ':edit #<CR>', {noremap = true})
 
 -- close the buffer
 map('n', '<c-c>', ':bdelete<CR>', {noremap = true})
