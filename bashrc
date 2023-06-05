@@ -38,7 +38,8 @@ alias ....='cd ../../..'
 
 alias lg="lazygit"
 alias hx="helix"
-alias zel="zellij options --theme catppuccin-frappe"
+alias zel="zellij --layout ~/.config/zellij/dev-layout.kdl \
+    options --theme catppuccin-frappe"
 alias bat="bat -p"
 alias fd="fd --color=never"
 alias nnn="nnn -e -U -A"
