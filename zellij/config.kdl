@@ -63,29 +63,6 @@ plugins {
     compact-bar { path "compact-bar"; }
 }
 
-on_force_close "quit"
-
-simplified_ui false
-
-pane_frames true
-
-auto_layout true
-
-theme "catppuccin-frappe"
-
-default_layout "compact"
-
-default_mode "normal"
-
-mouse_mode true
-
-scroll_buffer_size 100000
-
-copy_command "wl-copy"
-copy_clipboard "system"
-
-copy_on_select false
-
 themes {
     catppuccin-frappe {
         bg "#626880"
@@ -114,3 +91,26 @@ themes {
         white "#4c4f69"
     }
 }
+
+default_layout "compact"
+
+on_force_close "quit"
+
+simplified_ui false
+
+pane_frames false
+
+auto_layout true
+
+theme "catppuccin-frappe"
+
+default_mode "normal"
+
+mouse_mode true
+
+scroll_buffer_size 500000
+
+copy_command "wl-copy"
+copy_clipboard "system"
+
+copy_on_select false
