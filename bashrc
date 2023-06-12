@@ -9,10 +9,6 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS" \
 --color=bg+:#414559,bg:#303446,spinner:#f2d5cf,hl:#e78284 \
 --color=fg:#c6d0f5,header:#e78284,info:#ca9ee6,pointer:#f2d5cf \
 --color=marker:#f2d5cf,fg+:#c6d0f5,prompt:#ca9ee6,hl+:#e78284"
-# export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS" \
-# --color=bg+:#ccd0da,bg:#eff1f5,spinner:#dc8a78,hl:#d20f39 \
-# --color=fg:#4c4f69,header:#d20f39,info:#8839ef,pointer:#dc8a78 \
-# --color=marker:#dc8a78,fg+:#4c4f69,prompt:#8839ef,hl+:#d20f39"
 
 export NNN_FIFO=/tmp/nnn.fifo
 export NNN_PLUG='f:finder;o:fzopen;p:mocplay;d:diffs;t:nmount;v:imgview'
@@ -45,7 +41,6 @@ alias fd="fd --color=never"
 alias nnn="nnn -e -U -A"
 alias ranger="ranger --choosedir=$HOME/.rangerdir"
 alias clc="clear"
-alias profile="gdb_profile"
 
 alias mkin="sudo make install"
 alias msd="meson setup build --buildtype debug"
@@ -80,6 +75,9 @@ alias gdp="git diff -p"
 alias grh="git reset --hard"
 alias grs="git reset --soft"
 alias gclc="git clean -fdx"
+
+alias profile="gdb_profile"
+alias get_env="get_environment"
 
 if [[ -x $(command -v exa) ]]; then
     alias l="exa -l --group-directories-first"
@@ -198,3 +196,13 @@ gdb_profile() {
     END { print s }' | \
   sort | uniq -c | sort -r -n -k 1,1
 }
+
+get_environment() {
+    if [ -z "$1" ]; then
+        echo "ERROR: Please provide a PID as an argument."
+        return 1
+    fi
+    cat "/proc/$1/environ" | tr '\0' '\n' | cut -d ':' -f 1-
+}
+
+bind -x '"\C-f":"vif"'
