@@ -1,70 +1,86 @@
 * {
-	font-family: Iosevka Nerd Font;
-    font-size: 19;
+    border-radius: 0;
+    font-family: 'RobotoMono Nerd Font';
+    font-size: 13pt;
+    min-height: 0;
 }
 
 window#waybar {
-    background-color: transparent;
-    color: #c6d0f5;
+    background: transparent;
+    color: #DADAE8;
 }
 
-#window {
-    padding-left: 8px;
-    padding-right: 8px;
-	background-color: #313244;
-}
+tooltip {
+	background: #1E1E28;
+	border-radius: 15px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: #a4b9ef;
+	}
 
-#mode {
-    background-color: #313244;
-    color: #c6d0f5;
+#workspaces {
+    background: #332E41;
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 15px;
 }
 
 #workspaces button {
-	background-color: #313244;
-    color: #c6d0f5;
-}
-
-#workspaces button:hover {
-    background: #cba6f7;
-    color: #4c4f69;
+    padding-left: 10px;
+    padding-right: 10px;
+    min-width: 0;
+    color: #DADAE8;
 }
 
 #workspaces button.focused {
-    background-color: #cba6f7;
-    color: #4c4f69;
+    color: #A4B9EF;
 }
 
 #workspaces button.urgent {
-    background-color: #f38ba8;
+    color: #F9C096;
 }
 
-#network, #backlight, #pulseaudio, #clock, #battery {
-    margin: 4px;
-    padding-left: 8px;
-    padding-right: 8px;
+#workspaces button:hover {
+    background: #332e41;
+    border-color: #332e41;
+	color: #A4B9EF;
 }
 
-#clock {
-    background-color: #313244;
-    color: #c6d0f5;
-}
-
-#battery {
-    background-color: #313244;
-    color: #c6d0f5;
-}
-
-#pulseaudio {
-    background-color: #313244;
-    color: #c6d0f5;
-}
-
-#backlight {
-    background-color: #313244;
-    color: #c6d0f5;
+#clock, #battery, #pulseaudio, #workspaces, #mpd  {
+	padding: 2px 10px;
+    background: #332E41;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 #network {
-    background-color: #313244;
-    color: #c6d0f5;
+    padding-left: 15px;
+    padding-right: 2px;
+    background: #332E41;
+    border-radius: 15px 0px 0px 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#custom-vpn {
+    background: #332E41;
+    padding-right: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#clock {
+    padding-right: 15px;
+    margin-right: 5px;
+    border-radius: 0px 15px 15px 0px;
+}
+
+#custom-spotify {
+    background: #332E41;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border-radius: 15px;
 }

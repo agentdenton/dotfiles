@@ -28,6 +28,8 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 
+export DEBUGINFOD_URLS=""
+
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'

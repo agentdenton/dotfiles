@@ -1,16 +1,18 @@
-set $mod Mod1
+set $mod Mod4
 set $term alacritty
-set $wallpaper_path ~/git_repos/wallpapers/mandelbrot/mandelbrot_full_blue.png
+set $wallpaper_path ~/Pictures/wallpapers/space.jpg
 
 font pango:Iosevka Nerd Font 12
 
 output eDP-1 bg $wallpaper_path stretch
 
+output HDMI-A-1 mode 2560x1440@144Hz bg $wallpaper_path stretch
+
 gaps inner 10
 gaps outer 10
 
 # disable antialiasing?
-output * subpixel none
+# output * subpixel none
 
 # set $opacity 0.9
 # for_window [class=".*"] opacity $opacity
@@ -105,12 +107,14 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
+
 # to display workspaces with icons
 set $ws1 1
 set $ws2 2
 set $ws3 3
 set $ws4 4
 set $ws5 5
+set $ws0 10
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -118,6 +122,7 @@ bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
 bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace $ws5
+bindsym $mod+0 workspace $ws0
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
@@ -125,6 +130,10 @@ bindsym $mod+Shift+2 move container to workspace number $ws2
 bindsym $mod+Shift+3 move container to workspace number $ws3
 bindsym $mod+Shift+4 move container to workspace number $ws4
 bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+0 move container to workspace number $ws0
+
+workspace $ws0 output eDP-1
+workspace 1
 
 # resize window mode
 mode "resize" {

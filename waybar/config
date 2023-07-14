@@ -1,29 +1,64 @@
 {
-    "layer": "top",
-    "position": "top",
-    "modules-left": ["sway/workspaces", "sway/window", "sway/mode"],
-    "modules-center": [""],
-    "modules-right": ["network", "backlight", "pulseaudio", "battery", "clock"],
-    "height": 15,
-    "sway/window": {
-        "max-length": 50
+  "position": "top",
+  "modules-left": ["sway/workspaces"],
+  "modules-center": ["custom/spotify"],
+  "modules-right": ["network", "pulseaudio", "battery", "clock"],
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "format": "{icon}",
+    "persistent_workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+      "10": []
     },
-    "network": {
-        "format-wifi": "net: {essid}",
-        "format-ethernet": "net: {ipaddr}",
-        "format-disconnected": "net: disconnected",
-    },
-    "backlight": {
-        "format": "backlight: {percent}%",
-    },
-    "pulseaudio": {
-        "format": "vol: {volume}%",
-        "format-muted": "vol: muted",
-    },
-    "battery": {
-        "format": "bat: {capacity}%",
-    },
-    "clock": {
-        "format": "{:%a, %d. %b  %H:%M}"
+    "format-icons": {
+      "default": "",
+      "urgent": "",
+      "focused": ""
     }
+  },
+  "clock": {
+    "format": "<span foreground='#C6AAE8'> </span>{:%a %d %H:%M}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "<span size='13000' foreground='#B1E3AD'>{icon}</span> {capacity}%",
+    "format-warning": "<span size='13000' foreground='#B1E3AD'>{icon}</span> {capacity}%",
+    "format-critical": "<span size='13000' foreground='#E38C8F'>{icon}</span> {capacity}%",
+    "format-charging": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
+    "format-plugged": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
+    "format-alt": "<span size='13000' foreground='#B1E3AD'>{icon}</span> {time}",
+    "format-full": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
+    "format-icons": ["", "", "", "", ""],
+    "tooltip-format": "{time}"
+  },
+  "network": {
+    "format-wifi": "<span size='13000' foreground='#F2CECF'> </span>{essid}",
+    "format-ethernet": "<span size='13000' foreground='#F2CECF'></span> {ipaddr}",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "<span size='13000' foreground='#F2CECF'> </span>Disconnected",
+    "tooltip-format-wifi": "Signal Strenght: {signalStrength}%"
+  },
+  "pulseaudio": {
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "format": "<span size='13000' foreground='#EBDDAA'>{icon}</span> {volume}%",
+    "format-muted": "<span size='14000' foreground='#EBDDAA'></span> Muted",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", ""]
+    }
+  }
 }
