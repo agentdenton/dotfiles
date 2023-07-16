@@ -25,6 +25,10 @@ export EXA_STRICT=1
 export BAT_THEME="ansi"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
+# Fix broken escape codes for the man-pages after upgrading from groff-1.22.4-10
+# to groff-1.23.0-2. See: https://bbs.archlinux.org/viewtopic.php?id=287185
+export GROFF_NO_SGR=1
+
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 
