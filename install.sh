@@ -12,3 +12,4 @@ ln -fns ~/.dotfiles/zathura ~/.config
 ln -fns ~/.dotfiles/zellij ~/.config
 ln -fns ~/.dotfiles/starship.toml ~/.config
 ln -fns ~/.dotfiles/alacritty ~/.config
+ln -fns ~/.dotfiles/dunst ~/.config
