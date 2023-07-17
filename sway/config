@@ -5,8 +5,12 @@ set $wallpaper_path ~/Pictures/wallpapers/space.jpg
 font pango:Iosevka Nerd Font 12
 
 output eDP-1 bg $wallpaper_path stretch
-
 output HDMI-A-1 mode 2560x1440@144Hz bg $wallpaper_path stretch
+
+output HDMI-A-1 pos 0 0 res 2560x1440
+output eDP-1 pos 2560 0 res 1920x1080
+
+focus output HDMI-A-1
 
 gaps inner 10
 gaps outer 10
@@ -116,6 +120,8 @@ set $ws4 4
 set $ws5 5
 set $ws0 10
 
+workspace $ws0 output eDP-1
+
 # switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -131,9 +137,6 @@ bindsym $mod+Shift+3 move container to workspace number $ws3
 bindsym $mod+Shift+4 move container to workspace number $ws4
 bindsym $mod+Shift+5 move container to workspace number $ws5
 bindsym $mod+Shift+0 move container to workspace number $ws0
-
-workspace $ws0 output eDP-1
-workspace 1
 
 # resize window mode
 mode "resize" {
