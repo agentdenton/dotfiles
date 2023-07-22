@@ -1,9 +1,0 @@
-[Unit]
-Description=Apply some tweaks to the system
-
-[Service]
-Type=oneshot
-ExecStart=/usr/local/bin/tweak_system.sh
-
-[Install]
-WantedBy=multi-user.target

@@ -13,3 +13,4 @@ sway
 waybar
 rofi
 dunst
+light
