@@ -58,8 +58,8 @@ bindsym $mod+F2 exec pactl set-sink-volume @DEFAULT_SINK@ -5%  # Up
 bindsym $mod+F3 exec pactl set-sink-volume @DEFAULT_SINK@ +5%  # Down
 
 # screen brightness control
-bindsym $mod+F4 exec light -U 10
-bindsym $mod+F5 exec light -A 10
+bindsym $mod+F4 exec light -U 5
+bindsym $mod+F5 exec light -A 5
 
 # keyboard brightness control
 bindsym $mod+F7 exec sway_brightness_keyboard.py +1

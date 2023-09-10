@@ -63,6 +63,7 @@ end)
 require('nvim-treesitter.configs').setup({
   ensure_installed = {
     'c',
+    'cpp',
     'yaml',
     'json',
     'bash',
@@ -82,5 +83,9 @@ require('nvim-treesitter.configs').setup({
 
 require('indent_blankline').setup()
 require('telescope').setup()
+
+require("catppuccin").setup({
+    no_italic = true,
+})
 
 cmd [[ colorscheme catppuccin-frappe ]]

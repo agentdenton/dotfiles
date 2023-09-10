@@ -15,12 +15,12 @@ keybinds clear-defaults=true {
         bind "7" { GoToTab 7; SwitchToMode "Normal"; }
         bind "8" { GoToTab 8; SwitchToMode "Normal"; }
         bind "9" { GoToTab 9; SwitchToMode "Normal"; }
-        bind "t" { ToggleTab; }
+        bind "t" { ToggleTab; SwitchToMode "Normal"; }
     }
     scroll {
         bind "Esc" { SwitchToMode "Normal"; }
         bind "e" { EditScrollback; SwitchToMode "Normal"; }
-        bind "s" { SwitchToMode "EnterSearch"; SearchInput 0; }
+        bind "s" { SwitchToMode "EnterSearch"; }
         bind "Ctrl c" { ScrollToBottom; SwitchToMode "Normal"; }
         bind "j" "Down" { ScrollDown; }
         bind "k" "Up" { ScrollUp; }
