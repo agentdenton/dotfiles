@@ -4,6 +4,7 @@ ln -fns ~/.dotfiles/bashrc ~/.bashrc
 ln -fns ~/.dotfiles/inputrc ~/.inputrc
 ln -fns ~/.dotfiles/vimrc ~/.vimrc
 ln -fns ~/.dotfiles/nvim ~/.config
+ln -fns ~/.dotfiles/helix ~/.config
 ln -fns ~/.dotfiles/sway ~/.config
 ln -fns ~/.dotfiles/waybar ~/.config
 ln -fns ~/.dotfiles/rofi ~/.config
