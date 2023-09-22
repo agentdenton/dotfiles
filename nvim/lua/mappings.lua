@@ -21,8 +21,8 @@ map('t', '<c-j>', '<c-\\><c-n><c-w>j', {noremap = true})
 map('t', '<c-k>', '<c-\\><c-n><c-w>k', {noremap = true})
 map('t', '<c-l>', '<c-\\><c-n><c-w>l', {noremap = true})
 
-map('n', 'E', '$', {noremap = true})
-map('n', 'B', '^', {noremap = true})
+map('n', 'ge', '$', {noremap = true})
+map('n', 'gb', '^', {noremap = true})
 
 map('n', 'Y', 'y$', {noremap = true})
 map('n', 'n', 'nzzzv', {noremap = true})
