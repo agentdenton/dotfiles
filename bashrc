@@ -84,6 +84,8 @@ alias gclc="git clean -fdx"
 alias profile="gdb_profile"
 alias get_env="get_environment"
 
+alias bl-off="bluetoothctl power off"
+alias bl-on="bluetoothctl power on"
 if [[ -x $(command -v exa) ]]; then
     alias l="exa -l --group-directories-first"
     alias ls="exa --group-directories-first"
