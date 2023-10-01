@@ -36,10 +36,10 @@ require('which-key').register({
     },
     m = {
       name = '+movement',
-      h = { '<c-h>', 'Move left'},
-      j = { '<c-j>', 'Move down'},
-      k = { '<c-k>', 'Move up'},
-      l = { '<c-l>', 'Move right'},
+      h = { '<c-w>h', 'Move left'},
+      j = { '<c-w>j', 'Move down'},
+      k = { '<c-w>k', 'Move up'},
+      l = { '<c-w>l', 'Move right'},
     },
     ['<space>'] = {
       name = '+options',

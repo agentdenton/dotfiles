@@ -4,7 +4,6 @@ local map = vim.api.nvim_set_keymap
 
 map('n', '<space>', '<nop>', {noremap = true})
 map('v', '<space>', '<nop>', {noremap = true})
-map('n', '<c-l>', '<nop>', {noremap = true})
 
 -- disable annoying man pages
 map('n', 'K', '<nop>', {noremap = true})
