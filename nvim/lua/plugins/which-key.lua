@@ -15,8 +15,8 @@ require('which-key').register({
         end, 'Search open buffers'
       },
     },
-    g = {
-      name = '+grep',
+    s = {
+      name = '+search',
       g = {
         function()
           require('telescope.builtin')
@@ -34,12 +34,12 @@ require('which-key').register({
       c = { '<cmd>bdelete<cr>', 'Delete current buffer'},
       p = { '<cmd>edit #<cr>', 'Switch to the previous buffer' }
     },
-    m = {
-      name = '+movement',
-      h = { '<c-w>h', 'Move left'},
-      j = { '<c-w>j', 'Move down'},
-      k = { '<c-w>k', 'Move up'},
-      l = { '<c-w>l', 'Move right'},
+    g = {
+      name = '+goto',
+      h = { '<c-w>h', 'Goto left pane'},
+      j = { '<c-w>j', 'Goto pane below'},
+      k = { '<c-w>k', 'Goto pane up'},
+      l = { '<c-w>l', 'Goto right pane'},
     },
     ['<space>'] = {
       name = '+options',
