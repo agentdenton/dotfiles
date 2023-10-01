@@ -1,25 +1,12 @@
-local g = vim.g
+vim.g.mapleader = ' '
+
 local map = vim.api.nvim_set_keymap
 
-g.mapleader = ' '
+map('n', '<space>', '<nop>', {noremap = true})
+map('n', '<c-l>', '<nop>', {noremap = true})
 
--- autoclosing backets
-map('i', '{<CR>', '{<CR><BS>}<Esc>O', {noremap = true})
-
--- move faster between splits
-map('n', '<c-h>', '<c-w>h', {noremap = true})
-map('n', '<c-j>', '<c-w>j', {noremap = true})
-map('n', '<c-k>', '<c-w>k', {noremap = true})
-map('n', '<c-l>', '<c-w>l', {noremap = true})
-
--- faster normal mode in terminal
-map('t', '<c-space>', '<c-\\><c-n>', {noremap = true})
-
--- move between terminal windows
-map('t', '<c-h>', '<c-\\><c-n><c-w>h', {noremap = true})
-map('t', '<c-j>', '<c-\\><c-n><c-w>j', {noremap = true})
-map('t', '<c-k>', '<c-\\><c-n><c-w>k', {noremap = true})
-map('t', '<c-l>', '<c-\\><c-n><c-w>l', {noremap = true})
+-- disable annoying man pages
+map('n', 'K', '<nop>', {noremap = true})
 
 map('n', 'ge', '$', {noremap = true})
 map('n', 'gb', '^', {noremap = true})
@@ -31,29 +18,7 @@ map('n', 'J', 'mzJ`z', {noremap = true})
 
 map('v', '<', '<gv', {noremap = true})
 map('v', '>', '>gv', {noremap = true})
-map('v', 'E', '$h',    {noremap = true})
-map('v', 'B', '^h',    {noremap = true})
+map('v', 'ge', '$h',    {noremap = true})
+map('v', 'gb', '^h',    {noremap = true})
 
--- disable annoying man pages
-map('n', 'K', '<nop>', {noremap = true})
-
--- switch between buffers
-map('n', '<leader>p', ':edit #<CR>', {noremap = true})
-
--- close the buffer
-map('n', '<c-c>', ':bdelete<CR>', {noremap = true})
-
--- close all buffers except current one
-map('n', '<c-c>a', ':%bd|e#<CR>', {noremap = true})
-
--- create a terminal in a split below
-map('n', '<leader>t', ':split | term<CR>', {noremap = true})
-
--- remove highlight from words
-map('n', '<leader><space>', ':set hlsearch!<CR>', {noremap = true})
-
--- telescope mappings
-map('n', '<leader>f', ':Telescope find_files<CR>', {noremap = true})
-map('n', '<leader>g', ':Telescope live_grep<CR>', {noremap = true})
-map('n', '<leader>gc', ':Telescope current_buffer_fuzzy_find<CR>', {noremap = true})
-map('n', '<leader>b', ':Telescope buffers<CR>', {noremap = true})
+map('n', 'U', '<cmd>redo<cr>', {noremap = true})

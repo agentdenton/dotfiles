@@ -17,7 +17,7 @@ autocmd('TextYankPost', {
 
 -- remove whitespace on save
 autocmd('BufWritePre', {
-  pattern = '*',
+  pattern = '*.{not md}',
   command = ":%s/\\s\\+$//e"
 })
 

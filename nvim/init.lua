@@ -8,18 +8,6 @@ local fn = vim.fn
 local api = vim.api
 local cmd = vim.cmd
 
-local execute = vim.api.nvim_command
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-if fn.empty(fn.glob(install_path)) > 0 then
-  fn.system({
-    'git',
-    'clone',
-    'https://github.com/wbthomason/packer.nvim',
-    install_path
-  })
-  execute 'packadd packer.nvim'
-end
-
 local disable_plugins = {
   "netrw",
   "netrwPlugin",
@@ -46,10 +34,33 @@ for _, plugin in pairs(disable_plugins) do
   g["loaded_" .. plugin] = 1
 end
 
+local execute = vim.api.nvim_command
+local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+if fn.empty(fn.glob(install_path)) > 0 then
+  fn.system({
+    'git',
+    'clone',
+    'https://github.com/wbthomason/packer.nvim',
+    install_path
+  })
+  execute 'packadd packer.nvim'
+end
+
 require('packer').startup(function()
   use 'wbthomason/packer.nvim'
   use 'lukas-reineke/indent-blankline.nvim'
+  use 'm4xshen/autoclose.nvim'
+  use 'numToStr/Comment.nvim'
   use 'catppuccin/nvim'
+  use 'nvim-tree/nvim-tree.lua'
+
+  use {
+    "folke/which-key.nvim",
+    config = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 100
+    end
+  }
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
@@ -60,32 +71,13 @@ require('packer').startup(function()
   }
 end)
 
-require('nvim-treesitter.configs').setup({
-  ensure_installed = {
-    'c',
-    'cpp',
-    'yaml',
-    'json',
-    'bash',
-    'lua',
-    'python',
-    'rust',
-    'julia',
-  },
-  highlight = {
-    enable = true
-    -- disable = {"python", "c"},
-  },
-  indent = {
-    disable = {"python"}
-  },
-})
-
-require('indent_blankline').setup()
-require('telescope').setup()
-
-require("catppuccin").setup({
-    no_italic = true,
-})
+require('plugins/treesitter')
+require('plugins/telescope')
+require('plugins/nvim-tree')
+require('plugins/which-key')
+require('plugins/autoclose')
+require('plugins/ibl')
+require('plugins/comment')
+require('plugins/theme')
 
 cmd [[ colorscheme catppuccin-frappe ]]
