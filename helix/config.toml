@@ -12,3 +12,15 @@ separator = "│"
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
 mode.select = "SELECT"
+
+[keys.normal]
+"G" = "goto_last_line"
+"," = "repeat_last_motion"
+X = ["extend_line_up", "extend_to_line_bounds"]
+
+[keys.normal.g]
+"s" = "goto_line_start"
+"e" = "goto_line_end"
+
+[keys.normal.space]
+"p" = "goto_last_accessed_file"
