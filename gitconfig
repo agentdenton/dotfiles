@@ -1,0 +1,7 @@
+[init]
+	defaultBranch = main
+[user]
+	email = andybrychenko@gmail.com
+	name = Andy Brychenko
+[color]
+	ui = auto
