@@ -8,6 +8,9 @@ map('v', '<space>', '<nop>', {noremap = true})
 -- disable annoying man pages
 map('n', 'K', '<nop>', {noremap = true})
 
+-- switch to normal mode in terminal
+map('t', '<c-space>', '<c-\\><c-n>', {noremap = true})
+
 map('n', 'ge', '$', {noremap = true})
 map('n', 'gb', '^', {noremap = true})
 
