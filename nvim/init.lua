@@ -48,14 +48,20 @@ end
 
 require('packer').startup(function()
   use 'wbthomason/packer.nvim'
+  use 'catppuccin/nvim'
   use 'lukas-reineke/indent-blankline.nvim'
   use 'm4xshen/autoclose.nvim'
   use 'numToStr/Comment.nvim'
-  use 'catppuccin/nvim'
   use 'nvim-tree/nvim-tree.lua'
+  use 'neovim/nvim-lspconfig'
+
+  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-vsnip'
 
   use {
-    "folke/which-key.nvim",
+    'folke/which-key.nvim',
     config = function()
       vim.o.timeout = true
       vim.o.timeoutlen = 100
@@ -73,6 +79,8 @@ end)
 
 require('plugins/treesitter')
 require('plugins/telescope')
+require('plugins/lsp')
+require('plugins/nvim-cmp')
 require('plugins/nvim-tree')
 require('plugins/which-key')
 require('plugins/autoclose')
@@ -80,4 +88,4 @@ require('plugins/ibl')
 require('plugins/comment')
 require('plugins/theme')
 
-cmd [[ colorscheme catppuccin-frappe ]]
+vim.cmd([[colorscheme catppuccin-frappe]])

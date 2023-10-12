@@ -55,6 +55,24 @@ require('which-key').register({
       },
       c = { '<Plug>(comment_toggle_linewise_current)<cr>', 'Comment current line' },
     },
+    l = {
+      name = '+lsp',
+      g = {
+        name = '+goto',
+        d = {
+          function()
+            vim.lsp.buf.declaration()
+          end,
+          'Go to function definition'
+        },
+        D = {
+          function()
+            vim.lsp.buf.definition()
+          end,
+          'Go to function declaration'
+        },
+      },
+    },
   },
 }, { mode =  'n' })
 
