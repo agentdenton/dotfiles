@@ -1,0 +1,16 @@
+{
+    "editor.fontFamily": "Iosevka Nerd Font",
+    "editor.fontSize": 16,
+    "editor.hideCursorInOverviewRuler": true,
+    "editor.scrollbar.horizontal": "hidden",
+    "editor.scrollbar.vertical": "hidden",
+    "editor.scrollbar.verticalScrollbarSize": 0,
+    "editor.minimap.enabled": false,
+    "terminal.integrated.fontSize": 20,
+    "security.workspace.trust.untrustedFiles": "open",
+    "scm.inputFontSize": 15,
+    "workbench.colorTheme": "Tokyo Night Storm",
+    "window.zoomLevel": 1,
+    "window.titleBarStyle": "custom",
+    "git.openRepositoryInParentFolders": "never",
+}
