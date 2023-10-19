@@ -1,6 +1,7 @@
 #!/bin/sh
 
 ln -fns ~/.dotfiles/bashrc ~/.bashrc
+ln -fns ~/.dotfiles/zshrc ~/.zshrc
 ln -fns ~/.dotfiles/gitconfig ~/.gitconfig
 ln -fns ~/.dotfiles/inputrc ~/.inputrc
 ln -fns ~/.dotfiles/vimrc ~/.vimrc
