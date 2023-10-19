@@ -5,3 +5,5 @@
 	name = Andy Brychenko
 [color]
 	ui = auto
+[pull]
+	ff = only
