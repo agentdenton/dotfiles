@@ -1,8 +1,7 @@
 {
   "position": "top",
   "modules-left": ["sway/workspaces"],
-  "modules-center": ["custom/spotify"],
-  "modules-right": ["network", "pulseaudio", "battery", "clock"],
+  "modules-right": ["network", "pulseaudio", "battery", "sway/language", "clock", "tray"],
   "sway/workspaces": {
     "disable-scroll": true,
     "all-outputs": true,
@@ -24,6 +23,9 @@
   "clock": {
     "format": "<span foreground='#C6AAE8'> </span>{:%a %d %H:%M}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+  "sway/language": {
+      "format": "{short}",
   },
   "battery": {
     "states": {
@@ -53,12 +55,11 @@
     "format-muted": "<span size='14000' foreground='#EBDDAA'></span> Muted",
     "format-icons": {
       "headphone": "",
-      "hands-free": "",
       "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
       "default": ["", ""]
     }
-  }
+  },
+  "tray": {
+      "spacing": 10
+  },
 }
