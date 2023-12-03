@@ -2,6 +2,7 @@
 
 ln -fns ~/.dotfiles/bashrc ~/.bashrc
 ln -fns ~/.dotfiles/zshrc ~/.zshrc
+ln -fns ~/.dotfiles/fonts.conf ~/.fonts.conf
 ln -fns ~/.dotfiles/gitconfig ~/.gitconfig
 ln -fns ~/.dotfiles/inputrc ~/.inputrc
 ln -fns ~/.dotfiles/vimrc ~/.vimrc
@@ -17,3 +18,5 @@ ln -fns ~/.dotfiles/zellij ~/.config/zellij
 ln -fns ~/.dotfiles/starship.toml ~/.config/starship.toml
 ln -fns ~/.dotfiles/alacritty ~/.config/alacritty
 ln -fns ~/.dotfiles/dunst ~/.config/dunst
+
+cp environment /etc/environment
