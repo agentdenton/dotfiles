@@ -11,7 +11,7 @@ require('which-key').register({
       b = {
         function()
           require('telescope.builtin')
-            .buffers(require('telescope.themes') .get_ivy())
+            .buffers(require('telescope.themes').get_ivy())
         end, 'Search open buffers'
       },
     },
