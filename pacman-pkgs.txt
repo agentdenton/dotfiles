@@ -1,3 +1,8 @@
+code
+neovim
+lazygit
+man-pages
+
 zoxide
 ripgrep
 bat
@@ -5,11 +10,6 @@ fd
 exa
 alacritty
 zellij
-code
-
-vim
-neovim
-lazygit
 
 htop
 curl
@@ -17,10 +17,14 @@ git
 zsh
 wl-clipboard
 minicom
-curl
-networkmanager
 net-tools
 bluez
+
+plasma-meta
+firefox
+networkmanager
+flatpak
+docker
 
 sway
 waybar
@@ -32,3 +36,5 @@ flameshot
 
 ttf-iosevka-nerd
 ttf-roboto-mono-nerd
+ttf-inconsolata-nerd
+noto-fonts-cjk
