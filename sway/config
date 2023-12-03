@@ -1,6 +1,6 @@
 set $mod Mod4
 set $term alacritty
-set $wallpaper_path ~/Pictures/wallpapers/space.jpg
+set $wallpaper_path ~/Pictures/wallpapers/gentleman_jiji.jpg
 
 font pango:Iosevka Nerd Font 12
 
@@ -15,9 +15,6 @@ focus output HDMI-A-1
 gaps inner 10
 gaps outer 10
 
-# disable antialiasing?
-# output * subpixel none
-
 # set $opacity 0.9
 # for_window [class=".*"] opacity $opacity
 # for_window [app_id=".*"] opacity $opacity
@@ -28,8 +25,6 @@ default_floating_border pixel 1
 focus_follows_mouse yes
 
 floating_modifier $mod normal
-
-seat seat0 xcursor_theme volantes_light_cursors 40
 
 input type:keyboard {
     xkb_layout us,ua
@@ -64,9 +59,9 @@ bindsym $mod+F5 exec light -A 5
 # keyboard brightness control
 bindsym $mod+F7 exec sway_brightness_keyboard.py +1
 
-bindsym $mod+Shift+e exec sway_exit.sh
-
 bindsym $mod+F9 exec swaylock -k -i ~/Pictures/wallpapers/space.jpg
+
+bindsym $mod+Shift+e exec sway_exit.sh
 
 # close a window
 bindsym $mod+Shift+c kill
