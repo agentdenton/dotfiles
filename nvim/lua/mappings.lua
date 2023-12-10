@@ -2,12 +2,13 @@ vim.g.mapleader = ' '
 
 local map = vim.api.nvim_set_keymap
 
-map('n', '<space>', '<nop>', {noremap = true})
-map('v', '<space>', '<nop>', {noremap = true})
-
 -- disable annoying man pages
 map('n', 'K', '<nop>', {noremap = true})
 
+-- Prevent the leader key from moving move the cursor when no command is
+-- selected in which-key
+map('n', '<leader>', '<nop>', {noremap = true})
+map('n', '<leader><space>', '<nop>', {noremap = true})
 
 map('n', 'ge', '$', {noremap = true})
 map('n', 'gb', '^', {noremap = true})
