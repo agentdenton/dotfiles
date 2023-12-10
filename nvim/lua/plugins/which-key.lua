@@ -1,5 +1,8 @@
 require('which-key').register({
   ['<leader>'] = {
+    h = { '<cmd>set hlsearch!<cr>', 'Toggle highlight' },
+    r = { '<cmd>luafile ~/.config/nvim/init.lua<cr>', 'Reload config' },
+    c = { '<Plug>(comment_toggle_linewise_current)<cr>', 'Comment current line' },
     f = {
       name = 'files',
       f = {
@@ -36,24 +39,6 @@ require('which-key').register({
     },
     g = {
       name = '+goto',
-      h = { '<c-w>h', 'Goto left pane'},
-      j = { '<c-w>j', 'Goto pane below'},
-      k = { '<c-w>k', 'Goto pane up'},
-      l = { '<c-w>l', 'Goto right pane'},
-    },
-    ['<space>'] = {
-      name = '+options',
-      h = { '<cmd>set hlsearch!<cr>', 'Toggle highlight' },
-      r = { '<cmd>luafile ~/.config/nvim/init.lua<cr>', 'Reload config' },
-      t = {
-        name = '+terminal',
-        h = { '<c-\\><c-n><c-w>h', 'Move terminal left'},
-        j = { '<c-\\><c-n><c-w>j', 'Move terminal down'},
-        k = { '<c-\\><c-n><c-w>k', 'Move terminal up'},
-        l = { '<c-\\><c-n><c-w>l', 'Move terminal right'},
-        n = { '<c-\\><c-n>', 'Switch to normal mode' }
-      },
-      c = { '<Plug>(comment_toggle_linewise_current)<cr>', 'Comment current line' },
     },
     l = {
       name = '+lsp',
