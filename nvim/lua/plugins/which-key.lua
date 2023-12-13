@@ -61,12 +61,9 @@ require('which-key').register({
   },
 }, { mode =  'n' })
 
-
 require('which-key').register({
   ['<leader>'] = {
-    ['<space>'] = {
-      name = '+options',
-      c = { '<Plug>(comment_toggle_linewise_visual)<cr>', 'Comment current line' },
-    },
+    name = '+options',
+    c = { '<Plug>(comment_toggle_linewise_visual)<cr>', 'Comment current line' },
   },
 }, { mode = 'v' })
