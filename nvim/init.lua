@@ -70,6 +70,10 @@ require('packer').startup(function()
     'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  }
 end)
 
 require('plugins/treesitter')
@@ -80,5 +84,6 @@ require('plugins/autoclose')
 require('plugins/ibl')
 require('plugins/comment')
 require('plugins/theme')
+require('plugins/lualine')
 
 vim.cmd([[colorscheme catppuccin-frappe]])
