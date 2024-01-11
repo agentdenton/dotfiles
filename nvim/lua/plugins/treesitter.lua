@@ -14,6 +14,6 @@ require('nvim-treesitter.configs').setup({
     enable = true
   },
   indent = {
-    disable = {"python"}
+    enable = true
   },
 })
