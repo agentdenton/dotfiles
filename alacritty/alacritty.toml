@@ -1,0 +1,23 @@
+import = ["~/.config/alacritty/catppuccin-frappe.toml"]
+
+[cursor]
+thickness = 0.15
+unfocused_hollow = true
+
+[font]
+size = 13
+
+[font.bold]
+family = "Hack Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "Hack Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "Hack Nerd Font"
+style = "Medium"
+
+[shell]
+program = "/bin/zsh"
