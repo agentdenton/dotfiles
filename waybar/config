@@ -1,7 +1,7 @@
 {
   "position": "top",
   "modules-left": ["sway/workspaces"],
-  "modules-right": ["network", "pulseaudio", "battery", "sway/language", "clock", "tray"],
+  "modules-right": ["network", "pulseaudio", "battery", "sway/language", "clock"],
   "sway/workspaces": {
     "disable-scroll": true,
     "all-outputs": true,
