@@ -38,3 +38,4 @@ ttf-iosevka-nerd
 ttf-roboto-mono-nerd
 ttf-inconsolata-nerd
 noto-fonts-cjk
+ttf-font-awesome
