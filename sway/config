@@ -2,11 +2,10 @@ include /etc/sway/config.d/*
 
 set $mod Mod4
 set $term alacritty
-set $wallpaper ~/Pictures/wallpapers/vaporwave_anime.jpg
+set $wallpaper ~/Pictures/wallpapers/sci-fi-planet.png
 
 font pango:Hack Nerd Font 12
 
-focus output DP-3
 output * mode 2560x1440@144Hz bg $wallpaper stretch
 
 gaps inner 15
@@ -23,7 +22,7 @@ floating_modifier $mod normal
 bindsym $mod+Return exec alacritty
 
 # launch programs
-bindsym $mod+m exec --no-startup-id rofi -show run
+bindsym $mod+s exec --no-startup-id rofi -show run
 
 # volume control
 bindsym $mod+F1 exec pactl set-sink-mute @DEFAULT_SINK@ toggle # Mute
@@ -37,7 +36,7 @@ bindsym --locked $mod+F5 exec brightnessctl set 5%+
 # keyboard brightness control
 bindsym $mod+F7 exec sway_brightness_keyboard.py +1
 
-bindsym $mod+F9 exec swaylock -k -i ~/git_repos/catppuccin-wallpapers/mandelbrot/mandelbrot_side_blue.png
+bindsym $mod+F9 exec swaylock -k -i ~/Pictures/wallpapers/sci-fi-planet.png
 
 bindsym $mod+Shift+e exec sway_exit.sh
 

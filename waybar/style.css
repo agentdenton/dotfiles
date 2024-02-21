@@ -1,5 +1,4 @@
 * {
-    border-radius: 0;
     font-family: 'Hack Nerd Font';
     font-size: 12pt;
     min-height: 0;
@@ -15,7 +14,6 @@ window#waybar {
     margin-left: 5px;
     margin-top: 5px;
     margin-bottom: 5px;
-    border-radius: 15px;
 }
 
 #workspaces button {
@@ -39,24 +37,11 @@ window#waybar {
     color: #A4B9EF;
 }
 
-#clock, #battery, #pulseaudio, #workspaces, #language, #tray {
+#clock, #network, #battery, #pulseaudio, #workspaces, #language, #tray {
     padding: 2px 10px;
     background: #332E41;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-#network {
-    padding-left: 15px;
-    padding-right: 2px;
-    background: #332E41;
-    border-radius: 15px 0px 0px 15px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-#tray {
-    padding-right: 15px;
     margin-right: 5px;
-    border-radius: 0px 15px 15px 0px;
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }

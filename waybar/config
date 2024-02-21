@@ -12,7 +12,6 @@
       "3": [],
       "4": [],
       "5": [],
-      "10": []
     },
     "format-icons": {
       "default": "",
@@ -51,7 +50,7 @@
   },
   "pulseaudio": {
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-    "format": "<span size='13000' foreground='#e5c890'> {icon}</span> {volume}%",
+    "format": "<span size='13000' foreground='#e5c890'>{icon}</span> {volume}%",
     "format-muted": "<span size='14000' foreground='#EBDDAA'></span> Muted",
     "format-icons": {
       "headphone": "",
