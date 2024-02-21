@@ -1,19 +1,16 @@
+include /etc/sway/config.d/*
+
 set $mod Mod4
 set $term alacritty
-set $wallpaper_path ~/git_repos/catppuccin-wallpapers/mandelbrot/mandelbrot_side_blue.png
+set $wallpaper ~/Pictures/wallpapers/vaporwave_anime.jpg
 
 font pango:Hack Nerd Font 12
 
-output DP-3 mode 2560x1440@144Hz bg $wallpaper_path stretch
-
 focus output DP-3
+output * mode 2560x1440@144Hz bg $wallpaper stretch
 
-gaps inner 5
+gaps inner 15
 gaps outer 5
-
-# set $opacity 0.9
-# for_window [class=".*"] opacity $opacity
-# for_window [app_id=".*"] opacity $opacity
 
 default_border pixel 2
 default_floating_border pixel 1
@@ -22,35 +19,20 @@ focus_follows_mouse yes
 
 floating_modifier $mod normal
 
-input type:keyboard {
-    xkb_layout us,ua
-    xkb_options grp:win_space_toggle
-}
-
-input type:touchpad {
-    tap enabled
-}
-
 # launch terminal
 bindsym $mod+Return exec alacritty
 
 # launch programs
-bindsym $mod+d exec --no-startup-id rofi -show run
-
-# switch windows
-bindsym $mod+w exec --no-startup-id rofi -show window
-
-# ssh session
-bindsym $mod+s exec --no-startup-id rofi -show ssh
+bindsym $mod+m exec --no-startup-id rofi -show run
 
 # volume control
 bindsym $mod+F1 exec pactl set-sink-mute @DEFAULT_SINK@ toggle # Mute
 bindsym $mod+F2 exec pactl set-sink-volume @DEFAULT_SINK@ -5%  # Up
 bindsym $mod+F3 exec pactl set-sink-volume @DEFAULT_SINK@ +5%  # Down
 
-# screen brightness control
-bindsym $mod+F4 exec light -U 5
-bindsym $mod+F5 exec light -A 5
+# brightness control
+bindsym --locked $mod+F4 exec brightnessctl set 5%-
+bindsym --locked $mod+F5 exec brightnessctl set 5%+
 
 # keyboard brightness control
 bindsym $mod+F7 exec sway_brightness_keyboard.py +1
@@ -109,9 +91,6 @@ set $ws2 2
 set $ws3 3
 set $ws4 4
 set $ws5 5
-set $ws0 10
-
-workspace $ws0 output eDP-1
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -119,7 +98,6 @@ bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
 bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace $ws5
-bindsym $mod+0 workspace $ws0
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
@@ -127,7 +105,6 @@ bindsym $mod+Shift+2 move container to workspace number $ws2
 bindsym $mod+Shift+3 move container to workspace number $ws3
 bindsym $mod+Shift+4 move container to workspace number $ws4
 bindsym $mod+Shift+5 move container to workspace number $ws5
-bindsym $mod+Shift+0 move container to workspace number $ws0
 
 # resize window mode
 mode "resize" {
@@ -151,13 +128,20 @@ bar {
     swaybar_command waybar
 }
 
-# class                 border  backgr. text    indicator
-client.focused          #cba6f7 #cba6f7 #000000 #cba6f7
-client.unfocused        #303446 #949cbb #C6D0F5 #1f222d
+input type:keyboard {
+    xkb_layout us,ua
+    xkb_options grp:win_space_toggle
+}
+
+input type:touchpad {
+    tap enabled
+}
+
+# class                 border  backgr  text    indicator
+client.focused          #cba6f7 #8caaee #000000 #cba6f7
+client.unfocused        #303446 #414559 #C6D0F5 #1f222d
 client.focused_inactive #303446 #949cbb #C6D0F5 #1f222d
 client.placeholder      #303446 #949cbb #C6D0F5 #1f222d
 client.urgent           #E78284 #BF616A #303446 #BF616A
 
 exec --no-startup-id dunst
-
-include /etc/sway/config.d/*
