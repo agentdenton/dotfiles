@@ -25,7 +25,7 @@
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   },
   "sway/language": {
-      "format": "{short}",
+      "format": "{long}",
   },
   "battery": {
     "states": {
@@ -44,14 +44,14 @@
   },
   "network": {
     "format-wifi": "<span size='13000' foreground='#F2CECF'> </span>{essid}",
-    "format-ethernet": "<span size='13000' foreground='#F2CECF'></span> {ipaddr}",
+    "format-ethernet": "<span size='13000' foreground='#a6d189'></span> {ipaddr}",
     "format-linked": "{ifname} (No IP) ",
     "format-disconnected": "<span size='13000' foreground='#F2CECF'> </span>Disconnected",
     "tooltip-format-wifi": "Signal Strenght: {signalStrength}%"
   },
   "pulseaudio": {
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-    "format": "<span size='13000' foreground='#EBDDAA'>{icon}</span> {volume}%",
+    "format": "<span size='13000' foreground='#e5c890'> {icon}</span> {volume}%",
     "format-muted": "<span size='14000' foreground='#EBDDAA'></span> Muted",
     "format-icons": {
       "headphone": "",
