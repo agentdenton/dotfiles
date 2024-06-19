@@ -1,16 +1,3 @@
-export ZSH="$HOME/.oh-my-zsh"
-
-ZSH_THEME="refined"
-
-CASE_SENSITIVE="true"
-
-zstyle ':omz:update' mode disabled
-
-plugins=(git vi-mode)
-
-source $ZSH/oh-my-zsh.sh
-
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
@@ -34,6 +21,8 @@ export VISUAL="nvim"
 export EXA_STRICT=1
 export BAT_THEME="base16"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
+export GPG_TTY=$(tty)
 
 # Fix broken escape codes for the man-pages after upgrading from groff-1.22.4-10
 # to groff-1.23.0-2. See: https://bbs.archlinux.org/viewtopic.php?id=287185
@@ -62,8 +51,8 @@ alias nc="ninja -C build clean"
 alias zsrc="source ~/.zshrc"
 alias zedit="$EDITOR ~/.zshrc"
 
-alias todo="$EDITOR ~/todo.txt"
-alias notes="$EDITOR ~/notes.txt"
+alias todo="$EDITOR ~/todo.md"
+alias notes="$EDITOR ~/notes.md"
 
 alias toua="trans :uk "
 alias toen="trans uk: "
@@ -166,7 +155,6 @@ gvif() {
     fi
 }
 
-unalias gcf 2>/dev/null
 gcf() {
   is_in_git_repo || return
   local branch=$(git branch --color=always --all --sort=-committerdate |
@@ -211,5 +199,11 @@ get_environment() {
     cat "/proc/$1/environ" | tr '\0' '\n' | cut -d ':' -f 1-
 }
 
+bindkey -v
+
 bindkey -s '^f' 'vif\n'
 bindkey -s '^n' 'ncd\n'
+bindkey -s '^]' 'cdf\n'
+bindkey -s '^v' 'vi .\n'
+
+eval "$(starship init zsh)"
