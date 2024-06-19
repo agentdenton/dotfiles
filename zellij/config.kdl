@@ -76,19 +76,6 @@ themes {
         black "#292c3c"
         white "#c6d0f5"
     }
-    catppuccin-latte {
-        bg "#acb0be"
-        fg "#acb0be"
-        red "#d20f39"
-        green "#40a02b"
-        blue "#1e66f5"
-        yellow "#df8e1d"
-        magenta "#ea76cb"
-        orange "#fe640b"
-        cyan "#04a5e5"
-        black "#dce0e8"
-        white "#4c4f69"
-    }
 }
 
 default_layout "compact"
@@ -97,7 +84,7 @@ on_force_close "quit"
 
 simplified_ui false
 
-pane_frames false
+pane_frames true
 
 auto_layout true
 
