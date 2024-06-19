@@ -17,7 +17,7 @@ vim.opt.exrc = true
 vim.opt.smartindent = true
 vim.opt.showcmd = true
 vim.opt.showmode = false
-vim.opt.wrap = false
+vim.opt.wrap = true
 vim.opt.breakindent = true
 -- vim.opt.showbreak = string.rep(">>>", 3)
 vim.opt.linebreak = true
@@ -34,7 +34,7 @@ vim.opt.termguicolors = true
 vim.opt.background = 'dark'
 vim.opt.number = true
 vim.opt.relativenumber = true
-vim.opt.colorcolumn = '81'
+-- vim.opt.colorcolumn = '81'
 vim.o.wildmode = "longest:full" -- better <cmd> autocomplete
 -- vim.opt.iskeyword:remove{'_'}
 -- vim.o.guicursor = "n-v-c-i:block"

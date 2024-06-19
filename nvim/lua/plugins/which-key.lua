@@ -3,6 +3,7 @@ require('which-key').register({
     h = { '<cmd>set hlsearch!<cr>', 'Toggle highlight' },
     r = { '<cmd>luafile ~/.config/nvim/init.lua<cr>', 'Reload config' },
     c = { '<Plug>(comment_toggle_linewise_current)<cr>', 'Comment current line' },
+    q = { '<cmd>qa<cr>', 'Close all buffers and quit' },
     f = {
       name = 'files',
       f = {
@@ -25,6 +26,12 @@ require('which-key').register({
           require('telescope.builtin')
             .live_grep(require('telescope.themes').get_ivy())
         end, 'Live grep'
+      },
+      c = {
+        function()
+          require('telescope.builtin')
+            .current_buffer_fuzzy_find(require('telescope.themes').get_ivy())
+        end, 'Current buffer fuzzy find'
       },
     },
     t = {

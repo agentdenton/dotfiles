@@ -50,10 +50,8 @@ require('packer').startup(function()
   use 'wbthomason/packer.nvim'
   use 'catppuccin/nvim'
   use 'lukas-reineke/indent-blankline.nvim'
-  use 'm4xshen/autoclose.nvim'
   use 'numToStr/Comment.nvim'
   use 'nvim-tree/nvim-tree.lua'
-  use 'neovim/nvim-lspconfig'
 
   use {
     'folke/which-key.nvim',
@@ -80,7 +78,6 @@ require('plugins/treesitter')
 require('plugins/telescope')
 require('plugins/nvim-tree')
 require('plugins/which-key')
-require('plugins/autoclose')
 require('plugins/ibl')
 require('plugins/comment')
 require('plugins/theme')

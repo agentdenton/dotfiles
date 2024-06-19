@@ -10,6 +10,9 @@ map('n', 'K', '<nop>', {noremap = true})
 map('n', '<leader>', '<nop>', {noremap = true})
 map('n', '<leader><space>', '<nop>', {noremap = true})
 
+map("n", "<leader>\"", 'ciw""<Esc>P', {noremap = true})
+map("n", "<leader>'", 'ciw""<Esc>P', {noremap = true})
+
 map('n', 'ge', '$', {noremap = true})
 map('n', 'gb', '^', {noremap = true})
 
