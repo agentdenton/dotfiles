@@ -101,4 +101,4 @@ copy_clipboard "system"
 
 copy_on_select false
 
-default_shell "/bin/zsh"
+default_shell "/usr/bin/fish"
