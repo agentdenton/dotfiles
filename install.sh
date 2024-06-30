@@ -19,3 +19,9 @@ ln -fns ~/.dotfiles/alacritty ~/.config/alacritty
 ln -fns ~/.dotfiles/dunst ~/.config/dunst
 
 cp environment /etc/environment
+
+# install fisher
+# curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
+
+# install fzf.fish
+# fisher install PatrickF1/fzf.fish
