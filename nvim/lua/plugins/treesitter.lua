@@ -9,6 +9,7 @@ require('nvim-treesitter.configs').setup({
     'python',
     'rust',
     'julia',
+    'just',
   },
   highlight = {
     enable = true

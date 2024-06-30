@@ -35,6 +35,6 @@ vim.opt.background = 'dark'
 vim.opt.number = true
 vim.opt.relativenumber = true
 -- vim.opt.colorcolumn = '81'
-vim.o.wildmode = "longest:full" -- better <cmd> autocomplete
+vim.o.wildmode = "list:full" -- better <cmd> autocomplete
 -- vim.opt.iskeyword:remove{'_'}
 -- vim.o.guicursor = "n-v-c-i:block"
