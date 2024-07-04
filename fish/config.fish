@@ -44,10 +44,18 @@ set -x NNN_TMPFILE "/tmp/lastd"
 set -x EDITOR nvim
 set -x VISUAL nvim
 
-set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
+set -x EXA_STRICT 1
+
+set -x BAT_THEME ansi
+
+# set -x LESS "-R"
+set -x MANROFFOPT "-c"
+set -x MANPAGER "bat -l man -p"
 
 set -x PATH $HOME/.local/bin $PATH
 set -x PATH $HOME/.cargo/bin $PATH
+
+set -x DEBUGINFOD_URLS ""
 
 # aliases
 alias lg "lazygit"
@@ -86,6 +94,9 @@ alias grh "git reset --hard"
 alias grs "git reset --soft"
 alias gclc "git clean -fdx"
 
+alias fedit "$EDITOR $HOME/.config/fish/config.fish"
+alias fsrc "source $HOME/.config/fish/config.fish"
+
 function ncd
     # Block nesting of nnn in subshells (Fish version)
     if set -q NNNLVL; and test $NNNLVL -ge 1
@@ -98,6 +109,8 @@ function ncd
         source "$NNN_TMPFILE"
         rm -f "$NNN_TMPFILE" > /dev/null
     end
+
+    commandline -f repaint
 end
 
 function vif
@@ -105,6 +118,8 @@ function vif
     if test -n "$file"
         $EDITOR $file
     end
+
+    commandline -f repaint
 end
 
 function cdf --argument depth
@@ -121,6 +136,8 @@ function cdf --argument depth
     if test -n "$dir"
         cd $dir
     end
+
+    commandline -f repaint
 end
 
 if type -q exa
@@ -150,3 +167,7 @@ if status is-interactive
 end
 
 fish_vi_key_bindings
+
+bind --mode insert --user \cn ncd
+bind --mode insert --user \cf vif
+bind --mode insert --user \c] cdf
