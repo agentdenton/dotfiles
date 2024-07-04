@@ -13,11 +13,6 @@ $character"""
 [directory]
 style = "blue"
 
-[character]
-success_symbol = "[\\$](green)"
-error_symbol = "[\\$](red)"
-vimcmd_symbol = "[\\$](purple)"
-
 [git_branch]
 format = "on [$branch]($style)"
 style = "purple"
