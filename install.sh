@@ -6,7 +6,7 @@ ln -fns ~/.dotfiles/gitconfig ~/.gitconfig
 ln -fns ~/.dotfiles/inputrc ~/.inputrc
 ln -fns ~/.dotfiles/vimrc ~/.vimrc
 ln -fns ~/.dotfiles/nvim ~/.config/nvim
-ln -fns ~/.dotfiles/fish ~/.config/fish
+ln -fns ~/.dotfiles/fish/config.fish ~/.config/fish/config.fish
 ln -fns ~/.dotfiles/helix ~/.config/helix
 ln -fns ~/.dotfiles/sway ~/.config/sway
 ln -fns ~/.dotfiles/waybar ~/.config/waybar
