@@ -16,6 +16,7 @@ ln -fns ~/.dotfiles/zathura ~/.config/zathura
 ln -fns ~/.dotfiles/zellij ~/.config/zellij
 ln -fns ~/.dotfiles/starship.toml ~/.config/starship.toml
 ln -fns ~/.dotfiles/alacritty ~/.config/alacritty
+ln -fns ~/.dotfiles/wezterm ~/.config/wezterm
 ln -fns ~/.dotfiles/dunst ~/.config/dunst
 
 cp environment /etc/environment
