@@ -2,14 +2,21 @@ local wezterm = require('wezterm')
 local c = wezterm.config_builder()
 local act = wezterm.action
 
+local custom_catppuccin = wezterm.color.get_builtin_schemes()["Catppuccin Frappe"]
+custom_catppuccin.cursor_bg = '#B5BFE2'
+
+c.color_schemes = {
+    ['CustomCatppuccin'] = custom_catppuccin,
+}
+
+c.color_scheme = 'CustomCatppuccin'
+
 c.font = wezterm.font({
   family = 'Iosevka Nerd Font'
 })
 
 c.font_size = 15
 c.command_palette_font_size = c.font_size * 1.1
-
-c.color_scheme = 'Catppuccin Frappe'
 
 c.use_fancy_tab_bar = false
 
