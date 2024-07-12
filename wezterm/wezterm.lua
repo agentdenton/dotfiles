@@ -76,4 +76,18 @@ c.keys = {
   },
 }
 
+local map = function(key, mods, action)
+  if type(mods) == "string" then
+    table.insert(c.keys, { key = key, mods = mods, action = action })
+  elseif type(mods) == "table" then
+    for _, mod in pairs(mods) do
+      table.insert(c.keys, { key = key, mods = mod, action = action })
+    end
+  end
+end
+
+for i = 1, 9 do
+  map(tostring(i), { "ALT" }, act.ActivateTab(i - 1))
+end
+
 return c
