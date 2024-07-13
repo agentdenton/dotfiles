@@ -1,5 +1,5 @@
 * {
-    font: "Hack Nerd Font 14";
+    font: "Comic Mono 16";
     width: 600;
 
     bg-col:  #303446;
