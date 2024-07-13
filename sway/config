@@ -2,9 +2,9 @@ include /etc/sway/config.d/*
 
 set $mod Mod4
 set $term alacritty
-set $wallpaper ~/Pictures/wallpapers/sci-fi-planet.png
+set $wallpaper ~/Pictures/wallpapers/futuristic_night_city_blue.jpg
 
-font pango:Hack Nerd Font 12
+font pango:Comic Mono 14
 
 output * mode 2560x1440@144Hz bg $wallpaper stretch
 
@@ -19,7 +19,7 @@ focus_follows_mouse yes
 floating_modifier $mod normal
 
 # launch terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec wezterm
 
 # launch programs
 bindsym $mod+s exec --no-startup-id rofi -show run
@@ -120,6 +120,7 @@ mode "resize" {
   # back to normal: Enter or Escape
   bindsym Return mode "default"
   bindsym Escape mode "default"
+  bindsym $mod+r mode "default"
 }
 bindsym $mod+r mode "resize"
 
