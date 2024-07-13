@@ -12,7 +12,7 @@ c.color_schemes = {
 c.color_scheme = 'CustomCatppuccin'
 
 c.font = wezterm.font({
-  family = 'Iosevka Nerd Font'
+  family = 'ComicMono'
 })
 
 c.font_size = 15
