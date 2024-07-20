@@ -39,7 +39,7 @@ autocmd('Filetype', {
 augroup('setIndent2', {clear = true})
 autocmd('Filetype', {
   group = 'setIndent2',
-  pattern = {'lua'},
+  pattern = {'lua', 'cpp', 'c'},
   command = 'set softtabstop=2 shiftwidth=2 tabstop=2'
 })
 
