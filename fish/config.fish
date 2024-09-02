@@ -65,6 +65,7 @@ alias bat "bat -p"
 alias fd "fd --color=never"
 alias nnn "nnn -e -U -A"
 alias clc "clear"
+alias wcp "wl-copy"
 
 alias mkin "sudo make install"
 alias msd "meson setup build --buildtype debug"
@@ -72,8 +73,8 @@ alias msr "meson setup build --buildtype release"
 alias nb "ninja -C build"
 alias nc "ninja -C build clean"
 
-alias todo "$EDITOR ~/todo.txt"
-alias notes "$EDITOR ~/notes.txt"
+alias todo "$EDITOR ~/todo.md"
+alias notes "$EDITOR ~/notes.md"
 
 alias toua "trans :uk "
 alias toen "trans uk: "
