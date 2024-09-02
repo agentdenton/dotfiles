@@ -1,15 +1,15 @@
 include /etc/sway/config.d/*
 
 set $mod Mod4
-set $term alacritty
-set $wallpaper ~/Pictures/wallpapers/retro_synth.png
+set $term wezterm
+set $wallpaper ~/Pictures/wallpapers/space.jpg
 
 font pango:Comic Mono 14
 
 output * mode 2560x1440@144Hz bg $wallpaper stretch
 
 gaps inner 15
-gaps outer 5
+gaps outer 10
 
 default_border pixel 2
 default_floating_border pixel 1
@@ -19,7 +19,7 @@ focus_follows_mouse yes
 floating_modifier $mod normal
 
 # launch terminal
-bindsym $mod+Return exec wezterm
+bindsym $mod+Return exec $term
 
 # launch programs
 bindsym $mod+s exec --no-startup-id rofi -show drun
@@ -145,3 +145,4 @@ client.placeholder      #303446 #949cbb #C6D0F5 #1f222d
 client.urgent           #E78284 #BF616A #303446 #BF616A
 
 exec --no-startup-id dunst
+exec --no-startup-id /usr/lib/xdg-desktop-portal -r
