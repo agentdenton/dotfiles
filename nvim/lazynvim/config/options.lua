@@ -5,3 +5,4 @@
 vim.diagnostic.enable(false)
 vim.opt.wrap = true
 vim.opt.scrolloff = 12
+vim.g.autoformat = false
