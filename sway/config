@@ -2,7 +2,7 @@ include /etc/sway/config.d/*
 
 set $mod Mod4
 set $term wezterm
-set $wallpaper ~/Pictures/wallpapers/space.jpg
+set $wallpaper ~/Pictures/wallpapers/pixel_quasar.png
 
 font pango:Comic Mono 14
 
