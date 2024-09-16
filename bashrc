@@ -216,3 +216,4 @@ bind -x '"\C-f":"vif"'
 bind -x '"\C-n":"ncd"'
 
 eval "$(starship init bash)"
+. "$HOME/.cargo/env"

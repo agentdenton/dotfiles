@@ -67,6 +67,7 @@ alias nnn "nnn -e -U -A"
 alias clc "clear"
 alias wcp "wl-copy"
 
+alias make "make | less -R"
 alias mkin "sudo make install"
 alias msd "meson setup build --buildtype debug"
 alias msr "meson setup build --buildtype release"
