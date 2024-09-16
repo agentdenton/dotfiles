@@ -12,7 +12,12 @@ c.color_schemes = {
 c.color_scheme = "CustomCatppuccin"
 
 c.font = wezterm.font_with_fallback({
-	{ family = "JetBrainsMono", weight = "Medium", italic = false },
+  {
+    family = "VictorMono Nerd Font",
+    style = "Normal",
+    weight = "Medium",
+    italic = false
+  },
 })
 
 c.front_end = "WebGpu"
