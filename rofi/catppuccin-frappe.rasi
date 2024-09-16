@@ -1,5 +1,5 @@
 * {
-    font: "Comic Mono 16";
+    font: "RobotoMono Nerd Font 15";
     width: 600;
 
     bg-col:  #303446;
