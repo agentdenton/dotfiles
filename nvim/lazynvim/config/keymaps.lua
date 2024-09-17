@@ -5,3 +5,5 @@
 local map = vim.api.nvim_set_keymap
 
 map('n', 'U', '<cmd>redo<cr>', {noremap = true})
+
+map('n', 'K', '<nop>', {noremap = true})

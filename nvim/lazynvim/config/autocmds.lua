@@ -6,6 +6,12 @@ local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
 
 -- don't auto commenting new lines
+autocmd('BufEnter', {
+  pattern = '*',
+  command = 'set fo-=c fo-=r fo-=o'
+})
+
+-- don't auto commenting new lines
 autocmd("BufEnter", {
   pattern = "*",
   command = "set fo-=c fo-=r fo-=o",
@@ -25,4 +31,21 @@ autocmd("Filetype", {
   group = "setIndent2",
   pattern = { "lua", "cpp", "c" },
   command = "set softtabstop=2 shiftwidth=2 tabstop=2",
+})
+
+-- remove line numbers in terminal mode
+autocmd('TermOpen', {
+  command = 'setlocal listchars= nonumber norelativenumber',
+})
+
+-- Enter insert mode when switching to terminal
+autocmd({'TermOpen', 'BufWinEnter', 'WinEnter'}, {
+  pattern = 'term://*',
+  command = 'startinsert'
+})
+
+-- Close terminal buffer on process exit
+autocmd('BufLeave', {
+  pattern = 'term://*',
+  command = 'stopinsert'
 })
