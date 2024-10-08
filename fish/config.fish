@@ -52,9 +52,6 @@ set -x BAT_THEME ansi
 set -x MANROFFOPT "-c"
 set -x MANPAGER "bat -l man -p"
 
-set -x PATH $HOME/.local/bin $PATH
-set -x PATH $HOME/.cargo/bin $PATH
-
 set -x DEBUGINFOD_URLS ""
 
 # aliases
@@ -168,8 +165,11 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-fish_vi_key_bindings
-
 bind --mode insert --user \cn ncd
 bind --mode insert --user \cf vif
 bind --mode insert --user \c] cdf
+
+fish_vi_key_bindings
+
+fish_add_path $HOME/.local/bin $PATH
+fish_add_path $HOME/.cargo/bin $PATH

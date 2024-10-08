@@ -207,3 +207,4 @@ bindkey -s '^]' 'cdf\n'
 bindkey -s '^v' 'vi .\n'
 
 eval "$(starship init zsh)"
+. "$HOME/.cargo/env"

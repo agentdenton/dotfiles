@@ -22,7 +22,7 @@ c.font = wezterm.font_with_fallback({
 
 c.front_end = "WebGpu"
 
-c.font_size = 14
+c.font_size = 15
 c.command_palette_font_size = c.font_size * 1.1
 
 c.use_fancy_tab_bar = false
@@ -68,6 +68,11 @@ c.keys = {
 		key = "l",
 		mods = "ALT",
 		action = act.ActivatePaneDirection("Right"),
+	},
+	{
+		key = "p",
+		mods = "ALT",
+		action = act.ActivatePaneDirection("Prev"),
 	},
 	{
 		key = "n",

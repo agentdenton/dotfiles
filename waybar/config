@@ -7,7 +7,7 @@
     "disable-scroll": true,
     "all-outputs": true,
     "format": "{icon}",
-    "persistent_workspaces": {
+    "persistent-workspaces": {
       "1": [],
       "2": [],
       "3": [],
@@ -21,7 +21,7 @@
     }
   },
   "clock": {
-    "format": "<span foreground='#C6AAE8'> </span>{:%a %d %H:%M}",
+    "format": "{:%a %d %H:%M}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   },
   "sway/language": {

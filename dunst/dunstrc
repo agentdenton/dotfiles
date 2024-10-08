@@ -1,54 +1,54 @@
 [global]
-  monitor = 1
-  geometry = "280x6-10+43"
-  notification_height = 0
-  padding = 20
-  horizontal_padding = 20
-  idle_threshold = 120
-  line_height = 0
-  format = "<b>%s</b>\n%b"
-  show_age_threshold = 60
-  history_length = 20
+monitor = 1
+geometry = "280x6-10+43"
+notification_height = 0
+padding = 20
+horizontal_padding = 20
+idle_threshold = 120
+line_height = 0
+format = "<b>%s</b>\n%b"
+show_age_threshold = 60
+history_length = 20
 
-  corner_radius = 8
-  max_icon_size = 24
+corner_radius = 8
+max_icon_size = 24
 
-  frame_width = 3
-  frame_color = "#E5E9F0"
+frame_width = 3
+frame_color = "#E5E9F0"
 
-  separator_height = 2
-  separator_color = "#E5E9F0"
+separator_height = 2
+separator_color = "#E5E9F0"
 
-  ellipsize = middle
-  alignment = center
+ellipsize = middle
+alignment = center
 
-  verbosity = mesg
-  follow = none
+verbosity = mesg
+follow = none
 
-  shrink = no
-  markup = no
-  ignore_newline = no
+shrink = no
+markup = no
+ignore_newline = no
 
-  show_indicators = yes
-  sticky_history = yes
-  word_wrap = yes
-  sort = yes
-  indicate_hidden = yes
+show_indicators = yes
+sticky_history = yes
+word_wrap = yes
+sort = yes
+indicate_hidden = yes
 
-  stack_duplicates = true
-  hide_duplicate_count = false
-  startup_notification = false
-  force_xinerama = false
+stack_duplicates = true
+hide_duplicate_count = false
+startup_notification = false
+force_xinerama = false
 
-  mouse_left_click = close_current
-  mouse_middle_click = do_action
-  mouse_right_click = close_all
+mouse_left_click = close_current
+mouse_middle_click = do_action
+mouse_right_click = close_all
 
-  font = "Comic Mono 13"
+font = "Iosevka Nerd Font 16"
 
 [shortcuts]
-  close = ctrl+space
-  close_all = ctrl+shift+space
+close = ctrl+space
+close_all = ctrl+shift+space
 
 [global]
 frame_color = "#8CAAEE"
@@ -57,12 +57,15 @@ separator_color= frame
 [urgency_low]
 background = "#303446"
 foreground = "#C6D0F5"
+timeout = 3
 
 [urgency_normal]
 background = "#303446"
 foreground = "#C6D0F5"
+timeout = 10
 
 [urgency_critical]
 background = "#303446"
 foreground = "#C6D0F5"
 frame_color = "#EF9F76"
+timeout = 20
