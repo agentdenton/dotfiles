@@ -15,8 +15,8 @@ if type -q starship
     starship init fish | source
 end
 
-fish_add_path $HOME/.local/bin $PATH
-fish_add_path $HOME/.cargo/bin $PATH
+fish_add_path -m ~/.local/bin
+fish_add_path -m ~/.cargo/bin
 
 fish_vi_key_bindings
 
