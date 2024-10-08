@@ -8,7 +8,7 @@ ln -fns ~/.dotfiles/vimrc ~/.vimrc
 # ln -fns ~/.dotfiles/nvim ~/.config/nvim
 ln -fns ~/.dotfiles/nvim/lazynvim/config ~/.config/nvim/lua/config
 ln -fns ~/.dotfiles/nvim/lazynvim/plugins ~/.config/nvim/lua/plugins
-ln -fns ~/.dotfiles/fish/config.fish ~/.config/fish/config.fish
+ln -fns ~/.dotfiles/fish ~/.config/fish
 ln -fns ~/.dotfiles/helix ~/.config/helix
 ln -fns ~/.dotfiles/sway ~/.config/sway
 ln -fns ~/.dotfiles/waybar ~/.config/waybar
