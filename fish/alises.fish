@@ -6,6 +6,7 @@ alias fd "fd --color=never"
 alias nnn "nnn -e -U -A"
 alias clc "clear"
 alias wcp "wl-copy"
+alias cat "bat -p"
 
 alias make "make | less -R"
 alias mkin "sudo make install"

@@ -27,7 +27,7 @@ function cdf --argument depth
     set depth 1
 
     if test "$depth" = "1"
-        set dir (fd -I -t d --max-depth 1 | fzf)
+        set dir (fd -I -t d | fzf)
     else if test "$depth" = "-1"
         set dir (fd -I -t d | fzf)
     else
