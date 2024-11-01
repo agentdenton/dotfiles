@@ -53,16 +53,15 @@ require('packer').startup(function()
   use 'numToStr/Comment.nvim'
   use 'nvim-tree/nvim-tree.lua'
 
-  use {
-    'folke/which-key.nvim',
-    config = function()
-      vim.o.timeout = true
-      vim.o.timeoutlen = 100
-    end
-  }
+  -- use {
+  --   'folke/which-key.nvim',
+  --   config = function()
+  --     vim.o.timeout = true
+  --     vim.o.timeoutlen = 100
+  --   end
+  -- }
   use {
     'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate',
   }
   use {
     'nvim-telescope/telescope.nvim',
@@ -77,10 +76,7 @@ end)
 require('plugins/treesitter')
 require('plugins/telescope')
 require('plugins/nvim-tree')
-require('plugins/which-key')
 require('plugins/ibl')
 require('plugins/comment')
-require('plugins/theme')
 require('plugins/lualine')
-
-vim.cmd([[colorscheme catppuccin-frappe]])
+require('plugins/theme')
