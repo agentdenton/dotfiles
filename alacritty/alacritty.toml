@@ -5,19 +5,19 @@ thickness = 0.15
 unfocused_hollow = true
 
 [font]
-size = 14
+size = 17
 
 [font.bold]
-family = "JetBrainsMono Nerd Font"
+family = "Iosevka Nerd Font"
 style = "Bold"
 
 [font.italic]
-family = "JetBrainsMono Nerd Font"
+family = "Iosevka Nerd Font"
 style = "Italic"
 
 [font.normal]
-family = "JetBrainsMono Nerd Font"
-style = "Medium"
+family = "Iosevka Nerd Font"
+style = "Light"
 
 [shell]
 program = "/usr/bin/fish"
