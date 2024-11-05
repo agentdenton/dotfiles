@@ -18,9 +18,9 @@ set -x VISUAL nvim
 set -x EXA_STRICT 1
 
 set -x BAT_THEME ansi
+set -x BAT_PAGER "less -R"
 
-# set -x LESS "-R"
-# set -x MANROFFOPT "-c"
+set -x MANROFFOPT "-c"
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
 set -x DEBUGINFOD_URLS ""
