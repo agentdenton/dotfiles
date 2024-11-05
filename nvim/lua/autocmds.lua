@@ -59,3 +59,11 @@ autocmd('BufLeave', {
   pattern = 'term://*',
   command = 'stopinsert'
 })
+
+-- if vim.fn.executable('rustfmt') == 1 then
+--   -- run rustfmt on save
+--   autocmd("BufWrite", {
+--     pattern = "*.rs",
+--     command = 'execute "!rustfmt \'%\'" | edit | silent',
+--   })
+-- end
