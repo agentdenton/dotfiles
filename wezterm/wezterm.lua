@@ -97,6 +97,11 @@ c.keys = {
 		mods = "ALT",
 		action = "DisableDefaultAssignment",
 	},
+	{
+		key = "Tab",
+		mods = "ALT",
+		action = "ActivateLastTab",
+	},
 }
 
 local map = function(key, mods, action)
