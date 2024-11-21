@@ -102,6 +102,11 @@ c.keys = {
 		mods = "ALT",
 		action = "ActivateLastTab",
 	},
+	{
+		key = "c",
+		mods = "ALT",
+		action = "ActivateCopyMode",
+	},
 }
 
 local map = function(key, mods, action)
