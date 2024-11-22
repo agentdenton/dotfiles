@@ -7,6 +7,8 @@ alias nnn "nnn -e -U -A"
 alias clc "clear"
 alias wcp "wl-copy"
 alias cat "bat"
+alias sctl "systemctl"
+alias jctl "journalctl"
 
 alias make "make | less -R"
 alias mkin "sudo make install"
