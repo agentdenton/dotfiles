@@ -66,7 +66,7 @@ map(
 map(
   'n',
   '<leader>g',
-  '<cmd>lua require("telescope.builtin").live_grep()<cr>',
+  '<cmd>lua require("telescope.builtin").live_grep({layout_strategy="bottom_pane"})<cr>',
   { desc = 'Telescope live grep' }
 )
 map(
