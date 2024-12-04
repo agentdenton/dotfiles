@@ -1,5 +1,5 @@
 * {
-    font: "RobotoMono Nerd Font 15";
+    font: "Iosevka Nerd Font 18";
     width: 600;
 
     bg-col:  #303446;

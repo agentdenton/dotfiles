@@ -2,9 +2,9 @@ include /etc/sway/config.d/*
 
 set $mod Mod4
 set $term wezterm
-set $wallpaper ~/Pictures/wallpapers/deer.jpg
+set $wallpaper ~/git_repos/catppuccin-wallpapers/flatppuccin/flatppuccin_4k_macchiato_inverted.png
 
-font pango:Comic Mono 14
+font pango:Iosevka Nerd Font 14
 
 output * mode 2560x1440@144Hz bg $wallpaper stretch
 
