@@ -48,6 +48,9 @@ map('n', '<c-l>', '<c-w>l', {noremap = true, desc = 'Goto right pane'})
 -- switch to normal mode in terminal
 map('t', '<c-space>', '<c-\\><c-n>', {noremap = true})
 
+-- switch to previous buffer
+map('n', '<leader>bp', '<c-6>', {noremap = true})
+
 map('t', '<c-h>', '<c-\\><c-n><c-w>h', {noremap = true, desc = 'Move terminal left'})
 map('t', '<c-j>', '<c-\\><c-n><c-w>j', {noremap = true, desc = 'Move terminal down'})
 map('t', '<c-k>', '<c-\\><c-n><c-w>k', {noremap = true, desc = 'Move terminal up'})
