@@ -10,6 +10,7 @@ alias cat "bat"
 alias sctl "systemctl"
 alias jctl "journalctl"
 alias rgc "rg --color=always"
+alias rmf "rm -rf -I"
 
 alias mkbat "make 2>&1 | tee /tmp/mkbat.txt"
 alias mkbatf "bat /tmp/mkbat.txt"
