@@ -15,6 +15,10 @@ if type -q starship
     starship init fish | source
 end
 
+if type -q direnv
+    direnv hook fish | source
+end
+
 fish_add_path -m ~/.local/bin
 fish_add_path -m ~/.cargo/bin
 
