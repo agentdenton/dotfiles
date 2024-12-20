@@ -27,3 +27,4 @@ fish_vi_key_bindings
 bind --mode insert --user \cn ncd
 bind --mode insert --user \cf vif
 bind --mode insert --user \c] cdf
+bind --mode insert --user \cyp yank_pwd

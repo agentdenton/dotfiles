@@ -40,3 +40,8 @@ function cdf --argument depth
 
     commandline -f repaint
 end
+
+function yank_pwd
+    pwd | wl-copy
+    commandline -f repaint
+end
