@@ -4,6 +4,10 @@ theme = "catppuccin-frappe"
 line-number = "relative"
 mouse = false
 cursorline = true
+true-color = true
+color-modes = true
+completion-replace = true
+auto-completion = true
 
 [editor.statusline]
 left = ["mode", "spinner", "file-name"]
@@ -12,6 +16,17 @@ separator = "│"
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
 mode.select = "SELECT"
+
+[editor.indent-guides]
+render = true
+
+[editor.lsp]
+auto-signature-help = false
+display-messages = false
+
+[editor.file-picker]
+hidden = true
+git-ignore = false
 
 [keys.normal]
 "G" = "goto_last_line"
