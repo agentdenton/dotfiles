@@ -2,7 +2,7 @@ include /etc/sway/config.d/*
 
 set $mod Mod4
 set $term wezterm
-set $wallpaper ~/git_repos/catppuccin-wallpapers/flatppuccin/flatppuccin_4k_macchiato_inverted.png
+set $wallpaper ~/Pictures/wallpapers/girl-and-cat-in-field.png
 
 font pango:Iosevka Nerd Font 14
 
@@ -144,5 +144,7 @@ client.focused_inactive #303446 #949cbb #C6D0F5 #1f222d
 client.placeholder      #303446 #949cbb #C6D0F5 #1f222d
 client.urgent           #E78284 #BF616A #303446 #BF616A
 
+set $opacity 0.9
+for_window [app_id="org.wezfurlong.wezterm"] opacity $opacity
+
 exec --no-startup-id dunst
-exec --no-startup-id /usr/lib/xdg-desktop-portal -r
