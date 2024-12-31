@@ -20,6 +20,7 @@ ln -fns ~/.dotfiles/starship.toml ~/.config/starship.toml
 ln -fns ~/.dotfiles/alacritty ~/.config/alacritty
 ln -fns ~/.dotfiles/wezterm ~/.config/wezterm
 ln -fns ~/.dotfiles/dunst ~/.config/dunst
+ln -fns ~/.dotfiles/mimeapps.list ~/.config/mimeapps.list
 
 cp environment /etc/environment
 
