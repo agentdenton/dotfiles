@@ -21,7 +21,7 @@
     }
   },
   "clock": {
-    "format": "{:%a %d %H:%M}",
+    "format": "{:%a %Y-%m-%d %H:%M}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   },
   "sway/language": {
