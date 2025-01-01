@@ -1,4 +1,3 @@
-import = ["~/.config/alacritty/catppuccin-frappe.toml"]
 
 [cursor]
 thickness = 0.15
@@ -19,5 +18,10 @@ style = "Italic"
 family = "Iosevka Nerd Font"
 style = "Light"
 
-[shell]
+[general]
+import = ["~/.config/alacritty/catppuccin-frappe.toml"]
+
+[terminal]
+
+[terminal.shell]
 program = "/usr/bin/fish"
