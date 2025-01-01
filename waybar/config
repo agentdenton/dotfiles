@@ -32,7 +32,7 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "<span size='13000' foreground='#B1E3AD'>{icon}</span> {capacity}%",
+    "format": "<span size='13000' foreground='#B1E3AD'>{icon}</span>  {capacity}%",
     "format-warning": "<span size='13000' foreground='#B1E3AD'>{icon}</span> {capacity}%",
     "format-critical": "<span size='13000' foreground='#E38C8F'>{icon}</span> {capacity}%",
     "format-charging": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
@@ -43,7 +43,7 @@
     "tooltip-format": "{time}"
   },
   "network": {
-    "format-wifi": "<span size='13000' foreground='#F2CECF'> </span>{essid}",
+    "format-wifi": "<span size='13000' foreground='#F2CECF'> </span> {essid}",
     "format-ethernet": "<span size='13000' foreground='#a6d189'></span> {ipaddr}",
     "format-linked": "{ifname} (No IP) ",
     "format-disconnected": "<span size='13000' foreground='#F2CECF'> </span>Disconnected",
