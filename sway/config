@@ -8,11 +8,13 @@ font pango:Iosevka Nerd Font 14
 
 output * mode 2560x1440@144Hz bg $wallpaper stretch
 
-gaps inner 15
-gaps outer 10
+gaps inner 5
+gaps outer 5
 
 default_border pixel 2
 default_floating_border pixel 1
+
+hide_edge_borders smart
 
 focus_follows_mouse yes
 
@@ -36,7 +38,7 @@ bindsym --locked $mod+F5 exec brightnessctl set 5%+
 # keyboard brightness control
 bindsym $mod+F7 exec sway_brightness_keyboard.py +1
 
-bindsym $mod+F9 exec swaylock -k -i ~/Pictures/wallpapers/sci-fi-planet.png
+bindsym $mod+F9 exec swaylock -k -i ~/Pictures/wallpapers/girl-and-cat-in-field.png
 
 bindsym $mod+Shift+e exec sway_exit.sh
 
