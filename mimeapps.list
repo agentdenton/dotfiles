@@ -30,3 +30,4 @@ image/png=feh.desktop
 applications/json=nvim.desktop
 applications/mbox=nvim.desktop
 text/txt=nvim.desktop
+text/pdf=okular.desktop
