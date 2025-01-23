@@ -4,6 +4,8 @@ set $mod Mod4
 set $term wezterm
 set $wallpaper ~/Pictures/wallpapers/girl-and-cat-in-field.png
 
+set $opacity 0.9
+
 font pango:Iosevka Nerd Font 14
 
 output * mode 2560x1440@144Hz bg $wallpaper stretch
@@ -146,7 +148,7 @@ client.focused_inactive #303446 #949cbb #C6D0F5 #1f222d
 client.placeholder      #303446 #949cbb #C6D0F5 #1f222d
 client.urgent           #E78284 #BF616A #303446 #BF616A
 
-set $opacity 0.9
 for_window [app_id="org.wezfurlong.wezterm"] opacity $opacity
+for_window [class="VirtualBox Manager"] floating enable
 
 exec --no-startup-id dunst
