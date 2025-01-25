@@ -30,8 +30,6 @@ git-ignore = false
 
 [keys.normal]
 "G" = "goto_last_line"
-"," = "repeat_last_motion"
-X = ["extend_line_up", "extend_to_line_bounds"]
 
 [keys.normal.g]
 "s" = "goto_line_start"
