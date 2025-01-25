@@ -9,19 +9,18 @@ set -x FZF_DEFAULT_OPTS $FZF_DEFAULT_OPTS \
 
 set -x NNN_FIFO /tmp/nnn.fifo
 set -x NNN_PLUG 'f:finder;o:fzopen;p:mocplay;d:diffs;t:nmount;v:imgview'
-set -x NNN_FCOLORS "0B0B04060006060009060B06"
-set -x NNN_TMPFILE "/tmp/lastd"
+set -x NNN_FCOLORS 0B0B04060006060009060B06
+set -x NNN_TMPFILE /tmp/lastd
 
-set -x EDITOR nvim
-set -x VISUAL nvim
+set -x EDITOR helix
+set -x VISUAL helix
 
 set -x EXA_STRICT 1
 
 set -x BAT_THEME ansi
 set -x BAT_PAGER "less -R"
 
-set -x MANROFFOPT "-c"
+set -x MANROFFOPT -c
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
 set -x DEBUGINFOD_URLS ""
-
