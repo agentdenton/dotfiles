@@ -25,15 +25,13 @@ auto-signature-help = false
 display-messages = false
 
 [editor.file-picker]
+ignore = true
 hidden = true
-git-ignore = false
+git-ignore = true
 
 [keys.normal]
-"G" = "goto_last_line"
-
-[keys.normal.g]
-"s" = "goto_line_start"
-"e" = "goto_line_end"
-
-[keys.normal.space]
-"p" = "goto_last_accessed_file"
+G = "goto_last_line"
+D = "kill_to_line_end"
+tab = "repeat_last_motion"
+S-s = "goto_line_start"
+S-e = "goto_line_end"
