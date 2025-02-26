@@ -12,8 +12,8 @@ set -x NNN_PLUG 'f:finder;o:fzopen;p:mocplay;d:diffs;t:nmount;v:imgview'
 set -x NNN_FCOLORS 0B0B04060006060009060B06
 set -x NNN_TMPFILE /tmp/lastd
 
-set -x EDITOR helix
-set -x VISUAL helix
+set -x EDITOR nvim
+set -x VISUAL nvim
 
 set -x EXA_STRICT 1
 
