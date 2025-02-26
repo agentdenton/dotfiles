@@ -12,19 +12,19 @@ c.color_schemes = {
 c.color_scheme = "CustomCatppuccin"
 
 c.font = wezterm.font_with_fallback({
-  {
-    family = "Iosevka Nerd Font",
-    style = "Normal",
-    weight = "Light",
-    italic = false,
-  },
+	{
+		family = "Iosevka Nerd Font",
+		style = "Normal",
+		weight = "Light",
+		italic = false,
+	},
 })
 
-c.cell_width = 0.9
+c.cell_width = 0.85
 
 c.front_end = "WebGpu"
 
-c.font_size = 17
+c.font_size = 19
 c.command_palette_font_size = c.font_size * 1.1
 
 c.use_fancy_tab_bar = false
