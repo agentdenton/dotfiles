@@ -37,7 +37,7 @@ def symlink(src, dst):
     if os.path.exists(dst) or os.path.islink(dst):
         print(f"Removing existing file/symlink: {dst}")
         if os.path.isdir(dst) and not os.path.islink(dst):
-            shutil.rmtree(target_path)
+            shutil.rmtree(dst)
         else:
             os.remove(dst)
 
