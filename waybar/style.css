@@ -14,10 +14,6 @@ window#waybar {
     margin-left: 5px;
     margin-top: 5px;
     margin-bottom: 5px;
-    border-top-right-radius: 9999px;
-    border-bottom-right-radius: 9999px;
-    border-top-left-radius: 9999px;
-    border-bottom-left-radius: 9999px;
 }
 
 #workspaces button {
@@ -48,8 +44,4 @@ window#waybar {
     margin-left: 5px;
     margin-top: 5px;
     margin-bottom: 5px;
-    border-top-right-radius: 9999px;
-    border-bottom-right-radius: 9999px;
-    border-top-left-radius: 9999px;
-    border-bottom-left-radius: 9999px;
 }
