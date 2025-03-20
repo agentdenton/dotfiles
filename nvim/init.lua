@@ -17,6 +17,8 @@ vim.opt.mouse = "a"
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
 
+vim.opt.wrap = false
+
 -- Sync clipboard between OS and Neovim.
 --  Schedule the setting after `UiEnter` because it can increase startup-time.
 --  Remove this option if you want your OS clipboard to remain independent.
@@ -86,6 +88,15 @@ vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left wind
 vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
+
+vim.keymap.set("v", "<", "<gv", { noremap = true })
+vim.keymap.set("v", ">", ">gv", { noremap = true })
+
+vim.keymap.set("n", "ge", "$h", { noremap = true })
+vim.keymap.set("n", "gb", "^h", { noremap = true })
+
+vim.keymap.set("v", "ge", "$h", { noremap = true })
+vim.keymap.set("v", "gb", "^h", { noremap = true })
 
 vim.keymap.set("n", "U", "<cmd>redo<cr>", { desc = "Redo" })
 
@@ -683,7 +694,7 @@ require("lazy").setup({
 		priority = 1000,
 		config = function()
 			require("catppuccin").setup({
-				no_italic = false,
+				no_italic = true,
 			})
 			vim.cmd.colorscheme("catppuccin-frappe")
 		end,
