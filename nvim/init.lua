@@ -92,8 +92,8 @@ vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper win
 vim.keymap.set("v", "<", "<gv", { noremap = true })
 vim.keymap.set("v", ">", ">gv", { noremap = true })
 
-vim.keymap.set("n", "ge", "$h", { noremap = true })
-vim.keymap.set("n", "gb", "^h", { noremap = true })
+vim.keymap.set("n", "ge", "$", { noremap = true })
+vim.keymap.set("n", "gb", "^", { noremap = true })
 
 vim.keymap.set("v", "ge", "$h", { noremap = true })
 vim.keymap.set("v", "gb", "^h", { noremap = true })
@@ -143,7 +143,7 @@ vim.api.nvim_create_autocmd("Filetype", {
 	desc = "Set indentation to 4 spaces",
 	group = indent4_ag,
 	pattern = { "python", "rust" },
-	command = "set softtabstop=2 shiftwidth=2 tabstop=2",
+	command = "set softtabstop=4 shiftwidth=4 tabstop=4",
 })
 
 -- Remove whitespace on save
@@ -439,6 +439,7 @@ require("lazy").setup({
 						[vim.diagnostic.severity.HINT] = "󰌶 ",
 					},
 				} or {},
+				-- virtual_text = false,
 				virtual_text = {
 					source = "if_many",
 					spacing = 2,
