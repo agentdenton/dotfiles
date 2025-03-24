@@ -6,7 +6,6 @@
   "sway/workspaces": {
     "disable-scroll": true,
     "all-outputs": true,
-    "format": "{icon}",
     "persistent-workspaces": {
       "1": [],
       "2": [],
@@ -14,11 +13,6 @@
       "4": [],
       "5": [],
     },
-    "format-icons": {
-      "default": "",
-      "urgent": "",
-      "focused": ""
-    }
   },
   "clock": {
     "format": "{:%a %Y-%m-%d %H:%M}",
