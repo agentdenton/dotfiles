@@ -12,7 +12,7 @@ configs = {
     "inputrc": "~/.inputrc",
     "vimrc": "~/.vimrc",
     "nvim": "~/.config/nvim",
-    "fish": "~/.config/fish",
+    "config.fish": "~/.config/fish/config.fish",
     "helix": "~/.config/helix",
     "sway": "~/.config/sway",
     "waybar": "~/.config/waybar",
@@ -31,7 +31,7 @@ def symlink(src, dst):
     dst = os.path.expanduser(dst)
 
     if not os.path.exists(src):
-        print(f"Error: Source file not found: {src}")
+        print(f"Error: Source not found: {src}")
         return
 
     if os.path.exists(dst) or os.path.islink(dst):
