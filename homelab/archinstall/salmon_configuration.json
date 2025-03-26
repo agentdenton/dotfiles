@@ -1,0 +1,168 @@
+{
+    "additional-repositories": [],
+    "archinstall-language": "English",
+    "audio_config": {
+        "audio": "No audio server"
+    },
+    "bootloader": "Systemd-boot",
+    "config_version": "3.0.2",
+    "disk_config": {
+        "config_type": "default_layout",
+        "device_modifications": [
+            {
+                "device": "/dev/nvme0n1",
+                "partitions": [
+                    {
+                        "btrfs": [],
+                        "dev_path": null,
+                        "flags": [
+                            "boot",
+                            "esp"
+                        ],
+                        "fs_type": "fat32",
+                        "mount_options": [],
+                        "mountpoint": "/boot",
+                        "obj_id": "3c8e6aae-67f2-4ee5-a026-e842c083fc44",
+                        "size": {
+                            "sector_size": {
+                                "unit": "B",
+                                "value": 512
+                            },
+                            "unit": "GiB",
+                            "value": 1
+                        },
+                        "start": {
+                            "sector_size": {
+                                "unit": "B",
+                                "value": 512
+                            },
+                            "unit": "MiB",
+                            "value": 1
+                        },
+                        "status": "create",
+                        "type": "primary"
+                    },
+                    {
+                        "btrfs": [
+                            {
+                                "mountpoint": "/",
+                                "name": "@"
+                            },
+                            {
+                                "mountpoint": "/home",
+                                "name": "@home"
+                            },
+                            {
+                                "mountpoint": "/var/log",
+                                "name": "@log"
+                            },
+                            {
+                                "mountpoint": "/var/cache/pacman/pkg",
+                                "name": "@pkg"
+                            },
+                            {
+                                "mountpoint": "/.snapshots",
+                                "name": "@.snapshots"
+                            }
+                        ],
+                        "dev_path": null,
+                        "flags": [],
+                        "fs_type": "btrfs",
+                        "mount_options": [
+                            "compress=zstd"
+                        ],
+                        "mountpoint": null,
+                        "obj_id": "ebd940eb-5646-4211-a2c8-64ae4b672046",
+                        "size": {
+                            "sector_size": {
+                                "unit": "B",
+                                "value": 512
+                            },
+                            "unit": "B",
+                            "value": 999129350144
+                        },
+                        "start": {
+                            "sector_size": {
+                                "unit": "B",
+                                "value": 512
+                            },
+                            "unit": "B",
+                            "value": 1074790400
+                        },
+                        "status": "create",
+                        "type": "primary"
+                    }
+                ],
+                "wipe": true
+            }
+        ]
+    },
+    "disk_encryption": null,
+    "hostname": "salmon",
+    "kernels": [
+        "linux"
+    ],
+    "locale_config": {
+        "kb_layout": "us",
+        "sys_enc": "UTF-8",
+        "sys_lang": "en_US"
+    },
+    "mirror_config": {
+        "custom_mirrors": [],
+        "mirror_regions": {
+            "Ukraine": [
+                "http://mirrors.nix.org.ua/linux/archlinux/$repo/os/$arch",
+                "https://mirrors.nix.org.ua/linux/archlinux/$repo/os/$arch",
+                "http://archlinux.ip-connect.vn.ua/$repo/os/$arch",
+                "https://archlinux.ip-connect.vn.ua/$repo/os/$arch",
+                "http://mirror.mirohost.net/archlinux/$repo/os/$arch",
+                "https://mirror.mirohost.net/archlinux/$repo/os/$arch",
+                "http://repo.hyron.dev/archlinux/$repo/os/$arch",
+                "https://repo.hyron.dev/archlinux/$repo/os/$arch",
+                "http://distrohub.kyiv.ua/archlinux/$repo/os/$arch",
+                "https://distrohub.kyiv.ua/archlinux/$repo/os/$arch",
+                "http://mirrors.reitarovskyi.tech/archlinux/$repo/os/$arch",
+                "https://mirrors.reitarovskyi.tech/archlinux/$repo/os/$arch",
+                "http://mirror.hostiko.network/archlinux/$repo/os/$arch",
+                "https://mirror.hostiko.network/archlinux/$repo/os/$arch"
+            ]
+        }
+    },
+    "network_config": {
+        "type": "iso"
+    },
+    "ntp": true,
+    "packages": [
+        "sudo",
+        "neovim",
+        "fzf",
+        "git",
+        "net-tools",
+        "tailscale",
+        "ripgrep",
+        "networkmanager",
+    ],
+    "parallel downloads": 0,
+    "profile_config": {
+        "gfx_driver": null,
+        "greeter": null,
+        "profile": {
+            "custom_settings": {
+                "Docker": {},
+                "Nginx": {},
+                "sshd": {}
+            },
+            "details": [
+                "Docker",
+                "Nginx",
+                "sshd"
+            ],
+            "main": "Server"
+        }
+    },
+    "save_config": null,
+    "swap": true,
+    "timezone": "Europe/Kyiv",
+    "uki": false,
+    "version": "3.0.2"
+}
