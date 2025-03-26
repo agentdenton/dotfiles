@@ -13,9 +13,9 @@ c.color_scheme = "CustomCatppuccin"
 
 c.font = wezterm.font_with_fallback({
 	{
-		family = "Iosevka Nerd Font",
+		family = "JetBrainsMono Nerd Font",
 		style = "Normal",
-		weight = "Light",
+		weight = "Regular",
 		italic = false,
 	},
 })
@@ -24,7 +24,7 @@ c.cell_width = 0.85
 
 c.front_end = "WebGpu"
 
-c.font_size = 19
+c.font_size = 17
 c.command_palette_font_size = c.font_size * 1.1
 
 c.use_fancy_tab_bar = false
