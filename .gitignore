@@ -4,3 +4,4 @@ plugin
 __pycache__
 
 *.pyc
+lazy-lock.json
