@@ -142,7 +142,7 @@ local indent4_ag = vim.api.nvim_create_augroup("indent4-ag", { clear = true })
 vim.api.nvim_create_autocmd("Filetype", {
 	desc = "Set indentation to 4 spaces",
 	group = indent4_ag,
-	pattern = { "python", "rust" },
+	pattern = { "python", "rust", "sh" },
 	command = "set softtabstop=4 shiftwidth=4 tabstop=4",
 })
 
