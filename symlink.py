@@ -11,7 +11,7 @@ configs = {
     "gitconfig": "~/.gitconfig",
     "inputrc": "~/.inputrc",
     "vimrc": "~/.vimrc",
-    "nvim": "~/.config/nvim",
+    "nvim/init.lua": "~/.config/nvim/init.lua",
     "config.fish": "~/.config/fish/config.fish",
     "helix": "~/.config/helix",
     "sway": "~/.config/sway",
@@ -26,6 +26,8 @@ configs = {
     "mimeapps.list": "~/.config/mimeapps.list",
 }
 
+# FIXME: Something is wrong with the function because sometimes it deletes
+# the src.
 def symlink(src, dst):
     src = os.path.join(DOTFILES_DIR, src)
     dst = os.path.expanduser(dst)
