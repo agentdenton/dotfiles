@@ -2,14 +2,7 @@ local wezterm = require("wezterm")
 local c = wezterm.config_builder()
 local act = wezterm.action
 
-local custom_catppuccin = wezterm.color.get_builtin_schemes()["Catppuccin Frappe"]
-custom_catppuccin.cursor_bg = "#B5BFE2"
-
-c.color_schemes = {
-	["CustomCatppuccin"] = custom_catppuccin,
-}
-
-c.color_scheme = "CustomCatppuccin"
+c.color_scheme = "Catppuccin Frappe"
 
 c.font = wezterm.font_with_fallback({
 	{
