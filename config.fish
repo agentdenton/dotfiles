@@ -1,8 +1,9 @@
-set fish_greeting
-
 fish_add_path -m ~/.local/bin
 fish_add_path -m ~/.cargo/bin
+
 fish_vi_key_bindings
+
+set fish_greeting
 
 # Theme
 set -x fish_color_normal c6d0f5
@@ -32,7 +33,6 @@ set -x fish_pager_color_prefix f4b8e4
 set -x fish_pager_color_completion c6d0f5
 set -x fish_pager_color_description 737994
 
-# Env vars
 set -x FZF_DEFAULT_COMMAND "rg --files --no-ignore-vcs --hidden"
 set -x FZF_DEFAULT_OPTS "-m --height 50%"
 set -x FZF_DEFAULT_OPTS $FZF_DEFAULT_OPTS \
@@ -40,22 +40,13 @@ set -x FZF_DEFAULT_OPTS $FZF_DEFAULT_OPTS \
     "--color=fg:#c6d0f5,header:#e78284,info:#ca9ee6,pointer:#f2d5cf" \
     "--color=marker:#f2d5cf,fg+:#c6d0f5,prompt:#ca9ee6,hl+:#e78284"
 
-set -x NNN_FIFO /tmp/nnn.fifo
-set -x NNN_PLUG 'f:finder;o:fzopen;p:mocplay;d:diffs;t:nmount;v:imgview'
-set -x NNN_FCOLORS 0B0B04060006060009060B06
-set -x NNN_TMPFILE /tmp/lastd
-
 set -x EDITOR nvim
 set -x VISUAL nvim
-
 set -x EXA_STRICT 1
-
 set -x BAT_THEME ansi
 set -x BAT_PAGER "less -R"
-
 set -x MANROFFOPT -c
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
-
 set -x DEBUGINFOD_URLS ""
 
 # Aliases
@@ -64,7 +55,6 @@ alias hx "helix"
 alias zel "zellij options --theme catppuccin-frappe"
 alias bat "bat -p"
 alias fd "fd --color=never"
-alias nnn "nnn -e -U -A"
 alias clc "clear"
 alias wcp "wl-copy"
 alias cat "bat"
@@ -72,17 +62,14 @@ alias sctl "systemctl"
 alias jctl "journalctl"
 alias rgc "rg --color=always"
 alias rmf "rm -rf -I"
+alias cd "z"
+alias cdi "zi"
 
-alias mkbat "make 2>&1 | tee /tmp/mkbat.txt"
-alias mkbatf "bat /tmp/mkbat.txt"
 alias mkin "sudo make install"
 alias msd "meson setup build --buildtype debug"
 alias msr "meson setup build --buildtype release"
 alias nb "ninja -C build"
 alias nc "ninja -C build clean"
-
-alias todo "$EDITOR ~/todo.md"
-alias notes "$EDITOR ~/notes.md"
 
 alias toua "trans :uk "
 alias toen "trans uk: "
@@ -120,56 +107,29 @@ if type -q nvim
     alias vim="nvim"
 end
 
-function ncd
-    # Block nesting of nnn in subshells (Fish version)
-    if set -q NNNLVL; and test $NNNLVL -ge 1
-        echo "nnn is already running"
-        return
-    end
-
-    nnn $argv
-    if test -f "$NNN_TMPFILE"
-        source "$NNN_TMPFILE"
-        rm -f "$NNN_TMPFILE" > /dev/null
-    end
-
-    commandline -f repaint
-end
-
 function vif
     set file (fd -t f | fzf)
     if test -n "$file"
         $EDITOR $file
     end
-
     commandline -f repaint
 end
 
 function cdf --argument depth
-    set depth 1
-
-    if test "$depth" = "1"
-        set dir (fd -I -t d | fzf)
-    else if test "$depth" = "-1"
-        set dir (fd -I -t d | fzf)
-    else
-        set dir (fd -I -t d --max-depth $depth | fzf)
-    end
-
+    set dir (fd -I | fzf)
     if test -n "$dir"
         cd $dir
     end
-
     commandline -f repaint
 end
 
-function yank_pwd
-    pwd | wl-copy
-    commandline -f repaint
-end
-
-if status is-interactive
-    # Commands to run in interactive sessions can go here
+function y
+    set tmp (mktemp -t "yazi-cwd.XXXXXX")
+    yazi $argv --cwd-file="$tmp"
+    if read -z cwd < "$tmp"; and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+        builtin cd -- "$cwd"
+    end
+    rm -f -- "$tmp"
 end
 
 if type -q zoxide
@@ -183,8 +143,3 @@ end
 if type -q direnv
     direnv hook fish | source
 end
-
-bind --mode insert --user \cn ncd
-bind --mode insert --user \cf vif
-bind --mode insert --user \c] cdf
-bind --mode insert --user \cyp yank_pwd
