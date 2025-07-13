@@ -62,16 +62,21 @@ def install_pacman_packages():
     command = ["pacman", "-S", "--needed", "--noconfirm", "-"]
     try:
         with open(cfg_path, 'r') as f:
-            subprocess.run(
-                command,
-                stdin=f,
-                check=True,
-                capture_output=True,
-                text=True
-            )
+            subprocess.run(command, stdin=f, check=True, text=True)
     except subprocess.CalledProcessError as e:
         if "you cannot perform this operation unless you are root" in e.stderr:
             print(f"Error: Permission denied.")
+
+def install_flatpaks():
+    cfg_path = DOTFILES_DIR / "flatpak" / "denton-lp.txt"
+    with open(cfg_path, 'r') as f:
+        flatpak_ids = [line.strip() for line in f if line.strip()]
+    command = ["flatpak", "install", "flathub", "--assumeyes"] + flatpak_ids
+    try:
+        with open(cfg_path, 'r') as f:
+            subprocess.run(command, check=True, text=True)
+    except:
+        print("Error. Failed to install flatpaks")
 
 def main():
     p = argparse.ArgumentParser(
@@ -86,7 +91,7 @@ def main():
     install.add_argument(
         "component",
         nargs="+",
-        choices=["dots", "scripts", "packages"],
+        choices=["dots", "scripts", "packages", "flatpaks"],
         help="Select one or more components to install",
         metavar="",
     )
@@ -101,6 +106,9 @@ def main():
         if "packages" in args.component:
             print("Installing pacman packages...")
             install_pacman_packages()
+        if "flatpaks" in args.component:
+            print("Installing flatpaks...")
+            install_flatpaks()
 
 if __name__ == "__main__":
     main()

@@ -1,0 +1,16 @@
+org.signal.Signal
+org.kde.okular
+org.kde.neochat
+im.riot.Riot
+org.localsend.localsend_app
+org.kde.gwenview
+com.valvesoftware.Steam
+com.valvesoftware.SteamLink
+com.github.tchx84.Flatseal
+md.obsidian.Obsidian
+org.keepassxc.KeePassXC
+org.kde.krita
+org.kde.ktorrent
+com.anydesk.Anydesk
+com.obsproject.Studio
+org.raspberrypi.rpi-imager
