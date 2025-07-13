@@ -1,0 +1,172 @@
+{
+    "archinstall-language": "English",
+    "audio_config": {
+        "audio": "pipewire"
+    },
+    "bootloader": "Systemd-boot",
+    "custom_commands": [],
+    "disk_config": {
+        "btrfs_options": {
+            "snapshot_config": {
+                "type": "Snapper"
+            }
+        },
+        "config_type": "default_layout",
+        "device_modifications": [
+            {
+                "device": "/dev/nvme0n1",
+                "partitions": [
+                    {
+                        "btrfs": [],
+                        "dev_path": null,
+                        "flags": [
+                            "boot",
+                            "esp"
+                        ],
+                        "fs_type": "fat32",
+                        "mount_options": [],
+                        "mountpoint": "/boot",
+                        "obj_id": "a9bf6c4d-f267-4ea1-9522-8e8cbc7f0f6e",
+                        "size": {
+                            "sector_size": {
+                                "unit": "B",
+                                "value": 512
+                            },
+                            "unit": "GiB",
+                            "value": 1
+                        },
+                        "start": {
+                            "sector_size": {
+                                "unit": "B",
+                                "value": 512
+                            },
+                            "unit": "MiB",
+                            "value": 1
+                        },
+                        "status": "create",
+                        "type": "primary"
+                    },
+                    {
+                        "btrfs": [
+                            {
+                                "mountpoint": "/",
+                                "name": "@"
+                            },
+                            {
+                                "mountpoint": "/home",
+                                "name": "@home"
+                            },
+                            {
+                                "mountpoint": "/var/log",
+                                "name": "@log"
+                            },
+                            {
+                                "mountpoint": "/var/cache/pacman/pkg",
+                                "name": "@pkg"
+                            }
+                        ],
+                        "dev_path": null,
+                        "flags": [],
+                        "fs_type": "btrfs",
+                        "mount_options": [
+                            "compress=zstd"
+                        ],
+                        "mountpoint": null,
+                        "obj_id": "1d3fb87f-091f-457a-a87e-5b66f0378841",
+                        "size": {
+                            "sector_size": {
+                                "unit": "B",
+                                "value": 512
+                            },
+                            "unit": "B",
+                            "value": 254984323072
+                        },
+                        "start": {
+                            "sector_size": {
+                                "unit": "B",
+                                "value": 512
+                            },
+                            "unit": "B",
+                            "value": 1074790400
+                        },
+                        "status": "create",
+                        "type": "primary"
+                    }
+                ],
+                "wipe": true
+            }
+        ]
+    },
+    "hostname": "denton-lp",
+    "kernels": [
+        "linux"
+    ],
+    "locale_config": {
+        "kb_layout": "us",
+        "sys_enc": "UTF-8",
+        "sys_lang": "en_US.UTF-8"
+    },
+    "mirror_config": {
+        "custom_repositories": [],
+        "custom_servers": [],
+        "mirror_regions": {
+            "Poland": [
+                "http://arch.midov.pl/arch/$repo/os/$arch",
+                "https://arch.midov.pl/arch/$repo/os/$arch",
+                "http://ftp.icm.edu.pl/pub/Linux/dist/archlinux/$repo/os/$arch",
+                "https://ftp.icm.edu.pl/pub/Linux/dist/archlinux/$repo/os/$arch",
+                "http://mirror.juniorjpdj.pl/archlinux/$repo/os/$arch",
+                "https://mirror.juniorjpdj.pl/archlinux/$repo/os/$arch",
+                "http://ftp.psnc.pl/linux/archlinux/$repo/os/$arch",
+                "https://ftp.psnc.pl/linux/archlinux/$repo/os/$arch",
+                "http://arch.sakamoto.pl/$repo/os/$arch",
+                "https://arch.sakamoto.pl/$repo/os/$arch",
+                "https://mirror.przekichane.pl/archlinux/$repo/os/$arch"
+            ],
+            "Ukraine": [
+                "http://mirrors.nix.org.ua/linux/archlinux/$repo/os/$arch",
+                "https://mirrors.nix.org.ua/linux/archlinux/$repo/os/$arch",
+                "http://archlinux.ip-connect.vn.ua/$repo/os/$arch",
+                "https://archlinux.ip-connect.vn.ua/$repo/os/$arch",
+                "http://mirror.mirohost.net/archlinux/$repo/os/$arch",
+                "https://mirror.mirohost.net/archlinux/$repo/os/$arch",
+                "http://repo.hyron.dev/archlinux/$repo/os/$arch",
+                "https://repo.hyron.dev/archlinux/$repo/os/$arch",
+                "http://distrohub.kyiv.ua/archlinux/$repo/os/$arch",
+                "https://distrohub.kyiv.ua/archlinux/$repo/os/$arch",
+                "http://mirrors.reitarovskyi.tech/archlinux/$repo/os/$arch",
+                "https://mirrors.reitarovskyi.tech/archlinux/$repo/os/$arch",
+                "http://mirror.hostiko.network/archlinux/$repo/os/$arch",
+                "https://mirror.hostiko.network/archlinux/$repo/os/$arch"
+            ]
+        },
+        "optional_repositories": []
+    },
+    "network_config": {
+        "type": "nm"
+    },
+    "ntp": true,
+    "packages": [
+        "helix",
+        "networkmanager",
+        "firefox"
+    ],
+    "parallel_downloads": 0,
+    "profile_config": {
+        "gfx_driver": "All open-source",
+        "greeter": "sddm",
+        "profile": {
+            "custom_settings": {
+                "KDE Plasma": {}
+            },
+            "details": [
+                "KDE Plasma"
+            ],
+            "main": "Desktop"
+        }
+    },
+    "services": [],
+    "swap": true,
+    "timezone": "Europe/Kyiv",
+    "version": null
+}
