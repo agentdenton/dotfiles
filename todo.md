@@ -1,0 +1,17 @@
+- [ ] Install flatpaks using bob
+    - [ ] Signal
+    - [ ] Okular
+    - [ ] NeoChat
+    - [ ] Element
+    - [ ] LocalSend
+    - [ ] Gwenview
+    - [ ] Steam
+    - [ ] Obsidian
+    - [ ] KeePassXC
+    - [ ] Krita
+    - [ ] KTorrent
+    - [ ] AnyDesk
+    - [ ] OBS
+    - [ ] rpi-imager
+- [ ] Install docker and add user to docker group
+- [ ] Install virtualbox, kernel modules for virtualbox and add user the vboxusers group
