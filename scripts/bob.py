@@ -24,7 +24,7 @@ LINKS = {
     f"{DOTFILES_DIR}/vimrc":                    f"{HOME}/.vimrc",
     f"{DOTFILES_DIR}/inputrc":                  f"{HOME}/.inputrc",
     f"{DOTFILES_DIR}/gitconfig":                f"{HOME}/.gitconfig",
-    f"{DOTFILES_DIR}/config.fish":              f"{HOME}/.config/config.fish",
+    f"{DOTFILES_DIR}/config.fish":              f"{HOME}/.config/fish/config.fish",
     f"{DOTFILES_DIR}/mimeapps.list":            f"{HOME}/.config/mimeapps.list",
     f"{DOTFILES_DIR}/starship.toml":            f"{HOME}/.config/starship.toml",
     f"{DOTFILES_DIR}/nvim/init.lua":            f"{HOME}/.config/nvim/init.lua",
