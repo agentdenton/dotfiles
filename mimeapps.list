@@ -32,3 +32,5 @@ applications/mbox=helix.desktop
 text/txt=helix.desktop
 text/pdf=okular.desktop
 text/json=helix.desktop
+x-scheme-handler/io.element.desktop=io.element.Element.desktop
+x-scheme-handler/element=io.element.Element.desktop
