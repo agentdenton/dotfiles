@@ -25,6 +25,7 @@ net-tools
 bind
 bluez
 networkmanager
+sshfs
 
 alsa-utils
 
