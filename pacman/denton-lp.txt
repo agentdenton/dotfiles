@@ -14,10 +14,14 @@ ripgrep
 bat
 fd
 eza
-htop
+starship
 bottom
-wl-clipboard
-minicom
+yazi
+cyme
+fastfetch
+fzf
+jq
+tldr
 
 firefox
 curl
@@ -26,9 +30,19 @@ bind
 bluez
 networkmanager
 sshfs
+tailscale
+ufw
+wireguard-tools
 
+htop
+wl-clipboard
+minicom
+7zip
+unzip
 alsa-utils
+restic
 
+kdeconnect
 sway
 swaybg
 swaylock
