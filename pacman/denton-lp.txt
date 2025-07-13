@@ -36,6 +36,8 @@ rofi
 dunst
 brightnessctl
 
+pyright
+
 ttf-iosevka-nerd
 ttf-jetbrains-mono
 ttf-font-awesome
