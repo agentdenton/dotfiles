@@ -6,18 +6,20 @@ c.color_scheme = "Catppuccin Frappe"
 
 c.font = wezterm.font_with_fallback({
 	{
-		family = "JetBrainsMono Nerd Font",
+		family = "ComicShannsMono Nerd Font",
 		style = "Normal",
 		weight = "Regular",
 		italic = false,
 	},
 })
 
+c.window_background_opacity = 0.95
+
 c.cell_width = 0.85
 
-c.front_end = "WebGpu"
+c.front_end = "OpenGL"
 
-c.font_size = 17
+c.font_size = 15
 c.command_palette_font_size = c.font_size * 1.1
 
 c.use_fancy_tab_bar = false
