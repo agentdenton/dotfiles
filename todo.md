@@ -28,3 +28,7 @@
     - [ ] transfuse seems like the best solution
 
 - [ ] Improve README
+
+-  [ ] Enable sshd by default for denton-lp configuration
+
+- [ ] Save firefox configuration
