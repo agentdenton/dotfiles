@@ -50,6 +50,7 @@ waybar
 rofi
 dunst
 brightnessctl
+flatpak
 
 pyright
 

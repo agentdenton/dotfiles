@@ -194,6 +194,7 @@
         "rofi",
         "dunst",
         "brightnessctl",
+        "flatpak",
         "pyright",
         "ttf-iosevka-nerd",
         "ttf-jetbrains-mono",
