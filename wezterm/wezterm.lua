@@ -13,6 +13,8 @@ c.font = wezterm.font_with_fallback({
 	},
 })
 
+c.default_prog = { "/usr/bin/fish", "-l" }
+
 c.window_background_opacity = 0.95
 
 c.cell_width = 0.85
