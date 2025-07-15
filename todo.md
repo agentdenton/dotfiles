@@ -15,7 +15,12 @@
     - [X] rpi-imager
     - [X] FlatSeal
 
+- [ ] Install flatpaks using archinstall CLI?
+
 - [ ] Install docker and add user to docker group
+
+- [ ] Automatically install and configure services:
+    - [ ] syncthing
 
 - [ ] Install virtualbox, kernel modules for virtualbox and add user the vboxusers group
 
@@ -29,6 +34,13 @@
 
 - [ ] Improve README
 
--  [ ] Enable sshd by default for denton-lp configuration
+- [ ] Enable sshd by default for denton-lp configuration
 
 - [ ] Save firefox configuration
+
+- [ ] Backup Anki
+
+- [ ] Automatically start services
+    - [ ] tailscale
+    - [ ] bluetooth
+    - [ ] systemd-resolved
