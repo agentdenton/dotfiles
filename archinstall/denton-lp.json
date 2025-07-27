@@ -179,7 +179,6 @@
         "tailscale",
         "ufw",
         "wireguard-tools",
-        "systemd-resolved",
         "htop",
         "wl-clipboard",
         "minicom",
