@@ -44,3 +44,5 @@
     - [ ] tailscale
     - [ ] bluetooth
     - [ ] systemd-resolved
+
+- [ ] Automatically configure fzf for fish shell
