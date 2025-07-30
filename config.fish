@@ -143,3 +143,6 @@ end
 if type -q direnv
     direnv hook fish | source
 end
+
+bind --mode insert --user ctrl-f vif
+bind --mode insert --user ctrl-y y
