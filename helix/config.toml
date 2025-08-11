@@ -29,6 +29,9 @@ ignore = true
 hidden = true
 git-ignore = true
 
+[editor.search]
+smart-case = false
+
 [keys.normal]
 G = "goto_last_line"
 D = "kill_to_line_end"
