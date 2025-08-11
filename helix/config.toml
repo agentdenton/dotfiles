@@ -1,4 +1,4 @@
-theme = "catppuccin_frappe"
+theme = "catppuccin_frappe_no_italics"
 
 [editor]
 line-number = "relative"
