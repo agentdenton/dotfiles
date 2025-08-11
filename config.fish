@@ -50,20 +50,20 @@ set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 set -x DEBUGINFOD_URLS ""
 
 # Aliases
-alias lg "lazygit"
-alias hx "helix"
+alias lg lazygit
+alias hx helix
 alias zel "zellij options --theme catppuccin-frappe"
 alias bat "bat -p"
 alias fd "fd --color=never"
-alias clc "clear"
-alias wcp "wl-copy"
-alias cat "bat"
-alias sctl "systemctl"
-alias jctl "journalctl"
+alias clc clear
+alias wcp wl-copy
+alias cat bat
+alias sctl systemctl
+alias jctl journalctl
 alias rgc "rg --color=always"
 alias rmf "rm -rf -I"
-alias cd "z"
-alias cdi "zi"
+alias cd z
+alias cdi zi
 
 alias mkin "sudo make install"
 alias msd "meson setup build --buildtype debug"
@@ -126,7 +126,7 @@ end
 function y
     set tmp (mktemp -t "yazi-cwd.XXXXXX")
     yazi $argv --cwd-file="$tmp"
-    if read -z cwd < "$tmp"; and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+    if read -z cwd <"$tmp"; and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
         builtin cd -- "$cwd"
     end
     rm -f -- "$tmp"
