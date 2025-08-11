@@ -34,3 +34,5 @@ text/pdf=okular.desktop
 text/json=helix.desktop
 x-scheme-handler/io.element.desktop=io.element.Element.desktop
 x-scheme-handler/element=io.element.Element.desktop
+x-scheme-handler/sgnl=org.signal.Signal.desktop
+x-scheme-handler/signalcaptcha=org.signal.Signal.desktop
