@@ -146,3 +146,7 @@ end
 
 bind --mode insert --user ctrl-f vif
 bind --mode insert --user ctrl-y y
+
+if status is-interactive
+    # Commands to run in interactive sessions can go here
+end

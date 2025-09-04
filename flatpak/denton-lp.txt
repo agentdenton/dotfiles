@@ -14,3 +14,4 @@ org.kde.ktorrent
 com.anydesk.Anydesk
 com.obsproject.Studio
 org.raspberrypi.rpi-imager
+com.discordapp.Discord

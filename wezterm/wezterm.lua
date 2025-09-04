@@ -6,7 +6,7 @@ c.color_scheme = "Catppuccin Frappe"
 
 c.font = wezterm.font_with_fallback({
 	{
-		family = "ComicShannsMono Nerd Font",
+		family = "Iosevka Nerd Font",
 		style = "Normal",
 		weight = "Regular",
 		italic = false,
@@ -15,13 +15,13 @@ c.font = wezterm.font_with_fallback({
 
 c.default_prog = { "/usr/bin/fish", "-l" }
 
-c.window_background_opacity = 0.8
+-- c.window_background_opacity = 0.8
 
 c.cell_width = 0.85
 
 c.front_end = "OpenGL"
 
-c.font_size = 15
+c.font_size = 18
 c.command_palette_font_size = c.font_size * 1.1
 
 c.use_fancy_tab_bar = false

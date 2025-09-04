@@ -299,8 +299,8 @@ require("lazy").setup({
 
 			local servers = {
 				clangd = {},
-				-- gopls = {},
-				pyright = {},
+				gopls = {},
+				-- pyright = {},
 				rust_analyzer = {},
 				lua_ls = {
 					settings = {
@@ -386,7 +386,7 @@ require("lazy").setup({
 			formatters_by_ft = {
 				lua = { "stylua" },
 				-- Conform can also run multiple formatters sequentially
-				-- python = { "isort", "black" },
+				python = { "isort", "black" },
 				--
 				-- You can use 'stop_after_first' to run the first available formatter from the list
 				-- javascript = { "prettierd", "prettier", stop_after_first = true },
@@ -604,6 +604,7 @@ require("lazy").setup({
 				"rust",
 				"cpp",
 				"python",
+				"javascript",
 			},
 			-- Autoinstall languages that are not installed
 			auto_install = true,
@@ -662,6 +663,11 @@ require("lazy").setup({
 			cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 		end,
 	},
+	-- {
+	-- 	"MeanderingProgrammer/render-markdown.nvim",
+	-- 	dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" },
+	-- 	opts = {},
+	-- },
 }, {
 	ui = {
 		-- If you are using a Nerd Font: set icons to an empty table which will use the
