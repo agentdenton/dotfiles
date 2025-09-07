@@ -15,7 +15,7 @@ c.font = wezterm.font_with_fallback({
 
 c.default_prog = { "/usr/bin/fish", "-l" }
 
--- c.window_background_opacity = 0.8
+c.window_background_opacity = 0.8
 
 c.cell_width = 0.85
 
@@ -103,6 +103,19 @@ c.keys = {
 		key = "c",
 		mods = "ALT",
 		action = "ActivateCopyMode",
+	},
+}
+
+c.mouse_bindings = {
+	{
+		event = { Down = { streak = 1, button = { WheelUp = 1 } } },
+		mods = "NONE",
+		action = act.ScrollByLine(-3),
+	},
+	{
+		event = { Down = { streak = 1, button = { WheelDown = 1 } } },
+		mods = "NONE",
+		action = act.ScrollByLine(3),
 	},
 }
 
