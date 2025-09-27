@@ -46,3 +46,7 @@
     - [ ] systemd-resolved
 
 - [ ] Automatically configure fzf for fish shell
+
+### Neovim
+
+- [ ] Hide cursor line in floating windows in trasparent mode.
