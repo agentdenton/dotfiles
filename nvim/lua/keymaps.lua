@@ -32,3 +32,5 @@ vim.keymap.set("v", "ge", "$h", { noremap = true })
 vim.keymap.set("v", "gb", "^h", { noremap = true })
 
 vim.keymap.set("n", "U", "<cmd>redo<cr>", { desc = "Redo" })
+
+vim.keymap.set('n', '<leader>b', ':b#<CR>', { noremap = true, silent = true })
