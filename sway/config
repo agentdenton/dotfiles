@@ -2,13 +2,13 @@ include /etc/sway/config.d/*
 
 set $mod Mod4
 set $term wezterm
-set $wallpaper ~/Pictures/wallpapers/girl-and-cat-in-field.png
-
+set $wallpaper ~/Pictures/wallpapers/spiderman.jpg
 set $opacity 0.9
 
 font pango:Iosevka Nerd Font 14
 
-output * mode 2560x1440@144Hz bg $wallpaper stretch
+# output * mode 2560x1440@144Hz bg $wallpaper stretch
+output * mode 1920x1080@60Hz bg $wallpaper stretch
 
 gaps inner 5
 gaps outer 5
@@ -29,18 +29,23 @@ bindsym $mod+Return exec $term
 bindsym $mod+s exec --no-startup-id rofi -show drun
 
 # volume control
-bindsym $mod+F1 exec pactl set-sink-mute @DEFAULT_SINK@ toggle # Mute
-bindsym $mod+F2 exec pactl set-sink-volume @DEFAULT_SINK@ -5%  # Up
-bindsym $mod+F3 exec pactl set-sink-volume @DEFAULT_SINK@ +5%  # Down
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle # Mute
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%  # Up
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%  # Down
+bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
-# brightness control
-bindsym --locked $mod+F4 exec brightnessctl set 5%-
-bindsym --locked $mod+F5 exec brightnessctl set 5%+
+# display brightness control
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
 
 # keyboard brightness control
-bindsym $mod+F7 exec sway_brightness_keyboard.py +1
+bindsym XF86KbdBrightnessUp exec brightnessctl -d your_kbd_device set +10%
+bindsym XF86KbdBrightnessDown exec brightnessctl -d your_kbd_device set 10%-
 
-bindsym $mod+F9 exec swaylock -k -i ~/Pictures/wallpapers/girl-and-cat-in-field.png
+# media
+bindsym $mod+XF86AudioMute exec playerctl play-pause
+bindsym $mod+XF86AudioLowerVolume exec playerctl previous
+bindsym $mod+XF86AudioRaiseVolume exec playerctl next
 
 bindsym $mod+Shift+e exec sway_exit.sh
 
@@ -149,6 +154,7 @@ client.placeholder      #303446 #949cbb #C6D0F5 #1f222d
 client.urgent           #E78284 #BF616A #303446 #BF616A
 
 for_window [app_id="org.wezfurlong.wezterm"] opacity $opacity
+for_window [app_id="obsidian"] opacity $opacity
 for_window [class="VirtualBox Manager"] floating enable
 
 exec --no-startup-id dunst
