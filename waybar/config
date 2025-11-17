@@ -1,7 +1,7 @@
 {
   "position": "top",
   "modules-left": ["sway/workspaces", "sway/mode"],
-  "modules-right": ["network", "pulseaudio", "battery", "sway/language"],
+  "modules-right": ["network", "pulseaudio", "bluetooth", "battery", "sway/language"],
   "modules-center": ["clock"],
   "sway/workspaces": {
     "disable-scroll": true,
@@ -56,4 +56,12 @@
   "tray": {
       "spacing": 10
   },
+  "bluetooth": {
+    "format": " {status}",
+    "format-disabled": "", // an empty format will hide the module
+    "format-connected": " {device_alias}",
+    "tooltip-format": "{controller_alias}\t{controller_address}",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+  }
 }

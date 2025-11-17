@@ -37,7 +37,7 @@ window#waybar {
     color: #A4B9EF;
 }
 
-#clock, #network, #battery, #pulseaudio, #workspaces, #language, #tray, #mode {
+#clock, #network, #battery, #pulseaudio, #workspaces, #language, #tray, #mode, #bluetooth {
     padding: 2px 10px;
     background: #332E41;
     margin-right: 5px;
