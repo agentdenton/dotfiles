@@ -51,6 +51,7 @@ set -x DEBUGINFOD_URLS ""
 
 # Aliases
 alias lg lazygit
+alias ld lazydocker
 alias hx helix
 alias zel "zellij options --theme catppuccin-frappe"
 alias bat "bat -p"
