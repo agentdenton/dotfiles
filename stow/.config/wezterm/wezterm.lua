@@ -6,7 +6,7 @@ c.color_scheme = "Catppuccin Mocha"
 
 c.font = wezterm.font_with_fallback({
 	{
-		family = "JetBrainsMono Nerd Font",
+		family = "Iosevka Nerd Font",
 		style = "Normal",
 		weight = "Regular",
 		italic = false,
@@ -21,7 +21,7 @@ c.cell_width = 0.85
 
 c.front_end = "OpenGL"
 
-c.font_size = 19
+c.font_size = 20
 c.command_palette_font_size = c.font_size * 1.1
 
 c.use_fancy_tab_bar = false

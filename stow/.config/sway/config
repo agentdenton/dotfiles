@@ -2,7 +2,7 @@ include /etc/sway/config.d/*
 
 set $mod Mod4
 set $term wezterm
-set $wallpaper ~/Pictures/wallpapers/arcade.png
+set $wallpaper ~/Pictures/wallpapers/retrowave.jpg
 set $opacity 0.85
 
 font pango:Iosevka Nerd Font 14
