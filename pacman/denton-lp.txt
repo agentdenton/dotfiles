@@ -41,6 +41,7 @@ dunst
 brightnessctl
 flatpak
 rsync
+mpv
 ttf-iosevka-nerd
 ttf-jetbrains-mono
 ttf-jetbrains-mono-nerd
