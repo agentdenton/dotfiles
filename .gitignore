@@ -5,3 +5,10 @@ __pycache__
 
 *.pyc
 lazy-lock.json
+
+stow/.config/fish/completions
+stow/.config/fish/conf.d
+stow/.config/fish/fish_plugins
+stow/.config/fish/fish_variables
+stow/.config/fish/functions
+stow/.config/fish/plugins
