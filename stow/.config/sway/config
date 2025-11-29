@@ -156,8 +156,8 @@ client.focused_inactive #303446 #949cbb #C6D0F5 #1f222d
 client.placeholder      #303446 #949cbb #C6D0F5 #1f222d
 client.urgent           #E78284 #BF616A #303446 #BF616A
 
-for_window [app_id="org.wezfurlong.wezterm"] opacity $opacity
+for_window [app_id="wezterm"] opacity $opacity
 for_window [app_id="obsidian"] opacity $opacity
-for_window [class="VirtualBox Manager"] floating enable
+# for_window [class="VirtualBox Manager"] floating enable
 
 exec --no-startup-id dunst
