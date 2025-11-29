@@ -25,6 +25,9 @@ floating_modifier $mod normal
 # launch terminal
 bindsym $mod+Return exec $term
 
+# launch system monitor
+bindsym $mod+Shift+m exec $term start btm
+
 # launch programs
 bindsym $mod+s exec --no-startup-id rofi -show drun
 
