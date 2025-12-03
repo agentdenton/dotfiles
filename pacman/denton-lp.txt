@@ -17,6 +17,7 @@ starship
 yazi
 fzf
 jq
+yq
 tldr
 firefox
 curl
