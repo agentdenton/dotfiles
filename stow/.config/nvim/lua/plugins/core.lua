@@ -35,18 +35,6 @@ return {
     },
   },
 
-  {
-    "mason.org/mason.nvim",
-    opts = {
-      ensure_installed = {
-        "stylua",
-        "shellcheck",
-        "shfmt",
-        "flake8",
-      },
-    },
-  },
-
   { "nvim-lualine/lualine.nvim", enabled = false },
   { "folke/trouble.nvim", enabled = false },
   { "rcarriga/nvim-notify", enabled = false },
