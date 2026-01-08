@@ -1,0 +1,3 @@
+[submodule "dotfiles-private"]
+	path = dotfiles-private
+	url = ssh://git@forgejo.akogai.org:222/agent_denton/dotfiles-private.git
