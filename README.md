@@ -1,26 +1,15 @@
-Create symlinks
-----------------
+### Install
 
-`./install.sh`
+Install basic configurations:
 
-Install scripts
----------------
+```shell
+git clone https://github.com/agentdenton/dotfiles.git
+cd ~/.dotfiles/stow
+stow -t ~ .
+```
 
-`sudo cp scripts/* /usr/local/bin`
+Initialize the private repo:
 
-Install services
-----------------
-
-`sudo cp services/* /etc/systemd/system`
-
-Install sysctl config files
----------------------------
-
-`sudo cp 99-sysctl-override.conf /etc/sysctl.d`
-
-Font list
----------
-
-* **ttf-font-awesome**
-* **ttf-jetbrains-mono-nerd**
-* **adobe-source-han-sans-jp-fonts**
+```shell
+git submodule init && git submodule update
+```
