@@ -75,6 +75,7 @@ default:
 install: install_pacman_packages install_flatpaks install_scripts install_dotfiles
 
 install_dotfiles:
+  mkdir -p ~/.config
   cd ./stow && stow -t ~ .
 
 install_scripts:
