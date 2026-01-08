@@ -83,6 +83,7 @@ install_scripts:
   sudo rsync -avh ./scripts/ /usr/local/bin
 
 install_pacman_packages:
+  sudo pacman -Syu --noconfirm
   echo {{pacman_packages_list}} | xargs sudo pacman -S --needed --noconfirm
 
 install_flatpaks:
