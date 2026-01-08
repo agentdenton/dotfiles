@@ -151,3 +151,12 @@ bind --mode insert --user ctrl-y y
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
+
+set private_repo_path ~/.dotfiles/dotfiles-private
+set private_fish_variables "$private_repo_path/fish/variables.fish"
+
+if test -f $private_fish_variables
+    source $private_fish_variables
+else
+    echo "Warning: Private $private_fish_variables doesn't exist."
+end
