@@ -3,7 +3,7 @@ include /etc/sway/config.d/*
 set $mod Mod4
 set $term wezterm
 set $wallpaper ~/Pictures/wallpapers/retrowave.jpg
-set $opacity 0.85
+set $opacity 0.9
 
 font pango:Iosevka Nerd Font 14
 
@@ -148,6 +148,8 @@ input type:keyboard {
 input type:touchpad {
     tap enabled
 }
+
+# input * xkb_options compose:caps
 
 # class                 border  backgr  text    indicator
 client.focused          #cba6f7 #8caaee #000000 #cba6f7
