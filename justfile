@@ -41,6 +41,7 @@ pacman_packages_list := " \
   arp-scan \
   papirus-icon-theme \
   cosmic \
+  tailscale \
   ttf-iosevka-nerd \
   ttf-jetbrains-mono \
   ttf-jetbrains-mono-nerd \
