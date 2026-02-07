@@ -43,7 +43,7 @@ set -x FZF_DEFAULT_OPTS $FZF_DEFAULT_OPTS \
 set -x EDITOR nvim
 set -x VISUAL nvim
 set -x EXA_STRICT 1
-set -x BAT_THEME ansi
+set -x BAT_THEME "Catppuccin Mocha"
 set -x BAT_PAGER "less -R"
 set -x MANROFFOPT -c
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
