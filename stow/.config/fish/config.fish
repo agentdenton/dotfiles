@@ -40,8 +40,8 @@ set -x FZF_DEFAULT_OPTS $FZF_DEFAULT_OPTS \
     "--color=fg:#c6d0f5,header:#e78284,info:#ca9ee6,pointer:#f2d5cf" \
     "--color=marker:#f2d5cf,fg+:#c6d0f5,prompt:#ca9ee6,hl+:#e78284"
 
-set -x EDITOR nvim
-set -x VISUAL nvim
+set -x EDITOR helix
+set -x VISUAL helix
 set -x EXA_STRICT 1
 set -x BAT_THEME "Catppuccin Mocha"
 set -x BAT_PAGER "less -R"
