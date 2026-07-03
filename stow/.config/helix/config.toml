@@ -1,13 +1,16 @@
-theme = "catppuccin_mocha_no_italics"
+theme = "catppuccin_mocha_no_italics_transparent"
 
 [editor]
 line-number = "relative"
 mouse = false
-cursorline = true
+cursorline = false
 true-color = true
 color-modes = true
 completion-replace = true
 auto-completion = true
+
+[editor.soft-wrap]
+enable = true
 
 [editor.statusline]
 left = ["mode", "spinner", "file-name"]
