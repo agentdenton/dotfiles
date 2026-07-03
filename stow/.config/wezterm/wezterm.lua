@@ -6,7 +6,7 @@ c.color_scheme = "Catppuccin Mocha"
 
 c.font = wezterm.font_with_fallback({
 	{
-		family = "JetBrainsMonoNerdFont",
+		family = "ComicShannsMonoNerdFont",
 		style = "Normal",
 		weight = "Regular",
 		italic = false,
@@ -15,14 +15,14 @@ c.font = wezterm.font_with_fallback({
 
 c.default_prog = { "/usr/bin/fish", "-l" }
 
--- c.window_background_opacity = 0.85
+c.window_background_opacity = 0.9
 c.window_decorations = "NONE"
 
-c.cell_width = 0.85
+c.cell_width = 0.9
 
 c.front_end = "OpenGL"
 
-c.font_size = 14
+c.font_size = 16
 c.command_palette_font_size = c.font_size * 1.1
 
 c.use_fancy_tab_bar = false
