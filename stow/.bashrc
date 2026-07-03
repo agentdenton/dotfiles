@@ -217,3 +217,5 @@ bind -x '"\C-n":"ncd"'
 
 eval "$(starship init bash)"
 # . "$HOME/.cargo/env"
+
+export PATH=/home/akogai/.opencode/bin:$PATH
