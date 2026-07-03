@@ -65,6 +65,7 @@ alias rgc "rg --color=always"
 alias rmf "rm -rf -I"
 alias cd z
 alias cdi zi
+alias zed zeditor
 
 alias mkin "sudo make install"
 alias msd "meson setup build --buildtype debug"
@@ -160,3 +161,6 @@ if test -f $private_fish_variables
 else
     echo "Warning: Private $private_fish_variables doesn't exist."
 end
+
+set -gx PATH "/home/akogai/.local/bin" $PATH
+set -gx PATH "/home/akogai/.opencode/bin" $PATH
