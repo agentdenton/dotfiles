@@ -42,43 +42,44 @@ set -x FZF_DEFAULT_OPTS $FZF_DEFAULT_OPTS \
 
 set -x EDITOR helix
 set -x VISUAL helix
+
 set -x EXA_STRICT 1
+
 set -x BAT_THEME "Catppuccin Mocha"
 set -x BAT_PAGER "less -R"
+
 set -x MANROFFOPT -c
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
+
 set -x DEBUGINFOD_URLS ""
+
+set -gx PATH "$HOME/.opencode/bin" $PATH
 
 # Aliases
 alias lg lazygit
 alias ld lazydocker
+
 alias hx helix
-alias zel "zellij options --theme catppuccin-frappe"
-alias bat "bat -p"
-alias fd "fd --color=never"
-alias clc clear
-alias wcp wl-copy
-alias cat bat
-alias sctl systemctl
-alias jctl journalctl
-alias rgc "rg --color=always"
-alias rmf "rm -rf -I"
-alias cd z
-alias cdi zi
 alias zed zeditor
 
-alias mkin "sudo make install"
-alias msd "meson setup build --buildtype debug"
-alias msr "meson setup build --buildtype release"
-alias nb "ninja -C build"
-alias nc "ninja -C build clean"
+alias cd z
+alias cdi zi
 
-alias toua "trans :uk "
-alias toen "trans uk: "
-alias dict "trans -d "
+alias clc clear
+alias wcp wl-copy
+
+alias sctl systemctl
+alias jctl journalctl
+
+alias fd "fd --color=never"
+alias rgc "rg --color=always"
+
+alias rmf "rm -rf -I"
+
+alias nb "ninja -c build"
+alias nc "ninja -c build clean"
 
 alias gc "git commit"
-alias gca "git commit --amend"
 alias gs "git status"
 alias grv "git remote -v"
 alias gba "git branch -a"
@@ -87,7 +88,6 @@ alias gl "git log"
 alias glp "git log -p"
 alias gl1 "git log --oneline"
 alias gbl "git blame"
-alias gdp "git diff -p"
 alias grh "git reset --hard"
 alias grs "git reset --soft"
 alias gclc "git clean -fdx"
@@ -95,43 +95,21 @@ alias gclc "git clean -fdx"
 alias fedit "$EDITOR $HOME/.config/fish/config.fish"
 alias fsrc "source $HOME/.config/fish/config.fish"
 
-if type -q exa
-    alias l "exa -l --group-directories-first"
-    alias ls "exa --group-directories-first"
-    alias ll "exa -la --group-directories-first"
-    alias lss "exa -l -s size"
-    alias lsd "exa -l -s date"
-    alias lst "exa -l -s size -T"
-end
-
 if type -q nvim
     alias vi="nvim"
     alias vim="nvim"
 end
 
-function vif
-    set file (fd -t f | fzf)
-    if test -n "$file"
-        $EDITOR $file
-    end
-    commandline -f repaint
+if type -q bat
+    alias cat bat
+    alias bat "bat -p"
 end
 
-function cdf --argument depth
-    set dir (fd -I | fzf)
-    if test -n "$dir"
-        cd $dir
-    end
-    commandline -f repaint
-end
-
-function y
-    set tmp (mktemp -t "yazi-cwd.XXXXXX")
-    yazi $argv --cwd-file="$tmp"
-    if read -z cwd <"$tmp"; and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
-        builtin cd -- "$cwd"
-    end
-    rm -f -- "$tmp"
+if type -q eza
+    alias ls "eza -l"
+    alias ll "eza -la --group-directories-first"
+    alias lss "eza -la -s size"
+    alias lld "eza -la -s date"
 end
 
 if type -q zoxide
@@ -146,12 +124,33 @@ if type -q direnv
     direnv hook fish | source
 end
 
-bind --mode insert --user ctrl-f vif
-bind --mode insert --user ctrl-y y
-
-if status is-interactive
-    # Commands to run in interactive sessions can go here
+function f
+    set file (fd -t f | fzf)
+    if test -n "$file"
+        $EDITOR $file
+    end
+    commandline -f repaint
 end
+
+function y
+    set tmp (mktemp -t "yazi-cwd.XXXXXX")
+    yazi $argv --cwd-file="$tmp"
+    if read -z cwd <"$tmp"; and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+        builtin cd -- "$cwd"
+    end
+    rm -f -- "$tmp"
+end
+
+function cdf --argument depth
+    set dir (fd -I | fzf)
+    if test -n "$dir"
+        cd $dir
+    end
+    commandline -f repaint
+end
+
+bind --mode insert --user ctrl-f f
+bind --mode insert --user ctrl-y y
 
 set private_repo_path ~/.dotfiles/dotfiles-private
 set private_fish_variables "$private_repo_path/fish/variables.fish"
@@ -162,5 +161,6 @@ else
     echo "Warning: Private $private_fish_variables doesn't exist."
 end
 
-set -gx PATH "/home/akogai/.local/bin" $PATH
-set -gx PATH "/home/akogai/.opencode/bin" $PATH
+if status is-interactive
+    # Commands to run in interactive sessions can go here
+end
