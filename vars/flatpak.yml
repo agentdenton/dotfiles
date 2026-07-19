@@ -1,0 +1,12 @@
+flatpaks:
+  - org.signal.Signal
+  - org.localsend.localsend_app
+  - com.valvesoftware.Steam
+  - com.valvesoftware.SteamLink
+  - com.github.tchx84.Flatseal
+  - md.obsidian.Obsidian
+  - org.keepassxc.KeePassXC
+  - com.anydesk.Anydesk
+  - com.obsproject.Studio
+  - com.discordapp.Discord
+  - com.mattjakeman.ExtensionManager

@@ -1,0 +1,261 @@
+---
+- name: Install packages and flatpaks
+  hosts: localhost
+  connection: local
+  become: true
+
+  tasks:
+    - name: Load distro-specific package list
+      ansible.builtin.include_vars: "vars/{{ ansible_facts['distribution'] | lower }}.yml"
+
+    - name: Load flatpak list
+      ansible.builtin.include_vars: vars/flatpak.yml
+
+    - name: Install packages (Fedora)
+      ansible.builtin.dnf:
+        name: "{{ dnf_packages }}"
+        state: present
+      when: ansible_facts['distribution'] == "Fedora"
+
+    - name: Upgrade system (Arch)
+      community.general.pacman:
+        update_cache: true
+        upgrade: true
+      when: ansible_facts['distribution'] == "Archlinux"
+
+    - name: Install packages (Arch)
+      community.general.pacman:
+        name: "{{ pacman_packages }}"
+        state: present
+        update_cache: true
+      when: ansible_facts['distribution'] == "Archlinux"
+
+    - name: Install wezterm (Fedora)
+      when: ansible_facts['distribution'] == "Fedora"
+      block:
+        - name: Enable wezterm Copr repo
+          ansible.builtin.command:
+            cmd: dnf copr enable wezfurlong/wezterm-nightly --assumeyes
+            creates: /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:wezfurlong:wezterm-nightly.repo
+
+        - name: Install wezterm
+          ansible.builtin.dnf:
+            name: wezterm
+            state: present
+
+    - name: Set hostname
+      ansible.builtin.hostname:
+        name: akogai-desktop
+
+    - name: Add Flathub remote
+      community.general.flatpak_remote:
+        name: flathub
+        state: present
+        flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+
+    - name: Install flatpaks
+      community.general.flatpak:
+        name: "{{ flatpaks }}"
+        state: present
+
+    - name: Get latest lazygit version
+      ansible.builtin.uri:
+        url: https://api.github.com/repos/jesseduffield/lazygit/releases/latest
+      register: lazygit_latest
+
+    - name: Get latest lazydocker version
+      ansible.builtin.uri:
+        url: https://api.github.com/repos/jesseduffield/lazydocker/releases/latest
+      register: lazydocker_latest
+
+    - name: Store release versions
+      ansible.builtin.set_fact:
+        lazygit_version: "{{ lazygit_latest.json.tag_name | regex_replace('^v', '') }}"
+        lazydocker_version: "{{ lazydocker_latest.json.tag_name | regex_replace('^v', '') }}"
+
+    - name: Download lazygit
+      ansible.builtin.get_url:
+        url: "https://github.com/jesseduffield/lazygit/releases/download/v{{ lazygit_version }}/lazygit_{{ lazygit_version }}_Linux_x86_64.tar.gz"
+        dest: /tmp/lazygit.tar.gz
+
+    - name: Install lazygit
+      ansible.builtin.unarchive:
+        src: /tmp/lazygit.tar.gz
+        dest: /usr/local/bin
+        remote_src: true
+        include: ["lazygit"]
+        creates: /usr/local/bin/lazygit
+
+    - name: Download lazydocker
+      ansible.builtin.get_url:
+        url: "https://github.com/jesseduffield/lazydocker/releases/download/v{{ lazydocker_version }}/lazydocker_{{ lazydocker_version }}_Linux_x86_64.tar.gz"
+        dest: /tmp/lazydocker.tar.gz
+
+    - name: Install lazydocker
+      ansible.builtin.unarchive:
+        src: /tmp/lazydocker.tar.gz
+        dest: /usr/local/bin
+        remote_src: true
+        include: ["lazydocker"]
+        creates: /usr/local/bin/lazydocker
+    
+    - name: Download starship
+      ansible.builtin.get_url:
+        url: "https://github.com/starship/starship/releases/latest/download/starship-x86_64-unknown-linux-gnu.tar.gz"
+        dest: /tmp/starship.tar.gz
+
+    - name: Install starship
+      ansible.builtin.unarchive:
+        src: /tmp/starship.tar.gz
+        dest: /usr/local/bin
+        remote_src: true
+        include: ["starship"]
+        creates: /usr/local/bin/starship
+
+    - name: Download bottom
+      ansible.builtin.get_url:
+        url: "https://github.com/ClementTsang/bottom/releases/latest/download/bottom_x86_64-unknown-linux-gnu.tar.gz"
+        dest: /tmp/bottom.tar.gz
+
+    - name: Install bottom
+      ansible.builtin.unarchive:
+        src: /tmp/bottom.tar.gz
+        dest: /usr/local/bin
+        remote_src: true
+        include: ["btm"]
+        creates: /usr/local/bin/btm
+
+    - name: Download yazi
+      ansible.builtin.get_url:
+        url: "https://github.com/sxyazi/yazi/releases/latest/download/yazi-x86_64-unknown-linux-gnu.zip"
+        dest: /tmp/yazi.zip
+
+    - name: Install yazi and ya
+      ansible.builtin.command:
+        cmd: unzip -o -j /tmp/yazi.zip '*/yazi' '*/ya' -d /usr/local/bin
+        creates: /usr/local/bin/yazi
+
+- name: Symlink dotfiles
+  hosts: localhost
+  connection: local
+
+  vars:
+    home_dir_dotfiles:
+      - bashrc
+      - gitconfig
+      - inputrc
+      - tmux.conf
+      - vimrc
+      - zshrc
+      - gdbinit
+
+    config_dir_dotfiles:
+      - bat
+      - direnv
+      - dunst
+      - fish
+      - helix
+      - mimeapps.list
+      - nvim
+      - starship.toml
+      - wezterm
+      - yazi
+
+  tasks:
+    - name: Remove existing dotfiles from home
+      ansible.builtin.file:
+        path: "{{ ansible_facts['env']['HOME'] }}/.{{ item }}"
+        state: absent
+      loop: "{{ home_dir_dotfiles }}"
+
+    - name: Symlink dotfiles to home
+      ansible.builtin.file:
+        src: "{{ playbook_dir }}/config/{{ item }}"
+        path: "{{ ansible_facts['env']['HOME'] }}/.{{ item }}"
+        state: link
+      loop: "{{ home_dir_dotfiles }}"
+
+    - name: Ensure ~/.config exists
+      ansible.builtin.file:
+        path: "{{ ansible_facts['env']['HOME'] }}/.config"
+        state: directory
+
+    - name: Remove existing entries from ~/.config
+      ansible.builtin.file:
+        path: "{{ ansible_facts['env']['HOME'] }}/.config/{{ item }}"
+        state: absent
+      loop: "{{ config_dir_dotfiles }}"
+
+    - name: Symlink entries to ~/.config
+      ansible.builtin.file:
+        src: "{{ playbook_dir }}/config/{{ item }}"
+        path: "{{ ansible_facts['env']['HOME'] }}/.config/{{ item }}"
+        state: link
+      loop: "{{ config_dir_dotfiles }}"
+
+- name: Install assets
+  hosts: localhost
+  connection: local
+
+  vars:
+    fonts:
+      - name: Iosevka
+        url: https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Iosevka.zip
+      - name: JetBrainsMono
+        url: https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip
+      - name: ComicShannsMono
+        url: https://github.com/ryanoasis/nerd-fonts/releases/latest/download/ComicShannsMono.zip
+
+  tasks:
+    - name: Check which fonts are installed
+      ansible.builtin.stat:
+        path: "{{ ansible_facts['env']['HOME'] }}/.fonts/{{ item.name }}"
+      loop: "{{ fonts }}"
+      loop_control:
+        index_var: font_index
+      register: font_dirs
+
+    - name: Ensure ~/.fonts exists
+      ansible.builtin.file:
+        path: "{{ ansible_facts['env']['HOME'] }}/.fonts"
+        state: directory
+
+    - name: Ensure per-font directories exist
+      ansible.builtin.file:
+        path: "{{ ansible_facts['env']['HOME'] }}/.fonts/{{ item.name }}"
+        state: directory
+      loop: "{{ fonts }}"
+
+    - name: Download fonts
+      ansible.builtin.get_url:
+        url: "{{ item.url }}"
+        dest: "/tmp/{{ item.name }}.zip"
+      loop: "{{ fonts }}"
+      loop_control:
+        index_var: font_index
+      when: not font_dirs.results[font_index].stat.exists
+
+    - name: Install fonts
+      ansible.builtin.unarchive:
+        src: "/tmp/{{ item.name }}.zip"
+        dest: "{{ ansible_facts['env']['HOME'] }}/.fonts/{{ item.name }}"
+        remote_src: true
+      loop: "{{ fonts }}"
+      loop_control:
+        index_var: font_index
+      when: not font_dirs.results[font_index].stat.exists
+
+    - name: Refresh font cache
+      ansible.builtin.command: fc-cache -fv "{{ ansible_facts['env']['HOME'] }}/.fonts"
+      changed_when: false
+
+- name: Configure user
+  hosts: localhost
+  connection: local
+
+  tasks:
+    - name: Set fish as the default shell
+      become: true
+      ansible.builtin.user:
+        name: "{{ ansible_facts['user_id'] }}"
+        shell: /usr/bin/fish
