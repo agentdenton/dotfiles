@@ -40,8 +40,8 @@ set -x FZF_DEFAULT_OPTS $FZF_DEFAULT_OPTS \
     "--color=fg:#c6d0f5,header:#e78284,info:#ca9ee6,pointer:#f2d5cf" \
     "--color=marker:#f2d5cf,fg+:#c6d0f5,prompt:#ca9ee6,hl+:#e78284"
 
-set -x EDITOR helix
-set -x VISUAL helix
+set -x EDITOR hx
+set -x VISUAL hx
 
 set -x EXA_STRICT 1
 
@@ -59,7 +59,7 @@ set -gx PATH "$HOME/.opencode/bin" $PATH
 alias lg lazygit
 alias ld lazydocker
 
-alias hx helix
+# alias hx helix
 alias zed zeditor
 
 alias cd z
@@ -157,8 +157,6 @@ set private_fish_variables "$private_repo_path/fish/variables.fish"
 
 if test -f $private_fish_variables
     source $private_fish_variables
-else
-    echo "Warning: Private $private_fish_variables doesn't exist."
 end
 
 if status is-interactive
