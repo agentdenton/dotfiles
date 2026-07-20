@@ -47,6 +47,18 @@
       ansible.builtin.hostname:
         name: akogai-desktop
 
+    - name: Ensure docker group exists
+      ansible.builtin.group:
+        name: docker
+        state: present
+
+    - name: Allow dmesg without root
+      ansible.posix.sysctl:
+        name: kernel.dmesg_restrict
+        value: 0
+        state: present
+        sysctl_set: true
+
     - name: Add Flathub remote
       community.general.flatpak_remote:
         name: flathub
@@ -254,6 +266,13 @@
   connection: local
 
   tasks:
+    - name: Add user to groups
+      become: true
+      ansible.builtin.user:
+        name: "{{ ansible_facts['user_id'] }}"
+        groups: wheel,dialout,docker,input
+        append: true
+
     - name: Set fish as the default shell
       become: true
       ansible.builtin.user:
