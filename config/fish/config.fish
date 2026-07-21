@@ -76,9 +76,6 @@ alias rgc "rg --color=always"
 
 alias rmf "rm -rf -I"
 
-alias nb "ninja -c build"
-alias nc "ninja -c build clean"
-
 alias gc "git commit"
 alias gs "git status"
 alias grv "git remote -v"
