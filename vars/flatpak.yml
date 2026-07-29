@@ -10,3 +10,4 @@ flatpaks:
   - com.obsproject.Studio
   - com.discordapp.Discord
   - com.mattjakeman.ExtensionManager
+  - org.flameshot.Flameshot
