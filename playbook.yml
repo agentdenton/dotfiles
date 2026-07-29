@@ -172,6 +172,7 @@
       - starship.toml
       - wezterm
       - yazi
+      - herdr
 
   tasks:
     - name: Remove existing dotfiles from home
