@@ -1,3 +1,4 @@
+onboarding = false
 [theme]
 name = "catppuccin"
 
@@ -43,7 +44,7 @@ prefix = "ctrl+a"
 next_tab = ""
 new_tab = "prefix+n"
 cycle_pane_next = ""
-last_pane = "prefix+tab"
+last_pane = "prefix+a"
 close_pane = "prefix+shift+c"
 zoom = "prefix+f"       # legacy alias: fullscreen
 
