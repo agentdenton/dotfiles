@@ -1,9 +1,9 @@
-theme = "catppuccin_mocha_no_italics_transparent"
+theme = "catppuccin_mocha_no_italics"
 
 [editor]
 line-number = "relative"
 mouse = false
-cursorline = false
+cursorline = true
 true-color = true
 color-modes = true
 completion-replace = true

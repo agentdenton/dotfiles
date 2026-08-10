@@ -4,7 +4,7 @@ auto-format = true
 
 [[language]]
 name = "python"
-language-servers = ["pyright", "ruff"]
+language-servers = ["ty", "ruff"]
 auto-format = true
 
 [language-server.ruff]
