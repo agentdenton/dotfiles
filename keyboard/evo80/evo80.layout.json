@@ -117,7 +117,7 @@
       "KC_VOLU",
       "KC_PSCR",
       "KC_SLCK",
-      "KC_PAUS",
+      "CUSTOM(10)",
       "KC_GRV",
       "KC_1",
       "KC_2",
