@@ -20,6 +20,11 @@ mode.normal = "NORMAL"
 mode.insert = "INSERT"
 mode.select = "SELECT"
 
+[editor.cursor-shape]
+normal = "block"
+insert = "bar"
+select = "block"
+
 [editor.indent-guides]
 render = true
 
