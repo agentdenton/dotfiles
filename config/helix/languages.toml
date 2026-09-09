@@ -12,7 +12,7 @@ command = "ruff"
 args = ["server"]
 
 [language-server.ruff.config.settings]
-lineLength = 80
+lineLength = 100
 
 [[language]]
 name = "cpp"
