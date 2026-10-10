@@ -1,7 +1,10 @@
 fonts:
   - name: Iosevka
     url: https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Iosevka.zip
+    file: IosevkaNerdFont-Regular.ttf
   - name: JetBrainsMono
     url: https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip
+    file: JetBrainsMonoNerdFont-Regular.ttf
   - name: ComicShannsMono
     url: https://github.com/ryanoasis/nerd-fonts/releases/latest/download/ComicShannsMono.zip
+    file: ComicShannsMonoNerdFont-Regular.otf

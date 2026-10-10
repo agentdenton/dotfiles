@@ -1,10 +1,10 @@
 - name: Check which fonts are installed
   ansible.builtin.stat:
-    path: "{{ ansible_facts['env']['HOME'] }}/.fonts/{{ item.name }}"
+    path: "{{ ansible_facts['env']['HOME'] }}/.fonts/{{ item.name }}/{{ item.file }}"
   loop: "{{ fonts }}"
   loop_control:
     index_var: font_index
-  register: font_dirs
+  register: font_files
 
 - name: Ensure ~/.fonts exists
   ansible.builtin.file:
@@ -24,7 +24,7 @@
   loop: "{{ fonts }}"
   loop_control:
     index_var: font_index
-  when: not font_dirs.results[font_index].stat.exists
+  when: not font_files.results[font_index].stat.exists
 
 - name: Install fonts
   ansible.builtin.unarchive:
@@ -34,7 +34,7 @@
   loop: "{{ fonts }}"
   loop_control:
     index_var: font_index
-  when: not font_dirs.results[font_index].stat.exists
+  when: not font_files.results[font_index].stat.exists
 
 - name: Refresh font cache
   ansible.builtin.command: fc-cache -fv "{{ ansible_facts['env']['HOME'] }}/.fonts"
