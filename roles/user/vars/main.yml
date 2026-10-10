@@ -1,6 +1,6 @@
 user_groups:
   - wheel
-  - dialout
+  - "{{ 'uucp' if ansible_facts['distribution'] == 'Archlinux' else 'dialout' }}"
   - docker
   - input
 
