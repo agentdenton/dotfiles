@@ -1,6 +1,9 @@
 default:
   ansible-playbook playbook.yml -K
 
+setup:
+  git submodule update --init --recursive
+
 install_packages:
   ansible-playbook playbook.yml -K --tags packages
 

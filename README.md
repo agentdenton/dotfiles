@@ -4,10 +4,10 @@ Prerequisites:
 
 ```shell
 # Fedora
-sudo dnf install ansible
+sudo dnf install ansible just
 
 # Arch Linux
-sudo pacman -S ansible
+sudo pacman -S ansible just
 ```
 
 Install everything on a brand new system:
@@ -28,8 +28,8 @@ ansible-playbook playbook.yml -K --skip-tags packages
 ```
 ## Private repo
 
-Initialize the private submodule:
+Initialize and download the private submodule:
 
 ```shell
-git submodule init && git submodule update
+just setup
 ```
