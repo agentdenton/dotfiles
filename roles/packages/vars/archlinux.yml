@@ -26,6 +26,18 @@ pacman_packages:
   - bind
   - bluez
   - networkmanager
+  - pipewire
+  - pipewire-pulse
+  - pipewire-alsa
+  - wireplumber
+  - xdg-desktop-portal-hyprland
+  - xdg-desktop-portal-gtk
+  - brightnessctl
+  - playerctl
+  - upower
+  - ddcutil
+  - gnome-keyring
+  - uwsm
   - sshfs
   - wireguard-tools
   - wl-clipboard
@@ -48,3 +60,7 @@ pacman_packages:
   - otf-comicshanns-nerd
   - ttf-font-awesome
   - noto-fonts-cjk
+  - hyprland
+  - hyprland-guiutils
+  - noctalia
+  - greetd

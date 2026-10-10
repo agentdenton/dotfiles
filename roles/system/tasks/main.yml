@@ -1,0 +1,25 @@
+- name: Set hostname
+  ansible.builtin.hostname:
+    name: "{{ hostname }}"
+
+- name: Enable and start core system services
+  ansible.builtin.systemd:
+    name: "{{ item }}"
+    enabled: true
+    state: started
+  loop:
+    - NetworkManager
+    - bluetooth
+    - tailscaled
+
+- name: Ensure docker group exists
+  ansible.builtin.group:
+    name: docker
+    state: present
+
+- name: Allow dmesg without root
+  ansible.posix.sysctl:
+    name: kernel.dmesg_restrict
+    value: 0
+    state: present
+    sysctl_set: true

@@ -1,0 +1,20 @@
+dotfiles:
+  - { name: bashrc,        dest: .bashrc }
+  - { name: gitconfig,     dest: .gitconfig }
+  - { name: inputrc,       dest: .inputrc }
+  - { name: tmux.conf,     dest: .tmux.conf }
+  - { name: vimrc,         dest: .vimrc }
+  - { name: zshrc,         dest: .zshrc }
+  - { name: gdbinit,       dest: .gdbinit }
+  - { name: bat,           dest: .config/bat }
+  - { name: direnv,        dest: .config/direnv }
+  - { name: fish/config.fish, dest: .config/fish/config.fish }
+  - { name: helix,         dest: .config/helix }
+  - { name: hypr,          dest: .config/hypr }
+  - { name: mimeapps.list, dest: .config/mimeapps.list }
+  - { name: nvim,          dest: .config/nvim }
+  - { name: starship.toml, dest: .config/starship.toml }
+  - { name: wezterm,       dest: .config/wezterm }
+  - { name: yazi,          dest: .config/yazi }
+  - { name: herdr/config.toml, dest: .config/herdr/config.toml }
+  - { name: noctalia/config.toml, dest: .config/noctalia/config.toml }

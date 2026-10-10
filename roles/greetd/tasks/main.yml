@@ -1,0 +1,55 @@
+- name: Check for noctalia-greeter installation
+  ansible.builtin.stat:
+    path: /usr/bin/noctalia-greeter-session
+  register: noctalia_greeter
+
+- name: Warn when noctalia-greeter is not installed
+  ansible.builtin.debug:
+    msg: "noctalia-greeter is not installed, skipping greetd setup"
+  when: not noctalia_greeter.stat.exists
+
+- name: Configure greetd for noctalia-greeter
+  when: noctalia_greeter.stat.exists
+  block:
+    # The greeter session runs as the greetd user; upstream expects its HOME
+    # to be the greeter state dir (state, synced wallpaper/palette, caches).
+    # Fedora's package sets HOME=/var/lib/greetd instead, so align the
+    # passwd entry with upstream's layout.
+    - name: Set greetd user home to the greeter state dir
+      ansible.builtin.user:
+        name: greetd
+        home: /var/lib/noctalia-greeter
+        shell: /usr/sbin/nologin
+
+    - name: Ensure the noctalia-greeter state directory exists
+      ansible.builtin.file:
+        path: /var/lib/noctalia-greeter
+        state: directory
+        owner: greetd
+        group: greetd
+        mode: "0750"
+
+    - name: Install noctalia-greeter config
+      ansible.builtin.copy:
+        src: "{{ playbook_dir }}/config/greetd/greeter.toml"
+        dest: /var/lib/noctalia-greeter/greeter.toml
+        owner: greetd
+        group: greetd
+        mode: "0644"
+
+    - name: Symlink greetd config
+      ansible.builtin.file:
+        src: "{{ playbook_dir }}/config/greetd/config.toml"
+        dest: /etc/greetd/config.toml
+        state: link
+        force: true
+
+    - name: Enable passwordless greeter appearance sync for the primary user
+      ansible.builtin.command: >
+        /usr/bin/noctalia-greeter passwordless-sync enable {{ ansible_user_id }}
+      changed_when: false
+
+    - name: Enable greetd
+      ansible.builtin.systemd:
+        name: greetd
+        enabled: true

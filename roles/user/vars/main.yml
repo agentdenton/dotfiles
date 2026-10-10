@@ -1,0 +1,7 @@
+user_groups:
+  - wheel
+  - dialout
+  - docker
+  - input
+
+user_shell: /usr/bin/fish

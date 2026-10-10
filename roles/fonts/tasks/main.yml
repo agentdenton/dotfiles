@@ -1,0 +1,41 @@
+- name: Check which fonts are installed
+  ansible.builtin.stat:
+    path: "{{ ansible_facts['env']['HOME'] }}/.fonts/{{ item.name }}"
+  loop: "{{ fonts }}"
+  loop_control:
+    index_var: font_index
+  register: font_dirs
+
+- name: Ensure ~/.fonts exists
+  ansible.builtin.file:
+    path: "{{ ansible_facts['env']['HOME'] }}/.fonts"
+    state: directory
+
+- name: Ensure per-font directories exist
+  ansible.builtin.file:
+    path: "{{ ansible_facts['env']['HOME'] }}/.fonts/{{ item.name }}"
+    state: directory
+  loop: "{{ fonts }}"
+
+- name: Download fonts
+  ansible.builtin.get_url:
+    url: "{{ item.url }}"
+    dest: "/tmp/{{ item.name }}.zip"
+  loop: "{{ fonts }}"
+  loop_control:
+    index_var: font_index
+  when: not font_dirs.results[font_index].stat.exists
+
+- name: Install fonts
+  ansible.builtin.unarchive:
+    src: "/tmp/{{ item.name }}.zip"
+    dest: "{{ ansible_facts['env']['HOME'] }}/.fonts/{{ item.name }}"
+    remote_src: true
+  loop: "{{ fonts }}"
+  loop_control:
+    index_var: font_index
+  when: not font_dirs.results[font_index].stat.exists
+
+- name: Refresh font cache
+  ansible.builtin.command: fc-cache -fv "{{ ansible_facts['env']['HOME'] }}/.fonts"
+  changed_when: false

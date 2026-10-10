@@ -21,6 +21,18 @@ dnf_packages:
   - bind-utils
   - bluez
   - NetworkManager
+  - pipewire
+  - pipewire-pulseaudio
+  - pipewire-alsa
+  - wireplumber
+  - xdg-desktop-portal-hyprland
+  - xdg-desktop-portal-gtk
+  - brightnessctl
+  - playerctl
+  - upower
+  - ddcutil
+  - gnome-keyring
+  - hyprland-uwsm
   - fuse-sshfs
   - wireguard-tools
   - wl-clipboard
@@ -38,3 +50,7 @@ dnf_packages:
   - jetbrains-mono-fonts
   - fontawesome-fonts
   - "@cosmic-desktop"
+  - hyprland
+  - hyprland-guiutils
+  - noctalia
+  - greetd

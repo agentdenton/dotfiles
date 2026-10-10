@@ -1,0 +1,10 @@
+- name: Add user to groups
+  ansible.builtin.user:
+    name: "{{ ansible_facts['user_id'] }}"
+    groups: "{{ user_groups | join(',') }}"
+    append: true
+
+- name: Set fish as the default shell
+  ansible.builtin.user:
+    name: "{{ ansible_facts['user_id'] }}"
+    shell: "{{ user_shell }}"

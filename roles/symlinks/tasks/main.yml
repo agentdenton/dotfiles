@@ -1,0 +1,13 @@
+- name: Ensure dotfile parent directories exist
+  ansible.builtin.file:
+    path: "{{ ansible_facts['env']['HOME'] }}/{{ item.dest | dirname }}"
+    state: directory
+  loop: "{{ dotfiles }}"
+
+- name: Symlink dotfiles
+  ansible.builtin.file:
+    src: "{{ playbook_dir }}/config/{{ item.name }}"
+    path: "{{ ansible_facts['env']['HOME'] }}/{{ item.dest }}"
+    state: link
+    force: true
+  loop: "{{ dotfiles }}"

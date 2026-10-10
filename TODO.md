@@ -1,0 +1,1 @@
+- [ ] Automate Noctalia greeter installation.

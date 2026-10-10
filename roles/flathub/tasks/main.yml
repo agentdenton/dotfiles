@@ -1,0 +1,10 @@
+- name: Add Flathub remote
+  community.general.flatpak_remote:
+    name: flathub
+    state: present
+    flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+
+- name: Install flatpaks
+  community.general.flatpak:
+    name: "{{ flatpaks }}"
+    state: present
