@@ -66,7 +66,7 @@ alias cd z
 alias cdi zi
 
 alias clc clear
-alias wcp wl-copy
+alias wy wl-copy
 
 alias sctl systemctl
 alias jctl journalctl
