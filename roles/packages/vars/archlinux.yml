@@ -20,6 +20,7 @@ pacman_packages:
   - jq
   - yq
   - tldr
+  - btop
   - firefox
   - proton-vpn-gtk-app
   - curl

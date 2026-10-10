@@ -15,6 +15,7 @@ dnf_packages:
   - jq
   - yq
   - tldr
+  - btop
   - firefox
   - chromium
   - proton-vpn-gnome-desktop
