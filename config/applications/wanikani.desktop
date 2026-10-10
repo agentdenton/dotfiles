@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Name=WaniKani
+Comment=Learn Japanese kanji with WaniKani
+Exec=uwsm app -- chromium-browser --ozone-platform=wayland --app=https://www.wanikani.com/ --class=wanikani
+Terminal=false
+Type=Application
+Icon=chromium
+StartupNotify=true
+StartupWMClass=wanikani
+Categories=Education;

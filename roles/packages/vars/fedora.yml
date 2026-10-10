@@ -16,6 +16,7 @@ dnf_packages:
   - yq
   - tldr
   - firefox
+  - chromium
   - proton-vpn-gnome-desktop
   - curl
   - net-tools

@@ -8,6 +8,7 @@ dotfiles:
   - { name: gdbinit,       dest: .gdbinit }
   - { name: bat,           dest: .config/bat }
   - { name: direnv,        dest: .config/direnv }
+  - { name: applications/wanikani.desktop, dest: .local/share/applications/wanikani.desktop, distribution: Fedora }
   - { name: fish/config.fish, dest: .config/fish/config.fish }
   - { name: helix,         dest: .config/helix }
   - { name: hypr,          dest: .config/hypr }
