@@ -15,6 +15,7 @@ dotfiles:
   - { name: mimeapps.list, dest: .config/mimeapps.list }
   - { name: nvim,          dest: .config/nvim }
   - { name: starship.toml, dest: .config/starship.toml }
+  - { name: uwsm/env,      dest: .config/uwsm/env }
   - { name: wezterm,       dest: .config/wezterm }
   - { name: yazi,          dest: .config/yazi }
   - { name: herdr/config.toml, dest: .config/herdr/config.toml }
