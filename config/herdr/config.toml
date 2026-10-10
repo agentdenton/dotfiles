@@ -1,4 +1,5 @@
 onboarding = false
+
 [theme]
 name = "catppuccin"
 
@@ -55,3 +56,12 @@ enabled = true
 # path = "sounds/notification.mp3"   # one mp3 file for all sound notifications
 # done_path = "sounds/done.mp3"      # overrides only finished notifications
 # request_path = "sounds/request.mp3" # overrides only needs-attention notifications
+
+# Transparency: reset background surfaces to the host terminal's default.
+# [theme.custom]
+# panel_bg    = "transparent"
+# surface0    = "transparent"
+# surface1    = "transparent"
+# surface_dim = "transparent"
+# overlay0    = "transparent"
+# overlay1    = "transparent"
