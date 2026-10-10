@@ -45,8 +45,12 @@
         force: true
 
     - name: Enable passwordless greeter appearance sync for the primary user
-      ansible.builtin.command: >
-        /usr/bin/noctalia-greeter passwordless-sync enable {{ ansible_user_id }}
+      ansible.builtin.command:
+        argv:
+          - /usr/bin/noctalia-greeter
+          - passwordless-sync
+          - enable
+          - "{{ ansible_facts['user_id'] }}"
       changed_when: false
 
     - name: Enable greetd
