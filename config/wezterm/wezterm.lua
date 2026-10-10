@@ -2,23 +2,25 @@ local wezterm = require("wezterm")
 local c = wezterm.config_builder()
 local act = wezterm.action
 
-c.color_scheme = "Catppuccin Mocha"
+c.color_scheme = "Noctalia"
 
 c.font = wezterm.font_with_fallback({
 	{
 		family = "JetBrainsMonoNerdFont",
 		style = "Normal",
 		weight = "Regular",
-		italic = false,
 	},
 })
 
 c.default_prog = { "/usr/bin/fish", "-l" }
 
--- c.window_background_opacity = 0.9
+-- c.window_background_opacity = 0.95
 c.window_decorations = "NONE"
+-- c.freetype_load_target = "Light"
+-- c.freetype_render_target = "HorizontalLcd"
 
-c.cell_width = 0.80
+c.cell_width = 0.85
+-- c.line_height = 1.25
 
 c.front_end = "OpenGL"
 
