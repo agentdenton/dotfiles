@@ -9,5 +9,6 @@ flatpaks:
   - com.anydesk.Anydesk
   - com.obsproject.Studio
   - com.discordapp.Discord
+  - org.qbittorrent.qBittorrent
   - com.mattjakeman.ExtensionManager
   - org.flameshot.Flameshot

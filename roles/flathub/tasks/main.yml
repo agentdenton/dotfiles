@@ -8,3 +8,14 @@
   community.general.flatpak:
     name: "{{ flatpaks }}"
     state: present
+
+- name: Configure qBittorrent theme
+  ansible.builtin.command:
+    argv:
+      - flatpak
+      - override
+      - --system
+      - --env=QT_QPA_PLATFORMTHEME=gtk3
+      - --filesystem=xdg-config/gtk-3.0:ro
+      - org.qbittorrent.qBittorrent
+  changed_when: false
