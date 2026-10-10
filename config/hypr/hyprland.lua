@@ -107,6 +107,18 @@ hl.animation({
     style   = "popin 95%",
 })
 
+----------------------
+---- WINDOW RULES ----
+----------------------
+
+hl.window_rule({
+    name = "float-media-and-files",
+    match = {
+        class = [[^(steam|Steam|com\.system76\.CosmicFiles|mpv|org\.gnome\.Loupe)$]],
+    },
+    float = true,
+})
+
 ---------------------
 ---- KEYBINDINGS ----
 ---------------------
