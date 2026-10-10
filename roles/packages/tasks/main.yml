@@ -8,10 +8,28 @@
     creates: /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:lionheartp:Hyprland.repo
   when: ansible_facts['distribution'] == "Fedora"
 
+- name: Enable Proton VPN repo (Fedora)
+  when: ansible_facts['distribution'] == "Fedora"
+  vars:
+    protonvpn_repo_rpm: protonvpn-stable-release-1.0.4-1.noarch.rpm
+  block:
+    - name: Download Proton VPN repo package
+      ansible.builtin.get_url:
+        url: "https://repo.protonvpn.com/fedora-{{ ansible_facts['distribution_major_version'] }}-stable/protonvpn-stable-release/{{ protonvpn_repo_rpm }}"
+        dest: "/tmp/{{ protonvpn_repo_rpm }}"
+        checksum: sha256:c3a4ca5943b142997597c1e1248226cfafbabe914c89895e0a8b2890e422657c
+        mode: "0644"
+
+    - name: Install Proton VPN repo package
+      ansible.builtin.dnf:
+        name: "/tmp/{{ protonvpn_repo_rpm }}"
+        state: present
+
 - name: Install packages (Fedora)
   ansible.builtin.dnf:
     name: "{{ dnf_packages }}"
     state: present
+    update_cache: true
   when: ansible_facts['distribution'] == "Fedora"
 
 - name: Upgrade system (Arch)

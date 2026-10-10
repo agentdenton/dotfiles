@@ -21,6 +21,7 @@ pacman_packages:
   - yq
   - tldr
   - firefox
+  - proton-vpn-gtk-app
   - curl
   - net-tools
   - bind
