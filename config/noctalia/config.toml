@@ -1,0 +1,61 @@
+[accessibility]
+ui_scale = 1.2500000111758709
+
+[bar.default]
+capsule = true
+font_family = "JetBrainsMono NF"
+font_weight = 600
+padding = 15
+radius = 15
+scale = 1.2500000111758709
+start = [ "workspaces" ]
+thickness = 40
+widget_spacing = 9
+
+[brightness]
+enable_ddcutil = true
+minimum_brightness = 0.29999999329447746
+sync_all_monitors = true
+
+[idle]
+behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
+pre_action_fade_seconds = 4
+
+    [idle.behavior.lock]
+    action = "lock"
+    enabled = true
+    timeout = 600.0
+
+    [idle.behavior.lock-and-suspend]
+    action = "lock_and_suspend"
+    enabled = false
+    timeout = 900.0
+
+    [idle.behavior.screen-off]
+    action = "screen_off"
+    enabled = true
+    timeout = 660.0
+
+[location]
+address = "Kyiv"
+
+[shell]
+corner_radius_scale = 1.3500000201165676
+font_family = "JetBrainsMono NF"
+polkit_agent = true
+
+[theme]
+community_palette = "Catppuccin Mocha Blue"
+mode = "dark"
+source = "community"
+wallpaper_scheme = "m3-tonal-spot"
+
+    [theme.templates]
+    builtin_ids = [ "btop", "gtk3", "gtk4", "helix", "hyprland", "qt", "starship", "wezterm" ]
+
+[wallpaper]
+directory = "/home/akogai/Pictures/wallpapers"
+transition_on_startup = true
+
+    [wallpaper.default]
+    path = "/home/akogai/Pictures/wallpapers/lab-girls.jpg"
