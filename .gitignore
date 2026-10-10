@@ -1,4 +1,4 @@
-./fish/fish_variables
+config/fish/fish_variables
 plugin
 .netrwhist
 __pycache__
@@ -6,9 +6,15 @@ __pycache__
 *.pyc
 lazy-lock.json
 
-stow/.config/fish/completions
-stow/.config/fish/conf.d
-stow/.config/fish/fish_plugins
-stow/.config/fish/fish_variables
-stow/.config/fish/functions
-stow/.config/fish/plugins
+# rendered by noctalia's hyprland theme template
+config/hypr/noctalia.lua
+
+# generated Fish state
+config/fish/conf.d/rustup.fish
+
+# generated Herdr state
+config/herdr/.plugins.lock
+config/herdr/herdr-client.log
+config/herdr/herdr-server.log
+config/herdr/release-notes.json
+config/herdr/session.json
