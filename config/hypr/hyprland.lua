@@ -37,6 +37,9 @@ hl.config({
             tap_to_click   = true,
         },
     },
+    xwayland = {
+        force_zero_scaling = true,
+    },
 })
 
 -----------------------
