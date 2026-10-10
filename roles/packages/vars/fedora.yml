@@ -17,6 +17,8 @@ dnf_packages:
   - tldr
   - btop
   - firefox
+  - loupe
+  - papers
   - chromium
   - proton-vpn-gnome-desktop
   - curl

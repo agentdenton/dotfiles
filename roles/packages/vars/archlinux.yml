@@ -22,6 +22,8 @@ pacman_packages:
   - tldr
   - btop
   - firefox
+  - loupe
+  - papers
   - proton-vpn-gtk-app
   - curl
   - net-tools
