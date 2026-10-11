@@ -21,6 +21,22 @@
         home: /var/lib/noctalia-greeter
         shell: /usr/sbin/nologin
 
+    - name: Configure the greeter state directory at boot
+      ansible.builtin.copy:
+        dest: /etc/tmpfiles.d/noctalia-greeter.conf
+        owner: root
+        group: root
+        mode: "0644"
+        content: |
+          d /var/lib/noctalia-greeter 0750 greetd greetd -
+
+    - name: Configure the greeter state SELinux context
+      community.general.sefcontext:
+        target: '/var/lib/noctalia-greeter(/.*)?'
+        setype: xdm_var_lib_t
+        state: present
+      when: ansible_facts['selinux']['status'] | default('disabled') == 'enabled'
+
     - name: Ensure the noctalia-greeter state directory exists
       ansible.builtin.file:
         path: /var/lib/noctalia-greeter
@@ -28,6 +44,13 @@
         owner: greetd
         group: greetd
         mode: "0750"
+
+    - name: Apply the greeter state SELinux context
+      ansible.builtin.command:
+        cmd: restorecon -RFv /var/lib/noctalia-greeter
+      register: greeter_restorecon
+      changed_when: greeter_restorecon.stdout != ''
+      when: ansible_facts['selinux']['status'] | default('disabled') == 'enabled'
 
     - name: Install noctalia-greeter config
       ansible.builtin.copy:

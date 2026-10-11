@@ -58,4 +58,5 @@ dnf_packages:
   - hyprland
   - hyprland-guiutils
   - noctalia
+  - policycoreutils-python-utils
   - greetd

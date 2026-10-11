@@ -1,2 +1,8 @@
 [output]
 scale = 2
+
+[session]
+default = "Hyprland (uwsm-managed)"
+
+[appearance]
+scheme = "Catppuccin"
