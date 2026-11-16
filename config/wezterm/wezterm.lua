@@ -14,7 +14,7 @@ c.font = wezterm.font_with_fallback({
 
 c.default_prog = { "/usr/bin/fish", "-l" }
 
--- c.window_background_opacity = 0.95
+c.window_background_opacity = 0.95
 c.window_decorations = "NONE"
 -- c.freetype_load_target = "Light"
 -- c.freetype_render_target = "HorizontalLcd"
@@ -24,7 +24,7 @@ c.cell_width = 0.85
 
 c.front_end = "OpenGL"
 
-c.font_size = 15
+c.font_size = 14
 c.command_palette_font_size = c.font_size * 1.1
 
 c.use_fancy_tab_bar = false
