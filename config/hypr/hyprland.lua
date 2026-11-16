@@ -73,6 +73,9 @@ hl.config({
 
     misc = {
         vrr = 2,
+        -- honor activation requests (tray "Show", xdg-activation, X11
+        -- _NET_ACTIVE_WINDOW): switch to the window's workspace and focus it
+        focus_on_activate = true,
         disable_hyprland_logo   = true,
         force_default_wallpaper = 0, -- noctalia draws the wallpaper
     },
@@ -139,6 +142,40 @@ hl.window_rule({
     opacity = "0.95",
 })
 
+------------------------------------
+---- CENTER OFF-SCREEN WINDOWS ----
+------------------------------------
+
+-- The DisplayPort monitor disconnects when it powers down after idle
+-- screen-off. Hyprland moves its workspaces to a temporary fallback output
+-- and back, and floating windows come back shifted outside the screen.
+-- Center every floating window that no longer overlaps any monitor.
+local function center_offscreen_windows()
+    local monitors = hl.get_monitors()
+    for _, w in ipairs(hl.get_windows({ floating = true, mapped = true })) do
+        local x, y = w.at.x or w.at[1], w.at.y or w.at[2]
+        local ww, wh = w.size.x or w.size[1], w.size.y or w.size[2]
+        local on_screen = false
+        for _, m in ipairs(monitors) do
+            -- monitor size is in physical pixels, window geometry is logical
+            local mw, mh = m.width / m.scale, m.height / m.scale
+            if m.transform % 2 == 1 then mw, mh = mh, mw end
+            if x < m.x + mw and x + ww > m.x and y < m.y + mh and y + wh > m.y then
+                on_screen = true
+                break
+            end
+        end
+        if not on_screen then
+            hl.dispatch(hl.dsp.window.center({ window = "address:" .. w.address }))
+        end
+    end
+end
+
+-- give Hyprland time to move the workspaces back before checking
+hl.on("monitor.added", function()
+    hl.timer(center_offscreen_windows, { timeout = 2000, type = "oneshot" })
+end)
+
 ---------------------
 ---- KEYBINDINGS ----
 ---------------------
@@ -161,6 +198,7 @@ hl.bind(mod .. " + SHIFT + X", hl.dsp.exec_cmd("noctalia msg session lock"))
 hl.bind(mod .. " + F",         hl.dsp.window.fullscreen({ action = "toggle" }))
 hl.bind(mod .. " + SHIFT + F", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mod .. " + Tab",       hl.dsp.focus({ workspace = "previous" }))
+hl.bind(mod .. " + SHIFT + O", center_offscreen_windows)
 
 -- focus
 hl.bind(mod .. " + H", hl.dsp.focus({ direction = "left" }))
