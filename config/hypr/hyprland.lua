@@ -69,7 +69,10 @@ hl.config({
         force_split = 2,
     },
 
+    render = { direct_scanout = 1 },
+
     misc = {
+        vrr = 2,
         disable_hyprland_logo   = true,
         force_default_wallpaper = 0, -- noctalia draws the wallpaper
     },
