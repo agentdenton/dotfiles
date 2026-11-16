@@ -122,6 +122,23 @@ hl.window_rule({
     float = true,
 })
 
+-- all Anki windows (main, browser, editor, previews) share the "anki" class
+hl.window_rule({
+    name = "float-anki",
+    match = {
+        class = [[^anki$]],
+    },
+    float = true,
+})
+
+hl.window_rule({
+    name = "obsidian-opacity",
+    match = {
+        class = [[^md\.obsidian\.Obsidian$]],
+    },
+    opacity = "0.95",
+})
+
 ---------------------
 ---- KEYBINDINGS ----
 ---------------------
