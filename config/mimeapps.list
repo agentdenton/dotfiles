@@ -51,3 +51,4 @@ x-scheme-handler/io.element.desktop=io.element.Element.desktop;
 x-scheme-handler/element=io.element.Element.desktop;
 x-scheme-handler/sgnl=org.signal.Signal.desktop;
 x-scheme-handler/signalcaptcha=org.signal.Signal.desktop;
+x-scheme-handler/claude-cli=claude-code-url-handler.desktop
